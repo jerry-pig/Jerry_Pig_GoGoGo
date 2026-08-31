@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03_考研英语_201/00_英语通关导引_MOC.md",
+                "file": "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00_英语通关导引_MOC"
+              "title": "00_Mission_Control_主控台"
             }
           }
         ]
@@ -201,6 +201,7 @@
   },
   "active": "a975919d7895025e",
   "lastOpenFiles": [
+    "03_考研英语_201/00_英语通关导引_MOC.md",
     "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
     "02_量子力学_811/00_量子物理模型图谱_MOC.md",
     "01_高等数学_604/00_高数知识图谱_MOC.md",
