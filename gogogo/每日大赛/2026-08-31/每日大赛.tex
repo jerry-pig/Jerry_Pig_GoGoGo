@@ -1,0 +1,405 @@
+% ==============================================================================
+% The Grand Daily Tournament — 2026-08-31 Opening Match
+% Locked template: EB Garamond + Garamond-Math + STKaiti (v4.1)
+% Week 1 (Day 1) · Foundation diagnostic
+% ==============================================================================
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{unicode-math}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{EBGaramond}[
+  Path           = {c:/texlive/2024/texmf-dist/fonts/opentype/public/ebgaramond/},
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-SemiBold,
+  BoldItalicFont = *-SemiBoldItalic,
+  Ligatures      = TeX,
+  Numbers        = OldStyle
+]
+\setsansfont{LibertinusSans}[
+  Path        = {c:/texlive/2024/texmf-dist/fonts/opentype/public/libertinus-fonts/},
+  Extension   = .otf,
+  UprightFont = *-Regular,
+  ItalicFont  = *-Italic,
+  BoldFont    = *-Bold,
+  Scale       = MatchLowercase
+]
+\setmathfont{Garamond-Math.otf}[
+  Path  = {c:/texlive/2024/texmf-dist/fonts/opentype/public/garamond-math/},
+  Scale = MatchLowercase
+]
+
+\usepackage{xeCJK}
+\xeCJKsetup{
+  CJKmath      = false,
+  PunctStyle   = kaiming,
+  CheckSingle  = true,
+  AutoFakeBold = true,
+  AutoFakeSlant= false
+}
+\setCJKmainfont{STKaiti}[
+  Path        = {C:/Windows/Fonts/},
+  UprightFont = STKAITI.TTF,
+  BoldFont    = STKAITI.TTF,
+  ItalicFont  = STKAITI.TTF,
+  Script      = Default
+]
+\setCJKsansfont{Microsoft YaHei}
+\setCJKmonofont{FangSong}
+
+\usepackage[margin=1.8cm,headheight=14pt,headsep=12pt,footskip=20pt]{geometry}
+\usepackage{booktabs,enumitem,xcolor,graphicx,tabularx}
+
+\usepackage[breakable,skins,hooks]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows.meta}
+\usepackage{fancyhdr,lastpage}
+\usepackage{microtype}
+
+\definecolor{navy}{HTML}{0F172A}
+\definecolor{slate}{HTML}{1E293B}
+\definecolor{royal}{HTML}{1E40AF}
+\definecolor{mist}{HTML}{64748B}
+\definecolor{border}{HTML}{E2E8F0}
+\definecolor{paper}{HTML}{F8FAFC}
+\definecolor{forest}{HTML}{065F46}
+\definecolor{amber}{HTML}{D97706}
+\definecolor{wine}{HTML}{991B1B}
+\definecolor{ice}{HTML}{EFF6FF}
+
+\linespread{1.12}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt plus 1pt minus 1pt}
+\setlength{\abovedisplayskip}{6pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{6pt plus 2pt minus 2pt}
+
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\textcolor{mist}{\footnotesize\sffamily 2027 Theoretical Physics · 604 Calculus \& 811 Quantum Mechanics}}
+\fancyhead[R]{\textcolor{slate}{\footnotesize\sffamily\bfseries Daily Tournament · 2026-08-31}}
+\fancyfoot[L]{\textcolor{mist}{\footnotesize\itshape ``Calculate until the very last step.''}}
+\fancyfoot[R]{\textcolor{mist}{\footnotesize\sffamily Page \thepage\ of \pageref{LastPage}}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\color{border}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}
+
+\newtcolorbox{briefing}[1]{%
+  enhanced, blanker, breakable,
+  left=4mm, right=3mm, top=3mm, bottom=3mm,
+  borderline west={2.5pt}{0pt}{royal},
+  colback=paper,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={#1},
+  attach title to upper={\par\vspace{2mm}}
+}
+
+\newtcolorbox{problem}[2]{%
+  enhanced, breakable,
+  colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=3mm, bottom=3mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{royal}\rule{3pt}{10pt}}\hspace{4pt}#1\hfill{\normalfont\footnotesize\color{mist}\itshape #2}},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+}
+
+\newtcolorbox{solution}[1]{%
+  enhanced, breakable,
+  colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=3mm, bottom=3mm,
+  fonttitle=\sffamily\bfseries\color{forest},
+  title={\raisebox{0pt}{\color{forest}\rule{3pt}{10pt}}\hspace{4pt}#1},
+  colbacktitle=paper, coltitle=forest,
+  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+}
+
+\newtcolorbox{debrief}[1]{%
+  enhanced, breakable,
+  colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=3.5mm, right=3.5mm, top=2.5mm, bottom=2.5mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{amber}\rule{3pt}{10pt}}\hspace{4pt}#1},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+}
+
+\newtcolorbox{notebox}{%
+  enhanced, blanker,
+  left=3mm, right=2mm, top=1.5mm, bottom=1.5mm,
+  borderline west={2pt}{0pt}{royal!60},
+  colback=ice, fontupper=\small
+}
+
+\newtcolorbox{warnbox}{%
+  enhanced, blanker,
+  left=3mm, right=2mm, top=1.5mm, bottom=1.5mm,
+  borderline west={2pt}{0pt}{wine},
+  colback=wine!4, fontupper=\small
+}
+
+\newcommand{\checkbox}{\ensuremath{\mdlgwhtsquare}}
+\newcommand{\alerttag}[1]{\textcolor{wine}{\sffamily\bfseries [#1]}}
+
+\begin{document}
+
+% ==============================================================================
+% PAGE 1: COVER
+% ==============================================================================
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[paper] (current page.south west) rectangle (current page.north east);
+
+  \fill[navy] (current page.north west) rectangle ($(current page.north east)+(0,-3.4cm)$);
+  \fill[royal] ($(current page.north west)+(0,-3.4cm)$) rectangle ($(current page.north east)+(0,-3.55cm)$);
+  \fill[amber] ($(current page.north west)+(0,-3.55cm)$) rectangle ($(current page.north east)+(0,-3.62cm)$);
+
+  \node[anchor=west, text=white] at ($(current page.north west)+(2.2cm,-1.5cm)$) {
+    {\fontsize{12}{14}\selectfont\sffamily\bfseries THE GRAND DAILY TOURNAMENT \textperiodcentered\ 2027}
+  };
+  \node[anchor=west, text=white!50] at ($(current page.north west)+(2.2cm,-2.3cm)$) {
+    {\fontsize{8.5}{11}\selectfont\sffamily UCAS \textperiodcentered\ HIAIS \textperiodcentered\ THEORETICAL PHYSICS ADVANCED TRAINING DOSSIER}
+  };
+
+  \begin{scope}[shift={($(current page.center)+(0,1.2cm)$)}]
+    \draw[line width=0.5pt, border!80, dashed] (0,0) circle (3.3cm);
+    \draw[line width=0.7pt, border] (0,0) circle (2.5cm);
+    \draw[line width=0.4pt, royal!30] (0,0) circle (1.6cm);
+    \draw[line width=1.2pt, slate!60] (-3.8,-2.2) -- (3.8,2.2);
+    \draw[line width=1.2pt, slate!60] (-3.8,2.2) -- (3.8,-2.2);
+    \draw[line width=0.7pt, royal!65, -{Stealth[length=2.5mm]}] (-4.2,0) -- (4.2,0)
+      node[right, font=\footnotesize\sffamily\color{mist}] {$\hat{p},\, k$};
+    \draw[line width=0.7pt, royal!65, -{Stealth[length=2.5mm]}] (0,-3.6) -- (0,3.6)
+      node[above, font=\footnotesize\sffamily\color{mist}] {$\hat{H},\, E$};
+    \draw[line width=1.3pt, royal, smooth, samples=120, domain=-3.14:3.14]
+      plot ({\x}, {1.1*sin(2.5*\x r)*exp(-\x*\x/5.5)});
+    \draw[line width=1.1pt, amber!85!black, smooth, samples=120, domain=-3.14:3.14]
+      plot ({\x}, {-0.9*cos(2.5*\x r)*exp(-\x*\x/5.5)});
+    \fill[navy] (0,0) circle (3.5pt);
+    \fill[amber] (0,0) circle (2pt);
+    \fill[royal] (2.12, 1.13) circle (2.2pt);
+    \fill[wine] (-1.8, -1.05) circle (2.2pt);
+    \fill[forest] (1.0, -1.35) circle (2.2pt);
+  \end{scope}
+
+  \node[anchor=center] at ($(current page.center)+(0,-3.4cm)$) {
+    \begin{minipage}{0.82\textwidth}
+      \centering
+      {\fontsize{32}{38}\selectfont\bfseries\color{navy} Daily Tournament}\\[5pt]
+      {\fontsize{12}{15}\selectfont\sffamily\bfseries\color{royal}%
+        GRAND ARENA OF THEORETICAL PHYSICS}\\[12pt]
+      {\color{navy}\rule{0.5\textwidth}{1.2pt}}\\[10pt]
+      {\fontsize{10.5}{14}\selectfont\color{slate}\itshape
+        ``Today's contestants are ready: 604 Calculus $\times$ 811 Quantum Mechanics''\\[3pt]
+        {\small\color{mist}\upshape Closed-book \textperiodcentered\
+        Pen-and-paper derivation \textperiodcentered\ No shortcuts}}
+    \end{minipage}
+  };
+
+  \node[anchor=south] at ($(current page.south)+(0,1.6cm)$) {
+    \begin{minipage}{0.84\textwidth}
+      \begin{tcolorbox}[
+        enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+        left=4mm, right=4mm, top=3.5mm, bottom=3.5mm
+      ]
+        \renewcommand{\arraystretch}{1.3}
+        \sffamily\small
+        \begin{tabularx}{\linewidth}{@{}p{2.8cm}X@{}}
+          \textbf{Date} & 2026-08-31 \quad\textbar\quad Week 1 (Day 1)\\
+          \textbf{Modules} & \textbf{604}: Limits \& equivalents \quad\textbar\quad \textbf{811}: Infinite square well\\
+          \textbf{Error Protocol} & 5-Factor: Knowledge\,\textbar\, Modelling\,\textbar\, Logic\,\textbar\, Calculation\,\textbar\, Time\\
+          \textbf{Target} & Standard 5.5--6.5\,h \quad\textbar\quad Minimum Defence 3.5\,h\\
+        \end{tabularx}
+      \end{tcolorbox}
+    \end{minipage}
+  };
+\end{tikzpicture}
+\end{titlepage}
+
+% ==============================================================================
+% PAGE 2: §1 TACTICAL BRIEFING & WARM-UP RETRIEVAL
+% ==============================================================================
+\clearpage
+
+\begin{center}
+  {\LARGE\bfseries\color{navy} Theoretical Physics Training \textperiodcentered\ Daily Tournament}\\[4pt]
+  {\small\sffamily\color{mist} 2026-08-31 \quad\textbar\quad Week 1 (Day 1) \quad\textbar\quad Phase: Foundation diagnostic}\\[-3pt]
+  {\color{navy}\rule{\textwidth}{0.8pt}}\\[-11pt]
+  {\color{border}\rule{\textwidth}{0.3pt}}
+\end{center}
+
+\vspace{-4pt}
+
+\begin{briefing}{\S 1\quad Tactical Briefing \& Warm-Up Retrieval}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, topsep=2pt]
+  \item \textbf{604 今日输入与靶向}：精读《同济高等数学》第 1 章第 7--8 节（极限运算法则与无穷小比较），参考武忠祥「泰勒展开定阶」技巧；手推 2 道展开例题。M1 为典型加减相消相差阶极限（严禁逐项盲目等价替换）。
+  \item \textbf{811 今日输入与靶向}：精读格里菲斯《量子力学概论》第 2 章第 1--2 节（无限深方势阱），选做陈鄂生《量子力学小黄书》第 1 章例题 1--2；在草稿纸手推刚性壁边界、能级 $E_n$ 与归一化波函数 $\psi_n(x)$，为 Q1 概率积分蓄力。
+  \item \textbf{Supporting}：英语精读 2012 年阅读 Text 1，剖析 2 个长难句；政治 30 分钟精研马原·唯物论基本范畴选择题。
+\end{itemize}
+
+\begin{notebox}
+\textbf{Momentum Defence Line:} Standard push 5.5--6.5\,h \quad\textbar\quad Minimum defence 3.5\,h (must secure: 811 retrieval + M1 + English reading).
+\end{notebox}
+
+\vspace{1mm}
+\textbf{Warm-Up Retrieval Checklist} (5--10\,min): without notes, write on scratch paper:\\
+\checkbox\ $\sin x\sim x$, $1-\cos x\sim x^2/2$ ($x\to 0$) \quad
+\checkbox\ Time-independent Schrödinger equation \quad
+\checkbox\ Infinite-wall condition: $\psi=0$ on the walls
+\end{briefing}
+
+\vspace{6pt}
+
+\begin{tcolorbox}[
+  enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=3mm, bottom=3mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{royal}\rule{3pt}{10pt}}\hspace{4pt}Warm-Up Retrieval Workspace \textbar\ 白纸破冰草稿区},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+]
+\textcolor{mist}{\footnotesize\itshape 5--10 分钟闭卷盲写：在下方空白区域手推上述 3 个核心公式/边界条件，快速越过启动能垒。}
+\vspace{9.2cm}
+\end{tcolorbox}
+
+% ==============================================================================
+% PAGE 3: §2 CORE PROBLEM SET
+% ==============================================================================
+\clearpage
+
+{\Large\sffamily\bfseries\color{navy} \S 2\quad Core Problem Set}\hfill{\small\sffamily\color{mist}\itshape Complete independently under timed conditions}
+
+\vspace{8pt}
+
+\begin{problem}{Problem M1 \textbar\ 604 Calculus: subtraction limit}{Suggested time: 25\,min}
+求极限
+\[
+  \lim_{x\to 0}\frac{\tan x-\sin x}{x^3},
+\]
+并写清所用展开（或等价无穷小）的阶数依据。要求得到最终常数，不得停在「可洛必达」一层。
+\end{problem}
+
+\vspace{6pt}
+
+\begin{problem}{Problem Q1 \textbar\ 811 Quantum Mechanics: infinite square well}{Suggested time: 35\,min}
+质量为 $m$ 的粒子被限制在一维无限深势阱 $0<x<a$ 中（壁外 $V=\infty$）。
+\begin{enumerate}[leftmargin=1.6em,itemsep=2pt,topsep=2pt]
+  \item 写出阱内哈密顿量 $\hat{H}$ 与边界条件，求出能级 $E_n$ 与归一化本征函数 $\psi_n(x)$（$n=1,2,\ldots$）。
+  \item 粒子处于基态 $n=1$。求其出现在区间 $(0,a/3)$ 内的概率，化到最简精确式。
+\end{enumerate}
+\end{problem}
+
+\vspace{6pt}
+
+\begin{problem}{Extension \textbar\ Conceptual Analysis}{Optional \textperiodcentered\ Suggested time: 10\,min}
+M1 的分子是两个同阶小量相减。说明：为何不能分别用 $\tan x\sim x$、$\sin x\sim x$ 代入分子？Q1：无限高壁处 $\psi$ 连续、$\psi'$ 是否连续？主问题独立作答合计不超过 80 分钟。
+\end{problem}
+
+% ==============================================================================
+% PAGE 4: §3 MODEL SOLUTIONS & COMMENTARY
+% ==============================================================================
+\clearpage
+
+{\Large\sffamily\bfseries\color{navy} \S 3\quad Model Solutions \& Commentary}
+
+\vspace{1pt}
+{\small\color{mist}\itshape\hspace{1pt} Complete your independent attempt on scratch paper before consulting this page.}
+
+\vspace{8pt}
+
+\begin{solution}{M1 \textperiodcentered\ Model Solution \& Commentary}
+\textbf{Strategy:}\enspace 分子是 $O(x^3)$ 的差，一阶等价会把分子换成 $0$。先因式分解，把已知极限乘出来；或对 $\tan x$、$\sin x$ 展开到 $x^3$。
+
+\vspace{2mm}
+\textbf{Derivation:}\enspace
+\[
+  \tan x-\sin x=\sin x\Bigl(\frac{1}{\cos x}-1\Bigr)=\frac{\sin x\,(1-\cos x)}{\cos x}.
+\]
+于是
+\begin{align*}
+  \frac{\tan x-\sin x}{x^3}
+  &=\frac{\sin x}{x}\cdot\frac{1-\cos x}{x^2}\cdot\frac{1}{\cos x}.
+\end{align*}
+当 $x\to 0$：$\sin x/x\to 1$，$(1-\cos x)/x^2\to 1/2$，$\cos x\to 1$，故
+\[
+  \lim_{x\to 0}\frac{\tan x-\sin x}{x^3}=\frac{1}{2}.
+\]
+用 Taylor 核验：$\sin x=x-x^3/6+O(x^5)$，$\tan x=x+x^3/3+O(x^5)$，相减得 $x^3/2+O(x^5)$，除以 $x^3$ 同得 $1/2$。
+
+\begin{warnbox}
+\alerttag{Common Error}\enspace 等价无穷小只保证商的极限；加减中必须保留到能抵消的那一阶。分子里 $\tan x\sim x$ 与 $\sin x\sim x$ 同阶，差掉到 $x^3$，一阶替换会得到 $0/0$ 的假象或直接得 $0$。
+\end{warnbox}
+\end{solution}
+
+\vspace{6pt}
+
+\begin{solution}{Q1 \textperiodcentered\ Model Solution \& Commentary}
+\textbf{Physical Picture:}\enspace 刚性壁把波函数钉在 $\psi(0)=\psi(a)=0$。阱内自由粒子，定态是半波长的整数倍驻波；概率密度 $|\psi|^2$ 在基态于阱中点最大，在 $a/3$ 处尚未过半。
+
+\vspace{2mm}
+\textbf{Derivation:}\enspace
+阱内 $\hat{H}=\hat{p}^2/(2m)=-\dfrac{\hbar^2}{2m}\dfrac{d^2}{dx^2}$。定态方程 $E\psi=-\dfrac{\hbar^2}{2m}\psi''$，令 $k=\sqrt{2mE}/\hbar$，通解 $\psi=A\sin(kx)+B\cos(kx)$。由 $\psi(0)=0$ 得 $B=0$；由 $\psi(a)=0$ 得 $k a=n\pi$（$n=1,2,\ldots$）。因此
+\[
+  E_n=\frac{n^2\pi^2\hbar^2}{2ma^2},\qquad
+  \psi_n(x)=\sqrt{\frac{2}{a}}\sin\Bigl(\frac{n\pi x}{a}\Bigr)
+  \quad(0<x<a),\quad \psi_n=0\text{ 壁外}.
+\]
+归一化：$\int_0^a\sin^2(n\pi x/a)\,dx=a/2$。基态 $n=1$，
+\begin{align*}
+  P(0<x<a/3)
+  &=\frac{2}{a}\int_0^{a/3}\sin^2\Bigl(\frac{\pi x}{a}\Bigr)\,dx
+  =\frac{1}{\pi}\Bigl[u-\frac12\sin 2u\Bigr]_0^{\pi/3}
+  =\frac13-\frac{\sqrt{3}}{4\pi},
+\end{align*}
+其中 $u=\pi x/a$。量纲：$P$ 无量纲；$E_n$ 与 $\hbar^2/(ma^2)$ 同量纲。
+
+\begin{notebox}
+\alerttag{Checkpoint}\enspace $\psi$ 在壁上为 $0$（连续接到壁外的 $0$）；$\psi'$ 在无限壁处一般不连续。归一化系数是 $\sqrt{2/a}$ 不是 $\sqrt{2/a\pi}$。积分上限 $a/3$ 对应 $u=\pi/3$ 而非 $\pi/2$。
+\end{notebox}
+\end{solution}
+
+% ==============================================================================
+% PAGE 5: §4 DAILY DEBRIEF & REFLECTION
+% ==============================================================================
+\clearpage
+
+{\Large\sffamily\bfseries\color{navy} \S 4\quad Daily Debrief \& Reflection}
+
+\vspace{6pt}
+
+\begin{debrief}{Post-Match Review (fill in before sleep, 5\,min)}
+\renewcommand{\arraystretch}{1.2}
+\sffamily\small
+\begin{tabularx}{\linewidth}{@{}p{2.4cm}X@{}}
+  \textbf{604 Calculus} & Time spent: \underline{\hspace{1.4cm}} min \quad\textbar\quad M1 status: \checkbox\ Independent \checkbox\ Used hints \checkbox\ Incomplete\\
+  & Error type: \checkbox\ Knowledge gap \checkbox\ Modelling \checkbox\ Logic \checkbox\ Calculation \checkbox\ Time\\
+  \midrule
+  \textbf{811 QM} & Time spent: \underline{\hspace{1.4cm}} min \quad\textbar\quad Q1 status: \checkbox\ Independent \checkbox\ Used hints \checkbox\ Incomplete\\
+  & Error type: \checkbox\ Knowledge gap \checkbox\ Physical model \checkbox\ Operator algebra \checkbox\ Calculation \checkbox\ Time\\
+  \midrule
+  \textbf{Planning} & \textbf{Spaced retrieval in 3 days:} 9月3日重做相消展开项与基态概率积分\\
+  & \textbf{Today's assessment:} \checkbox\ Peak performance \checkbox\ Steady progress \checkbox\ Minimum defence mode\\
+\end{tabularx}
+\end{debrief}
+
+\vspace{8pt}
+
+\begin{tcolorbox}[
+  enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=3.5mm, bottom=4mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{forest}\rule{3pt}{10pt}}\hspace{4pt}Key Derivation Insights \& Traps \textbar\ 突破口与避坑沉淀},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+]
+\sffamily\small
+\textbf{Core Breakthrough (今日核心突破口与关键一步)}:\\[30pt]
+\rule{\linewidth}{0.3pt}\\[12pt]
+\textbf{Fatal Trap \& Common Error (致命陷阱与避坑警示)}:\\[30pt]
+\rule{\linewidth}{0.3pt}\\[12pt]
+\textbf{Day +3 Action Item (3 天后间隔重做提取的具体题号与断点)}:\\[25pt]
+\rule{\linewidth}{0.3pt}
+\end{tcolorbox}
+
+\end{document}
