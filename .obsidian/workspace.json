@@ -1,0 +1,241 @@
+{
+  "main": {
+    "id": "ac74fd591871c07d",
+    "type": "split",
+    "children": [
+      {
+        "id": "85e03777b87ec851",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a975919d7895025e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "dc2533b63e1ead2a",
+    "type": "split",
+    "children": [
+      {
+        "id": "553728fe177ee049",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "efb93bf0b9fa7dd6",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "e2da8b5832ef6806",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "c97705bc87346c79",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "fdfaabcdb7417039",
+    "type": "split",
+    "children": [
+      {
+        "id": "f372c47ac4e85b2f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "faf1bc12d148dd1e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "README.md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "1f5de87c768a0d23",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "README.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "07fb6436d61d5877",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "3badbf5eddc65f20",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "6c218134e95110af",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "README.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          },
+          {
+            "id": "ea749e728dc67cdf",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "a975919d7895025e",
+  "lastOpenFiles": [
+    "01_高等数学_604/05_级数与常微分方程/Bernoulli方程换元法与全微分方程.md",
+    "01_高等数学_604/01_极限连续与微分/一致连续性判定方法与闭区间均匀覆盖定理.md",
+    "02_量子力学_811/02_算符代数与表象理论/算符指数对易子与BCH展开_平移生成元.md",
+    "02_量子力学_811/05_微扰论与辐射跃迁/Hellmann-Feynman定理与Virial定理.md",
+    "02_量子力学_811/01_波函数与一维势场/圆环粒子运动_周期性边界条件与能级简并.md",
+    "00_Dashboard_作战指挥中心/03_考纲核查报告与超纲增补.md",
+    "811_2018.txt",
+    "811_2020.txt",
+    "811_2019.txt",
+    "811_2023.txt",
+    "811_2022.txt",
+    "811_2021.txt",
+    "811_syllabus_raw.txt",
+    "604_syllabus_raw.txt",
+    "05_每日大赛_Daily/README.md",
+    "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
+    "06_历年真题_Archive/README.md",
+    "06_历年真题_Archive/601/601.pdf",
+    "06_历年真题_Archive/811/811.pdf",
+    "05_每日大赛_Daily/每日大赛复盘索引_Index.md",
+    "04_思想政治_101/00_政治极简攻坚_MOC.md",
+    "04_思想政治_101/01_马原核心逻辑全景骨架.md",
+    "99_System_认知系统与模板/README.md",
+    "05_每日大赛_Daily/2026-08-31/每日大赛_2026-08-31_复盘笔记.md",
+    "02_量子力学_811/03_中心力场与氢原子/氢原子径向方程与能态物理图像.md",
+    "02_量子力学_811/01_波函数与一维势场/一维谐振子算符升降代数法.md",
+    "00_Dashboard_作战指挥中心/02_多巴胺成长系统_SkillTree.md",
+    "02_量子力学_811/00_量子物理模型图谱_MOC.md",
+    "01_高等数学_604/06_线性代数_保分专项/实对称矩阵正交相似对角化与二次型规范化.md",
+    "01_高等数学_604/01_极限连续与微分/泰勒展开定阶与极限相消项.md",
+    "01_高等数学_604/00_高数知识图谱_MOC.md",
+    "03_考研英语_201/04_写作功能积木库_Arsenal/大作文论述积木库_现象原因措施.md",
+    "03_考研英语_201/03_阅读逻辑与题型思维_Logic/考研英语阅读六大题型破局法.md",
+    "03_考研英语_201/02_真题语境高频词_Lexicon/真题高频熟词生义核心库.md",
+    "03_考研英语_201/01_真题长难句拆解_Syntax/真题长难句_从句嵌套与隔离修饰示范.md",
+    "03_考研英语_201/00_英语通关导引_MOC.md"
+  ]
+}
