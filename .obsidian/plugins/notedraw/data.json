@@ -17,7 +17,7 @@
       },
       "fountain": {
         "color": "#e53935",
-        "width": 3,
+        "width": 0.86,
         "opacity": 1,
         "count": 1
       },
@@ -56,7 +56,7 @@
     }
   },
   "lastToolMode": "draw",
-  "lastBrushMode": "pen",
+  "lastBrushMode": "watercolor",
   "lastPenVariant": "fountain",
   "lastWatercolorVariant": "default",
   "lastTextPreset": "plain",
