@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
+                "file": "02_量子力学_811/01_波函数与一维势场/一维谐振子算符升降代数法.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00_Mission_Control_主控台"
+              "title": "一维谐振子算符升降代数法"
             }
           }
         ]
@@ -201,9 +201,9 @@
   },
   "active": "a975919d7895025e",
   "lastOpenFiles": [
+    "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
     "01_高等数学_604/01_极限连续与微分/一致连续性判定方法与闭区间均匀覆盖定理.md",
     "01_高等数学_604/01_极限连续与微分/泰勒展开定阶与极限相消项.md",
-    "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
     "05_每日大赛_Daily/2026-08-31/每日大赛_2026-08-31_复盘笔记.md",
     "99_System_认知系统与模板/cognitive_manual/Gemini_AI导师互动学习指南与提示词库.md",
     "00_Dashboard_作战指挥中心/01_16周推进总览_Milestones.md",
