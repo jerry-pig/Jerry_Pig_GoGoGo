@@ -4,8 +4,8 @@
   "defaultPenColor": "#e53935",
   "defaultPenWidth": 3,
   "defaultPenOpacity": 1,
-  "defaultWatercolorColor": "#3b82f6",
-  "defaultWatercolorWidth": 9,
+  "defaultWatercolorColor": "#fdd835",
+  "defaultWatercolorWidth": 1.15,
   "defaultWatercolorOpacity": 0.45,
   "brushVariantSettings": {
     "pen": {
@@ -36,8 +36,8 @@
     },
     "watercolor": {
       "default": {
-        "color": "#3b82f6",
-        "width": 9,
+        "color": "#fdd835",
+        "width": 1.15,
         "opacity": 0.45,
         "count": 1
       },
@@ -56,7 +56,7 @@
     }
   },
   "lastToolMode": "draw",
-  "lastBrushMode": "watercolor",
+  "lastBrushMode": "pen",
   "lastPenVariant": "fountain",
   "lastWatercolorVariant": "default",
   "lastTextPreset": "plain",
