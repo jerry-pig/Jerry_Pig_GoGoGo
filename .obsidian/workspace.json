@@ -11,12 +11,14 @@
             "id": "a975919d7895025e",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "05_每日大赛_Daily/2026-09-01/每日大赛.pdf"
+                "file": "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "每日大赛"
+              "icon": "lucide-file",
+              "title": "00_Mission_Control_主控台"
             }
           }
         ]
@@ -200,9 +202,9 @@
   },
   "active": "a975919d7895025e",
   "lastOpenFiles": [
+    "05_每日大赛_Daily/2026-09-01/每日大赛.pdf",
     "05_每日大赛_Daily/2026-09-01/20260901.pdf",
     "02_量子力学_811/01_波函数与一维势场/一维谐振子算符升降代数法.md",
-    "05_每日大赛_Daily/2026-09-01/每日大赛.pdf",
     "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
     "03_考研英语_201/01_真题长难句拆解_Syntax/真题长难句_从句嵌套与隔离修饰示范.md",
     "05_每日大赛_Daily/2026-09-01/每日大赛_2026-09-01_复盘笔记.md",
