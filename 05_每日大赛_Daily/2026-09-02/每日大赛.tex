@@ -1,7 +1,7 @@
 % ==============================================================================
-% The Grand Daily Tournament — 2026-09-02 Match (Day 3)
+% The Grand Daily Tournament — 2026-09-02 Match (Day 3 Advanced)
 % Locked template: EB Garamond + Garamond-Math + STKaiti (v4.1)
-% Week 1 (Day 3) · Rolle Auxiliary Function & 1D Delta Potential
+% High-Capacity & High-Depth Edition: 3 Math Problems + 2 QM Problems
 % ==============================================================================
 \documentclass[a4paper,11pt]{article}
 
@@ -50,7 +50,7 @@
 \setCJKsansfont{Microsoft YaHei}
 \setCJKmonofont{FangSong}
 
-\usepackage[margin=1.8cm,headheight=14pt,headsep=12pt,footskip=20pt]{geometry}
+\usepackage[margin=1.5cm,headheight=14pt,headsep=10pt,footskip=18pt]{geometry}
 \usepackage{booktabs,enumitem,xcolor,graphicx,tabularx}
 
 \usepackage[breakable,skins,hooks]{tcolorbox}
@@ -70,15 +70,15 @@
 \definecolor{wine}{HTML}{991B1B}
 \definecolor{ice}{HTML}{EFF6FF}
 
-\linespread{1.12}
+\linespread{1.08}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{4pt plus 1pt minus 1pt}
-\setlength{\abovedisplayskip}{6pt plus 2pt minus 2pt}
-\setlength{\belowdisplayskip}{6pt plus 2pt minus 2pt}
+\setlength{\parskip}{3pt plus 1pt minus 1pt}
+\setlength{\abovedisplayskip}{4pt plus 1pt minus 1pt}
+\setlength{\belowdisplayskip}{4pt plus 1pt minus 1pt}
 
 \pagestyle{fancy}\fancyhf{}
 \fancyhead[L]{\textcolor{mist}{\footnotesize\sffamily 2027 Theoretical Physics · 604 Calculus \& 811 Quantum Mechanics}}
-\fancyhead[R]{\textcolor{slate}{\footnotesize\sffamily\bfseries Daily Tournament · 2026-09-02}}
+\fancyhead[R]{\textcolor{slate}{\footnotesize\sffamily\bfseries Daily Tournament (Intensive) · 2026-09-02}}
 \fancyfoot[L]{\textcolor{mist}{\footnotesize\itshape ``Calculate until the very last step.''}}
 \fancyfoot[R]{\textcolor{mist}{\footnotesize\sffamily Page \thepage\ of \pageref{LastPage}}}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -86,56 +86,49 @@
 
 \newtcolorbox{briefing}[1]{%
   enhanced, blanker, breakable,
-  left=4mm, right=3mm, top=3mm, bottom=3mm,
+  left=3.5mm, right=2.5mm, top=2.5mm, bottom=2.5mm,
   borderline west={2.5pt}{0pt}{royal},
   colback=paper,
   fonttitle=\sffamily\bfseries\color{slate},
   title={#1},
-  attach title to upper={\par\vspace{2mm}}
+  attach title to upper={\par\vspace{1.5mm}}
 }
 
 \newtcolorbox{problem}[2]{%
   enhanced, breakable,
-  colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
-  left=4mm, right=4mm, top=3mm, bottom=3mm,
+  colback=white, colframe=border, boxrule=0.5pt, arc=1.5mm,
+  left=3.5mm, right=3.5mm, top=2.5mm, bottom=2.5mm,
   fonttitle=\sffamily\bfseries\color{slate},
-  title={\raisebox{0pt}{\color{royal}\rule{3pt}{10pt}}\hspace{4pt}#1\hfill{\normalfont\footnotesize\color{mist}\itshape #2}},
+  title={\raisebox{0pt}{\color{royal}\rule{2.5pt}{9pt}}\hspace{4pt}#1\hfill{\normalfont\footnotesize\color{mist}\itshape #2}},
   colbacktitle=paper, coltitle=slate,
-  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+  titlerule=0pt, toptitle=1.5mm, bottomtitle=1.5mm
 }
 
 \newtcolorbox{solution}[1]{%
   enhanced, breakable,
-  colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
-  left=4mm, right=4mm, top=3mm, bottom=3mm,
+  colback=white, colframe=border, boxrule=0.5pt, arc=1.5mm,
+  left=3.5mm, right=3.5mm, top=2.5mm, bottom=2.5mm,
   fonttitle=\sffamily\bfseries\color{forest},
-  title={\raisebox{0pt}{\color{forest}\rule{3pt}{10pt}}\hspace{4pt}#1},
+  title={\raisebox{0pt}{\color{forest}\rule{2.5pt}{9pt}}\hspace{4pt}#1},
   colbacktitle=paper, coltitle=forest,
-  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+  titlerule=0pt, toptitle=1.5mm, bottomtitle=1.5mm
 }
 
 \newtcolorbox{debrief}[1]{%
   enhanced, breakable,
-  colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  colback=white, colframe=border, boxrule=0.5pt, arc=1.5mm,
   left=3.5mm, right=3.5mm, top=2.5mm, bottom=2.5mm,
   fonttitle=\sffamily\bfseries\color{slate},
-  title={\raisebox{0pt}{\color{amber}\rule{3pt}{10pt}}\hspace{4pt}#1},
+  title={\raisebox{0pt}{\color{amber}\rule{2.5pt}{9pt}}\hspace{4pt}#1},
   colbacktitle=paper, coltitle=slate,
-  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
-}
-
-\newtcolorbox{notebox}{%
-  enhanced, blanker,
-  left=3mm, right=2mm, top=1.5mm, bottom=1.5mm,
-  borderline west={2pt}{0pt}{royal!60},
-  colback=ice, fontupper=\small
+  titlerule=0pt, toptitle=1.5mm, bottomtitle=1.5mm
 }
 
 \newtcolorbox{warnbox}{%
   enhanced, blanker,
-  left=3mm, right=2mm, top=1.5mm, bottom=1.5mm,
+  left=2.5mm, right=2mm, top=1mm, bottom=1mm,
   borderline west={2pt}{0pt}{wine},
-  colback=wine!4, fontupper=\small
+  colback=wine!4, fontupper=\footnotesize
 }
 
 \newcommand{\checkbox}{\ensuremath{\mdlgwhtsquare}}
@@ -169,48 +162,46 @@
     \draw[line width=1.2pt, slate!60] (-3.8,-2.2) -- (3.8,2.2);
     \draw[line width=1.2pt, slate!60] (-3.8,2.2) -- (3.8,-2.2);
     \draw[line width=0.7pt, royal!65, -{Stealth[length=2.5mm]}] (-4.2,0) -- (4.2,0)
-      node[right, font=\footnotesize\sffamily\color{mist}] {$x$};
+      node[right, font=\footnotesize\sffamily\color{mist}] {$x,\, p$};
     \draw[line width=0.7pt, royal!65, -{Stealth[length=2.5mm]}] (0,-3.6) -- (0,3.6)
-      node[above, font=\footnotesize\sffamily\color{mist}] {$\psi_0(x),\, V(x)$};
-    % Plot delta-like cusp wave function: \psi_0(x) = exp(-|x|)
+      node[above, font=\footnotesize\sffamily\color{mist}] {$\psi(x),\, \phi(p)$};
     \draw[line width=1.4pt, royal, smooth, samples=120, domain=-3.2:3.2]
       plot ({\x}, {2.2*exp(-abs(\x))});
-    % Plot delta spike downward
-    \draw[line width=1.6pt, wine, -{Stealth[length=3mm]}] (0,0) -- (0,-3.0)
-      node[below, font=\footnotesize\sffamily\color{wine}] {$-\alpha\delta(x)$};
+    \draw[line width=1.1pt, amber!85!black, dashed, smooth, samples=120, domain=-3.14:3.14]
+      plot ({\x}, {1.3*cos(\x*1.57 r)});
     \fill[navy] (0, 2.2) circle (3pt);
-    \fill[amber] (0, 2.2) circle (1.8pt);
+    \fill[amber] (0, 1.3) circle (2.2pt);
     \fill[royal] (1.2, 0.66) circle (2.2pt);
     \fill[royal] (-1.2, 0.66) circle (2.2pt);
   \end{scope}
 
   \node[anchor=center] at ($(current page.center)+(0,-3.4cm)$) {
-    \begin{minipage}{0.82\textwidth}
+    \begin{minipage}{0.84\textwidth}
       \centering
-      {\fontsize{32}{38}\selectfont\bfseries\color{navy} Daily Tournament}\\[5pt]
-      {\fontsize{12}{15}\selectfont\sffamily\bfseries\color{royal}%
-        GRAND ARENA OF THEORETICAL PHYSICS}\\[12pt]
-      {\color{navy}\rule{0.5\textwidth}{1.2pt}}\\[10pt]
-      {\fontsize{10.5}{14}\selectfont\color{slate}\itshape
-        ``Today's contestants are ready: 604 Rolle Auxiliary Construction $\times$ 811 1D $\delta$-Potential''\\[3pt]
-        {\small\color{mist}\upshape Closed-book \textperiodcentered\
-        Pen-and-paper derivation \textperiodcentered\ No shortcuts}}
+      {\fontsize{30}{36}\selectfont\bfseries\color{navy} Daily Tournament}\\[4pt]
+      {\fontsize{11}{14}\selectfont\sffamily\bfseries\color{royal}%
+        GRAND ARENA OF THEORETICAL PHYSICS \textperiodcentered\ INTENSIVE ARENA}\\[10pt]
+      {\color{navy}\rule{0.45\textwidth}{1.2pt}}\\[8pt]
+      {\fontsize{10}{13}\selectfont\color{slate}\itshape
+        ``604 Advanced Trio: Partition Mean Value $\times$ Uniform Continuity $\times$ Taylor Bound\\
+        811 Double Strike: $\delta$-Potential Well $\times$ Symmetric Infinite Well Momentum Wave''\\[3pt]
+        {\small\color{mist}\upshape 5-Problem Intensive Battle \textperiodcentered\ Closed-book \textperiodcentered\ 100\,min Real-time Challenge}}
     \end{minipage}
   };
 
-  \node[anchor=south] at ($(current page.south)+(0,1.6cm)$) {
-    \begin{minipage}{0.84\textwidth}
+  \node[anchor=south] at ($(current page.south)+(0,1.5cm)$) {
+    \begin{minipage}{0.86\textwidth}
       \begin{tcolorbox}[
         enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
-        left=4mm, right=4mm, top=3.5mm, bottom=3.5mm
+        left=4mm, right=4mm, top=3mm, bottom=3mm
       ]
-        \renewcommand{\arraystretch}{1.3}
+        \renewcommand{\arraystretch}{1.25}
         \sffamily\small
-        \begin{tabularx}{\linewidth}{@{}p{2.8cm}X@{}}
-          \textbf{Date} & 2026-09-02 \quad\textbar\quad Week 1 (Day 3)\\
-          \textbf{Modules} & \textbf{604}: Mean Value Auxiliary Function \quad\textbar\quad \textbf{811}: 1D $\delta$-Potential \& Probability Current\\
+        \begin{tabularx}{\linewidth}{@{}p{2.6cm}X@{}}
+          \textbf{Date} & 2026-09-02 \quad\textbar\quad Week 1 (Day 3 Advanced)\\
+          \textbf{Modules} & \textbf{604}: 3 Problems (M1, M2, M3) \quad\textbar\quad \textbf{811}: 2 Problems (Q1, Q2)\\
           \textbf{Error Protocol} & 5-Factor: Knowledge\,\textbar\, Modelling\,\textbar\, Logic\,\textbar\, Calculation\,\textbar\, Time\\
-          \textbf{Target} & Standard 5.5--6.5\,h \quad\textbar\quad Minimum Defence 3.5\,h\\
+          \textbf{Standards} & Target: 100/100 Full Marks \quad\textbar\quad Time Budget: 90--100 min\\
         \end{tabularx}
       \end{tcolorbox}
     \end{minipage}
@@ -224,33 +215,29 @@
 \clearpage
 
 \begin{center}
-  {\LARGE\bfseries\color{navy} Theoretical Physics Training \textperiodcentered\ Daily Tournament}\\[4pt]
-  {\small\sffamily\color{mist} 2026-09-02 \quad\textbar\quad Week 1 (Day 3) \quad\textbar\quad Phase: Foundation diagnostic}\\[-3pt]
+  {\LARGE\bfseries\color{navy} Theoretical Physics Training \textperiodcentered\ Daily Tournament}\\[3pt]
+  {\small\sffamily\color{mist} 2026-09-02 \quad\textbar\quad Week 1 (Day 3 Advanced) \quad\textbar\quad Phase: Multi-Problem Power Training}\\[-4pt]
   {\color{navy}\rule{\textwidth}{0.8pt}}\\[-11pt]
   {\color{border}\rule{\textwidth}{0.3pt}}
 \end{center}
 
-\vspace{-4pt}
+\vspace{-6pt}
 
 \begin{briefing}{\S 1\quad Tactical Briefing \& Warm-Up Retrieval}
-\begin{itemize}[leftmargin=1.5em, itemsep=2pt, topsep=2pt]
-  \item \textbf{604 今日靶向}：微分中值定理证明大题专项。熟练运用积分因子逆推法构造辅助函数 $F(x) = e^{kx}f(x)$，严格验证连续性、可导性与端点值，应用 Rolle 定理与 Lagrange 定理完成严谨证明。
-  \item \textbf{811 今日靶向}：一维 $\delta$ 势阱束缚态严格推导。对薛定谔方程在原点处积分推导导数阶跃匹配条件；求解束缚态能级 $E_0 = -m\alpha^2/(2\hbar^2)$ 与偶宇称基态波函数；计算定态几率流密度 $J(x) \equiv 0$。
-  \item \textbf{Supporting}：英语精读 2015 Text 2（数字化媒体转型与付费墙），默写石雷鹏 Day 2 图画描述功能句；政治刷认识论真理观选择题。
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, topsep=1pt]
+  \item \textbf{604 高数深度攻坚 (3 题)}：\textbf{M1} 介值定理划分区间 + 双中值倒数和；\textbf{M2} 半无界区间 $[0,+\infty)$ 一致连续性截断证明；\textbf{M3} 极值点二阶 Taylor 展开估计导数下界 $f''(\xi) \ge 8$。
+  \item \textbf{811 量力物理攻坚 (2 题)}：\textbf{Q1} $\delta(x)$ 势阱导数跳变匹配、束缚态能级与几率流密度；\textbf{Q2} 对称一维无限深势阱宇称分类、动量表象波函数与测不准关系。
+  \item \textbf{考试规则}：闭卷、独立书写、严禁查阅公式；先在下方草稿区完成 5 分钟白纸公式破冰。
 \end{itemize}
 
-\begin{notebox}
-\textbf{Momentum Defence Line:} Standard push 5.5--6.5\,h \quad\textbar\quad Minimum defence 3.5\,h (must secure: 811 retrieval + M1 + English reading).
-\end{notebox}
-
 \vspace{1mm}
-\textbf{Warm-Up Retrieval Checklist} (5--10\,min): without notes, write on scratch paper:\\
-\checkbox\ Rolle condition: $f(a)=f(b) \implies \exists \xi \in (a,b), f'(\xi)=0$ \quad
-\checkbox\ $\delta(x)$ derivative jump: $\psi'(0^+) - \psi'(0^-) = -\frac{2m\alpha}{\hbar^2}\psi(0)$ \quad
-\checkbox\ Probability current: $J(x)=\frac{\hbar}{2mi}(\psi^*\psi' - \psi\psi^{*\prime})$
+\textbf{Warm-Up Retrieval Checklist} (5\,min): without notes, write on scratch paper:\\
+\checkbox\ Cantor Theorem: Continuous on $[a,b] \implies$ Uniformly continuous \quad
+\checkbox\ $\delta(x)$ derivative jump condition: $\Delta \psi'(0) = -\frac{2m\alpha}{\hbar^2}\psi(0)$ \quad
+\checkbox\ Momentum wave function: $\phi(p) = \frac{1}{\sqrt{2\pi\hbar}}\int_{-\infty}^\infty \psi(x) e^{-ipx/\hbar}dx$
 \end{briefing}
 
-\vspace{6pt}
+\vspace{4pt}
 
 \begin{tcolorbox}[
   enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
@@ -260,43 +247,61 @@
   colbacktitle=paper, coltitle=slate,
   titlerule=0pt, toptitle=2mm, bottomtitle=2mm
 ]
-\textcolor{mist}{\footnotesize\itshape 5--10 分钟闭卷盲写：在下方空白区域手推上述 3 个核心公式/边界条件，快速越过启动能垒。}
-\vspace{9.2cm}
+\textcolor{mist}{\footnotesize\itshape 5 分钟闭卷盲写：默写 Cantor 定理条件、$\delta$ 势导数跃度、动量表象傅里叶变换定义。}
+\vspace{10.2cm}
 \end{tcolorbox}
 
 % ==============================================================================
-% PAGE 3: §2 CORE PROBLEM SET
+% PAGE 3: §2 CORE PROBLEM SET (5 PROBLEMS)
 % ==============================================================================
 \clearpage
 
-{\Large\sffamily\bfseries\color{navy} \S 2\quad Core Problem Set}\hfill{\small\sffamily\color{mist}\itshape Complete independently under timed conditions}
+{\Large\sffamily\bfseries\color{navy} \S 2\quad Core Problem Set (604 Math Trio + 811 QM Double)}\hfill{\small\sffamily\color{mist}\itshape Timed: 100\,min}
 
-\vspace{8pt}
+\vspace{5pt}
 
-\begin{problem}{Problem M1 \textbar\ 604 Calculus: auxiliary function proof}{Suggested time: 25\,min}
-设函数 $f(x)$ 在闭区间 $[0, 1]$ 上连续，在开区间 $(0, 1)$ 内可导，且 $f(0) = 0$，$f(1) = 0$。
-证明：对任意给定的实常数 $k \in \mathbb{R}$，必存在 $\xi \in (0, 1)$，使得：
+\begin{problem}{M1 \textbar\ 604: Partition Intermediate Value \& Harmonic Mean of Derivatives}{Suggested: 15\,min}
+设函数 $f(x)$ 在闭区间 $[0, 1]$ 上连续，在开区间 $(0, 1)$ 内可导，且 $f(0) = 0$，$f(1) = 1$。
+证明：必存在两个互不相同的点 $\xi, \eta \in (0, 1)$，使得：
 \[
-  f'(\xi) + k f(\xi) = 0.
+  \frac{1}{f'(\xi)} + \frac{1}{f'(\eta)} = 2.
 \]
-要求写清辅助函数的构造思路、罗尔定理三大条件的验证及结论推导。
 \end{problem}
 
-\vspace{6pt}
+\vspace{3pt}
 
-\begin{problem}{Problem Q1 \textbar\ 811 Quantum Mechanics: 1D $\delta$-potential bound state}{Suggested time: 35\,min}
-设质量为 $m$ 的粒子在吸引型 $\delta$ 势场 $V(x) = -\alpha \delta(x)$ ($\alpha > 0$) 中运动。
-\begin{enumerate}[leftmargin=1.6em,itemsep=2pt,topsep=2pt]
-  \item 从定态薛定谔方程出发，对区间 $[-\epsilon, +\epsilon]$ 积分并令 $\epsilon \to 0^+$，严格推导波函数一阶导数在原点处的跃变匹配条件 $\psi'(0^+) - \psi'(0^-) = -\dfrac{2m\alpha}{\hbar^2}\psi(0)$。
-  \item 求解束缚态（$E < 0$）的能量本征值 $E_0$ 和归一化波函数 $\psi_0(x)$，并证明为何该势阱不存在奇宇称束缚态（即束缚态解是唯一的）。
-  \item 计算该束缚态的几率流密度 $J(x) = \dfrac{\hbar}{2mi}\left(\psi^*\dfrac{d\psi}{dx} - \psi\dfrac{d\psi^*}{dx}\right)$，并阐明为何所有一维定态实波函数的几率流密度在全空间均恒等于零。
+\begin{problem}{M2 \textbar\ 604: Uniform Continuity on Semi-Infinite Interval $[0,+\infty)$}{Suggested: 20\,min}
+设函数 $f(x)$ 在区间 $[0, +\infty)$ 上连续，且极限 $\lim_{x \to +\infty} f(x) = A$（$A$ 为有限实常数）。
+证明：$f(x)$ 在整个半无界区间 $[0, +\infty)$ 上一致连续。
+\end{problem}
+
+\vspace{3pt}
+
+\begin{problem}{M3 \textbar\ 604: Minimum Point \& Second-Order Taylor Bound}{Suggested: 15\,min}
+设函数 $f(x)$ 在 $[0, 1]$ 上具有连续的二阶导数，且 $f(0) = f(1) = 0$。已知 $\min_{x \in [0,1]} f(x) = -1$。
+证明：必存在 $\xi \in (0, 1)$，使得 $f''(\xi) \ge 8$。
+\end{problem}
+
+\vspace{3pt}
+
+\begin{problem}{Q1 \textbar\ 811: 1D $\delta$-Potential Well, Bound State \& Probability Current}{Suggested: 25\,min}
+设质量为 $m$ 的粒子在单 $\delta$ 势场 $V(x) = -\alpha \delta(x)$ ($\alpha > 0$) 中运动。
+\begin{enumerate}[leftmargin=1.5em,itemsep=1pt,topsep=1pt]
+  \item 严格推导波函数在原点处的导数跃变匹配条件 $\psi'(0^+) - \psi'(0^-) = -\frac{2m\alpha}{\hbar^2}\psi(0)$；
+  \item 求解束缚态（$E < 0$）的能量本征值 $E_0$ 与归一化波函数 $\psi_0(x)$，并证明为何不存在奇宇称束缚态；
+  \item 计算该束缚态的几率流密度 $J(x)$，并阐述一维定态实波函数几率流密度恒为零的物理意义。
 \end{enumerate}
 \end{problem}
 
-\vspace{6pt}
+\vspace{3pt}
 
-\begin{problem}{Extension \textbar\ Conceptual Analysis}{Optional \textperiodcentered\ Suggested time: 10\,min}
-M1：若将端点条件改为 $f(0)=0, f(1)=1$，如何利用拉格朗日中值定理证明存在 $\xi \in (0,1)$ 使得 $f'(\xi) + k f(\xi) = e^{k(1-\xi)}$？Q1：若势场变为对称双 $\delta$ 势阱 $V(x) = -\alpha[\delta(x+a)+\delta(x-a)]$，束缚态数目会如何随势阱间距 $a$ 发生变化？主问题独立作答合计不超过 80 分钟。
+\begin{problem}{Q2 \textbar\ 811: Symmetric Infinite Well, Parity \& Momentum Wave Function}{Suggested: 25\,min}
+一维粒子处于对称无限深方势阱中：$V(x) = 0$ ($|x| < a$)，$V(x) = \infty$ ($|x| \ge a$)。
+\begin{enumerate}[leftmargin=1.5em,itemsep=1pt,topsep=1pt]
+  \item 按宇称分类写出基态 $\psi_1(x)$（偶宇称）与第一激发态 $\psi_2(x)$（奇宇称）的归一化波函数与能级；
+  \item 若体系处于基态，求其动量表象波函数 $\phi(p) = \frac{1}{\sqrt{2\pi\hbar}}\int_{-\infty}^\infty \psi_1(x) e^{-ipx/\hbar} dx$，并指出动量几率密度 $|\phi(p)|^2$ 的最概然值；
+  \item 阐释不确定度关系 $\Delta x \cdot \Delta p \ge \hbar/2$ 在该基态下的物理表现。
+\end{enumerate}
 \end{problem}
 
 % ==============================================================================
@@ -306,55 +311,48 @@ M1：若将端点条件改为 $f(0)=0, f(1)=1$，如何利用拉格朗日中值�
 
 {\Large\sffamily\bfseries\color{navy} \S 3\quad Model Solutions \& Commentary}
 
-\vspace{1pt}
-{\small\color{mist}\itshape\hspace{1pt} Complete your independent attempt on scratch paper before consulting this page.}
-
-\vspace{8pt}
-
-\begin{solution}{M1 \textperiodcentered\ Model Solution \& Commentary}
-\textbf{Strategy:}\enspace 目标式为 $f'(\xi) + k f(\xi) = 0$，同乘积分因子 $e^{kx}$ 凑全导数 $[e^{kx}f(x)]' = 0$。
-
-\vspace{1mm}
-\textbf{Derivation:}\enspace
-构造辅助函数 $F(x) = e^{kx} f(x)$。\\
-显然 $F(x) \in C[0,1]$ 且在 $(0,1)$ 内可导。\\
-代入端点值：$F(0) = e^0 \cdot f(0) = 0$；$F(1) = e^k \cdot f(1) = 0$。\\
-满足端点等值条件 $F(0) = F(1) = 0$。\\
-在 $[0, 1]$ 上应用 Rolle 定理：$\exists \xi \in (0, 1)$，使得 $F'(\xi) = 0$。\\
-求导计算：$F'(x) = k e^{kx}f(x) + e^{kx}f'(x) = e^{kx}[f'(x) + k f(x)]$。\\
-因为对任意实数 $k$ 均有 $e^{k\xi} \neq 0$，故必有 $f'(\xi) + k f(\xi) = 0$。证毕！
-
-\begin{warnbox}
-\alerttag{Common Error}\enspace 许多考生未能识别一阶微分方程积分因子 $e^{kx}$，盲目构造多项式，或在题设端点不等时强行套用罗尔定理导致逻辑硬伤。
-\end{warnbox}
-\end{solution}
-
 \vspace{4pt}
 
-\begin{solution}{Q1 \textperiodcentered\ Model Solution \& Commentary}
-\textbf{Physical Picture:}\enspace $\delta$ 势提供局域强烈吸引；波函数连续但在原点有尖角（导数跃变）；束缚态为驻波，无净几率流动。
+\begin{solution}{M1 \textperiodcentered\ Partition Intermediate Value \& Lagrange}
+由 $f(0)=0, f(1)=1$ 及介值定理，$\exists c \in (0,1)$ 使得 $f(c) = 1/2$。\\
+在 $[0,c]$ 上应用拉格朗日中值定理：$f(c)-f(0) = f'(\xi) c \implies \frac{1}{f'(\xi)} = 2c$（$\xi \in (0,c)$）。\\
+在 $[c,1]$ 上应用拉格朗日中值定理：$f(1)-f(c) = f'(\eta) (1-c) \implies \frac{1}{f'(\eta)} = 2(1-c)$（$\eta \in (c,1)$）。\\
+相加得 $\frac{1}{f'(\xi)} + \frac{1}{f'(\eta)} = 2c + 2(1-c) = 2$。因 $\xi < c < \eta$，必有 $\xi \neq \eta$。证毕！
+\end{solution}
 
-\vspace{1mm}
-\textbf{Derivation:}\enspace
-(1) 薛定谔方程为 $-\dfrac{\hbar^2}{2m}\psi''(x) - \alpha\delta(x)\psi(x) = E\psi(x)$。两边在 $[-\epsilon, \epsilon]$ 积分：
-\[
-  -\frac{\hbar^2}{2m}[\psi'(\epsilon) - \psi'(-\epsilon)] - \alpha\psi(0) = E\int_{-\epsilon}^\epsilon \psi(x)\,dx.
-\]
-令 $\epsilon \to 0^+$，右侧因被积函数连续有限且区间趋零而消失，得：$\psi'(0^+) - \psi'(0^-) = -\dfrac{2m\alpha}{\hbar^2}\psi(0)$。\\
-(2) 设 $E = -\dfrac{\hbar^2\kappa^2}{2m} < 0$ ($\kappa > 0$)。在 $x \neq 0$ 处 $\psi''(x) = \kappa^2\psi(x)$。\\
-由平方可积条件：$x>0$ 时 $\psi(x)=Ae^{-\kappa x}$；$x<0$ 时 $\psi(x)=Ae^{\kappa x}$（$x=0$ 连续）。\\
-代入导数跃变条件：$(-\kappa A) - (\kappa A) = -\dfrac{2m\alpha}{\hbar^2}A \implies \kappa = \dfrac{m\alpha}{\hbar^2}$。\\
-能级为 $E_0 = -\dfrac{\hbar^2\kappa^2}{2m} = -\dfrac{m\alpha^2}{2\hbar^2}$。归一化常数 $A = \sqrt{\kappa} = \dfrac{\sqrt{m\alpha}}{\hbar}$。\\
-若为奇宇称态，必须 $\psi(0)=0$，此时导数连续但两侧波函数连续要求 $A=-A \implies A=0$，无非零解。故仅有唯一个束缚态！\\
-(3) 因 $\psi_0(x)$ 为实数函数，$\psi_0^* = \psi_0$，代入几率流密度：
-\[
-  J(x) = \frac{\hbar}{2mi}\left(\psi_0 \psi_0' - \psi_0 \psi_0'\right) \equiv 0.
-\]
-物理意义：定态波函数对应空间驻波分布，几率不发生宏观流动传输，严格满足几率守恒连续性方程 $\partial\rho/\partial t = -\nabla\cdot \mathbf{J} = 0$。
+\vspace{3pt}
 
-\begin{notebox}
-\alerttag{Checkpoint}\enspace 束缚态能级与 $\alpha^2$ 成正比；单 $\delta$ 势阱无论多浅必有且仅有 1 个偶宇称束缚态；几率流密度 $J=0$ 是定态实波函数的普适性质。
-\end{notebox}
+\begin{solution}{M2 \textperiodcentered\ Cantor Theorem \& Semi-Infinite Partition}
+$\forall \varepsilon > 0$，因 $\lim_{x\to+\infty} f(x)=A$，$\exists X > 0$ 当 $x \ge X$ 时 $|f(x)-A| < \varepsilon/4$。\\
+故当 $x_1, x_2 \ge X$ 时，$|f(x_1)-f(x_2)| \le |f(x_1)-A| + |A-f(x_2)| < \varepsilon/2$。\\
+在闭区间 $[0, X+1]$ 上，由 Cantor 定理，$f$ 一致连续，故 $\exists \delta_1 > 0$（不妨取 $\delta_1 < 1$），当 $x_1, x_2 \in [0, X+1]$ 且 $|x_1-x_2|<\delta_1$ 时，$|f(x_1)-f(x_2)| < \varepsilon$。\\
+取 $\delta = \delta_1$。若 $x_1, x_2 \in [0, +\infty)$ 且 $|x_1-x_2| < \delta$：若两者均在 $[0, X+1]$，由 Cantor 定理成立；若至少一个 $\ge X+1$，则因 $|x_1-x_2|<1$，两者均 $\ge X$，由极限控制成立。全区间一致连续！
+\end{solution}
+
+\vspace{3pt}
+
+\begin{solution}{M3 \textperiodcentered\ Minimum Point \& Second-Order Taylor Bound}
+设最小值点为 $x_0 \in (0,1)$，则 $f(x_0) = -1$，$f'(x_0) = 0$。在 $x_0$ 处展开到二阶：\\
+$f(0) = f(x_0) + f'(x_0)(0-x_0) + \frac{1}{2}f''(\xi_1)x_0^2 \implies 0 = -1 + \frac{1}{2}f''(\xi_1)x_0^2 \implies f''(\xi_1) = \frac{2}{x_0^2}$。\\
+$f(1) = f(x_0) + f'(x_0)(1-x_0) + \frac{1}{2}f''(\xi_2)(1-x_0)^2 \implies f''(\xi_2) = \frac{2}{(1-x_0)^2}$。\\
+因为 $\min\{x_0, 1-x_0\} \le 1/2$，必有 $\max\{f''(\xi_1), f''(\xi_2)\} \ge \frac{2}{(1/2)^2} = 8$。证毕！
+\end{solution}
+
+\vspace{3pt}
+
+\begin{solution}{Q1 \textperiodcentered\ 1D $\delta$-Potential Well Solution}
+(1) 薛定谔方程积分取极限得 $\Delta\psi'(0) = -\frac{2m\alpha}{\hbar^2}\psi(0)$。\\
+(2) 偶宇称解 $\psi(x) = Ae^{-\kappa|x|}$ 代入跃变式 $-2\kappa A = -\frac{2m\alpha}{\hbar^2}A \implies \kappa = \frac{m\alpha}{\hbar^2}$。能级 $E_0 = -\frac{\hbar^2\kappa^2}{2m} = -\frac{m\alpha^2}{2\hbar^2}$，归一化常数 $A = \sqrt{\kappa}$。若为奇宇称，$\psi(0)=0 \implies A=0$，无非零解。\\
+(3) 定态波函数为实函数，$\psi_0^*=\psi_0 \implies J(x) = \frac{\hbar}{2mi}(\psi_0\psi_0' - \psi_0\psi_0') \equiv 0$。驻波几率无净定向传输。
+\end{solution}
+
+\vspace{3pt}
+
+\begin{solution}{Q2 \textperiodcentered\ Symmetric Well \& Momentum Representation}
+(1) 偶宇称基态：$\psi_1(x) = \frac{1}{\sqrt{a}}\cos\left(\frac{\pi x}{2a}\right)$，$E_1 = \frac{\pi^2\hbar^2}{8ma^2}$。奇宇称第一激发态：$\psi_2(x) = \frac{1}{\sqrt{a}}\sin\left(\frac{\pi x}{a}\right)$，$E_2 = \frac{\pi^2\hbar^2}{2ma^2}$。\\
+(2) 基态动量波函数：$\phi(p) = \frac{1}{\sqrt{2\pi\hbar a}}\int_{-a}^a \cos\left(\frac{\pi x}{2a}\right)e^{-ipx/\hbar}dx = \sqrt{\frac{a}{\pi\hbar}}\frac{\pi\cos(pa/\hbar)}{\pi^2/4 - p^2a^2/\hbar^2}$。\\
+当 $p \to 0$ 时，$\phi(0) = \frac{4}{\pi}\sqrt{\frac{a}{\pi\hbar}}$ 取极大值，$|\phi(p)|^2$ 最概然动量为 $p = 0$。\\
+(3) 粒子被局域在宽度 $2a$ 的势阱内，动量展开为单缝衍射型谱宽 $\Delta p \sim \hbar/a$，满足测不准原理。
 \end{solution}
 
 % ==============================================================================
@@ -362,41 +360,41 @@ M1：若将端点条件改为 $f(0)=0, f(1)=1$，如何利用拉格朗日中值�
 % ==============================================================================
 \clearpage
 
-{\Large\sffamily\bfseries\color{navy} \S 4\quad Daily Debrief \& Reflection}
+{\Large\sffamily\bfseries\color{navy} \S 4\quad Daily Debrief \& Reflection (5-Problem Match)}
 
-\vspace{6pt}
+\vspace{4pt}
 
-\begin{debrief}{Post-Match Review (fill in before sleep, 5\,min)}
+\begin{debrief}{Post-Match Scorecard (fill in before sleep, 5\,min)}
 \renewcommand{\arraystretch}{1.2}
 \sffamily\small
 \begin{tabularx}{\linewidth}{@{}p{2.4cm}X@{}}
-  \textbf{604 Calculus} & Time spent: \underline{\hspace{1.4cm}} min \quad\textbar\quad M1 status: \checkbox\ Independent \checkbox\ Used hints \checkbox\ Incomplete\\
-  & Error type: \checkbox\ Knowledge gap \checkbox\ Auxiliary function \checkbox\ Zero location \checkbox\ Calculation \checkbox\ Time\\
+  \textbf{604 Calculus} & Time: \underline{\hspace{1.2cm}} min \quad\textbar\quad M1: \checkbox\ PASS \quad M2: \checkbox\ PASS \quad M3: \checkbox\ PASS\\
+  & Error type: \checkbox\ Knowledge gap \checkbox\ Cantor interval split \checkbox\ Taylor expansion \checkbox\ Time\\
   \midrule
-  \textbf{811 QM} & Time spent: \underline{\hspace{1.4cm}} min \quad\textbar\quad Q1 status: \checkbox\ Independent \checkbox\ Used hints \checkbox\ Incomplete\\
-  & Error type: \checkbox\ Knowledge gap \checkbox\ Jump condition \checkbox\ Bound state kappa \checkbox\ Current density \checkbox\ Time\\
+  \textbf{811 QM} & Time: \underline{\hspace{1.2cm}} min \quad\textbar\quad Q1: \checkbox\ PASS \quad Q2: \checkbox\ PASS\\
+  & Error type: \checkbox\ $\delta$-jump \checkbox\ Parity symmetry \checkbox\ Fourier transform to $\phi(p)$ \checkbox\ Calculation\\
   \midrule
-  \textbf{Planning} & \textbf{Spaced retrieval in 3 days:} 9月5日重做中值辅助函数构造与一维Delta势阱束缚态\\
-  & \textbf{Today's assessment:} \checkbox\ Peak performance \checkbox\ Steady progress \checkbox\ Minimum defence mode\\
+  \textbf{Summary} & \textbf{Total Score:} \underline{\hspace{1.4cm}} / 100 \quad\textbar\quad Total Time: \underline{\hspace{1.4cm}} min\\
+  & \textbf{Spaced retrieval in 3 days:} 9月5日盲写半无界一致连续性证明与动量表象积分\\
 \end{tabularx}
 \end{debrief}
 
-\vspace{8pt}
+\vspace{6pt}
 
 \begin{tcolorbox}[
   enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
-  left=4mm, right=4mm, top=3.5mm, bottom=4mm,
+  left=4mm, right=4mm, top=3mm, bottom=3.5mm,
   fonttitle=\sffamily\bfseries\color{slate},
   title={\raisebox{0pt}{\color{forest}\rule{3pt}{10pt}}\hspace{4pt}Key Derivation Insights \& Traps \textbar\ 突破口与避坑沉淀},
   colbacktitle=paper, coltitle=slate,
-  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+  titlerule=0pt, toptitle=1.5mm, bottomtitle=1.5mm
 ]
 \sffamily\small
-\textbf{Core Breakthrough (今日核心突破口与关键一步)}:\\[30pt]
-\rule{\linewidth}{0.3pt}\\[12pt]
-\textbf{Fatal Trap \& Common Error (致命陷阱与避坑警示)}:\\[30pt]
-\rule{\linewidth}{0.3pt}\\[12pt]
-\textbf{Day +3 Action Item (3 天后间隔重做提取的具体题号与断点)}:\\[25pt]
+\textbf{Core Breakthrough (今日核心突破口与关键一步)}:\\[26pt]
+\rule{\linewidth}{0.3pt}\\[10pt]
+\textbf{Fatal Trap \& Common Error (致命陷阱与避坑警示)}:\\[26pt]
+\rule{\linewidth}{0.3pt}\\[10pt]
+\textbf{Day +3 Action Item (3 天后间隔重做提取的具体题号与断点)}:\\[20pt]
 \rule{\linewidth}{0.3pt}
 \end{tcolorbox}
 
