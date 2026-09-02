@@ -1,7 +1,7 @@
 % ==============================================================================
 % The Grand Daily Tournament — 2026-09-02 Match (Day 3)
 % Locked template: EB Garamond + Garamond-Math + STKaiti (v4.1)
-% Week 1 (Day 3) · Rolle Auxiliary Function & 3D Harmonic Oscillator
+% Week 1 (Day 3) · Rolle Auxiliary Function & 1D Delta Potential
 % ==============================================================================
 \documentclass[a4paper,11pt]{article}
 
@@ -169,18 +169,19 @@
     \draw[line width=1.2pt, slate!60] (-3.8,-2.2) -- (3.8,2.2);
     \draw[line width=1.2pt, slate!60] (-3.8,2.2) -- (3.8,-2.2);
     \draw[line width=0.7pt, royal!65, -{Stealth[length=2.5mm]}] (-4.2,0) -- (4.2,0)
-      node[right, font=\footnotesize\sffamily\color{mist}] {$x,\, y,\, z$};
+      node[right, font=\footnotesize\sffamily\color{mist}] {$x$};
     \draw[line width=0.7pt, royal!65, -{Stealth[length=2.5mm]}] (0,-3.6) -- (0,3.6)
-      node[above, font=\footnotesize\sffamily\color{mist}] {$E_N,\, g_N$};
-    \draw[line width=1.3pt, royal, smooth, samples=120, domain=-3.14:3.14]
-      plot ({\x}, {1.2*cos(2*\x r)*exp(-\x*\x/4.0)});
-    \draw[line width=1.1pt, amber!85!black, smooth, samples=120, domain=-3.14:3.14]
-      plot ({\x}, {1.0*sin(3*\x r)*exp(-\x*\x/4.0)});
-    \fill[navy] (0,0) circle (3.5pt);
-    \fill[amber] (0,0) circle (2pt);
-    \fill[royal] (1.8, 0.8) circle (2.2pt);
-    \fill[wine] (-1.8, -0.8) circle (2.2pt);
-    \fill[forest] (0, 1.2) circle (2.2pt);
+      node[above, font=\footnotesize\sffamily\color{mist}] {$\psi_0(x),\, V(x)$};
+    % Plot delta-like cusp wave function: \psi_0(x) = exp(-|x|)
+    \draw[line width=1.4pt, royal, smooth, samples=120, domain=-3.2:3.2]
+      plot ({\x}, {2.2*exp(-abs(\x))});
+    % Plot delta spike downward
+    \draw[line width=1.6pt, wine, -{Stealth[length=3mm]}] (0,0) -- (0,-3.0)
+      node[below, font=\footnotesize\sffamily\color{wine}] {$-\alpha\delta(x)$};
+    \fill[navy] (0, 2.2) circle (3pt);
+    \fill[amber] (0, 2.2) circle (1.8pt);
+    \fill[royal] (1.2, 0.66) circle (2.2pt);
+    \fill[royal] (-1.2, 0.66) circle (2.2pt);
   \end{scope}
 
   \node[anchor=center] at ($(current page.center)+(0,-3.4cm)$) {
@@ -191,7 +192,7 @@
         GRAND ARENA OF THEORETICAL PHYSICS}\\[12pt]
       {\color{navy}\rule{0.5\textwidth}{1.2pt}}\\[10pt]
       {\fontsize{10.5}{14}\selectfont\color{slate}\itshape
-        ``Today's contestants are ready: 604 Rolle Auxiliary Construction $\times$ 811 3D Oscillator''\\[3pt]
+        ``Today's contestants are ready: 604 Rolle Auxiliary Construction $\times$ 811 1D $\delta$-Potential''\\[3pt]
         {\small\color{mist}\upshape Closed-book \textperiodcentered\
         Pen-and-paper derivation \textperiodcentered\ No shortcuts}}
     \end{minipage}
@@ -207,7 +208,7 @@
         \sffamily\small
         \begin{tabularx}{\linewidth}{@{}p{2.8cm}X@{}}
           \textbf{Date} & 2026-09-02 \quad\textbar\quad Week 1 (Day 3)\\
-          \textbf{Modules} & \textbf{604}: Mean Value Auxiliary Function \quad\textbar\quad \textbf{811}: 3D Isotropic Oscillator \& Perturbation\\
+          \textbf{Modules} & \textbf{604}: Mean Value Auxiliary Function \quad\textbar\quad \textbf{811}: 1D $\delta$-Potential \& Probability Current\\
           \textbf{Error Protocol} & 5-Factor: Knowledge\,\textbar\, Modelling\,\textbar\, Logic\,\textbar\, Calculation\,\textbar\, Time\\
           \textbf{Target} & Standard 5.5--6.5\,h \quad\textbar\quad Minimum Defence 3.5\,h\\
         \end{tabularx}
@@ -234,7 +235,7 @@
 \begin{briefing}{\S 1\quad Tactical Briefing \& Warm-Up Retrieval}
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt, topsep=2pt]
   \item \textbf{604 今日靶向}：微分中值定理证明大题专项。熟练运用积分因子逆推法构造辅助函数 $F(x) = e^{kx}f(x)$ 或 $F(x) = (1-x)^\lambda f(x)$，结合介值定理定位零点完成 Rolle 证明。
-  \item \textbf{811 今日靶向}：三维各向同性简谐振子哈密顿量分离变量法；推导能谱 $E_N=(N+3/2)\hbar\omega$ 与简并度 $g_N=(N+1)(N+2)/2$；利用微扰选择定则计算 $\hat{H}'=\lambda xyz$ 在粒子数表象下的矩阵元。
+  \item \textbf{811 今日靶向}：一维 $\delta$ 势阱束缚态严格推导。对薛定谔方程在原点处积分推导导数阶跃匹配条件；求解束缚态能级 $E_0 = -m\alpha^2/(2\hbar^2)$ 与偶宇称基态波函数；计算定态几率流密度 $J(x) \equiv 0$。
   \item \textbf{Supporting}：英语精读 2015 Text 2（数字化媒体转型与付费墙），默写石雷鹏 Day 2 图画描述功能句；政治刷认识论真理观选择题。
 \end{itemize}
 
@@ -245,8 +246,8 @@
 \vspace{1mm}
 \textbf{Warm-Up Retrieval Checklist} (5--10\,min): without notes, write on scratch paper:\\
 \checkbox\ Rolle condition: $f(a)=f(b) \implies \exists \xi \in (a,b), f'(\xi)=0$ \quad
-\checkbox\ 3D oscillator energy \& degeneracy: $E_N=(N+3/2)\hbar\omega$, $g_N=\frac{1}{2}(N+1)(N+2)$ \quad
-\checkbox\ Selection rule for $x$: $\Delta n = \pm 1$
+\checkbox\ $\delta(x)$ derivative jump: $\psi'(0^+) - \psi'(0^-) = -\frac{2m\alpha}{\hbar^2}\psi(0)$ \quad
+\checkbox\ Probability current: $J(x)=\frac{\hbar}{2mi}(\psi^*\psi' - \psi\psi^{*\prime})$
 \end{briefing}
 
 \vspace{6pt}
@@ -283,19 +284,19 @@
 
 \vspace{6pt}
 
-\begin{problem}{Problem Q1 \textbar\ 811 Quantum Mechanics: 3D isotropic oscillator}{Suggested time: 35\,min}
-三维各向同性谐振子哈密顿量为 $\hat{H}_0 = \dfrac{\hat{\mathbf{p}}^2}{2m} + \dfrac{1}{2}m\omega^2 (x^2+y^2+z^2)$。
+\begin{problem}{Problem Q1 \textbar\ 811 Quantum Mechanics: 1D $\delta$-potential bound state}{Suggested time: 35\,min}
+设质量为 $m$ 的粒子在吸引型 $\delta$ 势场 $V(x) = -\alpha \delta(x)$ ($\alpha > 0$) 中运动。
 \begin{enumerate}[leftmargin=1.6em,itemsep=2pt,topsep=2pt]
-  \item 写出能量本征值 $E_N$ 的通式，并严格推导证明第 $N$ 激发能级的简并度为 $g_N = \dfrac{1}{2}(N+1)(N+2)$。
-  \item 若体系受到微扰 $\hat{H}' = \lambda x y z$，利用升降算符证明基态 $|000\rangle$ 的一级微扰能量修正 $E_0^{(1)} = 0$。
-  \item 计算第一激发态（$N=1$ 的三重简并态 $\{|100\rangle, |010\rangle, |001\rangle\}$）在微扰 $\hat{H}' = \lambda x y z$ 下的一级微扰能量修正（写出微扰割裂矩阵并求解本征值）。
+  \item 从定态薛定谔方程出发，对区间 $[-\epsilon, +\epsilon]$ 积分并令 $\epsilon \to 0^+$，严格推导波函数一阶导数在原点处的跃变匹配条件 $\psi'(0^+) - \psi'(0^-) = -\dfrac{2m\alpha}{\hbar^2}\psi(0)$。
+  \item 求解束缚态（$E < 0$）的能量本征值 $E_0$ 和归一化波函数 $\psi_0(x)$，并证明为何该势阱不存在奇宇称束缚态（即束缚态解是唯一的）。
+  \item 计算该束缚态的几率流密度 $J(x) = \dfrac{\hbar}{2mi}\left(\psi^*\dfrac{d\psi}{dx} - \psi\dfrac{d\psi^*}{dx}\right)$，并阐明为何所有一维定态实波函数的几率流密度在全空间均恒等于零。
 \end{enumerate}
 \end{problem}
 
 \vspace{6pt}
 
 \begin{problem}{Extension \textbar\ Conceptual Analysis}{Optional \textperiodcentered\ Suggested time: 10\,min}
-M1：为何不能直接在全区间 $[0,1]$ 上对 $F(x)=e^{kx}[f(x)-1]$ 使用罗尔定理？必须补充哪一步？Q1：为何微扰项 $xyz$ 在 $N=1$ 子空间内的所有矩阵元全部严格为零？主问题独立作答合计不超过 80 分钟。
+M1：为何不能直接在全区间 $[0,1]$ 上对 $F(x)=e^{kx}[f(x)-1]$ 使用罗尔定理？必须补充哪一步？Q1：若势场变为对称双 $\delta$ 势阱 $V(x) = -\alpha[\delta(x+a)+\delta(x-a)]$，束缚态数目会如何随势阱间距 $a$ 发生变化？主问题独立作答合计不超过 80 分钟。
 \end{problem}
 
 % ==============================================================================
@@ -331,26 +332,28 @@ M1：为何不能直接在全区间 $[0,1]$ 上对 $F(x)=e^{kx}[f(x)-1]$ 使用�
 \vspace{4pt}
 
 \begin{solution}{Q1 \textperiodcentered\ Model Solution \& Commentary}
-\textbf{Physical Picture:}\enspace 三维谐振子可在直角坐标中完全分离变量；奇数个阶梯算符无法将态矢原样送回，矩阵元严格按选择定则相消。
+\textbf{Physical Picture:}\enspace $\delta$ 势提供局域强烈吸引；波函数连续但在原点有尖角（导数跃变）；束缚态为驻波，无净几率流动。
 
 \vspace{1mm}
 \textbf{Derivation:}\enspace
-(1) 分离变量 $\hat{H}_0 = \hat{H}_x + \hat{H}_y + \hat{H}_z$，能谱为 $E_N = (n_x+n_y+n_z+3/2)\hbar\omega = (N+3/2)\hbar\omega$。\\
-简并度为方程 $n_x+n_y+n_z=N$ 的非负整数解个数：
+(1) 薛定谔方程为 $-\dfrac{\hbar^2}{2m}\psi''(x) - \alpha\delta(x)\psi(x) = E\psi(x)$。两边在 $[-\epsilon, \epsilon]$ 积分：
 \[
-  g_N = \sum_{n_x=0}^N (N - n_x + 1) = (N+1)(N+1) - \frac{N(N+1)}{2} = \frac{(N+1)(N+2)}{2}.
+  -\frac{\hbar^2}{2m}[\psi'(\epsilon) - \psi'(-\epsilon)] - \alpha\psi(0) = E\int_{-\epsilon}^\epsilon \psi(x)\,dx.
 \]
-(2) 坐标算符 $x_i = \sqrt{\frac{\hbar}{2m\omega}}(\hat{a}_i + \hat{a}_i^\dagger)$。微扰 $\hat{H}' \propto (\hat{a}_x+\hat{a}_x^\dagger)(\hat{a}_y+\hat{a}_y^\dagger)(\hat{a}_z+\hat{a}_z^\dagger)$。\\
-基态一级修正 $E_0^{(1)} = \langle 000|\hat{H}'|000\rangle = \lambda \langle 0|x|0\rangle \langle 0|y|0\rangle \langle 0|z|0\rangle = 0$。\\
-(3) 对于 $N=1$ 子空间 $\{|100\rangle, |010\rangle, |001\rangle\}$，任意矩阵元为：
+令 $\epsilon \to 0^+$，右侧因被积函数连续有限且区间趋零而消失，得：$\psi'(0^+) - \psi'(0^-) = -\dfrac{2m\alpha}{\hbar^2}\psi(0)$。\\
+(2) 设 $E = -\dfrac{\hbar^2\kappa^2}{2m} < 0$ ($\kappa > 0$)。在 $x \neq 0$ 处 $\psi''(x) = \kappa^2\psi(x)$。\\
+由平方可积条件：$x>0$ 时 $\psi(x)=Ae^{-\kappa x}$；$x<0$ 时 $\psi(x)=Ae^{\kappa x}$（$x=0$ 连续）。\\
+代入导数跃变条件：$(-\kappa A) - (\kappa A) = -\dfrac{2m\alpha}{\hbar^2}A \implies \kappa = \dfrac{m\alpha}{\hbar^2}$。\\
+能级为 $E_0 = -\dfrac{\hbar^2\kappa^2}{2m} = -\dfrac{m\alpha^2}{2\hbar^2}$。归一化常数 $A = \sqrt{\kappa} = \dfrac{\sqrt{m\alpha}}{\hbar}$。\\
+若为奇宇称态，必须 $\psi(0)=0$，此时导数连续但两侧波函数连续要求 $A=-A \implies A=0$，无非零解。故仅有唯一个束缚态！\\
+(3) 因 $\psi_0(x)$ 为实数函数，$\psi_0^* = \psi_0$，代入几率流密度：
 \[
-  H'_{ij} = \lambda \langle n_x n_y n_z | x y z | n'_x n'_y n'_z \rangle = \lambda \langle n_x|x|n'_x\rangle \langle n_y|y|n'_y\rangle \langle n_z|z|n'_z\rangle.
+  J(x) = \frac{\hbar}{2mi}\left(\psi_0 \psi_0' - \psi_0 \psi_0'\right) \equiv 0.
 \]
-因为跃迁需要 $\Delta n_x = \pm 1, \Delta n_y = \pm 1, \Delta n_z = \pm 1$，在 $N=1$ 子空间内（如 $|100\rangle \to |010\rangle$），只有 $x$ 和 $y$ 发生变化，而 $z$ 轴量子数均为 $0$（$\Delta n_z = 0$），导致 $\langle 0|z|0\rangle = 0$！\\
-因此微扰割裂矩阵为全零矩阵 $\mathbf{H}' = \mathbf{0}_{3\times 3}$，一级微扰能量修正全部为零：$E_1^{(1)} = 0$！
+物理意义：定态波函数对应空间驻波分布，几率不发生宏观流动传输，严格满足几率守恒连续性方程 $\partial\rho/\partial t = -\nabla\cdot \mathbf{J} = 0$。
 
 \begin{notebox}
-\alerttag{Checkpoint}\enspace 三维谐振子简并度 $g_0=1, g_1=3, g_2=6$。微扰项 $xyz$ 只在 $\Delta n_x, \Delta n_y, \Delta n_z$ 均为 $\pm 1$ 时非零，故一阶微扰不发生能级分裂，分裂发生在二阶微扰。
+\alerttag{Checkpoint}\enspace 束缚态能级与 $\alpha^2$ 成正比；单 $\delta$ 势阱无论多浅必有且仅有 1 个偶宇称束缚态；几率流密度 $J=0$ 是定态实波函数的普适性质。
 \end{notebox}
 \end{solution}
 
@@ -371,9 +374,9 @@ M1：为何不能直接在全区间 $[0,1]$ 上对 $F(x)=e^{kx}[f(x)-1]$ 使用�
   & Error type: \checkbox\ Knowledge gap \checkbox\ Auxiliary function \checkbox\ Zero location \checkbox\ Calculation \checkbox\ Time\\
   \midrule
   \textbf{811 QM} & Time spent: \underline{\hspace{1.4cm}} min \quad\textbar\quad Q1 status: \checkbox\ Independent \checkbox\ Used hints \checkbox\ Incomplete\\
-  & Error type: \checkbox\ Knowledge gap \checkbox\ Degeneracy proof \checkbox\ Perturbation matrix \checkbox\ Calculation \checkbox\ Time\\
+  & Error type: \checkbox\ Knowledge gap \checkbox\ Jump condition \checkbox\ Bound state kappa \checkbox\ Current density \checkbox\ Time\\
   \midrule
-  \textbf{Planning} & \textbf{Spaced retrieval in 3 days:} 9月5日重做中值辅助函数构造与三维谐振子简并微扰\\
+  \textbf{Planning} & \textbf{Spaced retrieval in 3 days:} 9月5日重做中值辅助函数构造与一维Delta势阱束缚态\\
   & \textbf{Today's assessment:} \checkbox\ Peak performance \checkbox\ Steady progress \checkbox\ Minimum defence mode\\
 \end{tabularx}
 \end{debrief}
