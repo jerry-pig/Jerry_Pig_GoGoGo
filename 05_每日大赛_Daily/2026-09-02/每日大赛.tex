@@ -234,7 +234,7 @@
 
 \begin{briefing}{\S 1\quad Tactical Briefing \& Warm-Up Retrieval}
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt, topsep=2pt]
-  \item \textbf{604 今日靶向}：微分中值定理证明大题专项。熟练运用积分因子逆推法构造辅助函数 $F(x) = e^{kx}f(x)$ 或 $F(x) = (1-x)^\lambda f(x)$，结合介值定理定位零点完成 Rolle 证明。
+  \item \textbf{604 今日靶向}：微分中值定理证明大题专项。熟练运用积分因子逆推法构造辅助函数 $F(x) = e^{kx}f(x)$，严格验证连续性、可导性与端点值，应用 Rolle 定理与 Lagrange 定理完成严谨证明。
   \item \textbf{811 今日靶向}：一维 $\delta$ 势阱束缚态严格推导。对薛定谔方程在原点处积分推导导数阶跃匹配条件；求解束缚态能级 $E_0 = -m\alpha^2/(2\hbar^2)$ 与偶宇称基态波函数；计算定态几率流密度 $J(x) \equiv 0$。
   \item \textbf{Supporting}：英语精读 2015 Text 2（数字化媒体转型与付费墙），默写石雷鹏 Day 2 图画描述功能句；政治刷认识论真理观选择题。
 \end{itemize}
@@ -274,12 +274,12 @@
 \vspace{8pt}
 
 \begin{problem}{Problem M1 \textbar\ 604 Calculus: auxiliary function proof}{Suggested time: 25\,min}
-设函数 $f(x)$ 在闭区间 $[0, 1]$ 上连续，在开区间 $(0, 1)$ 内可导，且 $f(0) = 0$，$f(1) = 1$。
-证明：对任意给定的实常数 $k > 0$，必存在 $\xi \in (0, 1)$，使得：
+设函数 $f(x)$ 在闭区间 $[0, 1]$ 上连续，在开区间 $(0, 1)$ 内可导，且 $f(0) = 0$，$f(1) = 0$。
+证明：对任意给定的实常数 $k \in \mathbb{R}$，必存在 $\xi \in (0, 1)$，使得：
 \[
-  f'(\xi) + k f(\xi) = k.
+  f'(\xi) + k f(\xi) = 0.
 \]
-要求写清辅助函数的构造思路、零点定位及罗尔定理的应用条件。
+要求写清辅助函数的构造思路、罗尔定理三大条件的验证及结论推导。
 \end{problem}
 
 \vspace{6pt}
@@ -296,7 +296,7 @@
 \vspace{6pt}
 
 \begin{problem}{Extension \textbar\ Conceptual Analysis}{Optional \textperiodcentered\ Suggested time: 10\,min}
-M1：为何不能直接在全区间 $[0,1]$ 上对 $F(x)=e^{kx}[f(x)-1]$ 使用罗尔定理？必须补充哪一步？Q1：若势场变为对称双 $\delta$ 势阱 $V(x) = -\alpha[\delta(x+a)+\delta(x-a)]$，束缚态数目会如何随势阱间距 $a$ 发生变化？主问题独立作答合计不超过 80 分钟。
+M1：若将端点条件改为 $f(0)=0, f(1)=1$，如何利用拉格朗日中值定理证明存在 $\xi \in (0,1)$ 使得 $f'(\xi) + k f(\xi) = e^{k(1-\xi)}$？Q1：若势场变为对称双 $\delta$ 势阱 $V(x) = -\alpha[\delta(x+a)+\delta(x-a)]$，束缚态数目会如何随势阱间距 $a$ 发生变化？主问题独立作答合计不超过 80 分钟。
 \end{problem}
 
 % ==============================================================================
@@ -312,20 +312,20 @@ M1：为何不能直接在全区间 $[0,1]$ 上对 $F(x)=e^{kx}[f(x)-1]$ 使用�
 \vspace{8pt}
 
 \begin{solution}{M1 \textperiodcentered\ Model Solution \& Commentary}
-\textbf{Strategy:}\enspace 目标式移项为 $f'(\xi) + k[f(\xi)-1] = 0$，令 $g(x)=f(x)-1$，乘积分因子 $e^{kx}$ 构造 $F(x)=e^{kx}[f(x)-1]$。
+\textbf{Strategy:}\enspace 目标式为 $f'(\xi) + k f(\xi) = 0$，同乘积分因子 $e^{kx}$ 凑全导数 $[e^{kx}f(x)]' = 0$。
 
 \vspace{1mm}
 \textbf{Derivation:}\enspace
-令辅助函数 $F(x) = e^{kx}[f(x)-1]$。显然 $F(x) \in C[0,1]$ 且在 $(0,1)$ 内可导。\\
-代入端点值：$F(0) = e^0[f(0)-1] = -1$；$F(1) = e^k[f(1)-1] = 0$。\\
-由 $f(0)=0, f(1)=1$ 且 $f(x)$ 连续，根据介值定理，必存在 $c \in (0,1)$ 使得 $f(c)=1$。\\
-此时在区间 $[c, 1]$ 上：$F(c) = e^{kc}[f(c)-1] = 0$，$F(1) = 0$。\\
-在 $[c, 1]$ 上应用 Rolle 定理：$\exists \xi \in (c, 1) \subset (0,1)$，使得 $F'(\xi) = 0$。\\
-求导：$F'(x) = k e^{kx}[f(x)-1] + e^{kx}f'(x) = e^{kx}[f'(x) + k f(x) - k]$。\\
-因为 $e^{k\xi} \neq 0$，所以 $f'(\xi) + k f(\xi) = k$。证毕！
+构造辅助函数 $F(x) = e^{kx} f(x)$。\\
+显然 $F(x) \in C[0,1]$ 且在 $(0,1)$ 内可导。\\
+代入端点值：$F(0) = e^0 \cdot f(0) = 0$；$F(1) = e^k \cdot f(1) = 0$。\\
+满足端点等值条件 $F(0) = F(1) = 0$。\\
+在 $[0, 1]$ 上应用 Rolle 定理：$\exists \xi \in (0, 1)$，使得 $F'(\xi) = 0$。\\
+求导计算：$F'(x) = k e^{kx}f(x) + e^{kx}f'(x) = e^{kx}[f'(x) + k f(x)]$。\\
+因为对任意实数 $k$ 均有 $e^{k\xi} \neq 0$，故必有 $f'(\xi) + k f(\xi) = 0$。证毕！
 
 \begin{warnbox}
-\alerttag{Common Error}\enspace 许多考生直接在 $[0,1]$ 用 Rolle 定理，却忽视了 $F(0)=-1 \neq F(1)=0$！必须先用介值定理找到中间根 $f(c)=1$，将区间缩小到 $[c,1]$ 才能应用罗尔定理。
+\alerttag{Common Error}\enspace 许多考生未能识别一阶微分方程积分因子 $e^{kx}$，盲目构造多项式，或在题设端点不等时强行套用罗尔定理导致逻辑硬伤。
 \end{warnbox}
 \end{solution}
 
