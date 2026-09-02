@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
+                "file": "02_量子力学_811/01_波函数与一维势场/一维Delta势阱束缚态与导数跃变条件.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00_Mission_Control_主控台"
+              "title": "一维Delta势阱束缚态与导数跃变条件"
             }
           }
         ]
@@ -200,8 +200,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a975919d7895025e",
+  "active": "efb93bf0b9fa7dd6",
   "lastOpenFiles": [
+    "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
     "02_量子力学_811/01_波函数与一维势场/一维Delta势阱束缚态与导数跃变条件.md",
     "02_量子力学_811/01_波函数与一维势场/圆环粒子运动_周期性边界条件与能级简并.md",
     "02_量子力学_811/01_波函数与一维势场/一维谐振子算符升降代数法.md",
@@ -210,7 +211,6 @@
     "05_每日大赛_Daily/2026-09-02/每日大赛.log",
     "01_高等数学_604/01_极限连续与微分/微分中值定理构造辅助函数法.md",
     "01_高等数学_604/01_极限连续与微分/泰勒展开定阶与极限相消项.md",
-    "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
     "99_System_认知系统与模板/cognitive_manual/Gemini_AI导师互动学习指南与提示词库.md",
     "02_量子力学_811/03_中心力场与氢原子/球形方势阱与三维各向同性谐振子.md",
     "05_每日大赛_Daily/2026-09-02/每日大赛_2026-09-02_复盘笔记.md",
