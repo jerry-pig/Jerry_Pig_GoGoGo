@@ -1,0 +1,421 @@
+% ==============================================================================
+% The Grand Daily Tournament — 2026-09-03 Match (Day 4)
+% Locked template: EB Garamond + Garamond-Math + STKaiti (v4.1)
+% High-Capacity & High-Depth Edition: 3 Math Problems + 2 QM Problems
+% ==============================================================================
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{unicode-math}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{EBGaramond}[
+  Path           = {c:/texlive/2024/texmf-dist/fonts/opentype/public/ebgaramond/},
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-SemiBold,
+  BoldItalicFont = *-SemiBoldItalic,
+  Ligatures      = TeX,
+  Numbers        = OldStyle
+]
+\setsansfont{LibertinusSans}[
+  Path        = {c:/texlive/2024/texmf-dist/fonts/opentype/public/libertinus-fonts/},
+  Extension   = .otf,
+  UprightFont = *-Regular,
+  ItalicFont  = *-Italic,
+  BoldFont    = *-Bold,
+  Scale       = MatchLowercase
+]
+\setmathfont{Garamond-Math.otf}[
+  Path  = {c:/texlive/2024/texmf-dist/fonts/opentype/public/garamond-math/},
+  Scale = MatchLowercase
+]
+
+\usepackage{xeCJK}
+\xeCJKsetup{
+  CJKmath      = false,
+  PunctStyle   = kaiming,
+  CheckSingle  = true,
+  AutoFakeBold = true,
+  AutoFakeSlant= false
+}
+\setCJKmainfont{STKaiti}[
+  Path        = {C:/Windows/Fonts/},
+  UprightFont = STKAITI.TTF,
+  BoldFont    = STKAITI.TTF,
+  ItalicFont  = STKAITI.TTF,
+  Script      = Default
+]
+\setCJKsansfont{Microsoft YaHei}
+\setCJKmonofont{FangSong}
+
+\usepackage[margin=1.5cm,headheight=14pt,headsep=10pt,footskip=18pt]{geometry}
+\usepackage{booktabs,enumitem,xcolor,graphicx,tabularx}
+
+\usepackage[breakable,skins,hooks]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows.meta}
+\usepackage{fancyhdr,lastpage}
+\usepackage{microtype}
+
+\definecolor{navy}{HTML}{0F172A}
+\definecolor{slate}{HTML}{1E293B}
+\definecolor{royal}{HTML}{1E40AF}
+\definecolor{mist}{HTML}{64748B}
+\definecolor{border}{HTML}{E2E8F0}
+\definecolor{paper}{HTML}{F8FAFC}
+\definecolor{forest}{HTML}{065F46}
+\definecolor{amber}{HTML}{D97706}
+\definecolor{wine}{HTML}{991B1B}
+\definecolor{ice}{HTML}{EFF6FF}
+
+\linespread{1.08}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt plus 1pt minus 1pt}
+\setlength{\abovedisplayskip}{4pt plus 1pt minus 1pt}
+\setlength{\belowdisplayskip}{4pt plus 1pt minus 1pt}
+
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\textcolor{mist}{\footnotesize\sffamily 2027 Theoretical Physics · 604 Calculus \& 811 Quantum Mechanics}}
+\fancyhead[R]{\textcolor{slate}{\footnotesize\sffamily\bfseries Daily Tournament · 2026-09-03}}
+\fancyfoot[L]{\textcolor{mist}{\footnotesize\itshape ``Penetrate the classical forbidden barrier.''}}
+\fancyfoot[R]{\textcolor{mist}{\footnotesize\sffamily Page \thepage\ of \pageref{LastPage}}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\color{border}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}
+
+\newtcolorbox{briefing}[1]{%
+  enhanced, blanker, breakable,
+  left=3.5mm, right=2.5mm, top=2.5mm, bottom=2.5mm,
+  borderline west={2.5pt}{0pt}{royal},
+  colback=paper,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={#1},
+  attach title to upper={\par\vspace{1.5mm}}
+}
+
+\newtcolorbox{problem}[2]{%
+  enhanced, breakable,
+  colback=white, colframe=border, boxrule=0.5pt, arc=1.5mm,
+  left=3.5mm, right=3.5mm, top=2.5mm, bottom=2.5mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{royal}\rule{2.5pt}{9pt}}\hspace{4pt}#1\hfill{\normalfont\footnotesize\color{mist}\itshape #2}},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0pt, toptitle=1.5mm, bottomtitle=1.5mm
+}
+
+\newtcolorbox{solution}[1]{%
+  enhanced, breakable,
+  colback=white, colframe=border, boxrule=0.5pt, arc=1.5mm,
+  left=3.5mm, right=3.5mm, top=2.5mm, bottom=2.5mm,
+  fonttitle=\sffamily\bfseries\color{forest},
+  title={\raisebox{0pt}{\color{forest}\rule{2.5pt}{9pt}}\hspace{4pt}#1},
+  colbacktitle=paper, coltitle=forest,
+  titlerule=0pt, toptitle=1.5mm, bottomtitle=1.5mm
+}
+
+\newtcolorbox{debrief}[1]{%
+  enhanced, breakable,
+  colback=white, colframe=border, boxrule=0.5pt, arc=1.5mm,
+  left=3.5mm, right=3.5mm, top=2.5mm, bottom=2.5mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{amber}\rule{2.5pt}{9pt}}\hspace{4pt}#1},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0pt, toptitle=1.5mm, bottomtitle=1.5mm
+}
+
+\newtcolorbox{warnbox}{%
+  enhanced, blanker,
+  left=2.5mm, right=2mm, top=1mm, bottom=1mm,
+  borderline west={2pt}{0pt}{wine},
+  colback=wine!4, fontupper=\footnotesize
+}
+
+\newcommand{\checkbox}{\ensuremath{\mdlgwhtsquare}}
+\newcommand{\alerttag}[1]{\textcolor{wine}{\sffamily\bfseries [#1]}}
+
+\begin{document}
+
+% ==============================================================================
+% PAGE 1: COVER
+% ==============================================================================
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[paper] (current page.south west) rectangle (current page.north east);
+
+  \fill[navy] (current page.north west) rectangle ($(current page.north east)+(0,-3.4cm)$);
+  \fill[royal] ($(current page.north west)+(0,-3.4cm)$) rectangle ($(current page.north east)+(0,-3.55cm)$);
+  \fill[amber] ($(current page.north west)+(0,-3.55cm)$) rectangle ($(current page.north east)+(0,-3.62cm)$);
+
+  \node[anchor=west, text=white] at ($(current page.north west)+(2.2cm,-1.5cm)$) {
+    {\fontsize{12}{14}\selectfont\sffamily\bfseries THE GRAND DAILY TOURNAMENT \textperiodcentered\ 2027}
+  };
+  \node[anchor=west, text=white!50] at ($(current page.north west)+(2.2cm,-2.3cm)$) {
+    {\fontsize{8.5}{11}\selectfont\sffamily UCAS \textperiodcentered\ HIAIS \textperiodcentered\ THEORETICAL PHYSICS ADVANCED TRAINING DOSSIER}
+  };
+
+  \begin{scope}[shift={($(current page.center)+(0,1.2cm)$)}]
+    \draw[line width=0.5pt, border!80, dashed] (0,0) circle (3.3cm);
+    \draw[line width=0.7pt, border] (0,0) circle (2.5cm);
+    \draw[line width=0.4pt, royal!30] (0,0) circle (1.6cm);
+    
+    % Barrier representation
+    \fill[navy!15] (-0.8,-2.6) rectangle (0.8,2.6);
+    \draw[line width=1.5pt, navy] (-0.8,-2.6) -- (-0.8,2.6) -- (0.8,2.6) -- (0.8,-2.6);
+    \node[above, font=\sffamily\bfseries\color{navy}] at (0,2.6) {$V_0$};
+    
+    % Wave penetration
+    \draw[line width=1.2pt, royal, smooth, domain=-3.6:-0.8] 
+      plot ({\x}, {1.2*sin(4.5*(\x+3.6) r)});
+    \draw[line width=1.4pt, amber!90!black, smooth, domain=-0.8:0.8] 
+      plot ({\x}, {1.2*exp(-1.4*(\x+0.8))});
+    \draw[line width=1.2pt, royal, smooth, domain=0.8:3.6] 
+      plot ({\x}, {0.38*sin(4.5*(\x-0.8) r + 0.3)});
+
+    \draw[line width=0.7pt, slate!70, -{Stealth[length=2.5mm]}] (-3.8,-2.6) -- (3.8,-2.6)
+      node[right, font=\footnotesize\sffamily\color{mist}] {$x$};
+    \node[below, font=\footnotesize\sffamily\color{mist}] at (-0.8,-2.6) {$0$};
+    \node[below, font=\footnotesize\sffamily\color{mist}] at (0.8,-2.6) {$a$};
+  \end{scope}
+
+  \node[anchor=center] at ($(current page.center)+(0,-3.4cm)$) {
+    \begin{minipage}{0.84\textwidth}
+      \centering
+      {\fontsize{30}{36}\selectfont\bfseries\color{navy} Daily Tournament}\\[4pt]
+      {\fontsize{11}{14}\selectfont\sffamily\bfseries\color{royal}%
+        ARENA OF THEORETICAL PHYSICS \textperiodcentered\ DAY 4 BATTLE}\\[10pt]
+      {\color{navy}\rule{0.45\textwidth}{1.2pt}}\\[8pt]
+      {\fontsize{10}{13}\selectfont\color{slate}\itshape
+        ``604 Calculus: Integral Equations $\times$ Pumping Work $\times$ Cauchy-Schwarz Inequality\\
+        811 QM: Finite Barrier Penetration $\times$ Quantum Tunneling Gamow Approximation''\\[3pt]
+        {\small\color{mist}\upshape 5-Problem Comprehensive Test \textperiodcentered\ Closed-book \textperiodcentered\ 80\,min Timed Challenge}}
+    \end{minipage}
+  };
+
+  \node[anchor=south] at ($(current page.south)+(0,1.5cm)$) {
+    \begin{minipage}{0.86\textwidth}
+      \begin{tcolorbox}[
+        enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+        left=4mm, right=4mm, top=3mm, bottom=3mm
+      ]
+        \renewcommand{\arraystretch}{1.25}
+        \sffamily\small
+        \begin{tabularx}{\linewidth}{@{}p{2.6cm}X@{}}
+          \textbf{Date} & 2026-09-03 \quad\textbar\quad Week 1 (Day 4)\\
+          \textbf{Modules} & \textbf{604}: Integral Eq + Work + Inequality \quad\textbar\quad \textbf{811}: Barrier Tunneling + Gamow\\
+          \textbf{Error Protocol} & 5-Factor: Knowledge\,\textbar\, Modelling\,\textbar\, Logic\,\textbar\, Calculation\,\textbar\, Time\\
+          \textbf{Standards} & Target: 100/100 Full Marks \quad\textbar\quad Time Budget: 80 min\\
+        \end{tabularx}
+      \end{tcolorbox}
+    \end{minipage}
+  };
+\end{tikzpicture}
+\end{titlepage}
+
+% ==============================================================================
+% PAGE 2: §1 TACTICAL BRIEFING & WARM-UP RETRIEVAL
+% ==============================================================================
+\clearpage
+
+\begin{center}
+  {\LARGE\bfseries\color{navy} Theoretical Physics Training \textperiodcentered\ Daily Tournament}\\[3pt]
+  {\small\sffamily\color{mist} 2026-09-03 \quad\textbar\quad Week 1 (Day 4) \quad\textbar\quad Phase: Integral & Tunneling Power Test}\\[-4pt]
+  {\color{navy}\rule{\textwidth}{0.8pt}}\\[-11pt]
+  {\color{border}\rule{\textwidth}{0.3pt}}
+\end{center}
+
+\vspace{-6pt}
+
+\begin{briefing}{\S 1\quad Tactical Briefing \& Warm-Up Retrieval}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, topsep=1pt]
+  \item \textbf{604 高数攻坚 (3 题)}：\textbf{M1} 变上限积分方程反演二阶微分方程；\textbf{M2} 半球形水池圆盘切片克服重力抽水做功；\textbf{M3} 柯西-施瓦茨积分不等式降维证明。
+  \item \textbf{811 量力攻坚 (2 题)}：\textbf{Q1} 一维有限矩形势垒贯穿透射系数 $T$ 与几率流守恒；\textbf{Q2} 量子隧道效应厚势垒 Gamow 指数衰减与高能共振完全透射。
+  \item \textbf{考试规则}：闭卷、独立手推、严禁查阅笔记；先在下方草稿区完成 5 分钟白纸公式破冰。
+\end{itemize}
+
+\vspace{1mm}
+\textbf{Warm-Up Retrieval Checklist} (5\,min): without notes, write on scratch paper:\\
+\checkbox\ Leibniz integral differentiation: $\frac{d}{dx}\int_a^x f(x,t)dt = f(x,x) + \int_a^x \frac{\partial f}{\partial x}dt$ \quad
+\checkbox\ Cauchy-Schwarz inequality: $(\int fg\,dx)^2 \le \int f^2\,dx \int g^2\,dx$ \quad
+\checkbox\ Tunneling probability: $T = [1 + \frac{V_0^2}{4E(V_0-E)}\sinh^2(\kappa a)]^{-1}$
+\end{briefing}
+
+\vspace{4pt}
+
+\begin{tcolorbox}[
+  enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=3mm, bottom=3mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{royal}\rule{3pt}{10pt}}\hspace{4pt}Warm-Up Retrieval Workspace \textbar\ 白纸破冰草稿区},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+]
+\textcolor{mist}{\footnotesize\itshape 5 分钟闭卷盲写：默写变上限求导拆项公式、柯西-施瓦茨积分形式、势垒透射系数与 Gamow 因子。}
+\vspace{10.2cm}
+\end{tcolorbox}
+
+% ==============================================================================
+% PAGE 3: §2 CORE PROBLEM SET (5 PROBLEMS)
+% ==============================================================================
+\clearpage
+
+{\Large\sffamily\bfseries\color{navy} \S 2\quad Core Problem Set (604 Math Trio + 811 QM Double)}\hfill{\small\sffamily\color{mist}\itshape Timed: 80\,min}
+
+\vspace{5pt}
+
+\begin{problem}{M1 \textbar\ 604: Integral Equation to 2nd-Order ODE Initial Value Problem}{Suggested: 15\,min}
+设连续函数 $f(x)$ 在区间 $[0, +\infty)$ 上满足积分方程：
+\[
+  f(x) = x + 2 \int_0^x f(t)\,dt - \int_0^x (x-t) f(t)\,dt.
+\]
+\begin{enumerate}[leftmargin=1.5em,itemsep=1pt,topsep=1pt]
+  \item 求初始值 $f(0)$ 与 $f'(0)$；
+  \item 证明 $f(x)$ 满足二阶常系数齐次线性微分方程 $f''(x) - 2f'(x) + f(x) = 0$；
+  \item 求解该定解问题，写出 $f(x)$ 的闭式解析表达式。
+\end{enumerate}
+\end{problem}
+
+\vspace{3pt}
+
+\begin{problem}{M2 \textbar\ 604: Physical Application: Slicing Method for Pumping Work}{Suggested: 15\,min}
+设有一半径为 $R$ 的半球形水池盛满了水（水的密度为 $\rho$，重力加速度为 $g$）。现用抽水机将池中的水全部抽到水池上边缘平面处。
+\begin{enumerate}[leftmargin=1.5em,itemsep=1pt,topsep=1pt]
+  \item 建立垂直向下的坐标系（以水面为 $x=0$），求水深 $x$ 处厚度为 $dx$ 的微薄水层的半径 $r(x)$ 与微质量 $dm$；
+  \item 写出克服重力将该薄层水提升至池口所做的微功 $dW$，并定积分求出抽完满池水所做的总功 $W$。
+\end{enumerate}
+\end{problem}
+
+\vspace{3pt}
+
+\begin{problem}{M3 \textbar\ 604: Cauchy-Schwarz Integral Inequality Reduction Proof}{Suggested: 15\,min}
+设函数 $f(x)$ 在闭区间 $[0, 1]$ 上具有连续的一阶导数，且已知 $f(0) = 0$。
+\begin{enumerate}[leftmargin=1.5em,itemsep=1pt,topsep=1pt]
+  \item 将 $f(x)$ 表为对导数 $f'(t)$ 的积分形式，并利用 Cauchy-Schwarz 不等式证明：$[f(x)]^2 \le x \int_0^1 [f'(t)]^2 dt$；
+  \item 严格证明不等式：$\displaystyle\int_0^1 [f(x)]^2\,dx \le \frac{1}{2} \int_0^1 [f'(x)]^2\,dx$；指出等号成立的充要条件。
+\end{enumerate}
+\end{problem}
+
+\vspace{3pt}
+
+\begin{problem}{Q1 \textbar\ 811: Rectangular Barrier Penetration \& Transmission Coefficient}{Suggested: 20\,min}
+设一维矩形势垒 $V(x) = V_0$ ($0 \le x \le a$)，其余区域 $V=0$。质量为 $m$ 的粒子自左向右以能量 $E < V_0$ 入射。
+\begin{enumerate}[leftmargin=1.5em,itemsep=1pt,topsep=1pt]
+  \item 设出三个区域的定态波函数，写出实波数 $k$ 与衰减常数 $\kappa$；
+  \item 列出 $x=0$ 和 $x=a$ 处的波函数及导数连续性方程，推导透射系数 $T = \left[1 + \frac{V_0^2}{4E(V_0-E)}\sinh^2(\kappa a)\right]^{-1}$；
+  \item 证明定态散射全空间几率流守恒关系 $R + T = 1$。
+\end{enumerate}
+\end{problem}
+
+\vspace{3pt}
+
+\begin{problem}{Q2 \textbar\ 811: Thick Barrier Gamow Factor \& High-Energy Resonant Transmission}{Suggested: 15\,min}
+\begin{enumerate}[leftmargin=1.5em,itemsep=1pt,topsep=1pt]
+  \item 证明当势垒较厚（$\kappa a \gg 1$）时，透射系数逼近 Gamow 指数衰减律 $T \approx \frac{16E(V_0-E)}{V_0^2}e^{-2\kappa a}$，并简析其物理图像；
+  \item 若粒子能量高于势垒顶端 $E > V_0$，推导完全无反射透射（$T=1, R=0$）时势垒宽度 $a$ 满足的共振条件。
+\end{enumerate}
+\end{problem}
+
+% ==============================================================================
+% PAGE 4: §3 MODEL SOLUTIONS & COMMENTARY
+% ==============================================================================
+\clearpage
+
+{\Large\sffamily\bfseries\color{navy} \S 3\quad Model Solutions \& Commentary}
+
+\vspace{4pt}
+
+\begin{solution}{M1 \textperiodcentered\ Integral Equation to 2nd-Order ODE Solution}
+(1) 令 $x=0$ 代入原方程，积分项全为零，得 $f(0) = 0$。\\
+(2) 原式写为 $f(x) = x + 2\int_0^x f(t)dt - x\int_0^x f(t)dt + \int_0^x tf(t)dt$。\\
+求一阶导数：$f'(x) = 1 + 2f(x) - [\int_0^x f(t)dt + xf(x)] + xf(x) = 1 + 2f(x) - \int_0^x f(t)dt$。\\
+代入 $x=0$ 得 $f'(0) = 1 + 2f(0) - 0 = 1$。\\
+再求二阶导数：$f''(x) = 2f'(x) - f(x) \implies f''(x) - 2f'(x) + f(x) = 0$。\\
+(3) 特征方程 $r^2 - 2r + 1 = 0 \implies (r-1)^2 = 0$，二重特征根 $r_1=r_2=1$。\\
+通解为 $f(x) = (C_1 + C_2 x)e^x$。代入初值：$f(0) = C_1 = 0$；$f'(0) = C_2 = 1$。\\
+故解析表达式为：$f(x) = x e^x$。
+\end{solution}
+
+\vspace{3pt}
+
+\begin{solution}{M2 \textperiodcentered\ Pumping Work from Hemispherical Tank}
+(1) 在水深 $x \in [0, R]$ 处切厚度为 $dx$ 的圆盘，由勾股定理半径 $r(x) = \sqrt{R^2 - x^2}$。\\
+微体积 $dV = \pi r^2(x) dx = \pi(R^2 - x^2)dx$，微质量 $dm = \rho dV = \pi\rho(R^2 - x^2)dx$。\\
+(2) 将该层薄水提升至池口 $x=0$ 的提升高度恰为 $x$。克服重力做功的微元为：\\
+$dW = x \cdot g dm = \pi\rho g (R^2 x - x^3)dx$。\\
+总功为定积分：$W = \int_0^R dW = \pi\rho g \int_0^R (R^2 x - x^3)dx = \pi\rho g \left[\frac{R^2 x^2}{2} - \frac{x^4}{4}\right]_0^R = \frac{1}{4}\pi\rho g R^4$。
+\end{solution}
+
+\vspace{3pt}
+
+\begin{solution}{M3 \textperiodcentered\ Cauchy-Schwarz Integral Inequality}
+(1) 由 $f(0)=0$，微积分基本定理给 $f(x) = \int_0^x f'(t)dt$。由 Cauchy-Schwarz 不等式：\\
+$[f(x)]^2 = \left(\int_0^x 1 \cdot f'(t)dt\right)^2 \le \left(\int_0^x 1^2 dt\right) \left(\int_0^x [f'(t)]^2 dt\right) = x \int_0^x [f'(t)]^2 dt \le x \int_0^1 [f'(t)]^2 dt$。\\
+(2) 两边对 $x$ 在 $[0, 1]$ 上积分：\\
+$\int_0^1 [f(x)]^2 dx \le \left(\int_0^1 x\,dx\right) \left(\int_0^1 [f'(t)]^2 dt\right) = \frac{1}{2} \int_0^1 [f'(x)]^2 dx$。证毕！\\
+(3) 等号成立条件：在两处不等式中，要求 $f'(t) \equiv C$（常数）且 $f'(t)$ 在 $t > x$ 处为零，结合连续性只能是 $f(x) \equiv 0$。
+\end{solution}
+
+\vspace{3pt}
+
+\begin{solution}{Q1 \textperiodcentered\ Rectangular Barrier Penetration \& Transmission}
+(1) $\psi_I = e^{ikx} + R'e^{-ikx}$ ($x<0$), $\psi_{II} = Ce^{-\kappa x} + De^{\kappa x}$ ($0\le x\le a$), $\psi_{III} = T'e^{ikx}$ ($x>a$)。\\
+其中 $k = \frac{\sqrt{2mE}}{\hbar}$, $\kappa = \frac{\sqrt{2m(V_0-E)}}{\hbar}$。\\
+(2) 在 $x=0$ 和 $x=a$ 处波函数及一阶导数分别连续，联立解出 $T' = \frac{4ik\kappa e^{-ika}}{(k+i\kappa)^2 e^{\kappa a} - (k-i\kappa)^2 e^{-\kappa a}}$。\\
+取模平方化简得 $T = |T'|^2 = \frac{1}{1 + \frac{V_0^2}{4E(V_0-E)}\sinh^2(\kappa a)}$。\\
+(3) 区域 I 反射流 $J_{\text{ref}} = \frac{\hbar k}{m}|R'|^2$，透射流 $J_{\text{trans}} = \frac{\hbar k}{m}|T'|^2$。因无耗散，总几率流守恒 $R + T = |R'|^2 + |T'|^2 = 1$。
+\end{solution}
+
+\vspace{3pt}
+
+\begin{solution}{Q2 \textperiodcentered\ Gamow Factor \& Resonant Transmission}
+(1) 当 $\kappa a \gg 1$ 时，$\sinh(\kappa a) \approx \frac{1}{2}e^{\kappa a} \implies \sinh^2(\kappa a) \approx \frac{1}{4}e^{2\kappa a} \gg 1$。\\
+代入分母得 $T \approx \frac{1}{\frac{V_0^2}{16E(V_0-E)}e^{2\kappa a}} = \frac{16E(V_0-E)}{V_0^2} e^{-2\kappa a}$。穿透几率随势垒厚度指数衰减。\\
+(2) 当 $E > V_0$ 时，$\kappa \to -ik_2$（$k_2 = \frac{\sqrt{2m(E-V_0)}}{\hbar}$），$\sinh^2(\kappa a) \to -\sin^2(k_2 a)$。\\
+$T = \left[1 + \frac{V_0^2}{4E(E-V_0)}\sin^2(k_2 a)\right]^{-1}$。当 $\sin(k_2 a) = 0$ 即 $k_2 a = n\pi$ ($a = n\frac{\lambda_2}{2}, n\in\mathbb{N}^+$) 时，$T = 1$ 发生共振完全透射。
+\end{solution}
+
+% ==============================================================================
+% PAGE 5: §4 DAILY DEBRIEF & REFLECTION
+% ==============================================================================
+\clearpage
+
+{\Large\sffamily\bfseries\color{navy} \S 4\quad Daily Debrief \& Reflection (Day 4 Match)}
+
+\vspace{4pt}
+
+\begin{debrief}{Post-Match Scorecard (fill in before sleep, 5\,min)}
+\renewcommand{\arraystretch}{1.2}
+\sffamily\small
+\begin{tabularx}{\linewidth}{@{}p{2.4cm}X@{}}
+  \textbf{604 Calculus} & Time: \underline{\hspace{1.2cm}} min \quad\textbar\quad M1: \checkbox\ PASS \quad M2: \checkbox\ PASS \quad M3: \checkbox\ PASS\\
+  & Error type: \checkbox\ Integral ODE \checkbox\ Slicing disk \checkbox\ Cauchy-Schwarz \checkbox\ Time\\
+  \midrule
+  \textbf{811 QM} & Time: \underline{\hspace{1.2cm}} min \quad\textbar\quad Q1: \checkbox\ PASS \quad Q2: \checkbox\ PASS\\
+  & Error type: \checkbox\ Boundary match \checkbox\ Transmission T \checkbox\ Gamow factor \checkbox\ Calculation\\
+  \midrule
+  \textbf{Summary} & \textbf{Total Score:} \underline{\hspace{1.4cm}} / 100 \quad\textbar\quad Total Time: \underline{\hspace{1.4cm}} min\\
+  & \textbf{Spaced retrieval in 3 days:} 9月6日盲写水池抽水微元与势垒透射系数推导\\
+\end{tabularx}
+\end{debrief}
+
+\vspace{6pt}
+
+\begin{tcolorbox}[
+  enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=3mm, bottom=3.5mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{forest}\rule{3pt}{10pt}}\hspace{4pt}Key Derivation Insights \& Traps \textbar\ 突破口与避坑沉淀},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0pt, toptitle=1.5mm, bottomtitle=1.5mm
+]
+\sffamily\small
+\textbf{Core Breakthrough (今日核心突破口与关键一步)}:\\[26pt]
+\rule{\linewidth}{0.3pt}\\[10pt]
+\textbf{Fatal Trap \& Common Error (致命陷阱与避坑警示)}:\\[26pt]
+\rule{\linewidth}{0.3pt}\\[10pt]
+\textbf{Day +3 Action Item (3 天后间隔重做提取的具体题号与断点)}:\\[20pt]
+\rule{\linewidth}{0.3pt}
+\end{tcolorbox}
+
+\end{document}
