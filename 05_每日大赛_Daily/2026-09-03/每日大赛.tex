@@ -291,8 +291,11 @@
 \begin{problem}{M3 \textbar\ 604: Cauchy-Schwarz Integral Inequality Reduction Proof}{Suggested: 15\,min}
 设函数 $f(x)$ 在闭区间 $[0, 1]$ 上具有连续的一阶导数，且已知 $f(0) = 0$。
 \begin{enumerate}[leftmargin=1.5em,itemsep=1pt,topsep=1pt]
-  \item 将 $f(x)$ 表为对导数 $f'(t)$ 的积分形式，并利用 Cauchy-Schwarz 不等式证明：$[f(x)]^2 \le x \int_0^1 [f'(t)]^2 dt$；
-  \item 严格证明不等式：$\displaystyle\int_0^1 [f(x)]^2\,dx \le \frac{1}{2} \int_0^1 [f'(x)]^2\,dx$；指出等号成立的充要条件。
+  \item 将 $f(x)$ 表为对导数 $f'(t)$ 的积分形式，并利用 Cauchy-Schwarz 不等式证明：$[f(x)]^2 \le x \int_0^x [f'(t)]^2 dt$；
+  \item 利用分部积分法，严格证明不等式：
+  \[
+    \int_0^1 [f(x)]^2\,dx \le \frac{1}{2} \int_0^1 (1-x^2)[f'(x)]^2\,dx \le \frac{1}{2} \int_0^1 [f'(x)]^2\,dx.
+  \]
 \end{enumerate}
 \end{problem}
 
@@ -349,11 +352,13 @@ $dW = x \cdot g dm = \pi\rho g (R^2 x - x^3)dx$。\\
 \vspace{3pt}
 
 \begin{solution}{M3 \textperiodcentered\ Cauchy-Schwarz Integral Inequality}
-(1) 由 $f(0)=0$，微积分基本定理给 $f(x) = \int_0^x f'(t)dt$。由 Cauchy-Schwarz 不等式：\\
-$[f(x)]^2 = \left(\int_0^x 1 \cdot f'(t)dt\right)^2 \le \left(\int_0^x 1^2 dt\right) \left(\int_0^x [f'(t)]^2 dt\right) = x \int_0^x [f'(t)]^2 dt \le x \int_0^1 [f'(t)]^2 dt$。\\
-(2) 两边对 $x$ 在 $[0, 1]$ 上积分：\\
-$\int_0^1 [f(x)]^2 dx \le \left(\int_0^1 x\,dx\right) \left(\int_0^1 [f'(t)]^2 dt\right) = \frac{1}{2} \int_0^1 [f'(x)]^2 dx$。证毕！\\
-(3) 等号成立条件：在两处不等式中，要求 $f'(t) \equiv C$（常数）且 $f'(t)$ 在 $t > x$ 处为零，结合连续性只能是 $f(x) \equiv 0$。
+(1) 由 $f(0)=0$，由微积分基本定理得 $f(x) = \int_0^x 1 \cdot f'(t)dt$。在局部区间 $[0, x]$ 上应用 Cauchy-Schwarz 不等式：\\
+$[f(x)]^2 = \left(\int_0^x 1 \cdot f'(t)dt\right)^2 \le \left(\int_0^x 1^2 dt\right) \left(\int_0^x [f'(t)]^2 dt\right) = x \int_0^x [f'(t)]^2 dt$。\\
+(2) 两边在 $[0, 1]$ 上对 $x$ 积分：$\int_0^1 [f(x)]^2 dx \le \int_0^1 x \left(\int_0^x [f'(t)]^2 dt\right) dx$。\\
+应用分部积分法，令 $u = \int_0^x [f'(t)]^2 dt$，$dv = x\,dx \implies v = \frac{x^2}{2}$：\\
+$\int_0^1 x \left(\int_0^x [f'(t)]^2 dt\right) dx = \left[ \frac{x^2}{2} \int_0^x [f'(t)]^2 dt \right]_0^1 - \int_0^1 \frac{x^2}{2} [f'(x)]^2 dx = \frac{1}{2}\int_0^1 (1-x^2)[f'(x)]^2 dx$。\\
+由于在 $x \in [0, 1]$ 上恒有 $1-x^2 \le 1$，且 $[f'(x)]^2 \ge 0$，因此：\\
+$\frac{1}{2}\int_0^1 (1-x^2)[f'(x)]^2 dx \le \frac{1}{2}\int_0^1 [f'(x)]^2 dx$。全式证毕！
 \end{solution}
 
 \vspace{3pt}
