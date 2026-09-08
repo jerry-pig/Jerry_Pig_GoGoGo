@@ -125,45 +125,78 @@
 }
 
 \newcommand{\checkbox}{\ensuremath{\mdlgwhtsquare}}
+\newcommand{\alerttag}[1]{\textcolor{wine}{\sffamily\bfseries [#1]}}
 
 % ==============================================================================
 % PAGE 1: COVER PAGE
 % ==============================================================================
 \begin{document}
 \begin{titlepage}
-\begin{tikzpicture}[remember picture, overlay]
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
   \fill[paper] (current page.south west) rectangle (current page.north east);
-  \fill[navy] (current page.north west) rectangle ($(current page.north east)+(0,-6.5cm)$);
-  \fill[royal] ($(current page.north west)+(0,-6.5cm)$) rectangle ($(current page.north east)+(0,-6.7cm)$);
-  
-  \node[anchor=west] at ($(current page.north west)+(1.8cm,-2.2cm)$) {
-    \begin{minipage}{0.85\linewidth}
-      {\sffamily\bfseries\color{amber}\small THE GRAND DAILY TOURNAMENT \textbar\ 每日大赛}\\[5pt]
-      {\Huge\sffamily\bfseries\color{white} 理论物理考研作战大练兵}\\[8pt]
-      {\Large\sffamily\color{border} 2026-09-08 Match (Week 2 Day 2) \textperiodcentered\ Standard Push}
+
+  \fill[navy] (current page.north west) rectangle ($(current page.north east)+(0,-3.4cm)$);
+  \fill[royal] ($(current page.north west)+(0,-3.4cm)$) rectangle ($(current page.north east)+(0,-3.55cm)$);
+  \fill[amber] ($(current page.north west)+(0,-3.55cm)$) rectangle ($(current page.north east)+(0,-3.62cm)$);
+
+  \node[anchor=west, text=white] at ($(current page.north west)+(2.2cm,-1.5cm)$) {
+    {\fontsize{12}{14}\selectfont\sffamily\bfseries THE GRAND DAILY TOURNAMENT \textperiodcentered\ 2027}
+  };
+  \node[anchor=west, text=white!50] at ($(current page.north west)+(2.2cm,-2.3cm)$) {
+    {\fontsize{8.5}{11}\selectfont\sffamily UCAS \textperiodcentered\ HIAIS \textperiodcentered\ THEORETICAL PHYSICS ADVANCED TRAINING DOSSIER}
+  };
+
+  \begin{scope}[shift={($(current page.center)+(0,1.2cm)$)}]
+    \draw[line width=0.5pt, border!80, dashed] (0,0) circle (3.3cm);
+    \draw[line width=0.7pt, border] (0,0) circle (2.5cm);
+    \draw[line width=0.4pt, royal!30] (0,0) circle (1.6cm);
+    \draw[line width=1.2pt, slate!60] (-3.8,-2.2) -- (3.8,2.2);
+    \draw[line width=1.2pt, slate!60] (-3.8,2.2) -- (3.8,-2.2);
+    
+    % Axes
+    \draw[line width=0.7pt, royal!65, -{Stealth[length=2.5mm]}] (-4.2,0) -- (4.2,0)
+      node[right, font=\footnotesize\sffamily\color{mist}] {$r / a_0$};
+    \draw[line width=0.7pt, royal!65, -{Stealth[length=2.5mm]}] (0,-3.6) -- (0,3.6)
+      node[above, font=\footnotesize\sffamily\color{mist}] {$V_{\text{eff}}(r),\, P(r)$};
+
+    % Hydrogen radial probability density P(r) = 4 * r^2 * exp(-2r)
+    \draw[line width=1.4pt, royal, smooth, samples=120, domain=0:3.8]
+      plot ({\x}, {3.5*\x*\x*exp(-1.8*\x)});
+
+    % Effective potential curve V_eff(r)
+    \draw[line width=1.2pt, amber!90!black, smooth, samples=100, domain=0.6:3.8]
+      plot ({\x}, {1.8/(\x*\x) - 3.2/\x});
+
+    % Dashed vertical drop to minimum of V_eff
+    \draw[line width=0.6pt, forest, dashed] (1.125,-1.42) -- (1.125, 0);
+
+    \fill[navy] (0,0) circle (3.5pt);
+    \fill[amber] (1.125, -1.42) circle (2.2pt);
+    \fill[royal] (1.11, 1.88) circle (2.2pt);
+
+    \node[above, font=\footnotesize\sffamily\color{royal}] at (1.11, 1.95) {$r_p = a_0$};
+    \node[below right, font=\footnotesize\sffamily\color{amber!90!black}] at (1.18, -1.42) {$\min V_{\text{eff}}$};
+  \end{scope}
+
+  \node[anchor=center] at ($(current page.center)+(0,-3.4cm)$) {
+    \begin{minipage}{0.84\textwidth}
+      \centering
+      {\fontsize{30}{36}\selectfont\bfseries\color{navy} Daily Tournament}\\[4pt]
+      {\fontsize{11}{14}\selectfont\sffamily\bfseries\color{royal}%
+        GRAND ARENA OF THEORETICAL PHYSICS \textperiodcentered\ MULTIVARIABLE \& HYDROGEN}\\[10pt]
+      {\color{navy}\rule{0.45\textwidth}{1.2pt}}\\[8pt]
+      {\fontsize{10}{13}\selectfont\color{slate}\itshape
+        ``604 Multivariable Calculus: Hessian Discriminant $\times$ Lagrange Volume Optimization\\
+        811 Quantum Mechanics: Symmetric Well Parity $\times$ Hydrogen Radial Stability''\\[3pt]
+        {\small\color{mist}\upshape 5-Problem Intensive Battle \textperiodcentered\ Closed-book \textperiodcentered\ 80\,min Real-time Challenge}}
     \end{minipage}
   };
 
-  \node[anchor=west] at ($(current page.north west)+(1.8cm,-4.8cm)$) {
-    \begin{minipage}{0.85\linewidth}
-      \sffamily\small\color{border}
-      \textbf{Target}: UCAS / HIAS Theoretical Physics (070201) \quad\textbar\quad 16-Week Season\\
-      \textbf{Standards}: Double-Blind Handwritten \textbar\ 80 min \textbar\ Strict Marking \& Immediate Debrief
-    \end{minipage}
-  };
-
-  \node[anchor=north west] at ($(current page.north west)+(1.8cm,-7.5cm)$) {
-    \begin{minipage}{0.85\linewidth}
-      {\Large\sffamily\bfseries\color{navy} 今日大赛核心攻坚航标}\\[10pt]
-      \begin{itemize}[leftmargin=1.5em, itemsep=7pt]
-        \item \textbf{604 高等数学}：多元函数微分学（二元 Taylor 公式、Hessian 矩阵 $AC-B^2$ 极值与鞍点充分条件判定；空间非线性约束 Lagrange 乘数法椭球最大内接长方体体积；曲面切平面、法线与梯度方向导数）。
-        \item \textbf{811 量子力学}：一维势场与氢原子启航（对称无限深方势阱 $[-a, a]$ 宇称与动量期望值 $\langle p \rangle = 0$；对称有限深方势阱画圆法与束缚态数目判定；氢原子中心力场两体约化、测不准原理支撑、最概然半径 $r=a_0$ 与基态几率积分）。
-        \item \textbf{考研战略导引}：从一维势阱自然跨越至三维中心力场，数学与物理完美共鸣，全面检验白天的核心刀法！
-      \end{itemize}
-
-      \vspace{1.2cm}
+  \node[anchor=south] at ($(current page.south)+(0,1.5cm)$) {
+    \begin{minipage}{0.86\textwidth}
       \begin{tcolorbox}[
-        enhanced, colback=white, colframe=royal, boxrule=1pt, arc=2mm,
+        enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
         left=4mm, right=4mm, top=3mm, bottom=3mm
       ]
         \renewcommand{\arraystretch}{1.25}
@@ -196,16 +229,20 @@
 
 \begin{briefing}{\S 1\quad Tactical Briefing \& Warm-Up Retrieval}
 \begin{itemize}[leftmargin=1.5em, itemsep=2pt, topsep=1pt]
-  \item \textbf{604 高数攻坚 (3 题)}：\textbf{M1} 二元函数无条件极值与 Hessian 鞍点判定；\textbf{M2} 椭球面内接长方体最大体积 Lagrange 乘数法；\textbf{M3} 二次曲面切平面与梯度方向导数。
-  \item \textbf{811 量力攻坚 (2 题)}：\textbf{Q1} 一维对称方势阱（无限深宇称/动量期望值 + 有限深画圆法/束缚态数目）；\textbf{Q2} 氢原子中心力场（有效势能/测不准原理 + 最概然半径 $r=a_0$ + 玻尔球内几率）。
-  \item \textbf{考试规则}：闭卷、独立手推、严禁查阅笔记；先在下方草稿区完成 5 分钟白纸公式破冰。
+  \item \textbf{604 今日靶向}：多元函数微分学——二元 Taylor 展开与 Hessian 判别式 $\Delta = AC-B^2$、空间约束 Lagrange 乘数法求最值、法向量与梯度方向导数。
+  \item \textbf{811 今日靶向}：一维对称方势阱（无限深宇称定理与 $\langle p \rangle = 0$；有限深画圆法与束缚态数目）；氢原子启航（两体约化、测不准原理支撑、最概然半径 $r_p=a_0$ 及玻尔球内几率积分）。
+  \item \textbf{Spaced Retrieval 间隔提取 (Day +3 滚动回溯)}：\textbf{604 (Day 3)} 变上限积分拆项求导 $\frac{d}{dx}\int_0^x (x-t)f(t)dt = \int_0^x f(t)dt$；\textbf{811 (Day 2/3)} $\delta(x)$ 势阱导数跃变条件 $\Delta \psi'(0) = -\frac{2m\alpha}{\hbar^2}\psi(0)$ 与厚势垒 Gamow 穿透因子 $T\approx e^{-2\kappa a}$。
+  \item \textbf{考试规则}：闭卷、独立手推、严禁查阅笔记；先在下方草稿区完成 5--8 分钟白纸公式破冰与间隔提取。
 \end{itemize}
 
 \vspace{1mm}
-\textbf{Warm-Up Retrieval Checklist} (5\,min): without notes, write on scratch paper:\\
+\textbf{Warm-Up \& Spaced Retrieval Checklist} (5--8\,min): without notes, write on scratch paper:\\
 \checkbox\ Hessian discriminant: $\Delta = AC - B^2 = f_{xx}f_{yy} - f_{xy}^2$ ($\Delta>0, A>0 \implies \min$, $\Delta<0 \implies$ saddle) \quad
+\checkbox\ Radial probability: $P(r) = \frac{4}{a_0^3}r^2 e^{-2r/a_0}$ ($r_p = a_0$) \quad
 \checkbox\ Symmetric well energy: $E_n = \frac{n^2\pi^2\hbar^2}{8ma^2}$ \quad
-\checkbox\ Radial probability density: $P(r) = 4\pi r^2 |\psi|^2 = \frac{4}{a_0^3}r^2 e^{-2r/a_0}$
+\checkbox\ \alerttag{Day +3 604} $\frac{d}{dx}\int_0^x (x-t)f(t)dt = \int_0^x f(t)dt$ \quad
+\checkbox\ \alerttag{Day +3 811} $\Delta \psi'(0) = -\frac{2m\alpha}{\hbar^2}\psi(0)$ \quad
+\checkbox\ \alerttag{Day +3 811} Gamow factor $T \approx e^{-2\kappa a}$
 \end{briefing}
 
 \vspace{4pt}
@@ -214,12 +251,12 @@
   enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
   left=4mm, right=4mm, top=3mm, bottom=3mm,
   fonttitle=\sffamily\bfseries\color{slate},
-  title={\raisebox{0pt}{\color{royal}\rule{3pt}{10pt}}\hspace{4pt}Warm-Up Retrieval Workspace \textbar\ 白纸破冰草稿区},
+  title={\raisebox{0pt}{\color{royal}\rule{3pt}{10pt}}\hspace{4pt}Warm-Up Retrieval Workspace \textbar\ 白纸破冰与间隔提取草稿区},
   colbacktitle=paper, coltitle=slate,
   titlerule=0pt, toptitle=2mm, bottomtitle=2mm
 ]
-\textcolor{mist}{\footnotesize\itshape 5 分钟闭卷盲写：默写二元极值判别式 $\Delta = AC-B^2$、对称势阱波函数奇偶交替式、氢原子径向几率 $P(r)$ 表达式。}
-\vspace{10.2cm}
+\textcolor{mist}{\footnotesize\itshape 5--8 分钟闭卷盲写：默写今日二元极值判别式、氢原子径向几率 $P(r)$，并滚动回溯 3 天前变限求导拆项与 $\delta$ 势阱导数跃变。}
+\vspace{9.0cm}
 \end{tcolorbox}
 
 % ==============================================================================
@@ -357,8 +394,10 @@ $W = \frac{4}{a_0^3} \int_0^2 \frac{a_0^2}{4}t^2 e^{-t} \frac{a_0}{2}dt = \frac{
   \textbf{811 QM} & Time: \underline{\hspace{1.2cm}} min \quad\textbar\quad Q1: \checkbox\ PASS \quad Q2: \checkbox\ PASS\\
   & Error type: \checkbox\ Parity well \checkbox\ Circle range \checkbox\ Most probable $r$ \checkbox\ Integration $W$\\
   \midrule
+  \textbf{Spaced Retrieval} & Day +3 Review: \checkbox\ 604 变限求导拆项 \quad \checkbox\ 811 $\delta$ 势导数跃变 \quad \checkbox\ 811 Gamow 因子\\
+  \midrule
   \textbf{Summary} & \textbf{Total Score:} \underline{\hspace{1.4cm}} / 100 \quad\textbar\quad Total Time: \underline{\hspace{1.4cm}} min\\
-  & \textbf{Spaced retrieval in 3 days:} 9月11日盲写 Hessian 判别法与氢原子径向几率 $P(r)$ 极值\\
+  & \textbf{Next Spaced retrieval (Day +3):} 9月11日盲写 Hessian 判别法与氢原子径向几率 $P(r)$ 极值\\
 \end{tabularx}
 \end{debrief}
 
