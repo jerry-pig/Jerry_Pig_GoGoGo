@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01_高等数学_604/03_多元微积分与空间解析/二元Taylor公式与多元极值充分条件.md",
+                "file": "99_System_认知系统与模板/cognitive_manual/Gemini_AI导师互动学习指南与提示词库.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "二元Taylor公式与多元极值充分条件"
+              "title": "Gemini_AI导师互动学习指南与提示词库"
             }
           }
         ]
@@ -202,6 +202,7 @@
   },
   "active": "a975919d7895025e",
   "lastOpenFiles": [
+    "01_高等数学_604/03_多元微积分与空间解析/二元Taylor公式与多元极值充分条件.md",
     "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
     "99_System_认知系统与模板/cognitive_manual/Gemini_AI导师互动学习指南与提示词库.md",
     "00_Dashboard_作战指挥中心/01_16周推进总览_Milestones.md",
@@ -236,7 +237,6 @@
     "06_历年真题_Archive/201_English/2015_Text2_真题精读与长难句精解.md",
     "04_思想政治_101/01_马原极简逻辑_Philosophy/01_马原核心逻辑全景骨架.md",
     "04_思想政治_101/05_大题活字印刷与模板_Templates/01_政治大题活字印刷术与万能踩点模板_一页纸版.md",
-    "04_思想政治_101/04_选择题秒杀战法与排雷_Arsenal/01_政治选择题十大命题陷阱与秒杀心法.md",
-    "04_思想政治_101/03_毛中特与新思想_XiThought/02_中国式现代化与高质量发展核心题眼.md"
+    "04_思想政治_101/04_选择题秒杀战法与排雷_Arsenal/01_政治选择题十大命题陷阱与秒杀心法.md"
   ]
 }
