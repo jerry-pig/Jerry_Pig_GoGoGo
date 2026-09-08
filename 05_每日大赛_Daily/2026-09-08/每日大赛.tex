@@ -1,0 +1,391 @@
+% ==============================================================================
+% The Grand Daily Tournament — 2026-09-08 Match (Week 2 Day 2)
+% Locked template: EB Garamond + Garamond-Math + STKaiti (v4.1)
+% High-Capacity & High-Depth Edition: 3 Math Problems + 2 QM Problems
+% ==============================================================================
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{unicode-math}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{EBGaramond}[
+  Path           = {c:/texlive/2024/texmf-dist/fonts/opentype/public/ebgaramond/},
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-SemiBold,
+  BoldItalicFont = *-SemiBoldItalic,
+  Ligatures      = TeX,
+  Numbers        = OldStyle
+]
+\setsansfont{LibertinusSans}[
+  Path        = {c:/texlive/2024/texmf-dist/fonts/opentype/public/libertinus-fonts/},
+  Extension   = .otf,
+  UprightFont = *-Regular,
+  ItalicFont  = *-Italic,
+  BoldFont    = *-Bold,
+  Scale       = MatchLowercase
+]
+\setmathfont{Garamond-Math.otf}[
+  Path  = {c:/texlive/2024/texmf-dist/fonts/opentype/public/garamond-math/},
+  Scale = MatchLowercase
+]
+
+\usepackage{xeCJK}
+\xeCJKsetup{
+  CJKmath      = false,
+  PunctStyle   = kaiming,
+  CheckSingle  = true,
+  AutoFakeBold = true,
+  AutoFakeSlant= false
+}
+\setCJKmainfont{STKaiti}[
+  Path        = {C:/Windows/Fonts/},
+  UprightFont = STKAITI.TTF,
+  BoldFont    = STKAITI.TTF,
+  ItalicFont  = STKAITI.TTF,
+  Script      = Default
+]
+\setCJKsansfont{Microsoft YaHei}
+\setCJKmonofont{FangSong}
+
+\usepackage[margin=1.5cm,headheight=14pt,headsep=10pt,footskip=18pt]{geometry}
+\usepackage{booktabs,enumitem,xcolor,graphicx,tabularx}
+
+\usepackage[breakable,skins,hooks]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows.meta}
+\usepackage{fancyhdr,lastpage}
+\usepackage{microtype}
+
+\definecolor{navy}{HTML}{0F172A}
+\definecolor{slate}{HTML}{1E293B}
+\definecolor{royal}{HTML}{1E40AF}
+\definecolor{mist}{HTML}{64748B}
+\definecolor{border}{HTML}{E2E8F0}
+\definecolor{paper}{HTML}{F8FAFC}
+\definecolor{forest}{HTML}{065F46}
+\definecolor{amber}{HTML}{D97706}
+\definecolor{wine}{HTML}{991B1B}
+\definecolor{ice}{HTML}{EFF6FF}
+
+\linespread{1.08}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt plus 1pt minus 1pt}
+\setlength{\abovedisplayskip}{4pt plus 1pt minus 1pt}
+\setlength{\belowdisplayskip}{4pt plus 1pt minus 1pt}
+
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\textcolor{mist}{\footnotesize\sffamily 2027 Theoretical Physics · 604 Calculus \& 811 Quantum Mechanics}}
+\fancyhead[R]{\textcolor{slate}{\footnotesize\sffamily\bfseries Daily Tournament · 2026-09-08}}
+\fancyfoot[L]{\textcolor{mist}{\footnotesize\itshape ``From Multivariable Extremum to Atomic Microcosm.''}}
+\fancyfoot[R]{\textcolor{mist}{\footnotesize\sffamily Page \thepage\ of \pageref{LastPage}}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\color{border}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}
+
+\newtcolorbox{briefing}[1]{%
+  enhanced, blanker, breakable,
+  left=3.5mm, right=2.5mm, top=2.5mm, bottom=2.5mm,
+  borderline west={2.5pt}{0pt}{royal},
+  colback=paper,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={#1},
+  attach title to upper={\par\vspace{1.5mm}}
+}
+
+\newtcolorbox{problem}[2]{%
+  enhanced, breakable,
+  colback=white, colframe=border, boxrule=0.5pt, arc=1.5mm,
+  left=3.5mm, right=3.5mm, top=2.5mm, bottom=2.5mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0.3pt, toptitle=1.5mm, bottomtitle=1.5mm,
+  title={\raisebox{0pt}{\color{royal}\rule{2.5pt}{8.5pt}}\hspace{4pt}#1\hfill{\footnotesize\color{mist}\itshape #2}}
+}
+
+\newtcolorbox{solution}[1]{%
+  enhanced, breakable,
+  colback=white, colframe=border, boxrule=0.4pt, arc=1mm,
+  left=3mm, right=3mm, top=2mm, bottom=2mm,
+  fonttitle=\sffamily\bfseries\footnotesize\color{forest},
+  colbacktitle=paper, coltitle=forest,
+  titlerule=0.2pt, toptitle=1mm, bottomtitle=1mm,
+  title={\raisebox{0pt}{\color{forest}\rule{2pt}{7pt}}\hspace{3pt}#1}
+}
+
+\newtcolorbox{debrief}[1]{%
+  enhanced, breakable,
+  colback=paper, colframe=slate, boxrule=0.6pt, arc=1.5mm,
+  left=4mm, right=4mm, top=3mm, bottom=3mm,
+  fonttitle=\sffamily\bfseries\color{white},
+  colbacktitle=slate, coltitle=white,
+  titlerule=0pt, toptitle=2mm, bottomtitle=2mm,
+  title={#1}
+}
+
+\newcommand{\checkbox}{\ensuremath{\mdlgwhtsquare}}
+
+% ==============================================================================
+% PAGE 1: COVER PAGE
+% ==============================================================================
+\begin{document}
+\begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[paper] (current page.south west) rectangle (current page.north east);
+  \fill[navy] (current page.north west) rectangle ($(current page.north east)+(0,-6.5cm)$);
+  \fill[royal] ($(current page.north west)+(0,-6.5cm)$) rectangle ($(current page.north east)+(0,-6.7cm)$);
+  
+  \node[anchor=west] at ($(current page.north west)+(1.8cm,-2.2cm)$) {
+    \begin{minipage}{0.85\linewidth}
+      {\sffamily\bfseries\color{amber}\small THE GRAND DAILY TOURNAMENT \textbar\ 每日大赛}\\[5pt]
+      {\Huge\sffamily\bfseries\color{white} 理论物理考研作战大练兵}\\[8pt]
+      {\Large\sffamily\color{border} 2026-09-08 Match (Week 2 Day 2) \textperiodcentered\ Standard Push}
+    \end{minipage}
+  };
+
+  \node[anchor=west] at ($(current page.north west)+(1.8cm,-4.8cm)$) {
+    \begin{minipage}{0.85\linewidth}
+      \sffamily\small\color{border}
+      \textbf{Target}: UCAS / HIAS Theoretical Physics (070201) \quad\textbar\quad 16-Week Season\\
+      \textbf{Standards}: Double-Blind Handwritten \textbar\ 80 min \textbar\ Strict Marking \& Immediate Debrief
+    \end{minipage}
+  };
+
+  \node[anchor=north west] at ($(current page.north west)+(1.8cm,-7.5cm)$) {
+    \begin{minipage}{0.85\linewidth}
+      {\Large\sffamily\bfseries\color{navy} 今日大赛核心攻坚航标}\\[10pt]
+      \begin{itemize}[leftmargin=1.5em, itemsep=7pt]
+        \item \textbf{604 高等数学}：多元函数微分学（二元 Taylor 公式、Hessian 矩阵 $AC-B^2$ 极值与鞍点充分条件判定；空间非线性约束 Lagrange 乘数法椭球最大内接长方体体积；曲面切平面、法线与梯度方向导数）。
+        \item \textbf{811 量子力学}：一维势场与氢原子启航（对称无限深方势阱 $[-a, a]$ 宇称与动量期望值 $\langle p \rangle = 0$；对称有限深方势阱画圆法与束缚态数目判定；氢原子中心力场两体约化、测不准原理支撑、最概然半径 $r=a_0$ 与基态几率积分）。
+        \item \textbf{考研战略导引}：从一维势阱自然跨越至三维中心力场，数学与物理完美共鸣，全面检验白天的核心刀法！
+      \end{itemize}
+
+      \vspace{1.2cm}
+      \begin{tcolorbox}[
+        enhanced, colback=white, colframe=royal, boxrule=1pt, arc=2mm,
+        left=4mm, right=4mm, top=3mm, bottom=3mm
+      ]
+        \renewcommand{\arraystretch}{1.25}
+        \sffamily\small
+        \begin{tabularx}{\linewidth}{@{}p{2.6cm}X@{}}
+          \textbf{Date} & 2026-09-08 \quad\textbar\quad Week 2 (Day 2)\\
+          \textbf{Modules} & \textbf{604}: Multivariable Extremum + Lagrange \quad\textbar\quad \textbf{811}: Parity Well + Hydrogen\\
+          \textbf{Error Protocol} & 5-Factor: Knowledge\,\textbar\, Modelling\,\textbar\, Logic\,\textbar\, Calculation\,\textbar\, Time\\
+          \textbf{Standards} & Target: 100/100 Full Marks \quad\textbar\quad Time Budget: 80 min\\
+        \end{tabularx}
+      \end{tcolorbox}
+    \end{minipage}
+  };
+\end{tikzpicture}
+\end{titlepage}
+
+% ==============================================================================
+% PAGE 2: §1 TACTICAL BRIEFING & WARM-UP RETRIEVAL
+% ==============================================================================
+\clearpage
+
+\begin{center}
+  {\LARGE\bfseries\color{navy} Theoretical Physics Training \textperiodcentered\ Daily Tournament}\\[3pt]
+  {\small\sffamily\color{mist} 2026-09-08 \quad\textbar\quad Week 2 (Day 2) \quad\textbar\quad Phase: Multivariable Extremum \& Hydrogen Power Test}\\[-4pt]
+  {\color{navy}\rule{\textwidth}{0.8pt}}\\[-11pt]
+  {\color{border}\rule{\textwidth}{0.3pt}}
+\end{center}
+
+\vspace{-6pt}
+
+\begin{briefing}{\S 1\quad Tactical Briefing \& Warm-Up Retrieval}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, topsep=1pt]
+  \item \textbf{604 高数攻坚 (3 题)}：\textbf{M1} 二元函数无条件极值与 Hessian 鞍点判定；\textbf{M2} 椭球面内接长方体最大体积 Lagrange 乘数法；\textbf{M3} 二次曲面切平面与梯度方向导数。
+  \item \textbf{811 量力攻坚 (2 题)}：\textbf{Q1} 一维对称方势阱（无限深宇称/动量期望值 + 有限深画圆法/束缚态数目）；\textbf{Q2} 氢原子中心力场（有效势能/测不准原理 + 最概然半径 $r=a_0$ + 玻尔球内几率）。
+  \item \textbf{考试规则}：闭卷、独立手推、严禁查阅笔记；先在下方草稿区完成 5 分钟白纸公式破冰。
+\end{itemize}
+
+\vspace{1mm}
+\textbf{Warm-Up Retrieval Checklist} (5\,min): without notes, write on scratch paper:\\
+\checkbox\ Hessian discriminant: $\Delta = AC - B^2 = f_{xx}f_{yy} - f_{xy}^2$ ($\Delta>0, A>0 \implies \min$, $\Delta<0 \implies$ saddle) \quad
+\checkbox\ Symmetric well energy: $E_n = \frac{n^2\pi^2\hbar^2}{8ma^2}$ \quad
+\checkbox\ Radial probability density: $P(r) = 4\pi r^2 |\psi|^2 = \frac{4}{a_0^3}r^2 e^{-2r/a_0}$
+\end{briefing}
+
+\vspace{4pt}
+
+\begin{tcolorbox}[
+  enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=3mm, bottom=3mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{royal}\rule{3pt}{10pt}}\hspace{4pt}Warm-Up Retrieval Workspace \textbar\ 白纸破冰草稿区},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+]
+\textcolor{mist}{\footnotesize\itshape 5 分钟闭卷盲写：默写二元极值判别式 $\Delta = AC-B^2$、对称势阱波函数奇偶交替式、氢原子径向几率 $P(r)$ 表达式。}
+\vspace{10.2cm}
+\end{tcolorbox}
+
+% ==============================================================================
+% PAGE 3: §2 CORE PROBLEM SET (5 PROBLEMS)
+% ==============================================================================
+\clearpage
+
+{\Large\sffamily\bfseries\color{navy} \S 2\quad Core Problem Set (604 Math Trio + 811 QM Double)}\hfill{\small\sffamily\color{mist}\itshape Timed: 80\,min}
+
+\vspace{5pt}
+
+\begin{problem}{M1 \textbar\ 604: Multivariable Extremum \& Hessian Discriminant}{Suggested: 15\,min}
+求二元函数 $f(x, y) = x^3 - y^3 - 3x^2 + 3y^2$ 的所有驻点、极值，并指出其中的鞍点。
+\begin{enumerate}[leftmargin=1.5em,itemsep=1pt,topsep=1pt]
+  \item 求一阶偏导数 $f_x, f_y$，解方程组确定所有驻点；
+  \item 求二阶偏导数 $A = f_{xx}, B = f_{xy}, C = f_{yy}$，写出 Hessian 判别式 $\Delta = AC - B^2$；
+  \item 判定各驻点的极值性质，并求出极大值与极小值。
+\end{enumerate}
+\end{problem}
+
+\vspace{3pt}
+
+\begin{problem}{M2 \textbar\ 604: Lagrange Multipliers for Ellipsoid Inscribed Volume}{Suggested: 15\,min}
+在第一卦限（$x>0, y>0, z>0$）内，求函数 $u = xyz$ 在椭球面 $\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} = 1$ 约束下的最大值（即椭球面内接长方体的最大体积）。
+\begin{enumerate}[leftmargin=1.5em,itemsep=1pt,topsep=1pt]
+  \item 构造 Lagrange 函数 $L(x, y, z, \lambda)$，列出一阶偏导方程组；
+  \item 利用乘变量法消去乘子 $\lambda$，导出 $\frac{x^2}{a^2} = \frac{y^2}{b^2} = \frac{z^2}{c^2} = \frac{1}{3}$；
+  \item 求出最大值点坐标及最大体积 $u_{\max}$。
+\end{enumerate}
+\end{problem}
+
+\vspace{3pt}
+
+\begin{problem}{M3 \textbar\ 604: Tangent Plane \& Directional Derivative in Gradient Direction}{Suggested: 15\,min}
+设空间闭曲面 $S$ 的方程为 $x^2 + 2y^2 + 3z^2 = 6$。
+\begin{enumerate}[leftmargin=1.5em,itemsep=1pt,topsep=1pt]
+  \item 求曲面 $S$ 在点 $P(1, 1, 1)$ 处的切平面方程与法线方程；
+  \item 设空间标量场 $u(x, y, z) = x^2 y z$，求点 $P(1, 1, 1)$ 处的梯度 $\nabla u(P)$；
+  \item 求标量场 $u$ 在点 $P$ 处沿曲面 $S$ 外法线单位向量 $\mathbf{n}^0$ 方向的方向导数 $\frac{\partial u}{\partial \mathbf{n}^0}$。
+\end{enumerate}
+\end{problem}
+
+\vspace{3pt}
+
+\begin{problem}{Q1 \textbar\ 811: 1D Symmetric Wells: Infinite Parity \& Finite Circle Method}{Suggested: 20\,min}
+考虑一维对称方势阱，其宽度为 $2a$（区间为 $[-a, a]$），势阱关于原点对称 $V(-x) = V(x)$。
+\begin{enumerate}[leftmargin=1.5em,itemsep=1pt,topsep=1pt]
+  \item 若势阱为无限深（壁高 $V_0 = \infty$），写出基态（$n=1$）与第一激发态（$n=2$）的归一化波函数与能级；严格证明动量期望值 $\langle p \rangle = 0$；
+  \item 若势阱为有限深（深 $V_0$），引入无量纲参数 $\xi = ka, \eta = \kappa a$，写出毕达哥拉斯圆方程 $\xi^2 + \eta^2 = R^2$。简述为什么无论 $V_0$ 多小必定至少存在 1 个偶宇称束缚态；
+  \item 若实验测得该有限深方势阱中恰好存在 3 个束缚态，求势阱深度 $V_0$ 满足的不等式范围。
+\end{enumerate}
+\end{problem}
+
+\vspace{3pt}
+
+\begin{problem}{Q2 \textbar\ 811: Hydrogen Radial Physics: Stability, Peak Radius \& Probability}{Suggested: 15\,min}
+氢原子由电子（质量 $m$）和质子（质量 $M$）组成，相互作用势为库仑引力 $V(r) = -e^2/r$。
+\begin{enumerate}[leftmargin=1.5em,itemsep=1pt,topsep=1pt]
+  \item 写出相对运动的约化质量 $\mu$ 与径向有效势能 $V_{\text{eff}}(r)$；简述在 $l=0$ 时为什么海森堡测不准原理能阻止原子坍缩；
+  \item 已知氢原子基态球对称波函数为 $\psi_{100}(r) = \frac{1}{\sqrt{\pi a_0^3}} e^{-r/a_0}$（$a_0$ 为玻尔半径）。求径向几率密度函数 $P(r)$，并求最概然半径 $r_p$；
+  \item 定积分计算电子出现在玻尔半径球体内部（$0 \le r \le a_0$）的总几率 $W$。
+\end{enumerate}
+\end{problem}
+
+% ==============================================================================
+% PAGE 4: §3 MODEL SOLUTIONS & COMMENTARY
+% ==============================================================================
+\clearpage
+
+{\Large\sffamily\bfseries\color{navy} \S 3\quad Model Solutions \& Commentary}
+
+\vspace{2pt}
+
+\begin{solution}{M1 \textperiodcentered\ Multivariable Extremum \& Hessian Discriminant}
+(1) $\begin{cases} f_x = 3x^2 - 6x = 3x(x-2) = 0 \implies x=0 \text{ 或 } 2 \\ f_y = -3y^2 + 6y = -3y(y-2) = 0 \implies y=0 \text{ 或 } 2 \end{cases}$。驻点为 $(0,0), (0,2), (2,0), (2,2)$。\\
+(2) $A = f_{xx} = 6x-6, B = f_{xy} = 0, C = f_{yy} = -6y+6 \implies \Delta = AC - B^2 = -36(x-1)(y-1)$。\\
+(3) ① $(0,0)$: $A=-6, C=6 \implies \Delta = -36 < 0$，为\textbf{鞍点}；② $(2,2)$: $A=6, C=-6 \implies \Delta = -36 < 0$，为\textbf{鞍点}；\\
+③ $(2,0)$: $A=6, C=6 \implies \Delta = 36 > 0$ 且 $A>0$，为\textbf{极小值点}，极小值 $f(2,0) = -4$；\\
+④ $(0,2)$: $A=-6, C=-6 \implies \Delta = 36 > 0$ 且 $A<0$，为\textbf{极大值点}，极大值 $f(0,2) = 4$。
+\end{solution}
+
+\vspace{1.5pt}
+
+\begin{solution}{M2 \textperiodcentered\ Lagrange Multipliers for Ellipsoid Inscribed Volume}
+(1) 设 $L = xyz - \lambda (\frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} - 1)$。求偏导令为零：$yz = \frac{2\lambda x}{a^2}, xz = \frac{2\lambda y}{b^2}, xy = \frac{2\lambda z}{c^2}$。\\
+(2) 分别同乘 $x, y, z$ 得 $xyz = \frac{2\lambda x^2}{a^2} = \frac{2\lambda y^2}{b^2} = \frac{2\lambda z^2}{c^2}$。因 $xyz>0 \implies \lambda \neq 0$，故 $\frac{x^2}{a^2} = \frac{y^2}{b^2} = \frac{z^2}{c^2}$。\\
+代入约束条件得 $3\frac{x^2}{a^2} = 1 \implies \frac{x^2}{a^2} = \frac{y^2}{b^2} = \frac{z^2}{c^2} = \frac{1}{3} \implies x = \frac{a}{\sqrt{3}}, y = \frac{b}{\sqrt{3}}, z = \frac{c}{\sqrt{3}}$。\\
+(3) 最大值为 $u_{\max} = xyz = \frac{abc}{3\sqrt{3}} = \frac{\sqrt{3}}{9}abc$。
+\end{solution}
+
+\vspace{1.5pt}
+
+\begin{solution}{M3 \textperiodcentered\ Tangent Plane \& Directional Derivative}
+(1) 设 $F(x,y,z) = x^2+2y^2+3z^2-6$。$\nabla F = (2x, 4y, 6z)$。在 $P(1,1,1)$ 处法向量 $\mathbf{n} = (2, 4, 6) \parallel (1, 2, 3)$。\\
+切平面方程：$1(x-1) + 2(y-1) + 3(z-1) = 0 \implies x + 2y + 3z - 6 = 0$。法线方程：$\frac{x-1}{1} = \frac{y-1}{2} = \frac{z-1}{3}$。\\
+(2) 标量场 $u = x^2yz$。$\nabla u = (2xyz, x^2z, x^2y)$。在点 $P(1,1,1)$ 处梯度 $\nabla u(P) = (2, 1, 1)$。\\
+(3) 单位外法向量 $\mathbf{n}^0 = \frac{(1, 2, 3)}{\sqrt{1^2+2^2+3^2}} = \frac{1}{\sqrt{14}}(1, 2, 3)$。\\
+方向导数 $\frac{\partial u}{\partial \mathbf{n}^0} = \nabla u(P) \cdot \mathbf{n}^0 = \frac{1}{\sqrt{14}}[2(1) + 1(2) + 1(3)] = \frac{7}{\sqrt{14}} = \frac{\sqrt{14}}{2}$。
+\end{solution}
+
+\vspace{1.5pt}
+
+\begin{solution}{Q1 \textperiodcentered\ 1D Symmetric Wells: Infinite Parity \& Finite Circle Method}
+(1) 因 $V(-x)=V(x)$，$[H,\hat{P}]=0$ 且一维束缚态无简并，波函数具确定宇称。基态（偶，0节点）$\psi_1(x) = \frac{1}{\sqrt{a}}\cos(\frac{\pi x}{2a}), E_1 = \frac{\pi^2\hbar^2}{8ma^2}$；第一激发态（奇，1节点）$\psi_2(x) = \frac{1}{\sqrt{a}}\sin(\frac{\pi x}{a}), E_2 = \frac{4\pi^2\hbar^2}{8ma^2}$。\\
+动量期望值：$\langle p \rangle = -i\hbar\int_{-a}^a \psi_n \psi_n' dx = -\frac{i\hbar}{2}[\psi_n^2]_{-a}^a = 0$（或被积函数为奇函数积分对称相消；物理上定态驻波向左向右行波几率各50\%）。\\
+(2) 毕达哥拉斯圆 $\xi^2+\eta^2 = (ka)^2+(\kappa a)^2 = \frac{2mV_0a^2}{\hbar^2} \equiv R^2$。偶宇称曲线 $\eta = \xi\tan\xi$ 从原点 $(0,0)$ 出发单调递增，第一象限任意半径 $R>0$ 的圆弧必定与之在 $(0, \pi/2)$ 内相交，故浅阱必有偶基态。\\
+(3) 奇宇称曲线从 $\xi=\pi/2$ 穿出。每隔 $\pi/2$ 出生一个态。恰有3个束缚态（偶1, 奇1, 偶2）要求半径满足 $\pi < R \le \frac{3\pi}{2}$。代入 $R = \frac{\sqrt{2mV_0}a}{\hbar}$ 得 $\frac{\pi^2\hbar^2}{2ma^2} < V_0 \le \frac{9\pi^2\hbar^2}{8ma^2}$。
+\end{solution}
+
+\vspace{1.5pt}
+
+\begin{solution}{Q2 \textperiodcentered\ Hydrogen Radial Physics: Stability, Peak Radius \& Probability}
+(1) 约化质量 $\mu = \frac{mM}{m+M}$。有效势能 $V_{\text{eff}}(r) = -\frac{e^2}{r} + \frac{\hbar^2 l(l+1)}{2\mu r^2}$。$l=0$ 时，测不准原理 $\Delta x\Delta p \sim \hbar \implies E_k \sim \frac{\hbar^2}{2\mu r^2} \propto +\frac{1}{r^2}$，当 $r\to 0$ 时动能正发散速度远超库仑引力 $-\frac{1}{r}$，量子动压阻止坍缩。\\
+(2) $P(r) = 4\pi r^2 |\psi_{100}|^2 = \frac{4}{a_0^3} r^2 e^{-2r/a_0}$。求导 $\frac{dP}{dr} = \frac{8r}{a_0^3}e^{-2r/a_0}(1 - \frac{r}{a_0}) = 0 \implies r_p = a_0$。最概然半径恰等于玻尔半径。\\
+(3) $W = \int_0^{a_0} P(r)dr = \frac{4}{a_0^3} \int_0^{a_0} r^2 e^{-2r/a_0} dr$。令 $t = \frac{2r}{a_0}$，则 $r = \frac{a_0}{2}t, dr = \frac{a_0}{2}dt$：\\
+$W = \frac{4}{a_0^3} \int_0^2 \frac{a_0^2}{4}t^2 e^{-t} \frac{a_0}{2}dt = \frac{1}{2} \int_0^2 t^2 e^{-t} dt = \frac{1}{2} \left[ -e^{-t}(t^2 + 2t + 2) \right]_0^2 = 1 - 5e^{-2} \approx 0.323$（约 32.3\%）。
+\end{solution}
+
+% ==============================================================================
+% PAGE 5: §4 DAILY DEBRIEF & REFLECTION
+% ==============================================================================
+\clearpage
+
+{\Large\sffamily\bfseries\color{navy} \S 4\quad Daily Debrief \& Reflection (Week 2 Day 2 Match)}
+
+\vspace{4pt}
+
+\begin{debrief}{Post-Match Scorecard (fill in before sleep, 5\,min)}
+\renewcommand{\arraystretch}{1.2}
+\sffamily\small
+\begin{tabularx}{\linewidth}{@{}p{2.4cm}X@{}}
+  \textbf{604 Calculus} & Time: \underline{\hspace{1.2cm}} min \quad\textbar\quad M1: \checkbox\ PASS \quad M2: \checkbox\ PASS \quad M3: \checkbox\ PASS\\
+  & Error type: \checkbox\ Hessian $\Delta$ \checkbox\ Lagrange multiplier \checkbox\ Directional deriv \checkbox\ Time\\
+  \midrule
+  \textbf{811 QM} & Time: \underline{\hspace{1.2cm}} min \quad\textbar\quad Q1: \checkbox\ PASS \quad Q2: \checkbox\ PASS\\
+  & Error type: \checkbox\ Parity well \checkbox\ Circle range \checkbox\ Most probable $r$ \checkbox\ Integration $W$\\
+  \midrule
+  \textbf{Summary} & \textbf{Total Score:} \underline{\hspace{1.4cm}} / 100 \quad\textbar\quad Total Time: \underline{\hspace{1.4cm}} min\\
+  & \textbf{Spaced retrieval in 3 days:} 9月11日盲写 Hessian 判别法与氢原子径向几率 $P(r)$ 极值\\
+\end{tabularx}
+\end{debrief}
+
+\vspace{6pt}
+
+\begin{tcolorbox}[
+  enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=3mm, bottom=3.5mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{forest}\rule{3pt}{10pt}}\hspace{4pt}Key Derivation Insights \& Traps \textbar\ 突破口与避坑沉淀},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0pt, toptitle=1.5mm, bottomtitle=1.5mm
+]
+\sffamily\small
+\textbf{Core Breakthrough (今日核心突破口与关键一步)}:\\[26pt]
+\rule{\linewidth}{0.3pt}\\[10pt]
+\textbf{Fatal Trap \& Common Error (致命陷阱与避坑警示)}:\\[26pt]
+\rule{\linewidth}{0.3pt}\\[10pt]
+\textbf{Day +3 Action Item (3 天后间隔重做提取的具体题号与断点)}:\\[20pt]
+\rule{\linewidth}{0.3pt}
+\end{tcolorbox}
+
+\vspace{4pt}
+
+\begin{center}
+  \sffamily\footnotesize\color{mist}
+  Theoretical Physics Master Tournament \textperiodcentered\ Keep your handwritten test paper archived in vault.
+\end{center}
+
+\end{document}
