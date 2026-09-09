@@ -11,12 +11,14 @@
             "id": "a975919d7895025e",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "05_每日大赛_Daily/2026-09-08/每日大赛.pdf"
+                "file": "01_高等数学_604/02_一元积分与反常积分/变上限积分求导与反常积分审敛判定.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "每日大赛"
+              "icon": "lucide-file",
+              "title": "变上限积分求导与反常积分审敛判定"
             }
           }
         ]
@@ -81,8 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "fdfaabcdb7417039",
@@ -201,13 +202,13 @@
   },
   "active": "a975919d7895025e",
   "lastOpenFiles": [
-    "01_高等数学_604/01_极限连续与微分/泰勒展开定阶与极限相消项.md",
+    "05_每日大赛_Daily/2026-09-03/每日大赛.pdf",
     "05_每日大赛_Daily/2026-09-08/每日大赛.pdf",
+    "01_高等数学_604/01_极限连续与微分/泰勒展开定阶与极限相消项.md",
     "05_每日大赛_Daily/2026-09-08/每日大赛_2026-09-08_复盘笔记.md",
     "05_每日大赛_Daily/2026-09-08/每日大赛.aux",
     "05_每日大赛_Daily/2026-09-08/每日大赛.log",
     "05_每日大赛_Daily/2026-09-03/每日大赛_2026-09-03_复盘笔记.md",
-    "05_每日大赛_Daily/2026-09-03/每日大赛.pdf",
     "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
     "05_每日大赛_Daily/2026-09-08/每日大赛.tex",
     "05_每日大赛_Daily/2026-09-08",
