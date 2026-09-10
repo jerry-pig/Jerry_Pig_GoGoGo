@@ -11,14 +11,12 @@
             "id": "a975919d7895025e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "05_每日大赛_Daily/每日大赛复盘索引_Index.md",
-                "mode": "source",
-                "source": false
+                "file": "05_每日大赛_Daily/2026-09-10/每日大赛.pdf"
               },
-              "icon": "lucide-file",
-              "title": "每日大赛复盘索引_Index"
+              "icon": "lucide-file-text",
+              "title": "每日大赛"
             }
           }
         ]
@@ -83,7 +81,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "fdfaabcdb7417039",
@@ -202,6 +201,7 @@
   },
   "active": "a975919d7895025e",
   "lastOpenFiles": [
+    "05_每日大赛_Daily/每日大赛复盘索引_Index.md",
     "05_每日大赛_Daily/2026-09-08/每日大赛.pdf",
     "05_每日大赛_Daily/2026-09-08/每日大赛_2026-09-08_复盘笔记.md",
     "05_每日大赛_Daily/2026-09-10/每日大赛.pdf",
@@ -223,7 +223,6 @@
     "02_量子力学_811/01_波函数与一维势场/一维Delta势阱束缚态与导数跃变条件.md",
     "05_每日大赛_Daily/2026-09-09/每日大赛.aux",
     "05_每日大赛_Daily/2026-09-09/每日大赛.log",
-    "05_每日大赛_Daily/2026-09-09/每日大赛.tex",
     "05_每日大赛_Daily/2026-09-03/每日大赛_2026-09-03_复盘笔记.md",
     "02_量子力学_811/03_中心力场与氢原子/三维谐振子粒子数表象与多维微扰矩阵元.md",
     "02_量子力学_811/01_波函数与一维势场/一维无限深方势阱与对称性宇称.md",
