@@ -1,0 +1,427 @@
+% ==============================================================================
+% The Grand Daily Tournament — 2026-09-10 Match (Week 2 Day 4)
+% Locked template: EB Garamond + Garamond-Math + STKaiti (v4.1)
+% High-Capacity & High-Depth Edition: 4 High-Yield Problems
+% ==============================================================================
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{unicode-math}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{EBGaramond}[
+  Path           = {c:/texlive/2024/texmf-dist/fonts/opentype/public/ebgaramond/},
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-SemiBold,
+  BoldItalicFont = *-SemiBoldItalic,
+  Ligatures      = TeX,
+  Numbers        = OldStyle
+]
+\setsansfont{LibertinusSans}[
+  Path        = {c:/texlive/2024/texmf-dist/fonts/opentype/public/libertinus-fonts/},
+  Extension   = .otf,
+  UprightFont = *-Regular,
+  ItalicFont  = *-Italic,
+  BoldFont    = *-Bold,
+  Scale       = MatchLowercase
+]
+\setmathfont{Garamond-Math.otf}[
+  Path  = {c:/texlive/2024/texmf-dist/fonts/opentype/public/garamond-math/},
+  Scale = MatchLowercase
+]
+
+\usepackage{xeCJK}
+\xeCJKsetup{
+  CJKmath      = false,
+  PunctStyle   = kaiming,
+  CheckSingle  = true,
+  AutoFakeBold = true,
+  AutoFakeSlant= false
+}
+\setCJKmainfont{STKaiti}[
+  Path        = {C:/Windows/Fonts/},
+  UprightFont = STKAITI.TTF,
+  BoldFont    = STKAITI.TTF,
+  ItalicFont  = STKAITI.TTF,
+  Script      = Default
+]
+\setCJKsansfont{Microsoft YaHei}
+\setCJKmonofont{FangSong}
+
+\usepackage[margin=1.5cm,headheight=14pt,headsep=10pt,footskip=18pt]{geometry}
+\usepackage{booktabs,enumitem,xcolor,graphicx,tabularx}
+
+\usepackage[breakable,skins,hooks]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows.meta}
+\usepackage{fancyhdr,lastpage}
+\usepackage{microtype}
+
+\definecolor{navy}{HTML}{0F172A}
+\definecolor{slate}{HTML}{1E293B}
+\definecolor{royal}{HTML}{1E40AF}
+\definecolor{mist}{HTML}{64748B}
+\definecolor{border}{HTML}{E2E8F0}
+\definecolor{paper}{HTML}{F8FAFC}
+\definecolor{forest}{HTML}{065F46}
+\definecolor{amber}{HTML}{D97706}
+\definecolor{wine}{HTML}{991B1B}
+\definecolor{ice}{HTML}{EFF6FF}
+
+\linespread{1.08}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt plus 1pt minus 1pt}
+\setlength{\abovedisplayskip}{4pt plus 1pt minus 1pt}
+\setlength{\belowdisplayskip}{4pt plus 1pt minus 1pt}
+
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\textcolor{mist}{\footnotesize\sffamily 2027 Theoretical Physics · 604 Calculus \& 811 Quantum Mechanics}}
+\fancyhead[R]{\textcolor{slate}{\footnotesize\sffamily\bfseries Daily Tournament · 2026-09-10}}
+\fancyfoot[L]{\textcolor{mist}{\footnotesize\itshape ``From Taylor Asymptotics to Hydrogen Accidental Degeneracy.''}}
+\fancyfoot[R]{\textcolor{mist}{\footnotesize\sffamily Page \thepage\ of \pageref{LastPage}}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\color{border}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}
+
+\newtcolorbox{briefing}[1]{%
+  enhanced, blanker, breakable,
+  left=3.5mm, right=2.5mm, top=2.5mm, bottom=2.5mm,
+  borderline west={2.5pt}{0pt}{royal},
+  colback=paper,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={#1},
+  attach title to upper={\par\vspace{1.5mm}}
+}
+
+\newtcolorbox{problem}[2]{%
+  enhanced, breakable,
+  colback=white, colframe=border, boxrule=0.5pt, arc=1.5mm,
+  left=3.5mm, right=3.5mm, top=2.5mm, bottom=2.5mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0.3pt, toptitle=1.5mm, bottomtitle=1.5mm,
+  title={\raisebox{0pt}{\color{royal}\rule{2.5pt}{8.5pt}}\hspace{4pt}#1\hfill{\footnotesize\color{mist}\itshape #2}}
+}
+
+\newtcolorbox{solution}[1]{%
+  enhanced, breakable,
+  colback=white, colframe=border, boxrule=0.4pt, arc=1mm,
+  left=3mm, right=3mm, top=2mm, bottom=2mm,
+  fonttitle=\sffamily\bfseries\footnotesize\color{forest},
+  colbacktitle=paper, coltitle=forest,
+  titlerule=0.2pt, toptitle=1mm, bottomtitle=1mm,
+  title={\raisebox{0pt}{\color{forest}\rule{2pt}{7pt}}\hspace{3pt}#1}
+}
+
+\newtcolorbox{debrief}[1]{%
+  enhanced, breakable,
+  colback=paper, colframe=slate, boxrule=0.6pt, arc=1.5mm,
+  left=4mm, right=4mm, top=3mm, bottom=3mm,
+  fonttitle=\sffamily\bfseries\color{white},
+  colbacktitle=slate, coltitle=white,
+  titlerule=0pt, toptitle=2mm, bottomtitle=2mm,
+  title={#1}
+}
+
+\newcommand{\checkbox}{\ensuremath{\mdlgwhtsquare}}
+\newcommand{\alerttag}[1]{\textcolor{wine}{\sffamily\bfseries [#1]}}
+
+% ==============================================================================
+% PAGE 1: COVER PAGE
+% ==============================================================================
+\begin{document}
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[paper] (current page.south west) rectangle (current page.north east);
+
+  \fill[navy] (current page.north west) rectangle ($(current page.north east)+(0,-3.4cm)$);
+  \fill[royal] ($(current page.north west)+(0,-3.4cm)$) rectangle ($(current page.north east)+(0,-3.55cm)$);
+  \fill[amber] ($(current page.north west)+(0,-3.55cm)$) rectangle ($(current page.north east)+(0,-3.62cm)$);
+
+  \node[anchor=west, text=white] at ($(current page.north west)+(2.2cm,-1.5cm)$) {
+    {\fontsize{12}{14}\selectfont\sffamily\bfseries THE GRAND DAILY TOURNAMENT \textperiodcentered\ 2027}
+  };
+  \node[anchor=west, text=white!50] at ($(current page.north west)+(2.2cm,-2.3cm)$) {
+    {\fontsize{8.5}{11}\selectfont\sffamily UCAS \textperiodcentered\ HIAIS \textperiodcentered\ THEORETICAL PHYSICS ADVANCED TRAINING DOSSIER}
+  };
+
+  \begin{scope}[shift={($(current page.center)+(0,1.2cm)$)}]
+    \draw[line width=0.5pt, border!80, dashed] (0,0) circle (3.3cm);
+    \draw[line width=0.7pt, border] (0,0) circle (2.5cm);
+    \draw[line width=0.4pt, royal!30] (0,0) circle (1.6cm);
+    \draw[line width=1.2pt, slate!60] (-3.8,-2.2) -- (3.8,2.2);
+    \draw[line width=1.2pt, slate!60] (-3.8,2.2) -- (3.8,-2.2);
+    
+    % Axes
+    \draw[line width=0.7pt, royal!65, -{Stealth[length=2.5mm]}] (-4.2,0) -- (4.2,0)
+      node[right, font=\footnotesize\sffamily\color{mist}] {$x / a$};
+    \draw[line width=0.7pt, royal!65, -{Stealth[length=2.5mm]}] (0,-3.6) -- (0,3.6)
+      node[above, font=\footnotesize\sffamily\color{mist}] {$V(x),\, \frac{1}{2}k(\Delta x)^2$};
+
+    % Anharmonic potential V(x) = V0 * (1/x^2 - 2/x)
+    \draw[line width=1.4pt, royal, smooth, samples=120, domain=0.62:3.8]
+      plot ({\x}, {3.2*(1.0/(\x*\x) - 2.0/\x) + 3.2});
+
+    % Quadratic harmonic osc approximation near minimum x0 = 1
+    \draw[line width=1.2pt, amber!90!black, dashed, smooth, samples=100, domain=0.25:1.75]
+      plot ({\x}, {3.2*(\x - 1.0)*(\x - 1.0)});
+
+    % Dashed vertical drop to minimum x0 = a
+    \draw[line width=0.6pt, forest, dashed] (1.0, 0) -- (1.0, 0);
+
+    \fill[navy] (0,0) circle (3.5pt);
+    \fill[amber] (1.0, 0) circle (2.5pt);
+
+    \node[below, font=\footnotesize\sffamily\color{amber!90!black}] at (1.0, -0.15) {$x_0 = a$};
+    \node[above right, font=\footnotesize\sffamily\color{royal}] at (2.2, 1.3) {$V(x)$};
+    \node[above left, font=\footnotesize\sffamily\color{amber!90!black}] at (0.35, 1.5) {$\frac{1}{2}k_{\text{eff}}(x-a)^2$};
+  \end{scope}
+
+  \node[anchor=center] at ($(current page.center)+(0,-3.4cm)$) {
+    \begin{minipage}{0.84\textwidth}
+      \centering
+      {\fontsize{30}{36}\selectfont\bfseries\color{navy} Daily Tournament}\\[4pt]
+      {\fontsize{11}{14}\selectfont\sffamily\bfseries\color{royal}%
+        GRAND ARENA OF THEORETICAL PHYSICS \textperiodcentered\ TAYLOR ASYMPTOTICS \& QUANTUM DEGENERACY}\\[10pt]
+      {\color{navy}\rule{0.45\textwidth}{1.2pt}}\\[8pt]
+      {\fontsize{10}{13}\selectfont\color{slate}\itshape
+        ``604 Calculus: Taylor Nested Onion Peeling $\times$ Tridiagonal Chebyshev Recurrence\\
+        811 Quantum Mechanics: Hydrogen $SO(4)$ Accidental Degeneracy $\times$ Ladder Operator Selection Rules''\\[3pt]
+        {\small\color{mist}\upshape 4-Problem High-Yield Battle \textperiodcentered\ Closed-book \textperiodcentered\ 80\,min Real-time Challenge}}
+    \end{minipage}
+  };
+
+  \node[anchor=south] at ($(current page.south)+(0,1.5cm)$) {
+    \begin{minipage}{0.86\textwidth}
+      \begin{tcolorbox}[
+        enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+        left=4mm, right=4mm, top=3mm, bottom=3mm
+      ]
+        \renewcommand{\arraystretch}{1.25}
+        \sffamily\small
+        \begin{tabularx}{\linewidth}{@{}p{2.6cm}X@{}}
+          \textbf{Date} & 2026-09-10 \quad\textbar\quad Week 2 (Day 4) \quad\textbar\quad Level 3 氢原子探路者\\
+          \textbf{Modules} & \textbf{604}: Taylor Onion Peeling + Tridiagonal Recurrence \quad\textbar\quad \textbf{811}: Hydrogen $SO(4)$ + Ladder Algebra\\
+          \textbf{Error Protocol} & 5-Factor: Knowledge\,\textbar\, Modelling\,\textbar\, Logic\,\textbar\, Calculation\,\textbar\, Time\\
+          \textbf{Standards} & Target: 100/100 Full Marks \quad\textbar\quad Time Budget: 80 min\\
+        \end{tabularx}
+      \end{tcolorbox}
+    \end{minipage}
+  };
+\end{tikzpicture}
+\end{titlepage}
+
+% ==============================================================================
+% PAGE 2: §1 TACTICAL BRIEFING & WARM-UP RETRIEVAL
+% ==============================================================================
+\clearpage
+
+\begin{center}
+  {\LARGE\bfseries\color{navy} Theoretical Physics Training \textperiodcentered\ Daily Tournament}\\[3pt]
+  {\small\sffamily\color{mist} 2026-09-10 \quad\textbar\quad Week 2 (Day 4) \quad\textbar\quad Phase: Taylor Asymptotics \& Quantum Symmetries}\\[-4pt]
+  {\color{navy}\rule{\textwidth}{0.8pt}}\\[-11pt]
+  {\color{border}\rule{\textwidth}{0.3pt}}
+\end{center}
+
+\vspace{-6pt}
+
+\begin{briefing}{\S 1\quad Tactical Briefing \& Warm-Up Retrieval}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, topsep=1pt]
+  \item \textbf{604 今日靶向}：突破泰勒展开“洋葱剥皮”与交叉项泄露法则，严控极限相消定阶红线；攻克三对角特征差分方程与第二类切比雪夫多项式核 $D_n = \frac{\sin(n+1)\theta}{\sin\theta}$ 的三角化简。
+  \item \textbf{811 今日靶向}：氢原子 $n^2$ 空间简并度等差求和与 $SO(4)$ 伦茨矢量动力学守恒；谐振子升降算符梯子代数 $[a, a^\dagger]=1$、偶极跃迁选择定则 $\Delta n = \pm 1$ 与坐标矩阵元宇称奇偶性判断。
+  \item \textbf{Spaced Retrieval 间隔提取 (Day +3 滚动回溯)}：\textbf{604 (Day 2 回溯)} 变限积分拆项积法则相消 $\frac{d}{dx}\int_0^x (x-t)f(t)dt = \int_0^x f(t)dt$；\textbf{604 (Day 2)} 二元泰勒极值判别式 $\Delta = AC - B^2$；\textbf{811 (Day 2)} 对称有限深方势阱画圆半径 $\xi^2+\eta^2 = R^2 = \frac{2mV_0 a^2}{\hbar^2}$。
+  \item \textbf{考试规则}：闭卷、独立手推、严禁查阅笔记；先在下方草稿区完成 5--8 分钟白纸公式破冰与间隔提取。
+\end{itemize}
+
+\vspace{1mm}
+\textbf{Warm-Up \& Spaced Retrieval Checklist} (5--8\,min): without notes, write on scratch paper:\\
+\checkbox\ \alerttag{Day +3 604} $\frac{d}{dx}\int_0^x (x-t)f(t)dt = \int_0^x f(t)dt$ (Product rule: $+xf(x) - xf(x) = 0$)\quad
+\checkbox\ \alerttag{Day +3 604} $\Delta = AC - B^2$ ($\Delta>0, A>0 \implies \min$, $\Delta<0 \implies$ saddle) \quad
+\checkbox\ \alerttag{Day +3 811} Symmetric finite well: $\xi^2+\eta^2 = R^2 = \frac{2mV_0 a^2}{\hbar^2}$ \quad
+\checkbox\ Taylor onion peeling: $(x - x^3/6)^2 = x^2 - \frac{1}{3}x^4 + o(x^4)$ \quad
+\checkbox\ Degeneracy formula: $\sum_{l=0}^{n-1} (2l+1) = n^2$ \quad
+\checkbox\ Ladder selection: $\langle n'|\hat{x}|n\rangle \propto \sqrt{n}\delta_{n', n-1} + \sqrt{n+1}\delta_{n', n+1}$
+\end{briefing}
+
+\vspace{4pt}
+
+\begin{tcolorbox}[
+  enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=3mm, bottom=3mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{royal}\rule{3pt}{10pt}}\hspace{4pt}Warm-Up Retrieval Workspace \textbar\ 白纸破冰与间隔提取草稿区},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+]
+\textcolor{mist}{\footnotesize\itshape 5--8 分钟闭卷盲写：默写变限拆项求导积法则对消、Hessian 判别式，写出氢原子简并度求和式与谐振子升降算符作用法则。}
+\vspace{9.0cm}
+\end{tcolorbox}
+
+% ==============================================================================
+% PAGE 3: §2 CORE PROBLEM SET (4 HIGH-YIELD PROBLEMS)
+% ==============================================================================
+\clearpage
+
+{\Large\sffamily\bfseries\color{navy} \S 2\quad Core Problem Set (604 Math Duo + 811 QM Duo)}\hfill{\small\sffamily\color{mist}\itshape Timed: 80\,min}
+
+\vspace{3pt}
+
+\begin{problem}{M1 \textbar\ 604: Nested Taylor Expansion \& Anharmonic Well Oscillation}{Suggested: 15\,min}
+(1) 求极限：
+\[
+  \lim_{x \to 0} \frac{\cos(\sin x) - 1 + \frac{1}{2}x^2}{x^4}
+\]
+要求明确说明内层 $\sin x$ 展开保留到 $x^3$ 的依据，写出外层二次项平方展开产生的交叉项及其与其它项的合并过程。\\
+(2) 一维运动质点（质量为 $m$）处于势阱 $V(x) = V_0 \left(\frac{a^2}{x^2} - \frac{2a}{x}\right)$（$x>0, V_0>0, a>0$）中。求其稳定平衡位置 $x_0$，并在 $x_0$ 附近作二阶泰勒展开，确定等效劲度系数 $k_{\text{eff}}$ 与微振动固有角频率 $\omega$。
+\end{problem}
+
+\vspace{2pt}
+
+\begin{problem}{M2 \textbar\ 604: $n$-th Order Tridiagonal Determinant \& Chebyshev Kernel}{Suggested: 15\,min}
+计算下列 $n$ 阶三对角行列式 $D_n$：
+\[
+  D_n = \begin{vmatrix}
+    2\cos\theta & 1 & 0 & \dots & 0 \\
+    1 & 2\cos\theta & 1 & \dots & 0 \\
+    \vdots & \ddots & \ddots & \ddots & \vdots \\
+    0 & \dots & 1 & 2\cos\theta & 1 \\
+    0 & \dots & 0 & 1 & 2\cos\theta
+  \end{vmatrix}_n
+\]
+\begin{enumerate}[leftmargin=1.5em,itemsep=0.5pt,topsep=1pt]
+  \item 按第一行展开，导出二阶线性递推差分方程 $D_n = 2\cos\theta D_{n-1} - D_{n-2}$（$n \ge 3$）；
+  \item 计算初值 $D_1$ 与 $D_2$，并给出虚拟初值 $D_0$；
+  \item 建立特征方程求解复特征根 $\lambda_{1,2} = e^{\pm i\theta}$，证明通项闭式解为第二类切比雪夫核 $D_n = \frac{\sin(n+1)\theta}{\sin\theta}$。
+\end{enumerate}
+\end{problem}
+
+\vspace{2pt}
+
+\begin{problem}{Q1 \textbar\ 811: Hydrogen Spectrum, Degeneracy Summation \& $SO(4)$ Symmetry}{Suggested: 25\,min}
+考虑处于球对称库仑引力势 $V(r) = -e^2/r$ 中的氢原子体系。
+\begin{enumerate}[leftmargin=1.5em,itemsep=0.5pt,topsep=1pt]
+  \item 给定主量子数为 $n$，写出轨道角动量量子数 $l$ 与磁量子数 $m$ 的可能取值范围；
+  \item 不计自旋时利用等差求和证明主量子数 $n$ 能级简并度 $g_n = \sum_{l=0}^{n-1} (2l+1) = n^2$；计入自旋为何是 $2n^2$？
+  \item 从几何对称性与动力学守恒量两个层面，详述一般中心力场仅有 $SO(3)$ 转动对称性（不同 $l$ 不简并），而库仑势具备额外的 Runge-Lenz 矢量守恒与 $SO(4)$ 意外简并的物理图像；若引入微小微扰 $\Delta V = \lambda/r^2$，简述哪些简并被消除，哪些依然保持。
+\end{enumerate}
+\end{problem}
+
+\vspace{2pt}
+
+\begin{problem}{Q2 \textbar\ 811: Ladder Operator Algebra, Selection Rules \& Parity}{Suggested: 25\,min}
+设一维谐振子无量纲湮灭与产生算符分别为 $a = \sqrt{\frac{m\omega}{2\hbar}}(\hat{x} + \frac{i}{m\omega}\hat{p})$，$a^\dagger = \sqrt{\frac{m\omega}{2\hbar}}(\hat{x} - \frac{i}{m\omega}\hat{p})$。
+\begin{enumerate}[leftmargin=1.5em,itemsep=0.5pt,topsep=1pt]
+  \item 证明对易关系 $[a, a^\dagger] = 1$，并写出坐标算符 $\hat{x}$ 用 $a, a^\dagger$ 表示的表达式；
+  \item 写出升降算符作用在正规化本征态上的法则 $a|n\rangle$ 与 $a^\dagger|n\rangle$，并证明跃迁矩阵元 $\langle n'|\hat{x}|n\rangle = \sqrt{\frac{\hbar}{2m\omega}}(\sqrt{n}\delta_{n', n-1} + \sqrt{n+1}\delta_{n', n+1})$；
+  \item 导出偶极跃迁选择定则 $\Delta n = \pm 1$；分别从代数选择定则与坐标表象波函数宇称性（奇偶函数积分）两个角度，解释为何对角期望值 $\langle n|\hat{x}|n\rangle \equiv 0$。
+\end{enumerate}
+\end{problem}
+
+% ==============================================================================
+% PAGE 4: §3 MODEL SOLUTIONS & COMMENTARY
+% ==============================================================================
+\clearpage
+
+{\Large\sffamily\bfseries\color{navy} \S 3\quad Model Solutions \& Commentary}
+
+\vspace{2pt}
+
+\begin{solution}{M1 \textperiodcentered\ Nested Taylor Expansion \& Anharmonic Oscillation}
+\small
+(1) 分母为 4 阶，展开需保留到 $o(x^4)$。令 $u = \sin x = x - \frac{x^3}{6} + o(x^3)$。\\
+外层 $\cos u = 1 - \frac{1}{2}u^2 + \frac{1}{24}u^4 + o(u^4)$。代入展开：\\
+$u^2 = \left(x - \frac{x^3}{6}\right)^2 = x^2 - \frac{1}{3}x^4 + o(x^4)$（交叉项 $-2\cdot x \cdot \frac{x^3}{6} = -\frac{1}{3}x^4$ 泄露出来！），$u^4 = x^4 + o(x^4)$。\\
+分子 $= \left[1 - \frac{1}{2}(x^2 - \frac{1}{3}x^4) + \frac{1}{24}x^4\right] - 1 + \frac{1}{2}x^2 = (\frac{1}{6} + \frac{1}{24})x^4 = \frac{5}{24}x^4$。原极限 $= \frac{5}{24}$。\\
+(2) 平衡位置：$V'(x) = V_0(-\frac{2a^2}{x^3} + \frac{2a}{x^2}) = 0 \implies x_0 = a$。\\
+二阶导：$V''(x) = V_0(\frac{6a^2}{x^4} - \frac{4a}{x^3})$，代入得 $k_{\text{eff}} = V''(a) = \frac{2V_0}{a^2}$。固有角频率 $\omega = \sqrt{\frac{k_{\text{eff}}}{m}} = \frac{1}{a}\sqrt{\frac{2V_0}{m}}$。
+\end{solution}
+
+\vspace{1.5pt}
+
+\begin{solution}{M2 \textperiodcentered\ $n$-th Order Tridiagonal Determinant \& Chebyshev Kernel}
+\small
+(1) 按第一行展开：$D_n = 2\cos\theta M_{11} - 1 M_{12}$。其中 $M_{11} = D_{n-1}$，余子式 $M_{12}$ 按第一列展开得 $1\cdot D_{n-2}$。\\
+故二阶差分方程为：$D_n = 2\cos\theta D_{n-1} - D_{n-2}$（$n \ge 3$）。\\
+(2) 初值：$D_1 = 2\cos\theta$；$D_2 = 4\cos^2\theta - 1$。定义虚拟初值 $D_0 = 1$（自检 $D_2 = 2\cos\theta D_1 - D_0$ 成立）。\\
+(3) 特征方程 $\lambda^2 - 2\cos\theta\lambda + 1 = 0$，特征根 $\lambda_{1,2} = \cos\theta \pm i\sin\theta = e^{\pm i\theta}$。\\
+通解 $D_n = c_1 \lambda_1^n + c_2 \lambda_2^n$。代入 $D_0=1, D_1=\lambda_1+\lambda_2$ 得 $c_1 = \frac{\lambda_1}{\lambda_1-\lambda_2}, c_2 = -\frac{\lambda_2}{\lambda_1-\lambda_2}$。\\
+通项闭式解：$D_n = \frac{\lambda_1^{n+1} - \lambda_2^{n+1}}{\lambda_1 - \lambda_2} = \frac{e^{i(n+1)\theta} - e^{-i(n+1)\theta}}{e^{i\theta} - e^{-i\theta}} = \frac{2i\sin(n+1)\theta}{2i\sin\theta} = \frac{\sin(n+1)\theta}{\sin\theta}$。证毕！
+\end{solution}
+
+\vspace{1.5pt}
+
+\begin{solution}{Q1 \textperiodcentered\ Hydrogen Spectrum, Degeneracy Summation \& $SO(4)$ Symmetry}
+\small
+(1) 量子数取值：主量子数 $n$ 下，轨道角动量 $l = 0, 1, 2, \dots, n-1$；磁量子数 $m = -l, \dots, +l$。\\
+(2) 简并度求和：$g_n = \sum_{l=0}^{n-1} (2l+1) = \frac{[1+(2n-1)]n}{2} = n^2$。计入自旋 $s=1/2$（$m_s = \pm 1/2$），每个空间轨道容纳 2 个电子，总简并度为 $2n^2$。\\
+(3) 对称性本质：任意各向同性中心场具备三维转动对称性 $SO(3)$，角动量 $\hat{\mathbf{L}}$ 守恒，保证给定 $l$ 下 $m$ 的 $(2l+1)$ 重几何简并；库仑势由于经典开普勒轨道闭合不进动，拥有额外的 Runge-Lenz 矢量 $\hat{\mathbf{A}}$ 守恒，与 $\hat{\mathbf{L}}$ 一起构成更高阶的四维旋转群 $SO(4)$，将不同 $l$ 能级强行简并。\\
+若加微扰 $\Delta V = \lambda/r^2$：势场仍具备球对称性，角动量守恒，故 $SO(3)$ 与 $m$ 的 $(2l+1)$ 重简并\textbf{依然保持}；但打破了严格 $-1/r$ 依赖，近日点进动导致 Runge-Lenz 矢量不守恒，$SO(4)$ 对称性被破坏，\textbf{不同 $l$ 之间的意外简并完全消除}。
+\end{solution}
+
+\vspace{1.5pt}
+
+\begin{solution}{Q2 \textperiodcentered\ Ladder Operator Algebra, Selection Rules \& Parity}
+\small
+(1) 对易子 $[a, a^\dagger] = \frac{m\omega}{2\hbar} [\hat{x} + \frac{i}{m\omega}\hat{p}, \hat{x} - \frac{i}{m\omega}\hat{p}] = \frac{m\omega}{2\hbar} (-\frac{i}{m\omega}[\hat{x},\hat{p}] + \frac{i}{m\omega}[\hat{p},\hat{x}]) = \frac{1}{2\hbar}(-i(i\hbar) + i(-i\hbar)) = 1$。\\
+坐标算符反解：两式相加即得 $\hat{x} = \sqrt{\frac{\hbar}{2m\omega}}(a + a^\dagger)$。\\
+(2) 升降作用：$a|n\rangle = \sqrt{n}|n-1\rangle$（$a|0\rangle = 0$），$a^\dagger|n\rangle = \sqrt{n+1}|n+1\rangle$。\\
+矩阵元 $\langle n'|\hat{x}|n\rangle = \sqrt{\frac{\hbar}{2m\omega}}(\langle n'|a|n\rangle + \langle n'|a^\dagger|n\rangle) = \sqrt{\frac{\hbar}{2m\omega}}(\sqrt{n}\delta_{n', n-1} + \sqrt{n+1}\delta_{n', n+1})$。\\
+(3) 选择定则：矩阵元非零要求克罗内克符号下标一致，故 $n' = n-1$ 或 $n' = n+1$，即 $\Delta n = n' - n = \pm 1$。\\
+对角期望值：取 $n'=n$，由于选择定则要求 $\Delta n = \pm 1 \neq 0$，两项 $\delta_{n, n-1} = \delta_{n, n+1} = 0$，代数上恒为 0；从宇称角度看，本征态几率密度 $|\psi_n(x)|^2$ 为偶函数，坐标算符 $x$ 为奇函数，全空间对称区间定积分 $\int_{-\infty}^{+\infty} |\psi_n|^2 x dx = 0$。
+\end{solution}
+
+% ==============================================================================
+% PAGE 5: §4 DAILY DEBRIEF & REFLECTION
+% ==============================================================================
+\clearpage
+
+{\Large\sffamily\bfseries\color{navy} \S 4\quad Daily Debrief \& Reflection (Week 2 Day 4 Match)}
+
+\vspace{4pt}
+
+\begin{debrief}{Post-Match Scorecard (fill in before sleep, 5\,min)}
+\renewcommand{\arraystretch}{1.2}
+\sffamily\small
+\begin{tabularx}{\linewidth}{@{}p{2.4cm}X@{}}
+  \textbf{604 Calculus} & Time: \underline{\hspace{1.2cm}} min \quad\textbar\quad M1: \checkbox\ PASS \quad M2: \checkbox\ PASS\\
+  & Error type: \checkbox\ Taylor cross terms \checkbox\ Well potential dim \checkbox\ Tridiagonal recurrence \checkbox\ Time\\
+  \midrule
+  \textbf{811 QM} & Time: \underline{\hspace{1.2cm}} min \quad\textbar\quad Q1: \checkbox\ PASS \quad Q2: \checkbox\ PASS\\
+  & Error type: \checkbox\ Degeneracy sum \checkbox\ $SO(4)$ symmetry breaking \checkbox\ Ladder commutator \checkbox\ Parity integral\\
+  \midrule
+  \textbf{Day +3 Review} & Checklist: \checkbox\ 604 变限求导积法则相消 \quad \checkbox\ 604 Hessian 极值判别 \quad \checkbox\ 811 有限深画圆半径\\
+  \midrule
+  \textbf{Summary} & \textbf{Total Score:} \underline{\hspace{1.4cm}} / 100 \quad\textbar\quad Total Time: \underline{\hspace{1.4cm}} min\\
+  & \textbf{Next Spaced retrieval (Day +3):} 9月13日盲写切比雪夫核通项与氢原子 $SO(4)$ 伦茨矢量微扰破缺判据\\
+\end{tabularx}
+\end{debrief}
+
+\vspace{6pt}
+
+\begin{tcolorbox}[
+  enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=3mm, bottom=3.5mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{forest}\rule{3pt}{10pt}}\hspace{4pt}Key Derivation Insights \& Traps \textbar\ 突破口与避坑沉淀},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0pt, toptitle=1.5mm, bottomtitle=1.5mm
+]
+\sffamily\small
+\textbf{Core Breakthrough (今日核心突破口与关键一步)}:\\[26pt]
+\rule{\linewidth}{0.3pt}\\[10pt]
+\textbf{Fatal Trap \& Common Error (致命陷阱与避坑警示)}:\\[26pt]
+\rule{\linewidth}{0.3pt}\\[10pt]
+\textbf{Day +3 Action Item (3 天后间隔重做提取的具体题号与断点)}:\\[20pt]
+\rule{\linewidth}{0.3pt}
+\end{tcolorbox}
+
+\vspace{4pt}
+
+\begin{center}
+  \sffamily\footnotesize\color{mist}
+  Theoretical Physics Master Tournament \textperiodcentered\ Keep your handwritten test paper archived in vault.
+\end{center}
+
+\end{document}
