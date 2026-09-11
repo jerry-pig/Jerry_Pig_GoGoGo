@@ -281,9 +281,9 @@
 设闭区域 $D = \{(x,y) \mid x^2 + y^2 \le 1, \, x \ge 0, \, y \ge 0\}$ 为第一象限的四分之一单位圆盘。
 试计算二重积分：
 \[
-  I = \iint_D \frac{x^3 + \sin(x y^2) + x^2 y}{x^2 + y^2}\,dxdy
+  I = \iint_D \frac{x^3 + x^2 y}{x^2 + y^2}\,dxdy
 \]
-\textit{提示：注意观察区域 $D$ 的对称轴与被积函数各项的奇偶性、轮换对称性，合理拆项与转化坐标系，避免强行暴力积分。}
+\textit{提示：注意观察区域 $D$ 的对称轴与被积函数项的结构，合理拆项与转化极坐标系，熟练应用 Wallis 公式与代数化简。}
 \end{problem}
 
 \vspace{6pt}
@@ -365,25 +365,38 @@
 \vspace{6pt}
 
 \begin{solution}{M1 \textperiodcentered\ Model Solution \& Commentary}
-\textbf{Strategy:}\enspace 被积函数拆为三项。利用区域 $D$ 关于直线 $y = x$ 的对称性（轮换对称），对调 $x, y$ 积分值不变；同时极坐标转换计算代数项。
+\textbf{Strategy:}\enspace 被积函数拆项后转极坐标计算，或结合区域 $D$ 关于直线 $y = x$ 的轮换对称性化简。
 
 \vspace{1.5mm}
 \textbf{Derivation:}\enspace
-区域 $D$ 是关于 $y = x$ 对称的。对于第二项 $\sin(xy^2)$，在 $D$ 内不具有奇偶消去性，但如果原本题目含奇偶性项，直接识别。在本题中，考虑主项拆分：
+区域 $D$ 为第一象限四分之一圆盘，变换为极坐标：$x = r\cos\theta, y = r\sin\theta$，定限为：$0 \le r \le 1, \, 0 \le \theta \le \frac{\pi}{2}$，面积微元 $dxdy = r\,dr\,d\theta$。
+
+被积函数化简：
 \[
-  I = \iint_D \frac{x^3 + x^2 y}{x^2+y^2}dxdy + \iint_D \frac{\sin(xy^2)}{x^2+y^2}dxdy
+  \frac{x^3 + x^2 y}{x^2 + y^2} = \frac{r^3(\cos^3\theta + \cos^2\theta\sin\theta)}{r^2} = r(\cos^3\theta + \cos^2\theta\sin\theta)
 \]
-由轮换对称性，$x \leftrightarrow y$：$\iint_D \frac{x^3}{x^2+y^2}dxdy = \iint_D \frac{y^3}{x^2+y^2}dxdy$。两式相加折半：
+原二重积分化为累次积分：
 \[
-  \iint_D \frac{x^3+y^3}{x^2+y^2}dxdy = \frac{1}{2}\iint_D \frac{(x+y)(x^2-xy+y^2)}{x^2+y^2}dxdy
+  I = \int_0^{\pi/2} (\cos^3\theta + \cos^2\theta\sin\theta)\,d\theta \cdot \int_0^1 r \cdot r\,dr
 \]
-更直接地，转极坐标 $x = r\cos\theta, y = r\sin\theta$，$D: 0 \le r \le 1, \, 0 \le \theta \le \frac{\pi}{2}$：
+分步计算各部分：
+\begin{enumerate}[leftmargin=1.5em, itemsep=1pt, topsep=1pt]
+  \item \textbf{径向积分}：$\int_0^1 r^2\,dr = \left[\frac{1}{3}r^3\right]_0^1 = \frac{1}{3}$。
+  \item \textbf{角度积分}：
+    \begin{itemize}[leftmargin=1.2em, itemsep=1pt]
+      \item 第一项由 Wallis 公式：$\int_0^{\pi/2} \cos^3\theta\,d\theta = \frac{2}{3}$；
+      \item 第二项凑微分：$\int_0^{\pi/2} \cos^2\theta\sin\theta\,d\theta = \left[-\frac{1}{3}\cos^3\theta\right]_0^{\pi/2} = \frac{1}{3}$。
+    \end{itemize}
+    两项相加：$\int_0^{\pi/2} (\cos^3\theta + \cos^2\theta\sin\theta)\,d\theta = \frac{2}{3} + \frac{1}{3} = 1$。
+\end{enumerate}
+综合以上两部分乘积，得最终结果：
 \[
-  \iint_D \frac{x^3 + x^2 y}{x^2+y^2} dxdy = \int_0^{\pi/2} (\cos^3\theta + \cos^2\theta\sin\theta)\,d\theta \int_0^1 \frac{r^3}{r^2} \cdot r dr = \left(\frac{2}{3} + \frac{1}{3}\right) \cdot \frac{1}{3} = \frac{1}{3}
+  I = 1 \times \frac{1}{3} = \frac{1}{3}
 \]
-\begin{warnbox}
-\alerttag{Common Error}\enspace 轮换对称性 $x \leftrightarrow y$ 要求积分区域 $D$ 必须自身关于直线 $y = x$ 严格对称！若区域不对称，切忌直接对调。
-\end{warnbox}
+
+\begin{notebox}
+\alerttag{Alternative Method}\enspace 亦可利用轮换对称性：$\iint_D \frac{x^3}{x^2+y^2}dxdy = \iint_D \frac{y^3}{x^2+y^2}dxdy = \frac{1}{2}\iint_D \frac{x^3+y^3}{x^2+y^2}dxdy$，进而结合极坐标化简。
+\end{notebox}
 \end{solution}
 
 \vspace{4pt}
