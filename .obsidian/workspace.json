@@ -11,14 +11,12 @@
             "id": "a975919d7895025e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "02_量子力学_811/05_微扰论与辐射跃迁/突发微扰_势场突变与谐振子频率跃变.md",
-                "mode": "source",
-                "source": false
+                "file": "05_每日大赛_Daily/2026-09-11/每日大赛.pdf"
               },
-              "icon": "lucide-file",
-              "title": "突发微扰_势场突变与谐振子频率跃变"
+              "icon": "lucide-file-text",
+              "title": "每日大赛"
             }
           }
         ]
@@ -83,7 +81,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "fdfaabcdb7417039",
@@ -202,6 +201,7 @@
   },
   "active": "a975919d7895025e",
   "lastOpenFiles": [
+    "02_量子力学_811/05_微扰论与辐射跃迁/突发微扰_势场突变与谐振子频率跃变.md",
     "05_每日大赛_Daily/template/每日大赛_模板.pdf",
     "05_每日大赛_Daily/2026-09-11/每日大赛.pdf",
     "00_Dashboard_作战指挥中心/01_16周推进总览_Milestones.md",
