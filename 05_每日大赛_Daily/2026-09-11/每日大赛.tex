@@ -1,0 +1,102 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{ctex}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{lastpage}
+
+\geometry{left=2.5cm,right=2.5cm,top=3cm,bottom=3cm}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{UCAS 604/811 专属每日大赛}
+\fancyhead[C]{2026-09-11}
+\fancyhead[R]{第 \thepage \ 页，共 \pageref{LastPage} 页}
+
+\title{\textbf{每日大赛 (Daily Tournament)}\\ \Large 2026-09-11}
+\author{Level 4 👑 角动量大师}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{tcolorbox}[colback=blue!5,colframe=blue!75!black,title=导师寄语]
+Jerry！今天除了对旧有知识的巩固，我们正式开启\textbf{「计算专题」}！计算是考研数学的命脉，不要怕算错，慢慢建立肌肉记忆，用巧劲和硬功夫结合去击溃它。每天进步一点点！
+\end{tcolorbox}
+
+\section*{Part I: 知识快射 (Knowledge Quick Fire)}
+
+\textbf{1. 极坐标雅可比行列式}
+请简述在二重积分极坐标变换 $x = r\cos\theta, y = r\sin\theta$ 中，面积微元 $dxdy$ 变为 $rdrd\theta$ 的几何意义与行列式来源。
+
+\vspace{4cm}
+
+\textbf{2. 奇偶对称性与轮换对称性}
+计算二重积分 $I = \iint_D (x\sin(x^2) + x^2 y^3 + 1) dxdy$，其中 $D$ 为区域 $x^2 + y^2 \leq 1$。
+请直接写出哪些项因为什么对称性可以直接划掉，并给出最终答案。
+
+\vspace{5cm}
+
+\textbf{3. 格林公式（挖洞法）}
+当我们在包含原点 $O(0,0)$ 的闭区域上，遇到形如 $\frac{-ydx + xdy}{x^2+y^2}$ 的积分时，为什么不能直接对整个闭合曲线使用格林公式？应该如何处理（简述“挖洞法”的核心步骤）？
+
+\vspace{5cm}
+
+\newpage
+\section*{Part II: 核心计算专题 (Calculation Topic) —— 多元积分与格林公式}
+\textit{注：本部分难度梯次递进，请注意技巧的使用，避免陷入暴力计算死胡同。}
+
+\textbf{Level 1：直接转化（热身）}
+计算曲线积分 $\oint_L (2xy - y^2)dx + (x^2 + 2xy)dy$，其中 $L$ 为由抛物线 $y = x^2$ 和直线 $y = x$ 围成的区域的正向边界。
+
+\vspace{7cm}
+
+\textbf{Level 2：补线与格林公式（进阶）}
+计算曲线积分 $\int_L (e^x\sin y - y)dx + (e^x\cos y - 1)dy$，其中 $L$ 为上半圆周 $x^2 + y^2 = a^2 (y \geq 0)$，起点为 $(a,0)$，终点为 $(-a,0)$。
+
+\vspace{8cm}
+
+\textbf{Level 3：挖洞法实战（压轴）}
+计算曲线积分 $I = \oint_L \frac{xdy - ydx}{x^2+y^2} + (x+y)dx + (x-y)dy$，其中 $L$ 为椭圆 $\frac{x^2}{4} + \frac{y^2}{9} = 1$，取逆时针方向。
+
+\vspace{8cm}
+
+\newpage
+\section*{参考答案与解析 (Solutions)}
+
+\subsection*{Part I}
+1. \textbf{极坐标雅可比行列式}：几何上，微小极坐标网格在物理空间是一个近似的长方形，边长分别为 $dr$ 和 $rd\theta$，故面积为 $r dr d\theta$。数学上，$J = \frac{\partial(x,y)}{\partial(r,\theta)} = \begin{vmatrix} \cos\theta & -r\sin\theta \\ \sin\theta & r\cos\theta \end{vmatrix} = r(\cos^2\theta + \sin^2\theta) = r$。因此 $dxdy = |J| drd\theta = r drd\theta$。
+
+2. \textbf{奇偶对称性}：积分域 $D$ 关于 $x$ 轴、$y$ 轴均对称。$x\sin(x^2)$ 是关于 $x$ 的奇函数，积分为0；$x^2 y^3$ 是关于 $y$ 的奇函数，积分为0。所以原积分化简为 $\iint_D 1 dxdy$，即圆的面积 $\pi \times 1^2 = \pi$。
+
+3. \textbf{格林公式挖洞法}：在原点处，分母 $x^2+y^2=0$，函数不连续且偏导数不存在，不满足格林公式的条件。处理方法是以原点为圆心作一个足够小的圆 $l_{\varepsilon}: x^2+y^2=\varepsilon^2$（顺时针），使得 $l_{\varepsilon}$ 在原曲线内部。然后在两者围成的复连通区域内使用格林公式。
+
+\subsection*{Part II: 计算专题}
+\textbf{Level 1 (热身)}：
+直接应用格林公式：$P = 2xy - y^2, Q = x^2 + 2xy$。
+$\frac{\partial Q}{\partial x} = 2x + 2y$, $\frac{\partial P}{\partial y} = 2x - 2y$。
+积分化为二重积分：$\iint_D (2x + 2y - (2x - 2y))dxdy = \iint_D 4y dxdy$。
+积分区域 $D$：$0 \leq x \leq 1$, $x^2 \leq y \leq x$。
+$\int_0^1 dx \int_{x^2}^x 4y dy = \int_0^1 2(x^2 - x^4)dx = 2(\frac{1}{3} - \frac{1}{5}) = \frac{4}{15}$。
+
+\textbf{Level 2 (进阶)}：
+补一条沿着 $x$ 轴从 $(-a,0)$ 到 $(a,0)$ 的有向线段 $L_1$。
+记闭合曲线 $L + L_1$ 为 $C$ (逆时针)。$P = e^x\sin y - y, Q = e^x\cos y - 1$。
+$\frac{\partial Q}{\partial x} = e^x\cos y$, $\frac{\partial P}{\partial y} = e^x\cos y - 1$。
+$\oint_C Pdx + Qdy = \iint_D (e^x\cos y - (e^x\cos y - 1))dxdy = \iint_D 1 dxdy = \frac{1}{2}\pi a^2$。
+对于补线 $L_1$：$y=0, dy=0$，$x$ 从 $-a$ 到 $a$。
+$\int_{L_1} Pdx + Qdy = \int_{-a}^a (e^x \cdot 0 - 0)dx = 0$。
+所以原积分 = $\frac{1}{2}\pi a^2 - 0 = \frac{1}{2}\pi a^2$。
+
+\textbf{Level 3 (压轴)}：
+分成两部分：$I_1 = \oint_L \frac{xdy - ydx}{x^2+y^2}$ 和 $I_2 = \oint_L (x+y)dx + (x-y)dy$。
+对于 $I_2$：利用格林公式，$P_2 = x+y, Q_2 = x-y$，$\frac{\partial Q_2}{\partial x} - \frac{\partial P_2}{\partial y} = 1 - 1 = 0$。因此 $I_2 = 0$。
+对于 $I_1$：存在原点奇点。作小圆 $l_\varepsilon: x^2+y^2=\varepsilon^2$（顺时针）。
+在复连通区域上 $\frac{\partial Q_1}{\partial x} - \frac{\partial P_1}{\partial y} = \frac{y^2-x^2}{(x^2+y^2)^2} - \frac{y^2-x^2}{(x^2+y^2)^2} = 0$。
+所以 $I_1 + \oint_{l_\varepsilon} \frac{xdy - ydx}{x^2+y^2} = 0$。
+$\oint_{l_\varepsilon} \frac{xdy - ydx}{x^2+y^2} = \int_{2\pi}^0 \frac{\varepsilon\cos\theta(\varepsilon\cos\theta d\theta) - \varepsilon\sin\theta(-\varepsilon\sin\theta d\theta)}{\varepsilon^2} = \int_{2\pi}^0 d\theta = -2\pi$。
+故 $I = I_1 + I_2 = 2\pi + 0 = 2\pi$。
+
+\end{document}
