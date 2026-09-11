@@ -1,6 +1,6 @@
 # 每日大赛生成规范与 AI 指引 (Daily Tournament AI Guide)
 
-> **版本**：v4.1（锁定版：EB Garamond × Garamond-Math × 华文楷体 · 5页功能化版面）  
+> **版本**：v5.0（锁定版：EB Garamond × Garamond-Math × 华文楷体 · 6页功能化版面，新增计算专题）  
 > **适用对象**：所有接入本项目的 AI Agent / 自动化脚本  
 > **核心职责**：根据备考总纲进度，**复制并填写**锁定主模板，生成指定日期的 `每日大赛.tex`，完成 XeLaTeX 双编译。  
 > **锁定声明**：`gogogo/每日大赛/template/每日大赛_模板.tex` 的字体、配色、卡片环境、页眉页脚与分区结构已经定稿。生成每日文件时只替换占位内容，**不得改字体、宏包、颜色或版式骨架**。
@@ -40,17 +40,18 @@
 | `debrief` | §4 复盘表 |
 | `notebox` / `warnbox` | 提示条 / 避坑条 |
 
-### 4. 锁定 5 页功能化结构 (Zero Awkward Blank Pages)
+### 4. 锁定 6 页功能化结构 (Zero Awkward Blank Pages)
 
-完整 PDF = **封面 + 四个大分区，每个分区各自 `\clearpage` 独立成页，且版面功能充实**：
+完整 PDF = **封面 + 五个大分区，每个分区各自 `\clearpage` 独立成页，且版面功能充实**：
 
 1. **Page 1: Cover**（`titlepage`，无页眉，抽象相图与几何艺术）
 2. **Page 2: §1 Tactical Briefing & Warm-Up Retrieval**
    - 包含简报卡片、动量防御线提醒；
    - 包含 **Warm-Up Retrieval Workspace（白纸破冰草稿区，预留手写空间）**，消灭下半页空白。
 3. **Page 3: §2 Core Problem Set**（独立测试卷，包含 M1、Q1 与可选 Extension）
-4. **Page 4: §3 Model Solutions & Commentary**（独立成页，彻底隔离防剧透）
-5. **Page 5: §4 Daily Debrief & Reflection**
+4. **Page 4: §3 Calculation Topic**（**核心计算专题**：Level 1, Level 2, Level 3 梯次计算训练）
+5. **Page 5: §4 Model Solutions & Commentary**（独立成页，彻底隔离防剧透，包括主问题与计算专题的详细解析）
+6. **Page 6: §5 Daily Debrief & Reflection**
    - 包含复盘表格（耗时与 5 大错因勾选）；
    - 包含 **Key Derivation Insights & Traps（核心突破口与避坑沉淀栏，预留三项核心记录）**，消灭下半页空白。
 
