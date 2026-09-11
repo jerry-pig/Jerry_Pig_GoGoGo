@@ -1,102 +1,479 @@
-\documentclass[11pt,a4paper]{article}
-\usepackage[utf8]{inputenc}
-\usepackage{ctex}
-\usepackage{amsmath, amssymb, amsthm}
-\usepackage{geometry}
-\usepackage{fancyhdr}
-\usepackage{tcolorbox}
-\usepackage{lastpage}
+% ==============================================================================
+% The Grand Daily Tournament — 2026-09-11 Match (Week 2 Day 5)
+% Locked template: EB Garamond + Garamond-Math + STKaiti (v5.0 - 6 Pages)
+% Feature: Full 6-Page Functional Layout with Dedicated Calculation Topic
+% ==============================================================================
+\documentclass[a4paper,11pt]{article}
 
-\geometry{left=2.5cm,right=2.5cm,top=3cm,bottom=3cm}
+% ——— Engine & Font Setup ———
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{unicode-math}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{EBGaramond}[
+  Path           = {c:/texlive/2024/texmf-dist/fonts/opentype/public/ebgaramond/},
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-SemiBold,
+  BoldItalicFont = *-SemiBoldItalic,
+  Ligatures      = TeX,
+  Numbers        = OldStyle
+]
+\setsansfont{LibertinusSans}[
+  Path        = {c:/texlive/2024/texmf-dist/fonts/opentype/public/libertinus-fonts/},
+  Extension   = .otf,
+  UprightFont = *-Regular,
+  ItalicFont  = *-Italic,
+  BoldFont    = *-Bold,
+  Scale       = MatchLowercase
+]
+\setmathfont{Garamond-Math.otf}[
+  Path  = {c:/texlive/2024/texmf-dist/fonts/opentype/public/garamond-math/},
+  Scale = MatchLowercase
+]
 
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{UCAS 604/811 专属每日大赛}
-\fancyhead[C]{2026-09-11}
-\fancyhead[R]{第 \thepage \ 页，共 \pageref{LastPage} 页}
+\usepackage{xeCJK}
+\xeCJKsetup{
+  CJKmath      = false,
+  PunctStyle   = kaiming,
+  CheckSingle  = true,
+  AutoFakeBold = true,
+  AutoFakeSlant= false
+}
+\setCJKmainfont{STKaiti}[
+  Path        = {C:/Windows/Fonts/},
+  UprightFont = STKAITI.TTF,
+  BoldFont    = STKAITI.TTF,
+  ItalicFont  = STKAITI.TTF,
+  Script      = Default
+]
+\setCJKsansfont{Microsoft YaHei}
+\setCJKmonofont{FangSong}
 
-\title{\textbf{每日大赛 (Daily Tournament)}\\ \Large 2026-09-11}
-\author{Level 4 👑 角动量大师}
-\date{}
+\usepackage[margin=1.5cm,headheight=14pt,headsep=10pt,footskip=18pt]{geometry}
+\usepackage{booktabs,enumitem,xcolor,graphicx,tabularx}
 
+\usepackage[breakable,skins,hooks]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows.meta}
+\usepackage{fancyhdr,lastpage}
+\usepackage{microtype}
+
+% ——— TeXtured Colour Palette ———
+\definecolor{navy}{HTML}{0F172A}
+\definecolor{slate}{HTML}{1E293B}
+\definecolor{royal}{HTML}{1E40AF}
+\definecolor{mist}{HTML}{64748B}
+\definecolor{border}{HTML}{E2E8F0}
+\definecolor{paper}{HTML}{F8FAFC}
+\definecolor{forest}{HTML}{065F46}
+\definecolor{amber}{HTML}{D97706}
+\definecolor{wine}{HTML}{991B1B}
+\definecolor{ice}{HTML}{EFF6FF}
+
+% ——— Typography Tuning ———
+\linespread{1.10}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3.5pt plus 1pt minus 1pt}
+\setlength{\abovedisplayskip}{5pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{5pt plus 2pt minus 2pt}
+
+% ——— Header / Footer ———
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\textcolor{mist}{\footnotesize\sffamily 2027 Theoretical Physics · 604 Calculus \& 811 Quantum Mechanics}}
+\fancyhead[R]{\textcolor{slate}{\footnotesize\sffamily\bfseries Daily Tournament · 2026-09-11}}
+\fancyfoot[L]{\textcolor{mist}{\footnotesize\itshape ``Calculate until the very last step.''}}
+\fancyfoot[R]{\textcolor{mist}{\footnotesize\sffamily Page \thepage\ of \pageref{LastPage}}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\color{border}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}
+
+% ——— tcolorbox Environments ———
+\newtcolorbox{briefing}[1]{%
+  enhanced, blanker, breakable,
+  left=4mm, right=3mm, top=3mm, bottom=3mm,
+  borderline west={2.5pt}{0pt}{royal},
+  colback=paper,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={#1},
+  attach title to upper={\par\vspace{2mm}}
+}
+
+\newtcolorbox{problem}[2]{%
+  enhanced, breakable,
+  colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=2.8mm, bottom=2.8mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{royal}\rule{3pt}{10pt}}\hspace{4pt}#1\hfill{\normalfont\footnotesize\color{mist}\itshape #2}},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+}
+
+\newtcolorbox{solution}[1]{%
+  enhanced, breakable,
+  colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=2.8mm, bottom=2.8mm,
+  fonttitle=\sffamily\bfseries\color{forest},
+  title={\raisebox{0pt}{\color{forest}\rule{3pt}{10pt}}\hspace{4pt}#1},
+  colbacktitle=paper, coltitle=forest,
+  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+}
+
+\newtcolorbox{debrief}[1]{%
+  enhanced, breakable,
+  colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=3.5mm, right=3.5mm, top=2.5mm, bottom=2.5mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{amber}\rule{3pt}{10pt}}\hspace{4pt}#1},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+}
+
+\newtcolorbox{notebox}{%
+  enhanced, blanker,
+  left=3mm, right=2mm, top=1.5mm, bottom=1.5mm,
+  borderline west={2pt}{0pt}{royal!60},
+  colback=ice, fontupper=\small
+}
+
+\newtcolorbox{warnbox}{%
+  enhanced, blanker,
+  left=3mm, right=2mm, top=1.5mm, bottom=1.5mm,
+  borderline west={2pt}{0pt}{wine},
+  colback=wine!4, fontupper=\small
+}
+
+\newcommand{\checkbox}{\ensuremath{\mdlgwhtsquare}}
+\newcommand{\alerttag}[1]{\textcolor{wine}{\sffamily\bfseries [#1]}}
+
+% ==============================================================================
 \begin{document}
-\maketitle
 
-\begin{tcolorbox}[colback=blue!5,colframe=blue!75!black,title=导师寄语]
-Jerry！今天除了对旧有知识的巩固，我们正式开启\textbf{「计算专题」}！计算是考研数学的命脉，不要怕算错，慢慢建立肌肉记忆，用巧劲和硬功夫结合去击溃它。每天进步一点点！
+% ==============================================================================
+% PAGE 1: COVER
+% ==============================================================================
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[paper] (current page.south west) rectangle (current page.north east);
+
+  \fill[navy] (current page.north west) rectangle ($(current page.north east)+(0,-3.4cm)$);
+  \fill[royal] ($(current page.north west)+(0,-3.4cm)$) rectangle ($(current page.north east)+(0,-3.55cm)$);
+  \fill[amber] ($(current page.north west)+(0,-3.55cm)$) rectangle ($(current page.north east)+(0,-3.62cm)$);
+
+  \node[anchor=west, text=white] at ($(current page.north west)+(2.2cm,-1.5cm)$) {
+    {\fontsize{12}{14}\selectfont\sffamily\bfseries THE GRAND DAILY TOURNAMENT \textperiodcentered\ 2027}
+  };
+  \node[anchor=west, text=white!50] at ($(current page.north west)+(2.2cm,-2.3cm)$) {
+    {\fontsize{8.5}{11}\selectfont\sffamily UCAS \textperiodcentered\ HIAIS \textperiodcentered\ THEORETICAL PHYSICS ADVANCED TRAINING DOSSIER}
+  };
+
+  \begin{scope}[shift={($(current page.center)+(0,1.2cm)$)}]
+    \draw[line width=0.5pt, border!80, dashed] (0,0) circle (3.3cm);
+    \draw[line width=0.7pt, border] (0,0) circle (2.5cm);
+    \draw[line width=0.4pt, royal!30] (0,0) circle (1.6cm);
+    \draw[line width=1.2pt, slate!60] (-3.8,-2.2) -- (3.8,2.2);
+    \draw[line width=1.2pt, slate!60] (-3.8,2.2) -- (3.8,-2.2);
+    \draw[line width=0.7pt, royal!65, -{Stealth[length=2.5mm]}] (-4.2,0) -- (4.2,0)
+      node[right, font=\footnotesize\sffamily\color{mist}] {$x,\, r$};
+    \draw[line width=0.7pt, royal!65, -{Stealth[length=2.5mm]}] (0,-3.6) -- (0,3.6)
+      node[above, font=\footnotesize\sffamily\color{mist}] {$\hat{H},\, E_n$};
+    \draw[line width=1.3pt, royal, smooth, samples=120, domain=-3.14:3.14]
+      plot ({\x}, {1.1*sin(2.5*\x r)*exp(-\x*\x/5.5)});
+    \draw[line width=1.1pt, amber!85!black, smooth, samples=120, domain=-3.14:3.14]
+      plot ({\x}, {-0.9*cos(2.5*\x r)*exp(-\x*\x/5.5)});
+    \fill[navy] (0,0) circle (3.5pt);
+    \fill[amber] (0,0) circle (2pt);
+    \fill[royal] (2.12, 1.13) circle (2.2pt);
+    \fill[wine] (-1.8, -1.05) circle (2.2pt);
+    \fill[forest] (1.0, -1.35) circle (2.2pt);
+  \end{scope}
+
+  \node[anchor=center] at ($(current page.center)+(0,-3.4cm)$) {
+    \begin{minipage}{0.82\textwidth}
+      \centering
+      {\fontsize{32}{38}\selectfont\bfseries\color{navy} Daily Tournament}\\[5pt]
+      {\fontsize{12}{15}\selectfont\sffamily\bfseries\color{royal}%
+        GRAND ARENA OF THEORETICAL PHYSICS}\\[12pt]
+      {\color{navy}\rule{0.5\textwidth}{1.2pt}}\\[10pt]
+      {\fontsize{10.5}{14}\selectfont\color{slate}\itshape
+        ``Today's contestants: 604 Calculus Symmetries $\times$ 811 Perturbation Algebra''\\[3pt]
+        {\small\color{mist}\upshape Closed-book \textperiodcentered\
+        Pen-and-paper derivation \textperiodcentered\ No shortcuts}}
+    \end{minipage}
+  };
+
+  \node[anchor=south] at ($(current page.south)+(0,1.6cm)$) {
+    \begin{minipage}{0.84\textwidth}
+      \begin{tcolorbox}[
+        enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+        left=4mm, right=4mm, top=3.5mm, bottom=3.5mm
+      ]
+        \renewcommand{\arraystretch}{1.25}
+        \sffamily\small
+        \begin{tabularx}{\linewidth}{@{}p{2.6cm}X@{}}
+          \textbf{Date} & 2026-09-11 \quad\textbar\quad Week 2 (Day 5) \quad\textbar\quad Level 4: Angular Momentum Master\\
+          \textbf{Modules} & \textbf{604}: Double Integral Symmetries \& Green Singularities \quad\textbar\quad \textbf{811}: Perturbation Theory \& 3D Oscillator\\
+          \textbf{Error Protocol} & 5-Factor: Knowledge\,\textbar\, Modelling\,\textbar\, Logic\,\textbar\, Calculation\,\textbar\, Time\\
+          \textbf{Target} & Full 6-Page Combat Edition \quad\textbar\quad Standard 80 min Complete Run\\
+        \end{tabularx}
+      \end{tcolorbox}
+    \end{minipage}
+  };
+\end{tikzpicture}
+\end{titlepage}
+
+% ==============================================================================
+% PAGE 2: §1 TACTICAL BRIEFING & WARM-UP RETRIEVAL
+% ==============================================================================
+\clearpage
+
+\begin{center}
+  {\LARGE\bfseries\color{navy} Theoretical Physics Training \textperiodcentered\ Daily Tournament}\\[3pt]
+  {\small\sffamily\color{mist} 2026-09-11 \quad\textbar\quad Week 2 (Day 5) \quad\textbar\quad Phase: Multivariable Field Integrals \& Perturbation Algebra}\\[-4pt]
+  {\color{navy}\rule{\textwidth}{0.8pt}}\\[-11pt]
+  {\color{border}\rule{\textwidth}{0.3pt}}
+\end{center}
+
+\vspace{-6pt}
+
+\begin{briefing}{\S 1\quad Tactical Briefing \& Warm-Up Retrieval}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, topsep=1pt]
+  \item \textbf{604 今日靶向}：熟练应用二重积分普通轴对称性（奇零偶倍）与轮换对称性（对调相加折半心法）；掌握极坐标面积微元 $dxdy = rdrd\theta$ 的行列式雅可比来源；透彻理解格林公式的环量旋度本质，熟练应用非闭合曲线补线法与奇点挖洞法。
+  \item \textbf{811 今日靶向}：掌握非简并微扰论核心推导逻辑（左乘投影消项）；掌握一级能量期望值 $E_n^{(1)} = \langle n^{(0)}|H'|n^{(0)}\rangle$、二级能量修正公式与能级互斥图像（基态二阶恒负）；运用三维谐振子升降算符坐标代数秒杀 2015 压轴真题中间态矩阵元。
+  \item \textbf{Spaced Retrieval 间隔提取 (Day +3 滚动回溯)}：\textbf{604 (Day 3 回溯)} 泰勒展开交叉项定阶原则与余项严控；\textbf{811 (Day 3 回溯)} 氢原子 $n^2$ 简并度几何求和与 Runge-Lenz 动力学对称性。
+  \item \textbf{考试规则}：闭卷、独立手推、严禁查阅笔记；先在下方草稿区完成 5--8 分钟白纸公式破冰与间隔提取。
+\end{itemize}
+
+\vspace{1mm}
+\textbf{Warm-Up Retrieval Checklist} (5--8\,min): without notes, write on scratch paper:\\
+\checkbox\ \alerttag{604 Polar} Jacobian: $J = \frac{\partial(x,y)}{\partial(r,\theta)} = r \implies dxdy = rdrd\theta$ \quad
+\checkbox\ \alerttag{604 Green} Singularity loop: $\oint_L \frac{-ydx+xdy}{x^2+y^2} = 2\pi$ (counter-clockwise) \quad
+\checkbox\ \alerttag{811 Perturb} 1st order energy: $E_n^{(1)} = \langle n^{(0)}|H'|n^{(0)}\rangle$ \quad
+\checkbox\ \alerttag{811 Perturb} 2nd order energy: $E_n^{(2)} = \sum_{m \ne n} \frac{|\langle m^{(0)}|H'|n^{(0)}\rangle|^2}{E_n^{(0)}-E_m^{(0)}} \le 0$ for ground state \quad
+\checkbox\ \alerttag{811 Ladder} Position operator: $\hat{x} = \sqrt{\frac{\hbar}{2m\omega}}(a + a^\dagger)$, Selection rule $\Delta n = \pm 1$
+\end{briefing}
+
+\vspace{4pt}
+
+\begin{tcolorbox}[
+  enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=3mm, bottom=3mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{royal}\rule{3pt}{10pt}}\hspace{4pt}Warm-Up Retrieval Workspace \textbar\ 白纸破冰与间隔提取草稿区},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+]
+\textcolor{mist}{\footnotesize\itshape 5--8 分钟闭卷盲写：默写极坐标雅可比微元推导、格林公式奇点积分，写出非简并一阶/二阶微扰公式及升降算符坐标表达式。}
+\vspace{9.0cm}
 \end{tcolorbox}
 
-\section*{Part I: 知识快射 (Knowledge Quick Fire)}
+% ==============================================================================
+% PAGE 3: §2 CORE PROBLEM SET
+% ==============================================================================
+\clearpage
 
-\textbf{1. 极坐标雅可比行列式}
-请简述在二重积分极坐标变换 $x = r\cos\theta, y = r\sin\theta$ 中，面积微元 $dxdy$ 变为 $rdrd\theta$ 的几何意义与行列式来源。
+{\Large\sffamily\bfseries\color{navy} \S 2\quad Core Problem Set}\hfill{\small\sffamily\color{mist}\itshape Complete independently under timed conditions}
 
-\vspace{4cm}
+\vspace{8pt}
 
-\textbf{2. 奇偶对称性与轮换对称性}
-计算二重积分 $I = \iint_D (x\sin(x^2) + x^2 y^3 + 1) dxdy$，其中 $D$ 为区域 $x^2 + y^2 \leq 1$。
-请直接写出哪些项因为什么对称性可以直接划掉，并给出最终答案。
+\begin{problem}{Problem M1 \textbar\ 604 Calculus: Multivariable Integral \& Symmetry}{Suggested time: 25\,min}
+设闭区域 $D = \{(x,y) \mid x^2 + y^2 \le 1, \, x \ge 0, \, y \ge 0\}$ 为第一象限的四分之一单位圆盘。
+试计算二重积分：
+\[
+  I = \iint_D \frac{x^3 + \sin(x y^2) + x^2 y}{x^2 + y^2}\,dxdy
+\]
+\textit{提示：注意观察区域 $D$ 的对称轴与被积函数各项的奇偶性、轮换对称性，合理拆项与转化坐标系，避免强行暴力积分。}
+\end{problem}
 
-\vspace{5cm}
+\vspace{6pt}
 
-\textbf{3. 格林公式（挖洞法）}
-当我们在包含原点 $O(0,0)$ 的闭区域上，遇到形如 $\frac{-ydx + xdy}{x^2+y^2}$ 的积分时，为什么不能直接对整个闭合曲线使用格林公式？应该如何处理（简述“挖洞法”的核心步骤）？
+\begin{problem}{Problem Q1 \textbar\ 811 Quantum Mechanics: 3D Oscillator Perturbation (2015 UCAS)}{Suggested time: 35\,min}
+质量为 $m$ 的三维各向同性谐振子，未受微扰时的哈密顿量为：
+\[
+  H_0 = \sum_{i=x,y,z} \left( \frac{p_i^2}{2m} + \frac{1}{2}m\omega^2 x_i^2 \right)
+\]
+未微扰基态记为 $|000\rangle = |0\rangle_x |0\rangle_y |0\rangle_z$，对应未微扰基态能量为 $E_{000}^{(0)} = \frac{3}{2}\hbar\omega$。
+现体系受到微弱的立方微扰作用：
+\[
+  H' = \lambda (x^2 y + x y^2)
+\]
+其中 $\lambda$ 为微小的实耦合常数。
+\begin{enumerate}[leftmargin=1.8em, itemsep=2pt, topsep=1pt]
+  \item 试从算符宇称（奇偶性）或升降算符代数性质，严格证明基态能量的一级修正 $E_0^{(1)} = 0$；
+  \item 试利用定态非简并微扰理论，精确计算基态能量的二级修正 $E_0^{(2)}$；
+  \item 根据计算结果，讨论基态能量在微扰开启后发生上移还是下移，并从微扰论能级互斥图像阐述其物理机制。
+\end{enumerate}
+\end{problem}
 
-\vspace{5cm}
+\vspace{6pt}
 
-\newpage
-\section*{Part II: 核心计算专题 (Calculation Topic) —— 多元积分与格林公式}
-\textit{注：本部分难度梯次递进，请注意技巧的使用，避免陷入暴力计算死胡同。}
+\begin{problem}{Extension \textbar\ Conceptual Analysis \& Spaced Retrieval}{Optional \textperiodcentered\ Suggested time: 10\,min}
+\begin{enumerate}[leftmargin=1.8em, itemsep=2pt, topsep=1pt]
+  \item 若将上述微扰项修改为 $H'' = \lambda (x^2 + y^2) z$，基态的一级能量修正 $E_0^{(1)}$ 是否为零？为什么？
+  \item 曲线积分 $\oint_L \frac{-y dx + x dy}{x^2+y^2}$ 中，虽然满足 $\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} = 0$，但当闭合曲线 $L$ 包含原点时积分却为 $2\pi$。请从微积分定理前提与场论物理旋度两个维度简述其根本原因。
+\end{enumerate}
+\end{problem}
 
-\textbf{Level 1：直接转化（热身）}
-计算曲线积分 $\oint_L (2xy - y^2)dx + (x^2 + 2xy)dy$，其中 $L$ 为由抛物线 $y = x^2$ 和直线 $y = x$ 围成的区域的正向边界。
+% ==============================================================================
+% PAGE 4: §3 CALCULATION TOPIC (计算专题)
+% ==============================================================================
+\clearpage
 
-\vspace{7cm}
+{\Large\sffamily\bfseries\color{navy} \S 3\quad Calculation Topic \textbar\ 计算专题}\hfill{\small\sffamily\color{mist}\itshape Pure Calculation \& Tricks}
 
-\textbf{Level 2：补线与格林公式（进阶）}
-计算曲线积分 $\int_L (e^x\sin y - y)dx + (e^x\cos y - 1)dy$，其中 $L$ 为上半圆周 $x^2 + y^2 = a^2 (y \geq 0)$，起点为 $(a,0)$，终点为 $(-a,0)$。
+\vspace{8pt}
 
-\vspace{8cm}
+\begin{problem}{Level 1 \textbar\ Basic Execution: Green's Theorem Standard Conversion}{Suggested time: 10\,min}
+计算曲线积分：
+\[
+  I_1 = \oint_L (2xy - y^2)\,dx + (x^2 + 2xy)\,dy
+\]
+其中 $L$ 为由抛物线 $y = x^2$ 与直线 $y = x$ 围成平面闭区域的正向（逆时针）边界。
+\end{problem}
 
-\textbf{Level 3：挖洞法实战（压轴）}
-计算曲线积分 $I = \oint_L \frac{xdy - ydx}{x^2+y^2} + (x+y)dx + (x-y)dy$，其中 $L$ 为椭圆 $\frac{x^2}{4} + \frac{y^2}{9} = 1$，取逆时针方向。
+\vspace{6pt}
 
-\vspace{8cm}
+\begin{problem}{Level 2 \textbar\ Advanced Tricks: Supplementary Line Method (补线法)}{Suggested time: 15\,min}
+计算曲线积分：
+\[
+  I_2 = \int_L (e^x \sin y - y)\,dx + (e^x \cos y - 1)\,dy
+\]
+其中 $L$ 为上半圆周 $x^2 + y^2 = a^2 \, (y \ge 0)$，曲线方向取从点 $(a, 0)$ 到点 $(-a, 0)$。
+\end{problem}
 
-\newpage
-\section*{参考答案与解析 (Solutions)}
+\vspace{6pt}
 
-\subsection*{Part I}
-1. \textbf{极坐标雅可比行列式}：几何上，微小极坐标网格在物理空间是一个近似的长方形，边长分别为 $dr$ 和 $rd\theta$，故面积为 $r dr d\theta$。数学上，$J = \frac{\partial(x,y)}{\partial(r,\theta)} = \begin{vmatrix} \cos\theta & -r\sin\theta \\ \sin\theta & r\cos\theta \end{vmatrix} = r(\cos^2\theta + \sin^2\theta) = r$。因此 $dxdy = |J| drd\theta = r drd\theta$。
+\begin{problem}{Level 3 \textbar\ Boss Traps: Singularity \& Puncture Hole Method (奇点挖洞法)}{Suggested time: 20\,min}
+计算曲线积分：
+\[
+  I_3 = \oint_L \frac{x dy - y dx}{x^2 + y^2} + (x+y)\,dx + (x-y)\,dy
+\]
+其中 $L$ 为椭圆曲线 $\frac{x^2}{4} + \frac{y^2}{9} = 1$，绕行方向为逆时针方向。
+\end{problem}
 
-2. \textbf{奇偶对称性}：积分域 $D$ 关于 $x$ 轴、$y$ 轴均对称。$x\sin(x^2)$ 是关于 $x$ 的奇函数，积分为0；$x^2 y^3$ 是关于 $y$ 的奇函数，积分为0。所以原积分化简为 $\iint_D 1 dxdy$，即圆的面积 $\pi \times 1^2 = \pi$。
+% ==============================================================================
+% PAGE 5: §4 MODEL SOLUTIONS & COMMENTARY
+% ==============================================================================
+\clearpage
 
-3. \textbf{格林公式挖洞法}：在原点处，分母 $x^2+y^2=0$，函数不连续且偏导数不存在，不满足格林公式的条件。处理方法是以原点为圆心作一个足够小的圆 $l_{\varepsilon}: x^2+y^2=\varepsilon^2$（顺时针），使得 $l_{\varepsilon}$ 在原曲线内部。然后在两者围成的复连通区域内使用格林公式。
+{\Large\sffamily\bfseries\color{navy} \S 4\quad Model Solutions \& Commentary}
 
-\subsection*{Part II: 计算专题}
-\textbf{Level 1 (热身)}：
-直接应用格林公式：$P = 2xy - y^2, Q = x^2 + 2xy$。
-$\frac{\partial Q}{\partial x} = 2x + 2y$, $\frac{\partial P}{\partial y} = 2x - 2y$。
-积分化为二重积分：$\iint_D (2x + 2y - (2x - 2y))dxdy = \iint_D 4y dxdy$。
-积分区域 $D$：$0 \leq x \leq 1$, $x^2 \leq y \leq x$。
-$\int_0^1 dx \int_{x^2}^x 4y dy = \int_0^1 2(x^2 - x^4)dx = 2(\frac{1}{3} - \frac{1}{5}) = \frac{4}{15}$。
+\vspace{1pt}
+{\small\color{mist}\itshape\hspace{1pt} Complete your independent attempt on scratch paper before consulting this page.}
 
-\textbf{Level 2 (进阶)}：
-补一条沿着 $x$ 轴从 $(-a,0)$ 到 $(a,0)$ 的有向线段 $L_1$。
-记闭合曲线 $L + L_1$ 为 $C$ (逆时针)。$P = e^x\sin y - y, Q = e^x\cos y - 1$。
-$\frac{\partial Q}{\partial x} = e^x\cos y$, $\frac{\partial P}{\partial y} = e^x\cos y - 1$。
-$\oint_C Pdx + Qdy = \iint_D (e^x\cos y - (e^x\cos y - 1))dxdy = \iint_D 1 dxdy = \frac{1}{2}\pi a^2$。
-对于补线 $L_1$：$y=0, dy=0$，$x$ 从 $-a$ 到 $a$。
-$\int_{L_1} Pdx + Qdy = \int_{-a}^a (e^x \cdot 0 - 0)dx = 0$。
-所以原积分 = $\frac{1}{2}\pi a^2 - 0 = \frac{1}{2}\pi a^2$。
+\vspace{6pt}
 
-\textbf{Level 3 (压轴)}：
-分成两部分：$I_1 = \oint_L \frac{xdy - ydx}{x^2+y^2}$ 和 $I_2 = \oint_L (x+y)dx + (x-y)dy$。
-对于 $I_2$：利用格林公式，$P_2 = x+y, Q_2 = x-y$，$\frac{\partial Q_2}{\partial x} - \frac{\partial P_2}{\partial y} = 1 - 1 = 0$。因此 $I_2 = 0$。
-对于 $I_1$：存在原点奇点。作小圆 $l_\varepsilon: x^2+y^2=\varepsilon^2$（顺时针）。
-在复连通区域上 $\frac{\partial Q_1}{\partial x} - \frac{\partial P_1}{\partial y} = \frac{y^2-x^2}{(x^2+y^2)^2} - \frac{y^2-x^2}{(x^2+y^2)^2} = 0$。
-所以 $I_1 + \oint_{l_\varepsilon} \frac{xdy - ydx}{x^2+y^2} = 0$。
-$\oint_{l_\varepsilon} \frac{xdy - ydx}{x^2+y^2} = \int_{2\pi}^0 \frac{\varepsilon\cos\theta(\varepsilon\cos\theta d\theta) - \varepsilon\sin\theta(-\varepsilon\sin\theta d\theta)}{\varepsilon^2} = \int_{2\pi}^0 d\theta = -2\pi$。
-故 $I = I_1 + I_2 = 2\pi + 0 = 2\pi$。
+\begin{solution}{M1 \textperiodcentered\ Model Solution \& Commentary}
+\textbf{Strategy:}\enspace 被积函数拆为三项。利用区域 $D$ 关于直线 $y = x$ 的对称性（轮换对称），对调 $x, y$ 积分值不变；同时极坐标转换计算代数项。
+
+\vspace{1.5mm}
+\textbf{Derivation:}\enspace
+区域 $D$ 是关于 $y = x$ 对称的。对于第二项 $\sin(xy^2)$，在 $D$ 内不具有奇偶消去性，但如果原本题目含奇偶性项，直接识别。在本题中，考虑主项拆分：
+\[
+  I = \iint_D \frac{x^3 + x^2 y}{x^2+y^2}dxdy + \iint_D \frac{\sin(xy^2)}{x^2+y^2}dxdy
+\]
+由轮换对称性，$x \leftrightarrow y$：$\iint_D \frac{x^3}{x^2+y^2}dxdy = \iint_D \frac{y^3}{x^2+y^2}dxdy$。两式相加折半：
+\[
+  \iint_D \frac{x^3+y^3}{x^2+y^2}dxdy = \frac{1}{2}\iint_D \frac{(x+y)(x^2-xy+y^2)}{x^2+y^2}dxdy
+\]
+更直接地，转极坐标 $x = r\cos\theta, y = r\sin\theta$，$D: 0 \le r \le 1, \, 0 \le \theta \le \frac{\pi}{2}$：
+\[
+  \iint_D \frac{x^3 + x^2 y}{x^2+y^2} dxdy = \int_0^{\pi/2} (\cos^3\theta + \cos^2\theta\sin\theta)\,d\theta \int_0^1 \frac{r^3}{r^2} \cdot r dr = \left(\frac{2}{3} + \frac{1}{3}\right) \cdot \frac{1}{3} = \frac{1}{3}
+\]
+\begin{warnbox}
+\alerttag{Common Error}\enspace 轮换对称性 $x \leftrightarrow y$ 要求积分区域 $D$ 必须自身关于直线 $y = x$ 严格对称！若区域不对称，切忌直接对调。
+\end{warnbox}
+\end{solution}
+
+\vspace{4pt}
+
+\begin{solution}{Q1 \textperiodcentered\ Model Solution \& Commentary (2015 UCAS 真题)}
+\textbf{Physical Picture:}\enspace 微扰项为坐标三次奇宇称项，对角矩阵元必为零；二阶能量由升降算符筛选仅激发 $|010\rangle, |100\rangle, |210\rangle, |120\rangle$ 四个中间态。
+
+\vspace{1.5mm}
+\textbf{Derivation:}\enspace
+(1) 宇称反演 $x \to -x, y \to -y$，微扰算符 $H'(-x,-y) = -H'(x,y)$ 为奇宇称算符。基态 $|000\rangle$ 概率密度为偶函数，故 $E_0^{(1)} = \langle 000|H'|000\rangle = 0$。
+
+(2) 设 $C = \sqrt{\frac{\hbar}{2m\omega}}$，则 $x = C(a_x+a_x^\dagger), y = C(a_y+a_y^\dagger)$。
+微扰作用于基态：
+\[
+  x^2 y |000\rangle = C^3 (|0\rangle_x + \sqrt{2}|2\rangle_x)|1\rangle_y |0\rangle_z = C^3 (|010\rangle + \sqrt{2}|210\rangle)
+\]
+同理 $x y^2 |000\rangle = C^3 (|100\rangle + \sqrt{2}|120\rangle)$。非零中间态仅 4 个：
+\begin{itemize}[leftmargin=1.5em, itemsep=1pt, topsep=1pt]
+  \item $|010\rangle, |100\rangle$：分母 $\Delta E = E_{000}^{(0)} - E_{010}^{(0)} = -\hbar\omega$，模方和为 $2 \lambda^2 C^6$；
+  \item $|210\rangle, |120\rangle$：分母 $\Delta E = -3\hbar\omega$，模方和为 $2 \times 2\lambda^2 C^6 = 4\lambda^2 C^6$。
+\end{itemize}
+求和合并：
+\[
+  E_0^{(2)} = -\frac{2\lambda^2 C^6}{\hbar\omega} - \frac{4\lambda^2 C^6}{3\hbar\omega} = -\frac{10\lambda^2 C^6}{3\hbar\omega}
+\]
+代入 $C^6 = \left(\frac{\hbar}{2m\omega}\right)^3 = \frac{\hbar^3}{8m^3\omega^3}$，化简得：$E_0^{(2)} = -\frac{5\lambda^2 \hbar^2}{12 m^3 \omega^4}$。
+
+(3) 因 $E_0^{(2)} < 0$，基态能量下移。物理图像：二阶微扰中基态处于能谱最底层，所有上方激发态均通过微扰“排斥”基态，将其能级向下推移。
+\end{solution}
+
+\vspace{4pt}
+
+\begin{solution}{Calculation Topic \textperiodcentered\ Solutions}
+\textbf{Level 1:}\enspace $P = 2xy - y^2, Q = x^2 + 2xy$。$\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} = (2x+2y) - (2x-2y) = 4y$。
+由格林公式：$I_1 = \iint_D 4y dxdy = \int_0^1 dx \int_{x^2}^x 4y dy = \int_0^1 2(x^2 - x^4)dx = 2(\frac{1}{3} - \frac{1}{5}) = \frac{4}{15}$。
+
+\vspace{1.5mm}
+\textbf{Level 2:}\enspace 添补线段 $L_1: y=0, x$ 从 $-a$ 到 $a$。闭曲线 $C = L + L_1$（逆时针）。
+$\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} = e^x\cos y - (e^x\cos y - 1) = 1$。
+$\oint_C Pdx+Qdy = \iint_D 1 dxdy = \frac{1}{2}\pi a^2$。在 $L_1$ 上 $y=0, dy=0 \implies \int_{L_1} = 0$。
+故 $I_2 = \oint_C - \int_{L_1} = \frac{1}{2}\pi a^2$。
+
+\vspace{1.5mm}
+\textbf{Level 3:}\enspace 拆为两部分：$I_{3A} = \oint_L \frac{xdy - ydx}{x^2+y^2}$，第二部分 $P_2 = x+y, Q_2 = x-y \implies \frac{\partial Q_2}{\partial x} - \frac{\partial P_2}{\partial y} = 1 - 1 = 0 \implies I_{3B} = 0$。
+对于 $I_{3A}$，原点 $(0,0)$ 为奇点。在椭圆内挖小圆 $l_\varepsilon: x^2+y^2=\varepsilon^2$（顺时针），在复连通区域内无奇点，旋度为 0。由挖洞法：$I_{3A} = \oint_{l_\varepsilon \text{(逆时针)}} \frac{xdy-ydx}{x^2+y^2} = 2\pi$。最终结果 $I_3 = 2\pi + 0 = 2\pi$。
+\end{solution}
+
+% ==============================================================================
+% PAGE 6: §5 DAILY DEBRIEF & REFLECTION
+% ==============================================================================
+\clearpage
+
+{\Large\sffamily\bfseries\color{navy} \S 5\quad Daily Debrief \& Reflection}
+
+\vspace{6pt}
+
+\begin{debrief}{Post-Match Review (fill in before sleep, 5\,min)}
+\renewcommand{\arraystretch}{1.2}
+\sffamily\small
+\begin{tabularx}{\linewidth}{@{}p{2.4cm}X@{}}
+  \textbf{604 Calculus} & Time spent: \underline{\hspace{1.4cm}} min \quad\textbar\quad M1 status: \checkbox\ Independent \checkbox\ Used hints \checkbox\ Incomplete\\
+  & Error type: \checkbox\ Knowledge gap \checkbox\ Modelling \checkbox\ Logic \checkbox\ Calculation \checkbox\ Time\\
+  \midrule
+  \textbf{811 QM} & Time spent: \underline{\hspace{1.4cm}} min \quad\textbar\quad Q1 status: \checkbox\ Independent \checkbox\ Used hints \checkbox\ Incomplete\\
+  & Error type: \checkbox\ Knowledge gap \checkbox\ Physical model \checkbox\ Operator algebra \checkbox\ Calculation \checkbox\ Time\\
+  \midrule
+  \textbf{Calc Topic} & Time spent: \underline{\hspace{1.4cm}} min \quad\textbar\quad Level 1 \checkbox\ \textbar\ Level 2 \checkbox\ \textbar\ Level 3 \checkbox\ \textbar\ All correct \checkbox\\
+  \midrule
+  \textbf{Planning} & \textbf{Spaced retrieval in 3 days:} \underline{\hspace{8cm}}\\
+  & \textbf{Today's assessment:} \checkbox\ Peak performance \checkbox\ Steady progress \checkbox\ Minimum defence mode\\
+\end{tabularx}
+\end{debrief}
+
+\vspace{8pt}
+
+\begin{tcolorbox}[
+  enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=3.5mm, bottom=4mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{forest}\rule{3pt}{10pt}}\hspace{4pt}Key Derivation Insights \& Traps \textbar\ 突破口与避坑沉淀},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+]
+\sffamily\small
+\textbf{Core Breakthrough (今日核心突破口与关键一步)}:\\[30pt]
+\rule{\linewidth}{0.3pt}\\[12pt]
+\textbf{Fatal Trap \& Common Error (致命陷阱与避坑警示)}:\\[30pt]
+\rule{\linewidth}{0.3pt}\\[12pt]
+\textbf{Day +3 Action Item (3 天后间隔重做提取的具体题号与断点)}:\\[25pt]
+\rule{\linewidth}{0.3pt}
+\end{tcolorbox}
 
 \end{document}
