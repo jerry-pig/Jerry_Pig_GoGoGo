@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05_每日大赛_Daily/00_计算专题宏观规划_MacroPlan.md",
+                "file": "00_Dashboard_作战指挥中心/01_16周推进总览_Milestones.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00_计算专题宏观规划_MacroPlan"
+              "title": "01_16周推进总览_Milestones"
             }
           }
         ]
@@ -202,6 +202,7 @@
   },
   "active": "a975919d7895025e",
   "lastOpenFiles": [
+    "05_每日大赛_Daily/00_计算专题宏观规划_MacroPlan.md",
     "00_Dashboard_作战指挥中心/01_16周推进总览_Milestones.md",
     "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
     "05_每日大赛_Daily/2026-09-11/每日大赛.pdf",
@@ -214,7 +215,6 @@
     "05_每日大赛_Daily/template/每日大赛_模板.aux",
     "05_每日大赛_Daily/template/每日大赛_模板.log",
     "05_每日大赛_Daily/template/每日大赛生成规范与AI指引.md",
-    "05_每日大赛_Daily/00_计算专题宏观规划_MacroPlan.md",
     "05_每日大赛_Daily/大纲/2027国科大杭高院理论物理_备考总纲.pdf",
     "05_每日大赛_Daily/2026-09-11/每日大赛.tex",
     "05_每日大赛_Daily/2026-09-11",
