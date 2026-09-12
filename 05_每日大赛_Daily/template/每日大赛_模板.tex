@@ -1,171 +1,511 @@
-% !TeX program = xelatex
-\documentclass[11pt, a4paper]{article}
+% ==============================================================================
+% The Grand Daily Tournament — 2026-09-12 Match (Week 2 Day 6)
+% Locked template: EB Garamond + Garamond-Math + STKaiti (v6.0 Deluxe - 6 Pages)
+% Feature: Full 6-Page Deluxe Edition with Cover, Color-Coded Problem Boxes & XP System
+% ==============================================================================
+\documentclass[a4paper,11pt]{article}
 
-% ... (Same preamble as before up to document start, assuming user has their custom sty or I just use standard packages)
-\usepackage[utf8]{inputenc}
-\usepackage{geometry}
-\geometry{a4paper, left=15mm, right=15mm, top=20mm, bottom=20mm}
-\usepackage{amsmath, amssymb, amsthm}
-\usepackage{physics}
-\usepackage{graphicx}
-\usepackage{xcolor}
-\usepackage{tcolorbox}
-\tcbuselibrary{skins, breakable}
-\usepackage{enumitem}
-\usepackage{fancyhdr}
-\usepackage{lastpage}
-\usepackage{tabularx}
-\usepackage{booktabs}
+% ——— Engine & Font Setup ———
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{unicode-math}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{EBGaramond}[
+  Path           = {c:/texlive/2024/texmf-dist/fonts/opentype/public/ebgaramond/},
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-SemiBold,
+  BoldItalicFont = *-SemiBoldItalic,
+  Ligatures      = TeX,
+  Numbers        = OldStyle
+]
+\setsansfont{LibertinusSans}[
+  Path        = {c:/texlive/2024/texmf-dist/fonts/opentype/public/libertinus-fonts/},
+  Extension   = .otf,
+  UprightFont = *-Regular,
+  ItalicFont  = *-Italic,
+  BoldFont    = *-Bold,
+  Scale       = MatchLowercase
+]
+\setmathfont{Garamond-Math.otf}[
+  Path  = {c:/texlive/2024/texmf-dist/fonts/opentype/public/garamond-math/},
+  Scale = MatchLowercase
+]
+
 \usepackage{xeCJK}
-\setCJKmainfont{SimSun} % Or whatever standard font
-
-\definecolor{navy}{RGB}{20, 30, 80}
-\definecolor{slate}{RGB}{70, 80, 100}
-\definecolor{royal}{RGB}{30, 80, 180}
-\definecolor{forest}{RGB}{40, 120, 60}
-\definecolor{crimson}{RGB}{180, 40, 40}
-\definecolor{border}{RGB}{200, 205, 215}
-\definecolor{paper}{RGB}{250, 251, 253}
-\definecolor{mist}{RGB}{140, 150, 160}
-
-\newcommand{\alerttag}[1]{\textsf{\textbf{\color{crimson}[#1]}}}
-\newcommand{\checkbox}{$\square$}
-
-\newtcolorbox{briefing}[1]{
-  enhanced, breakable,
-  colback=white, colframe=navy, boxrule=1pt, arc=3mm,
-  fonttitle=\sffamily\bfseries\large, title={#1},
-  colbacktitle=navy, coltitle=white,
-  attach boxed title to top left={yshift=-2mm, xshift=5mm},
-  boxed title style={boxrule=0pt, arc=2mm}
+\xeCJKsetup{
+  CJKmath      = false,
+  PunctStyle   = kaiming,
+  CheckSingle  = true,
+  AutoFakeBold = true,
+  AutoFakeSlant= false
 }
+\setCJKmainfont{STKaiti}[
+  Path        = {C:/Windows/Fonts/},
+  UprightFont = STKAITI.TTF,
+  BoldFont    = STKAITI.TTF,
+  ItalicFont  = STKAITI.TTF,
+  Script      = Default
+]
+\setCJKsansfont{Microsoft YaHei}
+\setCJKmonofont{FangSong}
 
-\newtcolorbox{problem}[2]{
-  enhanced, breakable,
-  colback=white, colframe=royal, boxrule=0.8pt, arc=2mm,
-  left=4mm, right=4mm, top=3mm, bottom=3mm,
-  fonttitle=\sffamily\bfseries, title={#1},
-  colbacktitle=paper, coltitle=royal,
-  titlerule=0pt, toptitle=2mm, bottomtitle=2mm,
-  after title={\hfill\textmd{\color{slate}#2}}
-}
+\usepackage[margin=1.5cm,headheight=14pt,headsep=10pt,footskip=18pt]{geometry}
+\usepackage{booktabs,enumitem,xcolor,graphicx,tabularx}
 
-\newtcolorbox{solution}[1]{
-  enhanced, breakable,
-  colback=paper, colframe=forest, boxrule=0.8pt, arc=2mm,
-  fonttitle=\sffamily\bfseries, title={#1},
-  colbacktitle=forest, coltitle=white,
-  attach boxed title to top left={yshift=-2mm, xshift=5mm},
-  boxed title style={boxrule=0pt, arc=2mm},
-  top=4mm
-}
+\usepackage[breakable,skins,hooks]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows.meta}
+\usepackage{fancyhdr,lastpage}
+\usepackage{microtype}
 
-\newtcolorbox{debrief}[1]{
-  enhanced, breakable,
-  colback=white, colframe=slate, boxrule=1pt, arc=3mm,
-  fonttitle=\sffamily\bfseries\large, title={#1},
-  colbacktitle=slate, coltitle=white,
-  attach boxed title to top left={yshift=-2mm, xshift=5mm},
-  boxed title style={boxrule=0pt, arc=2mm}
-}
+% ——— TeXtured Colour Palette ———
+\definecolor{navy}{HTML}{0F172A}
+\definecolor{slate}{HTML}{1E293B}
+\definecolor{royal}{HTML}{1E40AF}
+\definecolor{mist}{HTML}{64748B}
+\definecolor{border}{HTML}{E2E8F0}
+\definecolor{paper}{HTML}{F8FAFC}
+\definecolor{forest}{HTML}{065F46}
+\definecolor{amber}{HTML}{D97706}
+\definecolor{wine}{HTML}{991B1B}
+\definecolor{ice}{HTML}{EFF6FF}
+\definecolor{purple}{HTML}{6B21A8}
+\definecolor{teal}{HTML}{0F766E}
 
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{\sffamily\color{slate} 2026 UCAS Daily Tournament}
-\fancyhead[R]{\sffamily\color{slate} \thepage\ / \pageref{LastPage}}
+% ——— Typography Tuning ———
+\linespread{1.10}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3.5pt plus 1pt minus 1pt}
+\setlength{\abovedisplayskip}{5pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{5pt plus 2pt minus 2pt}
+
+% ——— Header / Footer ———
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\textcolor{mist}{\footnotesize\sffamily 2027 Theoretical Physics · 604 Calculus \& 811 Quantum Mechanics}}
+\fancyhead[R]{\textcolor{slate}{\footnotesize\sffamily\bfseries Daily Tournament · 2026-09-12}}
+\fancyfoot[L]{\textcolor{mist}{\footnotesize\itshape ``Master the foundation; calculate until the very last step.''}}
+\fancyfoot[R]{\textcolor{mist}{\footnotesize\sffamily Page \thepage\ of \pageref{LastPage}}}
 \renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\headrule}{\hbox to\headwidth{\color{border}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\headrule}{\color{border}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}
 
+% ——— tcolorbox Environments with Color Separation ———
+\newtcolorbox{briefing}[1]{%
+  enhanced, blanker, breakable,
+  left=4mm, right=3mm, top=3mm, bottom=3mm,
+  borderline west={2.5pt}{0pt}{royal},
+  colback=paper,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={#1},
+  attach title to upper={\par\vspace{2mm}}
+}
+
+% General Color-Coded Problem Box
+\newtcolorbox{problembox}[3]{%
+  enhanced, breakable,
+  colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=2.8mm, bottom=2.8mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{#3}\rule{3.5pt}{10pt}}\hspace{4.5pt}#1\hfill{\normalfont\footnotesize\color{mist}\itshape #2}},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+}
+
+\newtcolorbox{solution}[1]{%
+  enhanced, breakable,
+  colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=2.8mm, bottom=2.8mm,
+  fonttitle=\sffamily\bfseries\color{forest},
+  title={\raisebox{0pt}{\color{forest}\rule{3pt}{10pt}}\hspace{4pt}#1},
+  colbacktitle=paper, coltitle=forest,
+  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+}
+
+\newtcolorbox{debrief}[1]{%
+  enhanced, breakable,
+  colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=3.5mm, right=3.5mm, top=2.5mm, bottom=2.5mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{amber}\rule{3pt}{10pt}}\hspace{4pt}#1},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+}
+
+\newtcolorbox{notebox}{%
+  enhanced, blanker,
+  left=3mm, right=2mm, top=1.5mm, bottom=1.5mm,
+  borderline west={2pt}{0pt}{royal!60},
+  colback=ice, fontupper=\small
+}
+
+\newtcolorbox{warnbox}{%
+  enhanced, blanker,
+  left=3mm, right=2mm, top=1.5mm, bottom=1.5mm,
+  borderline west={2pt}{0pt}{wine},
+  colback=wine!4, fontupper=\small
+}
+
+\newcommand{\checkbox}{\ensuremath{\mdlgwhtsquare}}
+\newcommand{\alerttag}[1]{\textcolor{wine}{\sffamily\bfseries [#1]}}
+
+% ==============================================================================
 \begin{document}
 
+% ==============================================================================
+% PAGE 1: COVER
+% ==============================================================================
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[paper] (current page.south west) rectangle (current page.north east);
+
+  \fill[navy] (current page.north west) rectangle ($(current page.north east)+(0,-3.4cm)$);
+  \fill[royal] ($(current page.north west)+(0,-3.4cm)$) rectangle ($(current page.north east)+(0,-3.55cm)$);
+  \fill[amber] ($(current page.north west)+(0,-3.55cm)$) rectangle ($(current page.north east)+(0,-3.62cm)$);
+
+  \node[anchor=west, text=white] at ($(current page.north west)+(2.2cm,-1.5cm)$) {
+    {\fontsize{12}{14}\selectfont\sffamily\bfseries THE GRAND DAILY TOURNAMENT \textperiodcentered\ 2027}
+  };
+  \node[anchor=west, text=white!50] at ($(current page.north west)+(2.2cm,-2.3cm)$) {
+    {\fontsize{8.5}{11}\selectfont\sffamily UCAS \textperiodcentered\ HIAIS \textperiodcentered\ THEORETICAL PHYSICS ADVANCED TRAINING DOSSIER}
+  };
+
+  \begin{scope}[shift={($(current page.center)+(0,1.2cm)$)}]
+    \draw[line width=0.5pt, border!80, dashed] (0,0) circle (3.3cm);
+    \draw[line width=0.7pt, border] (0,0) circle (2.5cm);
+    \draw[line width=0.4pt, royal!30] (0,0) circle (1.6cm);
+    \draw[line width=1.2pt, slate!60] (-3.8,-2.2) -- (3.8,2.2);
+    \draw[line width=1.2pt, slate!60] (-3.8,2.2) -- (3.8,-2.2);
+    \draw[line width=0.7pt, royal!65, -{Stealth[length=2.5mm]}] (-4.2,0) -- (4.2,0)
+      node[right, font=\footnotesize\sffamily\color{mist}] {$x,\, r$};
+    \draw[line width=0.7pt, royal!65, -{Stealth[length=2.5mm]}] (0,-3.6) -- (0,3.6)
+      node[above, font=\footnotesize\sffamily\color{mist}] {$\hat{H},\, \psi(x,t)$};
+    \draw[line width=1.3pt, royal, smooth, samples=120, domain=-3.14:3.14]
+      plot ({\x}, {1.1*sin(2.5*\x r)*exp(-\x*\x/5.5)});
+    \draw[line width=1.1pt, amber!85!black, smooth, samples=120, domain=-3.14:3.14]
+      plot ({\x}, {-0.9*cos(2.5*\x r)*exp(-\x*\x/5.5)});
+    \fill[navy] (0,0) circle (3.5pt);
+    \fill[amber] (0,0) circle (2pt);
+    \fill[royal] (2.12, 1.13) circle (2.2pt);
+    \fill[wine] (-1.8, -1.05) circle (2.2pt);
+    \fill[forest] (1.0, -1.35) circle (2.2pt);
+  \end{scope}
+
+  \node[anchor=center] at ($(current page.center)+(0,-3.4cm)$) {
+    \begin{minipage}{0.82\textwidth}
+      \centering
+      {\fontsize{32}{38}\selectfont\bfseries\color{navy} Daily Tournament}\\[5pt]
+      {\fontsize{12}{15}\selectfont\sffamily\bfseries\color{royal}%
+        GRAND ARENA OF THEORETICAL PHYSICS \textperiodcentered\ v6.0}\\[12pt]
+      {\color{navy}\rule{0.5\textwidth}{1.2pt}}\\[10pt]
+      {\fontsize{10.5}{14}\selectfont\color{slate}\itshape
+        ``Today's contestants: Taylor Symmetries \& Matrix Roots $\times$ Heisenberg Picture Evolution''\\[3pt]
+        {\small\color{mist}\upshape Closed-book \textperiodcentered\
+        Pen-and-paper derivation \textperiodcentered\ Muscle memory reconstruction}}
+    \end{minipage}
+  };
+
+  \node[anchor=south] at ($(current page.south)+(0,1.6cm)$) {
+    \begin{minipage}{0.84\textwidth}
+      \begin{tcolorbox}[
+        enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+        left=4mm, right=4mm, top=3.5mm, bottom=3.5mm
+      ]
+        \renewcommand{\arraystretch}{1.25}
+        \sffamily\small
+        \begin{tabularx}{\linewidth}{@{}p{2.6cm}X@{}}
+          \textbf{Date} & 2026-09-12 \quad\textbar\quad Week 2 (Day 6) \quad\textbar\quad Level 4: Angular Momentum Master (1610 XP)\\
+          \textbf{Modules} & \textbf{604}: Taylor Limit Order Matching, Symmetric Matrices, Linear ODE \quad\textbar\quad \textbf{811}: Heisenberg Picture\\
+          \textbf{Architecture} & v6.0 Deluxe: Muscle Matrix (Blue) $\to$ Concept Blitz (Amber) $\to$ Core Model (Green) $\to$ Abyss (Wine)\\
+          \textbf{Target} & Full 6-Page Deluxe Combat Edition \quad\textbar\quad Standard 80 min Complete Run\\
+        \end{tabularx}
+      \end{tcolorbox}
+    \end{minipage}
+  };
+\end{tikzpicture}
+\end{titlepage}
+
+% ==============================================================================
+% PAGE 2: §1 TACTICAL BRIEFING & WARM-UP RETRIEVAL
+% ==============================================================================
+\clearpage
+
 \begin{center}
-  {\Huge\sffamily\bfseries\color{navy} 每日大?Daily Tournament}\\[6pt]
-  {\small\sffamily\color{mist} [YYYY-MM-DD] \quad\textbar\quad Phase: [Phase Name]}\\[-3pt]
-  {\color{navy}\rule{\textwidth}{0.8pt}}
+  {\LARGE\bfseries\color{navy} Theoretical Physics Training \textperiodcentered\ Daily Tournament}\\[3pt]
+  {\small\sffamily\color{mist} 2026-09-12 \quad\textbar\quad Week 2 (Day 6) \quad\textbar\quad Phase 2: Ground-Level Foundation Reconstruction}\\[-4pt]
+  {\color{navy}\rule{\textwidth}{0.8pt}}\\[-11pt]
+  {\color{border}\rule{\textwidth}{0.3pt}}
 \end{center}
 
-\vspace{-4pt}
+\vspace{-6pt}
 
-\begin{briefing}{\S 1\quad Tactical Briefing \& Warm-Up}
-\begin{itemize}[leftmargin=1.5em]
-  \item \textbf{604}: [今日高数任务]
-  \item \textbf{811}: [今日量力任务]
+\begin{briefing}{\S 1\quad Tactical Briefing \& Warm-Up Retrieval}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, topsep=1pt]
+  \item \textbf{604 今日靶向}：重塑极限泰勒相消的定阶铁律（佩亚诺余项控制到同阶，防止抵消为零）；掌握 $3\times 3$ 实对称矩阵特征多项式的按行展开降阶技巧；熟练书写一阶线性非齐次微分方程积分因子通解公式。
+  \item \textbf{811 今日靶向}：彻底厘清 Schrödinger 图像与 Heisenberg 图像的物理本质对立统一（态矢冻结 vs 算符演化）；推导 Heisenberg 运动方程 $\frac{d\hat{A}_H}{dt} = \frac{1}{i\hbar}[\hat{A}_H, \hat{H}]$；透彻理解概率流密度连续性方程 $\nabla \cdot \vec{j} + \frac{\partial \rho}{\partial t} = 0$ 的守恒律内涵。
+  \item \textbf{Spaced Retrieval 间隔提取 (Day +3 滚动回溯)}：\textbf{604 (Day 3 回溯)} 极坐标面积微元雅可比行列式 $dxdy = rdrd\theta$；\textbf{811 (Day 3 回溯)} 升降算符坐标表达式 $\hat{x} = \sqrt{\frac{\hbar}{2m\omega}}(a+a^\dagger)$。
+  \item \textbf{考试规则}：闭卷、独立手推、严禁查阅笔记；先在下方草稿区完成 5--8 分钟白纸公式破冰与间隔提取。
 \end{itemize}
-\textbf{Warm-Up Retrieval} (5\,min): \checkbox\ [公式1] \quad \checkbox\ [公式2] \quad \checkbox\ [公式3]
+
+\vspace{1mm}
+\textbf{Warm-Up Retrieval Checklist} (5--8\,min): without notes, write on scratch paper:\\
+\checkbox\ \alerttag{604 Taylor} 展开式: $\sin x = x - \frac{x^3}{6} + o(x^3)$, $\cos x = 1 - \frac{x^2}{2} + o(x^2)$, $e^x = 1 + x + \frac{x^2}{2} + o(x^2)$ \quad
+\checkbox\ \alerttag{604 ODE} 一阶线性 $y' + p(x)y = q(x)$ 积分因子: $I(x) = e^{\int p(x)dx}$ \quad
+\checkbox\ \alerttag{811 Heisenberg} 运动方程: $\frac{d\hat{A}_H}{dt} = \frac{1}{i\hbar}[\hat{A}_H, \hat{H}] + \left(\frac{\partial\hat{A}}{\partial t}\right)_H$ \quad
+\checkbox\ \alerttag{811 Current} 概率流密度: $\vec{j} = \frac{\hbar}{2mi}(\psi^* \nabla \psi - \psi \nabla \psi^*)$
 \end{briefing}
 
+\vspace{4pt}
+
+\begin{tcolorbox}[
+  enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=3mm, bottom=3mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{royal}\rule{3pt}{10pt}}\hspace{4pt}Warm-Up Retrieval Workspace \textbar\ 白纸破冰与间隔提取草稿区},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+]
+\textcolor{mist}{\footnotesize\itshape 5--8 分钟闭卷盲写：默写常用麦克劳林展开前三阶、一阶线性方程积分通解形式，写出 Heisenberg 运动方程与概率流密度表达式。}
+\vspace{9.0cm}
+\end{tcolorbox}
+
+% ==============================================================================
+% PAGE 3: §2 SECTION A & SECTION B
+% ==============================================================================
+\clearpage
+
+{\Large\sffamily\bfseries\color{navy} \S 2\quad Foundation Matrix \& Concept Blitz}
+\hfill{\small\sffamily\color{mist}\itshape Complete independently under timed conditions}
+
+\vspace{8pt}
+
+{\normalsize\sffamily\bfseries\color{royal} \S A\quad 基础肌肉记忆区 (Muscle Memory Matrix \textperiodcentered\ 30 min)}
+\vspace{3pt}
+
+\begin{problembox}{Problem A.1 \textbar\ 604 Calculus: Taylor Limit (定阶相消)}{Suggested time: 10\,min}{royal}
+利用泰勒公式（带佩亚诺余项），求下列极限：
+\[
+  L = \lim_{x \to 0} \frac{\sin x - x \cos x}{x^3}
+\]
+\textit{要求：写清每一项展开的具体阶数与佩亚诺余项 $o(x^k)$，严禁跳步。}
+\end{problembox}
+
+\vspace{4pt}
+
+\begin{problembox}{Problem A.2 \textbar\ 604 Linear Algebra: Matrix Eigenvalues (特征多项式)}{Suggested time: 10\,min}{royal}
+求实对称矩阵：
+\[
+  A = \begin{pmatrix} 2 & 0 & 1 \\ 0 & 2 & 0 \\ 1 & 0 & 2 \end{pmatrix}
+\]
+的全部特征值 $\lambda_1, \lambda_2, \lambda_3$，并写出其对应的迹 $\mathrm{tr}(A)$ 与行列式 $|A|$ 的自检关系。
+\end{problembox}
+
+\vspace{4pt}
+
+\begin{problembox}{Problem A.3 \textbar\ 604 ODE: First-Order Linear Equation (积分因子法)}{Suggested time: 10\,min}{forest}
+求解一阶常微分方程的初值问题：
+\[
+  \frac{dy}{dx} - 2x y = 1, \quad y(0) = 0
+\]
+\textit{注：最终结果若含有不可用初等函数表达的高斯型积分 $\int_0^x e^{-t^2}dt$，保留该定积分形式即可。}
+\end{problembox}
+
+\vspace{8pt}
+{\normalsize\sffamily\bfseries\color{amber} \S B\quad 量子概念闪击战 (Quantum Concept Blitz \textperiodcentered\ 10 min)}
+\vspace{3pt}
+
+\begin{problembox}{Problem B.1 \textbar\ 811 Concept: Schrödinger vs. Heisenberg Picture (图像辨析)}{Suggested time: 5\,min}{amber}
+判断下列命题的正误，并用一句话说明理由：\\
+\textit{“在 Heisenberg 图像中，量子系统的态矢量 $|\psi_H(t)\rangle$ 随时间演化满足含时薛定谔方程，而力学量算符 $\hat{A}_H$ 则固定在初始时刻保持不含时。”}
+\end{problembox}
+
+\vspace{4pt}
+
+\begin{problembox}{Problem B.2 \textbar\ 811 Concept: Probability Current Density (守恒律物理图像)}{Suggested time: 5\,min}{amber}
+由薛定谔方程可严格推导得到连续性方程：
+\[
+  \nabla \cdot \vec{j} + \frac{\partial \rho}{\partial t} = 0
+\]
+其中 $\rho = |\psi|^2$ 为位置概率密度。请用直观的物理大白话阐述该方程的物理意义，并说明 $\vec{j}$ 为什么被称为“概率流密度”。
+\end{problembox}
+
+% ==============================================================================
+% PAGE 4: §3 SECTION C & SECTION D
+% ==============================================================================
+\clearpage
+
+{\Large\sffamily\bfseries\color{navy} \S 3\quad Core Model Mastery \& The Abyss}
+\hfill{\small\sffamily\color{mist}\itshape The Backbone of UCAS Exam}
+
+\vspace{8pt}
+
+{\normalsize\sffamily\bfseries\color{forest} \S C\quad 核心母题攻坚 (Core Model Mastery \textperiodcentered\ 25 min)}
+\vspace{3pt}
+
+\begin{problembox}{Problem C.1 \textbar\ 811 Model: Heisenberg Equation of Motion for 1D Harmonic Oscillator}{Suggested time: 25\,min}{teal}
+质量为 $m$、固有角频率为 $\omega$ 的一维谐振子，其哈密顿量算符为：
+\[
+  \hat{H} = \frac{\hat{p}^2}{2m} + \frac{1}{2}m\omega^2 \hat{x}^2
+\]
+在 Heisenberg 图像中，不显含时间的力学量算符 $\hat{A}_H(t)$ 满足 Heisenberg 运动方程：
+\[
+  \frac{d\hat{A}_H(t)}{dt} = \frac{1}{i\hbar}[\hat{A}_H(t), \hat{H}]
+\]
+基本对易关系为 $[\hat{x}, \hat{p}] = i\hbar$。
+\begin{enumerate}[leftmargin=1.8em, itemsep=2pt, topsep=1pt]
+  \item 试利用算符交换子性质，精确计算位置算符的演化方程 $\frac{d\hat{x}_H}{dt}$，指出其与动量算符 $\hat{p}_H$ 的代数关系；
+  \item 试计算动量算符的演化方程 $\frac{d\hat{p}_H}{dt}$，指出其与位置算符 $\hat{x}_H$ 的代数关系；
+  \item 结合上述结果，写出 $\hat{x}_H(t)$ 满足的二阶算符常微分方程，并与经典力学中简谐振动牛顿第二定律方程进行对照，阐明 Ehrenfest 定理的深刻物理意蕴。
+\end{enumerate}
+\end{problembox}
+
 \vspace{10pt}
 
-% ================= Section A =================
-{\Large\sffamily\bfseries\color{navy} \S A\quad 基础肌肉记忆区 (Muscle Memory Matrix)}
-\hfill{\small\itshape 604 \& 811 Foundation (30-40 min)}
-\vspace{4pt}
+{\normalsize\sffamily\bfseries\color{wine} \S D\quad 极限挑战区 (The Abyss \textperiodcentered\ 选做 \textperiodcentered\ 15 min)}
+\vspace{3pt}
 
-\begin{problem}{A.1 \textbar\ Calculus Foundation}{}
-[填入积分、求导或极限基础计算题]
-\end{problem}
-\begin{problem}{A.2 \textbar\ Linear Algebra Foundation}{}
-[填入矩阵、行列式基础计算题]
-\end{problem}
-\begin{problem}{A.3 \textbar\ ODE Foundation}{}
-[填入常微分方程基础计算题]
-\end{problem}
+\begin{problembox}{Problem D.1 \textbar\ Calculus \& QM Backbone: Gaussian Improper Integral (高斯积分极坐标技巧)}{Optional \textperiodcentered\ Suggested time: 15\,min}{wine}
+求解理论物理与量子波包中出现频次最高的高斯型反常积分：
+\[
+  I = \int_{-\infty}^{+\infty} e^{-a x^2}\,dx \quad (a > 0)
+\]
+\textit{提示：构造二重积分 $I^2 = \left(\int_{-\infty}^{+\infty} e^{-ax^2}dx\right)\left(\int_{-\infty}^{+\infty} e^{-ay^2}dy\right) = \iint_{\mathbb{R}^2} e^{-a(x^2+y^2)}dxdy$，并利用极坐标变换 $dxdy = rdrd\theta$ 计算其精确值。}
+\end{problembox}
 
+% ==============================================================================
+% PAGE 5: §4 MODEL SOLUTIONS & COMMENTARY
+% ==============================================================================
 \clearpage
-% ================= Section B =================
-{\Large\sffamily\bfseries\color{navy} \S B\quad 量子概念闪击战 (Quantum Concept Blitz)}
-\hfill{\small\itshape Physical Intuition without Heavy Math (10 min)}
-\vspace{4pt}
 
-\begin{problem}{B.1 \textbar\ Conceptual True/False}{}
-[判断题并简述理由]
-\end{problem}
-\begin{problem}{B.2 \textbar\ Dimensional \& Symmetry Analysis}{}
-[量纲或对称性分析题]
-\end{problem}
+{\Large\sffamily\bfseries\color{navy} \S 4\quad Model Solutions \& Commentary}
 
-\vspace{10pt}
-% ================= Section C =================
-{\Large\sffamily\bfseries\color{navy} \S C\quad 核心母题攻坚 (Core Model Mastery)}
-\hfill{\small\itshape Standard Exam Model (20-30 min)}
-\vspace{4pt}
+\vspace{1pt}
+{\small\color{mist}\itshape\hspace{1pt} Complete your independent attempt on scratch paper before consulting this page.}
 
-\begin{problem}{C.1 \textbar\ [Model Name]}{}
-[核心大题：分步设问，避免一上来就超高难度]
-\end{problem}
+\vspace{6pt}
 
-\clearpage
-% ================= Section D =================
-{\Large\sffamily\bfseries\color{navy} \S D\quad 极限挑战区 (The Abyss - 选做)}
-\hfill{\small\itshape True Exam Difficulty \& Beyond (Optional, 15+ min)}
-\vspace{4pt}
+\begin{solution}{Section A \textperiodcentered\ 604 Foundation Solutions}
+\textbf{A.1 (Taylor Limit):}\enspace
+当 $x \to 0$ 时，分母为 $x^3$，故分子必须展开至 $x^3$ 阶：
+$\sin x = x - \frac{x^3}{6} + o(x^3)$，$\cos x = 1 - \frac{x^2}{2} + o(x^2)$。\\
+代入分子：
+\[
+  \sin x - x \cos x = \left(x - \frac{x^3}{6} + o(x^3)\right) - x\left(1 - \frac{x^2}{2} + o(x^2)\right) = \left(-\frac{1}{6} + \frac{1}{2}\right)x^3 + o(x^3) = \frac{1}{3}x^3 + o(x^3)
+\]
+因此原极限为：$L = \lim_{x \to 0} \frac{\frac{1}{3}x^3 + o(x^3)}{x^3} = \frac{1}{3}$。\\
+\begin{warnbox}
+\alerttag{Common Error}\enspace 若直接用等价无穷小 $\sin x \sim x, \cos x \sim 1 - x^2/2$，则分子得到 $x - x(1 - x^2/2) = x^3/2$，导致系数错误！减法相消必须严格保留高阶项。
+\end{warnbox}
 
-\begin{problem}{D.1 \textbar\ The Abyss}{}
-[超纲/压轴题，做不出不扣分]
-\end{problem}
+\vspace{1.5mm}
+\textbf{A.2 (Eigenvalues):}\enspace
+计算特征行列式 $|\lambda I - A| = \begin{vmatrix} \lambda-2 & 0 & -1 \\ 0 & \lambda-2 & 0 \\ -1 & 0 & \lambda-2 \end{vmatrix}$。
+按第二行展开：
+\[
+  |\lambda I - A| = (\lambda-2) \begin{vmatrix} \lambda-2 & -1 \\ -1 & \lambda-2 \end{vmatrix} = (\lambda-2)[(\lambda-2)^2 - 1] = (\lambda-2)(\lambda-1)(\lambda-3) = 0
+\]
+解得三个特征值分别为：$\lambda_1 = 1, \, \lambda_2 = 2, \, \lambda_3 = 3$。\\
+\alerttag{自检} $\mathrm{tr}(A) = 2+2+2 = 6 = 1+2+3$；$|A| = 2(4-1) = 6 = 1 \times 2 \times 3$。两组自检完全吻合！
 
-\clearpage
-% ================= Solutions =================
-{\Large\sffamily\bfseries\color{navy} \S E\quad Model Solutions \& Commentary}
-\vspace{4pt}
-
-\begin{solution}{Section A \textperiodcentered\ Solutions}
-[解析]
-\end{solution}
-\begin{solution}{Section B \textperiodcentered\ Solutions}
-[解析]
-\end{solution}
-\begin{solution}{Section C \textperiodcentered\ Solutions}
-[解析]
-\end{solution}
-\begin{solution}{Section D \textperiodcentered\ Solutions}
-[解析]
+\vspace{1.5mm}
+\textbf{A.3 (Linear ODE):}\enspace
+标准型 $y' - 2xy = 1$。积分因子 $I(x) = e^{\int -2x dx} = e^{-x^2}$。\\
+两边同乘 $e^{-x^2}$：$\frac{d}{dx}\left[y e^{-x^2}\right] = e^{-x^2}$。两边从 $0$ 到 $x$ 积分并代入初值 $y(0) = 0$：
+\[
+  y(x)e^{-x^2} - 0 = \int_0^x e^{-t^2}dt \implies y(x) = e^{x^2}\int_0^x e^{-t^2}dt
+\]
 \end{solution}
 
+\vspace{4pt}
+
+\begin{solution}{Section B \& Section C \textperiodcentered\ 811 QM Solutions}
+\textbf{B.1 (Picture Check):}\enspace \alerttag{错误 (False)}。题干陈述完全相反。在 Heisenberg 图像中，态矢量冻结在初始时刻 $|\psi_H\rangle = |\psi(0)\rangle$，力学量算符随时间演化；而在 Schrödinger 图像中才是态矢量演化、算符不含时。
+
+\vspace{1.5mm}
+\textbf{B.2 (Probability Current):}\enspace 物理实质是“全空间概率严格守恒（无源无汇）”。空间某一闭区域内发现粒子的总概率之所以随时间减少，是因为概率以“概率流” $\vec{j}$ 的形式穿过区域边界流向了外界。$\vec{j}$ 刻画了粒子几率密度在空间中定向漂移的通量强度与流动方向。
+
+\vspace{1.5mm}
+\textbf{C.1 (Heisenberg Oscillator Derivation):}\\
+(1) 利用对易子性质 $[\hat{A}, \hat{B}^2] = [\hat{A},\hat{B}]\hat{B} + \hat{B}[\hat{A},\hat{B}]$：
+\[
+  [\hat{x}, \hat{H}] = \left[\hat{x}, \frac{\hat{p}^2}{2m} + \frac{1}{2}m\omega^2 \hat{x}^2\right] = \frac{1}{2m}[\hat{x}, \hat{p}^2] + 0 = \frac{1}{2m}(i\hbar\hat{p} + \hat{p}i\hbar) = \frac{i\hbar}{m}\hat{p}
+\]
+代入 Heisenberg 方程：$\frac{d\hat{x}_H}{dt} = \frac{1}{i\hbar}\left(\frac{i\hbar}{m}\hat{p}_H\right) = \frac{\hat{p}_H}{m}$。
+
+(2) 类似地计算动量与势能项的对易：
+\[
+  [\hat{p}, \hat{H}] = \frac{1}{2}m\omega^2 [\hat{p}, \hat{x}^2] = \frac{1}{2}m\omega^2 (-i\hbar\hat{x} - \hat{x}i\hbar) = -i\hbar m\omega^2 \hat{x}
+\]
+代入 Heisenberg 方程：$\frac{d\hat{p}_H}{dt} = \frac{1}{i\hbar}\left(-i\hbar m\omega^2 \hat{x}_H\right) = -m\omega^2 \hat{x}_H$。
+
+(3) 对 $\frac{d\hat{x}_H}{dt} = \frac{\hat{p}_H}{m}$ 再次对时间求导：
+\[
+  \frac{d^2\hat{x}_H}{dt^2} = \frac{1}{m}\frac{d\hat{p}_H}{dt} = \frac{1}{m}(-m\omega^2 \hat{x}_H) = -\omega^2 \hat{x}_H \iff \frac{d^2\hat{x}_H}{dt^2} + \omega^2 \hat{x}_H = 0
+\]
+\begin{notebox}
+\alerttag{Ehrenfest's Theorem}\enspace 这正是经典简谐振动牛顿第二定律 $m\ddot{x} = -kx$ 的精确算符形式！对两边取量子期望值，得到平均值运动规律与经典轨迹完全吻合，体现了量子到经典的对应原理。
+\end{notebox}
+\end{solution}
+
+\vspace{4pt}
+
+\begin{solution}{Section D \textperiodcentered\ Gaussian Integral Solution}
+构造二维高斯积分：$I^2 = \iint_{\mathbb{R}^2} e^{-a(x^2+y^2)}\,dxdy$。\\
+转换为极坐标：$x^2+y^2 = r^2, \, dxdy = r\,dr\,d\theta$，积分范围 $\theta \in [0, 2\pi], \, r \in [0, +\infty)$：
+\[
+  I^2 = \int_0^{2\pi}d\theta \int_0^{+\infty} e^{-ar^2} r\,dr = 2\pi \cdot \left[-\frac{1}{2a}e^{-ar^2}\right]_0^{+\infty} = 2\pi \cdot \left(0 - \left(-\frac{1}{2a}\right)\right) = \frac{\pi}{a}
+\]
+因被积函数 $e^{-ax^2} > 0$，故积分值必为正数，开方得最终解：$I = \sqrt{\frac{\pi}{a}}$。
+\end{solution}
+
+% ==============================================================================
+% PAGE 6: §5 DAILY DEBRIEF & REFLECTION
+% ==============================================================================
 \clearpage
-% ================= Debrief =================
-{\Large\sffamily\bfseries\color{navy} \S F\quad Daily Debrief \& XP Reward}
-\vspace{10pt}
-[手动填写：今日耗时、错题归因、获得的 XP 结算]
+
+{\Large\sffamily\bfseries\color{navy} \S 5\quad Daily Debrief \& Reflection (XP Checkout)}
+
+\vspace{6pt}
+
+\begin{debrief}{Post-Match Review (fill in before sleep, 5\,min)}
+\renewcommand{\arraystretch}{1.25}
+\sffamily\small
+\begin{tabularx}{\linewidth}{@{}p{3.0cm}X@{}}
+  \textbf{Section A (肌肉记忆)} & Time: \underline{\hspace{1.2cm}} min \quad\textbar\quad A.1 \checkbox\ \textbar\ A.2 \checkbox\ \textbar\ A.3 \checkbox\ \textbar\ 全对 (+30 XP) \checkbox\\
+  & 错因剖析: \checkbox\ 泰勒漏阶 \checkbox\ 特征多项式计算失误 \checkbox\ 积分因子公式遗忘\\
+  \midrule
+  \textbf{Section B (概念闪击)} & Time: \underline{\hspace{1.2cm}} min \quad\textbar\quad B.1 \checkbox\ \textbar\ B.2 \checkbox\ \textbar\ 概念直觉清晰 (+10 XP) \checkbox\\
+  & 错因剖析: \checkbox\ 图像定义颠倒 \checkbox\ 连续性方程物理意义不清晰\\
+  \midrule
+  \textbf{Section C (核心母题)} & Time: \underline{\hspace{1.2cm}} min \quad\textbar\quad 独立推导出 Ehrenfest 方程 (+50 XP) \checkbox\ \textbar\ 看了解析 \checkbox\\
+  & 错因剖析: \checkbox\ 对易子计算符号错误 \checkbox\ 运动方程定义模糊\\
+  \midrule
+  \textbf{Section D (深渊挑战)} & Time: \underline{\hspace{1.2cm}} min \quad\textbar\quad 成功手撕高斯二重积分 (+20 XP 选做成就) \checkbox\ \textbar\ 未作答 \checkbox\\
+  \midrule
+  \textbf{Total XP Check} & \textbf{今日结算经验值：\underline{\hspace{1.8cm}} XP} \quad\textbar\quad 当前累计：\textbf{1610 + \underline{\hspace{1.0cm}} XP}\\
+  \midrule
+  \textbf{State Assessment} & \checkbox\ Peak performance (冲级状态) \quad \checkbox\ Steady progress (平稳推进) \quad \checkbox\ Minimum defence mode (保底防御)\\
+\end{tabularx}
+\end{debrief}
+
+\vspace{8pt}
+
+\begin{tcolorbox}[
+  enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=3.5mm, bottom=4mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{forest}\rule{3pt}{10pt}}\hspace{4pt}Key Derivation Insights \& Traps \textbar\ 突破口与避坑沉淀},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+]
+\sffamily\small
+\textbf{Core Breakthrough (今日核心突破口与关键一步)}:\\[30pt]
+\rule{\linewidth}{0.3pt}\\[12pt]
+\textbf{Fatal Trap \& Common Error (致命陷阱与避坑警示)}:\\[30pt]
+\rule{\linewidth}{0.3pt}\\[12pt]
+\textbf{Day +3 Action Item (3 天后间隔重做提取的具体题号与断点)}:\\[25pt]
+\rule{\linewidth}{0.3pt}
+\end{tcolorbox}
 
 \end{document}
