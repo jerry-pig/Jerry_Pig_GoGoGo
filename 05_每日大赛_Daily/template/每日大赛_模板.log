@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.6.25)  11 SEP 2026 13:49
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.6.25)  12 SEP 2026 21:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -245,12 +245,12 @@ garamond/EBGaramond-SemiBoldItalic.otf]/OT:script=latn;language=dflt;+onum;+smc
 p;mapping=tex-text;"
 
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/EBGaramond(1)/m/n on input line 26.
+(Font)                  OT1/cmr/m/n --> TU/EBGaramond(1)/m/n on input line 22.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/EBGaramond(1)/m/it on input line 26
+(Font)                  OT1/cmr/m/it --> TU/EBGaramond(1)/m/it on input line 22
 .
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/EBGaramond(1)/b/n on input line 26.
+(Font)                  OT1/cmr/bx/n --> TU/EBGaramond(1)/b/n on input line 22.
 
 
 Package fontspec Info: LibertinusSans-Regular scale = 0.8695631100313233.
@@ -369,10 +369,10 @@ language=dflt;+smcp;mapping=tex-text;"
 
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
 (Font)                  OT1/cmss/m/n --> TU/LibertinusSans(1)/m/n on input line
- 34.
+ 30.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/bx/n --> TU/LibertinusSans(1)/b/n on input lin
-e 34.
+e 30.
 
 Package fontspec Info: Garamond-Math scale = 0.888888888888889.
 
@@ -396,7 +396,7 @@ t;mapping=tex-text;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(0)/m/n' will be
-(Font)              scaled to size 9.73329pt on input line 38.
+(Font)              scaled to size 9.73329pt on input line 34.
 
 Package fontspec Info: Garamond-Math scale = 0.888888888888889.
 
@@ -432,17 +432,17 @@ ript=math;language=dflt;+ssty=1;mapping=tex-text;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(1)/m/n' will be
-(Font)              scaled to size 9.73329pt on input line 38.
+(Font)              scaled to size 9.73329pt on input line 34.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 38.
+(Font)              `operators' in the math version `normal' on input line 34.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/Garamond-Math.otf(1)/m/n on input li
-ne 38.
+ne 34.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 38.
+(Font)              `operators' in the math version `bold' on input line 34.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> TU/Garamond-Math.otf(1)/b/n on input l
-ine 38.
+ine 34.
 
 Package fontspec Info: Garamond-Math scale = 0.888888888888889.
 
@@ -511,15 +511,15 @@ xlive/2024/texmf-dist/fonts/opentype/public/garamond-math/Garamond-Math.otf]/OT
 (fontspec)             =0pt\relax \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 38.
+(Font)              `symbols' in the math version `normal' on input line 34.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/cmsy/m/n --> TU/Garamond-Math.otf(2)/m/n on input l
-ine 38.
+ine 34.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 38.
+(Font)              `symbols' in the math version `bold' on input line 34.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/cmsy/b/n --> TU/Garamond-Math.otf(2)/b/n on input l
-ine 38.
+ine 34.
 
 Package fontspec Info: Garamond-Math scale = 0.888888888888889.
 
@@ -577,16 +577,16 @@ xlive/2024/texmf-dist/fonts/opentype/public/garamond-math/Garamond-Math.otf]/OT
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 3
-8.
+4.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/cmex/m/n --> TU/Garamond-Math.otf(3)/m/n on input l
-ine 38.
+ine 34.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 38.
+(Font)              `largesymbols' in the math version `bold' on input line 34.
 
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> TU/Garamond-Math.otf(3)/b/n on input l
-ine 38.
+ine 34.
 
 (c:/texlive/2024/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
 Package: xeCJK 2022/08/05 v3.9.1 Typesetting CJK scripts with XeLaTeX
@@ -1191,29 +1191,30 @@ Package microtype Info: Loading configuration file microtype.cfg.
 
 (c:/texlive/2024/texmf-dist/tex/latex/microtype/microtype.cfg
 File: microtype.cfg 2023/03/13 v3.1a microtype main configuration file (RS)
-)) (./每日大赛_模板.aux)
+))
+No file 每日大赛_模板.aux.
 \openout1 = `每日大赛_模板.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 154.
-LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 153.
+LaTeX Font Info:    ... okay on input line 153.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 154.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 153.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 154.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 153.
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1222,19 +1223,19 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(51.21504pt, 495.07779pt, 51.21504pt)
-* v-part:(T,H,B)=(51.21504pt, 742.61676pt, 51.21504pt)
+* h-part:(L,W,R)=(39.83368pt, 517.84052pt, 39.83368pt)
+* v-part:(T,H,B)=(39.83368pt, 765.37949pt, 39.83368pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=495.07779pt
-* \textheight=742.61676pt
-* \oddsidemargin=-21.05495pt
-* \evensidemargin=-21.05495pt
-* \topmargin=-47.05495pt
+* \textwidth=517.84052pt
+* \textheight=765.37949pt
+* \oddsidemargin=-32.43631pt
+* \evensidemargin=-32.43631pt
+* \topmargin=-56.43631pt
 * \headheight=14.0pt
-* \headsep=12.0pt
+* \headsep=10.0pt
 * \topskip=11.0pt
-* \footskip=20.0pt
+* \footskip=18.0pt
 * \marginparwidth=50.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
@@ -1248,12 +1249,12 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 154.
-Package microtype Info: Applying patch `item' on input line 154.
-Package microtype Info: Applying patch `toc' on input line 154.
-Package microtype Info: Applying patch `eqnum' on input line 154.
-Package microtype Info: Applying patch `footnote' on input line 154.
-Package microtype Info: Applying patch `verbatim' on input line 154.
+LaTeX Info: Redefining \microtypecontext on input line 153.
+Package microtype Info: Applying patch `item' on input line 153.
+Package microtype Info: Applying patch `toc' on input line 153.
+Package microtype Info: Applying patch `eqnum' on input line 153.
+Package microtype Info: Applying patch `footnote' on input line 153.
+Package microtype Info: Applying patch `verbatim' on input line 153.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
@@ -1308,7 +1309,7 @@ Package fontspec Info: Could not resolve font "Microsoft YaHei/I" (it probably
 (fontspec)             doesn't exist).
 
 LaTeX Font Info:    Font shape `TU/LibertinusSans(0)/m/n' will be
-(Font)              scaled to size 9.52176pt on input line 169.
+(Font)              scaled to size 9.52176pt on input line 168.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LibertinusSans' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -1334,9 +1335,9 @@ x-text;"
 (fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/LibertinusSans(0)/m/n' will be
-(Font)              scaled to size 10.43481pt on input line 169.
+(Font)              scaled to size 10.43481pt on input line 168.
 LaTeX Font Info:    Font shape `TU/LibertinusSans(0)/b/n' will be
-(Font)              scaled to size 11.18884pt on input line 169.
+(Font)              scaled to size 11.18884pt on input line 168.
 Package microtype Info: Character `textendash ' is missing
 (microtype)             in font `TU/EBGaramond(0)/m/n/8.5'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -1356,7 +1357,7 @@ Package microtype Info: Character `textquotedblright ' is missing
 (microtype)             in font `TU/EBGaramond(0)/m/n/8.5'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `TU/LibertinusSans(0)/m/n' will be
-(Font)              scaled to size 7.39133pt on input line 172.
+(Font)              scaled to size 7.39133pt on input line 171.
 Package microtype Info: Character `textendash ' is missing
 (microtype)             in font `TU/EBGaramond(0)/m/n/9'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -1376,29 +1377,29 @@ Package microtype Info: Character `textquotedblright ' is missing
 (microtype)             in font `TU/EBGaramond(0)/m/n/9'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `TU/LibertinusSans(0)/m/n' will be
-(Font)              scaled to size 7.82611pt on input line 182.
+(Font)              scaled to size 7.82611pt on input line 181.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(1)/m/n' will be
-(Font)              scaled to size 7.99997pt on input line 182.
+(Font)              scaled to size 7.99997pt on input line 181.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `Garamond-Math.otf' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(1)/m/n' will be
-(Font)              scaled to size 5.33331pt on input line 182.
+(Font)              scaled to size 5.33331pt on input line 181.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(1)/m/n' will be
-(Font)              scaled to size 4.44443pt on input line 182.
+(Font)              scaled to size 4.44443pt on input line 181.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(2)/m/n' will be
-(Font)              scaled to size 8.0008pt on input line 182.
+(Font)              scaled to size 8.0008pt on input line 181.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(2)/m/n' will be
-(Font)              scaled to size 5.33386pt on input line 182.
+(Font)              scaled to size 5.33386pt on input line 181.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(2)/m/n' will be
-(Font)              scaled to size 4.44489pt on input line 182.
+(Font)              scaled to size 4.44489pt on input line 181.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 182.
+(Font)              scaled to size 7.99915pt on input line 181.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(3)/m/n' will be
-(Font)              scaled to size 5.33276pt on input line 182.
+(Font)              scaled to size 5.33276pt on input line 181.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(3)/m/n' will be
-(Font)              scaled to size 4.44397pt on input line 182.
+(Font)              scaled to size 4.44397pt on input line 181.
 Package microtype Info: Character `textendash ' is missing
 (microtype)             in font `TU/EBGaramond(0)/m/n/32'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -1438,25 +1439,25 @@ Package microtype Info: Character `textquotedblright ' is missing
 Package microtype Info: Character `156' is missing
 (microtype)             in font `\TU/EBGaramond(0)/m/it/10.5'.
 (microtype)             Ignoring protrusion settings for this character.
-LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 204.
+LaTeX Font Info:    Calculating math sizes for size <10.5> on input line 203.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(1)/m/n' will be
-(Font)              scaled to size 9.3333pt on input line 204.
+(Font)              scaled to size 9.3333pt on input line 203.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(1)/m/n' will be
-(Font)              scaled to size 6.53326pt on input line 204.
+(Font)              scaled to size 6.53326pt on input line 203.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(1)/m/n' will be
-(Font)              scaled to size 4.66664pt on input line 204.
+(Font)              scaled to size 4.66664pt on input line 203.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(2)/m/n' will be
-(Font)              scaled to size 9.33426pt on input line 204.
+(Font)              scaled to size 9.33426pt on input line 203.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(2)/m/n' will be
-(Font)              scaled to size 6.53394pt on input line 204.
+(Font)              scaled to size 6.53394pt on input line 203.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(2)/m/n' will be
-(Font)              scaled to size 4.66713pt on input line 204.
+(Font)              scaled to size 4.66713pt on input line 203.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(3)/m/n' will be
-(Font)              scaled to size 9.33234pt on input line 204.
+(Font)              scaled to size 9.33234pt on input line 203.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(3)/m/n' will be
-(Font)              scaled to size 6.5326pt on input line 204.
+(Font)              scaled to size 6.5326pt on input line 203.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(3)/m/n' will be
-(Font)              scaled to size 4.66617pt on input line 204.
+(Font)              scaled to size 4.66617pt on input line 203.
 Package microtype Info: Character `156' is missing
 (microtype)             in font `\TU/EBGaramond(0)/m/it/10'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -1479,23 +1480,23 @@ Package microtype Info: Character `textquotedblright ' is missing
 (microtype)             in font `TU/EBGaramond(0)/m/n/10'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(1)/m/n' will be
-(Font)              scaled to size 6.8133pt on input line 207.
+(Font)              scaled to size 6.8133pt on input line 206.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(1)/m/n' will be
-(Font)              scaled to size 4.86665pt on input line 207.
+(Font)              scaled to size 4.86665pt on input line 206.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(2)/m/n' will be
-(Font)              scaled to size 9.73428pt on input line 207.
+(Font)              scaled to size 9.73428pt on input line 206.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(2)/m/n' will be
-(Font)              scaled to size 6.814pt on input line 207.
+(Font)              scaled to size 6.814pt on input line 206.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(2)/m/n' will be
-(Font)              scaled to size 4.86714pt on input line 207.
+(Font)              scaled to size 4.86714pt on input line 206.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(3)/m/n' will be
-(Font)              scaled to size 9.73228pt on input line 207.
+(Font)              scaled to size 9.73228pt on input line 206.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(3)/m/n' will be
-(Font)              scaled to size 6.81259pt on input line 207.
+(Font)              scaled to size 6.81259pt on input line 206.
 LaTeX Font Info:    Font shape `TU/Garamond-Math.otf(3)/m/n' will be
-(Font)              scaled to size 4.86615pt on input line 207.
+(Font)              scaled to size 4.86615pt on input line 206.
 LaTeX Font Info:    Font shape `TU/LibertinusSans(0)/m/n' will be
-(Font)              scaled to size 8.69568pt on input line 217.
+(Font)              scaled to size 8.69568pt on input line 216.
  [1
 
 ]
@@ -1518,13 +1519,17 @@ Package microtype Info: Character `textquotedblright ' is missing
 (microtype)             in font `TU/EBGaramond(0)/m/n/17.28'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `TU/LibertinusSans(0)/b/n' will be
-(Font)              scaled to size 10.20981pt on input line 244.
+(Font)              scaled to size 10.20981pt on input line 243.
 Package microtype Info: Character `156' is missing
 (microtype)             in font `\TU/EBGaramond(0)/m/it/9'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `TU/LibertinusSans(0)/b/n' will be
-(Font)              scaled to size 8.39163pt on input line 279.
- [1
+(Font)              scaled to size 8.39163pt on input line 276.
+
+
+LaTeX Warning: Reference `LastPage' on page 1 undefined on input line 276.
+
+[1
 
 ]
 Package microtype Info: Character `textendash ' is missing
@@ -1546,56 +1551,34 @@ Package microtype Info: Character `textquotedblright ' is missing
 (microtype)             in font `TU/EBGaramond(0)/m/n/14.4'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `TU/LibertinusSans(0)/m/n' will be
-(Font)              scaled to size 12.52176pt on input line 281.
+(Font)              scaled to size 12.52176pt on input line 278.
 LaTeX Font Info:    Font shape `TU/LibertinusSans(0)/b/n' will be
-(Font)              scaled to size 13.4266pt on input line 281.
+(Font)              scaled to size 13.4266pt on input line 278.
 LaTeX Font Info:    Font shape `TU/LibertinusSans(0)/m/it' will be
-(Font)              scaled to size 9.32404pt on input line 281.
+(Font)              scaled to size 9.32404pt on input line 279.
+
+
+LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 319.
 
 [2
 
-] [3
+]
+
+LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 350.
+
+[3
 
 ]
-Package microtype Info: Character `textendash ' is missing
-(microtype)             in font `TU/EBGaramond(0)/m/n/7.665'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `textemdash ' is missing
-(microtype)             in font `TU/EBGaramond(0)/m/n/7.665'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `textquoteleft ' is missing
-(microtype)             in font `TU/EBGaramond(0)/m/n/7.665'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `textquoteright ' is missing
-(microtype)             in font `TU/EBGaramond(0)/m/n/7.665'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `textquotedblleft ' is missing
-(microtype)             in font `TU/EBGaramond(0)/m/n/7.665'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `textquotedblright ' is missing
-(microtype)             in font `TU/EBGaramond(0)/m/n/7.665'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `textendash ' is missing
-(microtype)             in font `TU/EBGaramond(0)/m/n/5.475'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `textemdash ' is missing
-(microtype)             in font `TU/EBGaramond(0)/m/n/5.475'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `textquoteleft ' is missing
-(microtype)             in font `TU/EBGaramond(0)/m/n/5.475'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `textquoteright ' is missing
-(microtype)             in font `TU/EBGaramond(0)/m/n/5.475'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `textquotedblleft ' is missing
-(microtype)             in font `TU/EBGaramond(0)/m/n/5.475'.
-(microtype)             Ignoring protrusion settings for this character.
-Package microtype Info: Character `textquotedblright ' is missing
-(microtype)             in font `TU/EBGaramond(0)/m/n/5.475'.
-(microtype)             Ignoring protrusion settings for this character.
- [4
 
-] [5
+LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 399.
+
+[4
+
+]
+
+LaTeX Warning: Reference `LastPage' on page 5 undefined on input line 445.
+
+[5
 
 ] 
 enddocument/afterlastpage: lastpage setting LastPage.
@@ -1604,14 +1587,24 @@ enddocument/afterlastpage: lastpage setting LastPage.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package lastpage Warning: Rerun to get the references right on input line 445.
+
  ) 
 Here is how much of TeX's memory you used:
- 29391 strings out of 474773
- 685347 string characters out of 5761289
- 1938842 words of memory out of 5000000
- 51024 multiletter control sequences out of 15000+600000
- 564312 words of font info for 143 fonts, out of 8000000 for 9000
+ 29295 strings out of 474773
+ 679557 string characters out of 5761289
+ 1940842 words of memory out of 5000000
+ 50934 multiletter control sequences out of 15000+600000
+ 564280 words of font info for 139 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 84i,15n,122p,1004b,1313s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,15n,122p,1004b,1324s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on 每日大赛_模板.pdf (6 pages).
