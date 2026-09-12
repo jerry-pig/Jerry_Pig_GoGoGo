@@ -57,6 +57,15 @@
   top=4mm
 }
 
+\newtcolorbox{debrief}[1]{
+  enhanced, breakable,
+  colback=white, colframe=slate, boxrule=1pt, arc=3mm,
+  fonttitle=\sffamily\bfseries\large, title={#1},
+  colbacktitle=slate, coltitle=white,
+  attach boxed title to top left={yshift=-2mm, xshift=5mm},
+  boxed title style={boxrule=0pt, arc=2mm}
+}
+
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\sffamily\color{slate} 2026 UCAS Daily Tournament}
