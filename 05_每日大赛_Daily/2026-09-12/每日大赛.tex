@@ -51,7 +51,7 @@
 \setCJKsansfont{Microsoft YaHei}
 \setCJKmonofont{FangSong}
 
-\usepackage[margin=1.5cm,headheight=14pt,headsep=10pt,footskip=18pt]{geometry}
+\usepackage[margin=1.4cm,headheight=14pt,headsep=10pt,footskip=18pt]{geometry}
 \usepackage{booktabs,enumitem,xcolor,graphicx,tabularx}
 
 \usepackage[breakable,skins,hooks]{tcolorbox}
@@ -75,11 +75,11 @@
 \definecolor{teal}{HTML}{0F766E}
 
 % ——— Typography Tuning ———
-\linespread{1.10}
+\linespread{1.08}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{3.5pt plus 1pt minus 1pt}
-\setlength{\abovedisplayskip}{5pt plus 2pt minus 2pt}
-\setlength{\belowdisplayskip}{5pt plus 2pt minus 2pt}
+\setlength{\parskip}{3pt plus 1pt minus 1pt}
+\setlength{\abovedisplayskip}{4pt plus 1pt minus 1pt}
+\setlength{\belowdisplayskip}{4pt plus 1pt minus 1pt}
 
 % ——— Header / Footer ———
 \pagestyle{fancy}\fancyhf{}
@@ -105,21 +105,21 @@
 \newtcolorbox{problembox}[3]{%
   enhanced, breakable,
   colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
-  left=4mm, right=4mm, top=2.8mm, bottom=2.8mm,
+  left=4mm, right=4mm, top=2.5mm, bottom=2.5mm,
   fonttitle=\sffamily\bfseries\color{slate},
   title={\raisebox{0pt}{\color{#3}\rule{3.5pt}{10pt}}\hspace{4.5pt}#1\hfill{\normalfont\footnotesize\color{mist}\itshape #2}},
   colbacktitle=paper, coltitle=slate,
-  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+  titlerule=0pt, toptitle=1.8mm, bottomtitle=1.8mm
 }
 
 \newtcolorbox{solution}[1]{%
   enhanced, breakable,
   colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
-  left=4mm, right=4mm, top=2.8mm, bottom=2.8mm,
+  left=4mm, right=4mm, top=2.2mm, bottom=2.2mm,
   fonttitle=\sffamily\bfseries\color{forest},
   title={\raisebox{0pt}{\color{forest}\rule{3pt}{10pt}}\hspace{4pt}#1},
   colbacktitle=paper, coltitle=forest,
-  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+  titlerule=0pt, toptitle=1.8mm, bottomtitle=1.8mm
 }
 
 \newtcolorbox{debrief}[1]{%
@@ -134,14 +134,14 @@
 
 \newtcolorbox{notebox}{%
   enhanced, blanker,
-  left=3mm, right=2mm, top=1.5mm, bottom=1.5mm,
+  left=3mm, right=2mm, top=1.2mm, bottom=1.2mm,
   borderline west={2pt}{0pt}{royal!60},
   colback=ice, fontupper=\small
 }
 
 \newtcolorbox{warnbox}{%
   enhanced, blanker,
-  left=3mm, right=2mm, top=1.5mm, bottom=1.5mm,
+  left=3mm, right=2mm, top=1.2mm, bottom=1.2mm,
   borderline west={2pt}{0pt}{wine},
   colback=wine!4, fontupper=\small
 }
@@ -278,10 +278,10 @@
 {\Large\sffamily\bfseries\color{navy} \S 2\quad Foundation Matrix \& Concept Blitz}
 \hfill{\small\sffamily\color{mist}\itshape Complete independently under timed conditions}
 
-\vspace{8pt}
+\vspace{6pt}
 
 {\normalsize\sffamily\bfseries\color{royal} \S A\quad 基础肌肉记忆区 (Muscle Memory Matrix \textperiodcentered\ 30 min)}
-\vspace{3pt}
+\vspace{2pt}
 
 \begin{problembox}{Problem A.1 \textbar\ 604 Calculus: Taylor Limit (定阶相消)}{Suggested time: 10\,min}{royal}
 利用泰勒公式（带佩亚诺余项），求下列极限：
@@ -291,7 +291,7 @@
 \textit{要求：写清每一项展开的具体阶数与佩亚诺余项 $o(x^k)$，严禁跳步。}
 \end{problembox}
 
-\vspace{4pt}
+\vspace{3pt}
 
 \begin{problembox}{Problem A.2 \textbar\ 604 Linear Algebra: Matrix Eigenvalues (特征多项式)}{Suggested time: 10\,min}{royal}
 求实对称矩阵：
@@ -301,7 +301,7 @@
 的全部特征值 $\lambda_1, \lambda_2, \lambda_3$，并写出其对应的迹 $\mathrm{tr}(A)$ 与行列式 $|A|$ 的自检关系。
 \end{problembox}
 
-\vspace{4pt}
+\vspace{3pt}
 
 \begin{problembox}{Problem A.3 \textbar\ 604 ODE: First-Order Linear Equation (积分因子法)}{Suggested time: 10\,min}{forest}
 求解一阶常微分方程的初值问题：
@@ -311,16 +311,16 @@
 \textit{注：最终结果若含有不可用初等函数表达的高斯型积分 $\int_0^x e^{-t^2}dt$，保留该定积分形式即可。}
 \end{problembox}
 
-\vspace{8pt}
+\vspace{6pt}
 {\normalsize\sffamily\bfseries\color{amber} \S B\quad 量子概念闪击战 (Quantum Concept Blitz \textperiodcentered\ 10 min)}
-\vspace{3pt}
+\vspace{2pt}
 
 \begin{problembox}{Problem B.1 \textbar\ 811 Concept: Schrödinger vs. Heisenberg Picture (图像辨析)}{Suggested time: 5\,min}{amber}
 判断下列命题的正误，并用一句话说明理由：\\
 \textit{“在 Heisenberg 图像中，量子系统的态矢量 $|\psi_H(t)\rangle$ 随时间演化满足含时薛定谔方程，而力学量算符 $\hat{A}_H$ 则固定在初始时刻保持不含时。”}
 \end{problembox}
 
-\vspace{4pt}
+\vspace{3pt}
 
 \begin{problembox}{Problem B.2 \textbar\ 811 Concept: Probability Current Density (守恒律物理图像)}{Suggested time: 5\,min}{amber}
 由薛定谔方程可严格推导得到连续性方程：
@@ -340,7 +340,7 @@
 
 \vspace{8pt}
 
-{\normalsize\sffamily\bfseries\color{forest} \S C\quad 核心母题攻坚 (Core Model Mastery \textperiodcentered\ 25 min)}
+{\normalsize\sffamily\bfseries\color{teal} \S C\quad 核心母题攻坚 (Core Model Mastery \textperiodcentered\ 25 min)}
 \vspace{3pt}
 
 \begin{problembox}{Problem C.1 \textbar\ 811 Model: Heisenberg Equation of Motion for 1D Harmonic Oscillator}{Suggested time: 25\,min}{teal}
@@ -383,80 +383,44 @@
 \vspace{1pt}
 {\small\color{mist}\itshape\hspace{1pt} Complete your independent attempt on scratch paper before consulting this page.}
 
-\vspace{6pt}
+\vspace{5pt}
 
 \begin{solution}{Section A \textperiodcentered\ 604 Foundation Solutions}
-\textbf{A.1 (Taylor Limit):}\enspace
-当 $x \to 0$ 时，分母为 $x^3$，故分子必须展开至 $x^3$ 阶：
-$\sin x = x - \frac{x^3}{6} + o(x^3)$，$\cos x = 1 - \frac{x^2}{2} + o(x^2)$。\\
-代入分子：
-\[
-  \sin x - x \cos x = \left(x - \frac{x^3}{6} + o(x^3)\right) - x\left(1 - \frac{x^2}{2} + o(x^2)\right) = \left(-\frac{1}{6} + \frac{1}{2}\right)x^3 + o(x^3) = \frac{1}{3}x^3 + o(x^3)
-\]
-因此原极限为：$L = \lim_{x \to 0} \frac{\frac{1}{3}x^3 + o(x^3)}{x^3} = \frac{1}{3}$。\\
+\textbf{A.1:}\enspace $\sin x = x - \frac{x^3}{6} + o(x^3)$, $\cos x = 1 - \frac{x^2}{2} + o(x^2)$。代入分子得 $\left(x - \frac{x^3}{6}\right) - x\left(1 - \frac{x^2}{2}\right) + o(x^3) = \frac{1}{3}x^3 + o(x^3)$，故极限 $L = \lim_{x\to 0}\frac{x^3/3 + o(x^3)}{x^3} = \frac{1}{3}$。
 \begin{warnbox}
-\alerttag{Common Error}\enspace 若直接用等价无穷小 $\sin x \sim x, \cos x \sim 1 - x^2/2$，则分子得到 $x - x(1 - x^2/2) = x^3/2$，导致系数错误！减法相消必须严格保留高阶项。
+\alerttag{Common Error}\enspace 若直接用等价无穷小 $\cos x \sim 1 - x^2/2$，则分子得到 $x^3/2$，导致系数错误！减法相消必须严格保留高阶项。
 \end{warnbox}
 
-\vspace{1.5mm}
-\textbf{A.2 (Eigenvalues):}\enspace
-计算特征行列式 $|\lambda I - A| = \begin{vmatrix} \lambda-2 & 0 & -1 \\ 0 & \lambda-2 & 0 \\ -1 & 0 & \lambda-2 \end{vmatrix}$。
-按第二行展开：
-\[
-  |\lambda I - A| = (\lambda-2) \begin{vmatrix} \lambda-2 & -1 \\ -1 & \lambda-2 \end{vmatrix} = (\lambda-2)[(\lambda-2)^2 - 1] = (\lambda-2)(\lambda-1)(\lambda-3) = 0
-\]
-解得三个特征值分别为：$\lambda_1 = 1, \, \lambda_2 = 2, \, \lambda_3 = 3$。\\
-\alerttag{自检} $\mathrm{tr}(A) = 2+2+2 = 6 = 1+2+3$；$|A| = 2(4-1) = 6 = 1 \times 2 \times 3$。两组自检完全吻合！
+\vspace{1mm}
+\textbf{A.2:}\enspace 特征行列式 $|\lambda I - A| = (\lambda-2)[(\lambda-2)^2 - 1] = (\lambda-2)(\lambda-1)(\lambda-3) = 0$，解得特征值为 $\lambda_1 = 1, \lambda_2 = 2, \lambda_3 = 3$。自检：$\mathrm{tr}(A)=6=1+2+3$，$|A|=2(4-1)=6=1\times 2\times 3$，完全吻合。
 
-\vspace{1.5mm}
-\textbf{A.3 (Linear ODE):}\enspace
-标准型 $y' - 2xy = 1$。积分因子 $I(x) = e^{\int -2x dx} = e^{-x^2}$。\\
-两边同乘 $e^{-x^2}$：$\frac{d}{dx}\left[y e^{-x^2}\right] = e^{-x^2}$。两边从 $0$ 到 $x$ 积分并代入初值 $y(0) = 0$：
-\[
-  y(x)e^{-x^2} - 0 = \int_0^x e^{-t^2}dt \implies y(x) = e^{x^2}\int_0^x e^{-t^2}dt
-\]
+\vspace{1mm}
+\textbf{A.3:}\enspace 积分因子 $I(x) = e^{\int -2x dx} = e^{-x^2}$。方程变形为 $\frac{d}{dx}[y e^{-x^2}] = e^{-x^2}$。结合初值 $y(0)=0$ 积分即得：$y(x) = e^{x^2}\int_0^x e^{-t^2}dt$。
 \end{solution}
 
-\vspace{4pt}
+\vspace{3pt}
 
 \begin{solution}{Section B \& Section C \textperiodcentered\ 811 QM Solutions}
-\textbf{B.1 (Picture Check):}\enspace \alerttag{错误 (False)}。题干陈述完全相反。在 Heisenberg 图像中，态矢量冻结在初始时刻 $|\psi_H\rangle = |\psi(0)\rangle$，力学量算符随时间演化；而在 Schrödinger 图像中才是态矢量演化、算符不含时。
+\textbf{B.1:}\enspace \alerttag{错误}。正好相反。Heisenberg 图像中态矢冻结 $|\psi_H\rangle = |\psi(0)\rangle$，算符随时间演化；Schrödinger 图像中才是态矢演化、算符不含时。
 
-\vspace{1.5mm}
-\textbf{B.2 (Probability Current):}\enspace 物理实质是“全空间概率严格守恒（无源无汇）”。空间某一闭区域内发现粒子的总概率之所以随时间减少，是因为概率以“概率流” $\vec{j}$ 的形式穿过区域边界流向了外界。$\vec{j}$ 刻画了粒子几率密度在空间中定向漂移的通量强度与流动方向。
+\vspace{1mm}
+\textbf{B.2:}\enspace 物理实质是全空间概率严格守恒。空间某一闭区域内发现粒子的几率减少速率等于概率以流密度 $\vec{j}$ 流出边界的通量强度。
 
-\vspace{1.5mm}
-\textbf{C.1 (Heisenberg Oscillator Derivation):}\\
-(1) 利用对易子性质 $[\hat{A}, \hat{B}^2] = [\hat{A},\hat{B}]\hat{B} + \hat{B}[\hat{A},\hat{B}]$：
-\[
-  [\hat{x}, \hat{H}] = \left[\hat{x}, \frac{\hat{p}^2}{2m} + \frac{1}{2}m\omega^2 \hat{x}^2\right] = \frac{1}{2m}[\hat{x}, \hat{p}^2] + 0 = \frac{1}{2m}(i\hbar\hat{p} + \hat{p}i\hbar) = \frac{i\hbar}{m}\hat{p}
-\]
-代入 Heisenberg 方程：$\frac{d\hat{x}_H}{dt} = \frac{1}{i\hbar}\left(\frac{i\hbar}{m}\hat{p}_H\right) = \frac{\hat{p}_H}{m}$。
-
-(2) 类似地计算动量与势能项的对易：
-\[
-  [\hat{p}, \hat{H}] = \frac{1}{2}m\omega^2 [\hat{p}, \hat{x}^2] = \frac{1}{2}m\omega^2 (-i\hbar\hat{x} - \hat{x}i\hbar) = -i\hbar m\omega^2 \hat{x}
-\]
-代入 Heisenberg 方程：$\frac{d\hat{p}_H}{dt} = \frac{1}{i\hbar}\left(-i\hbar m\omega^2 \hat{x}_H\right) = -m\omega^2 \hat{x}_H$。
-
-(3) 对 $\frac{d\hat{x}_H}{dt} = \frac{\hat{p}_H}{m}$ 再次对时间求导：
-\[
-  \frac{d^2\hat{x}_H}{dt^2} = \frac{1}{m}\frac{d\hat{p}_H}{dt} = \frac{1}{m}(-m\omega^2 \hat{x}_H) = -\omega^2 \hat{x}_H \iff \frac{d^2\hat{x}_H}{dt^2} + \omega^2 \hat{x}_H = 0
-\]
+\vspace{1mm}
+\textbf{C.1:}\enspace
+(1) $[\hat{x}, \hat{H}] = \frac{1}{2m}[\hat{x}, \hat{p}^2] = \frac{i\hbar}{m}\hat{p} \implies \frac{d\hat{x}_H}{dt} = \frac{1}{i\hbar}\left(\frac{i\hbar}{m}\hat{p}_H\right) = \frac{\hat{p}_H}{m}$。\\
+(2) $[\hat{p}, \hat{H}] = \frac{1}{2}m\omega^2 [\hat{p}, \hat{x}^2] = -i\hbar m\omega^2 \hat{x} \implies \frac{d\hat{p}_H}{dt} = \frac{1}{i\hbar}(-i\hbar m\omega^2 \hat{x}_H) = -m\omega^2 \hat{x}_H$。\\
+(3) 对 (1) 再对时间求导：$\frac{d^2\hat{x}_H}{dt^2} = \frac{1}{m}\frac{d\hat{p}_H}{dt} = -\omega^2 \hat{x}_H \iff \frac{d^2\hat{x}_H}{dt^2} + \omega^2 \hat{x}_H = 0$。
 \begin{notebox}
-\alerttag{Ehrenfest's Theorem}\enspace 这正是经典简谐振动牛顿第二定律 $m\ddot{x} = -kx$ 的精确算符形式！对两边取量子期望值，得到平均值运动规律与经典轨迹完全吻合，体现了量子到经典的对应原理。
+\alerttag{Ehrenfest's Theorem}\enspace 这与经典简谐振动牛顿第二定律形式完全一致！两边取期望值即得平均值运动规律与经典轨迹重合。
 \end{notebox}
 \end{solution}
 
-\vspace{4pt}
+\vspace{3pt}
 
 \begin{solution}{Section D \textperiodcentered\ Gaussian Integral Solution}
-构造二维高斯积分：$I^2 = \iint_{\mathbb{R}^2} e^{-a(x^2+y^2)}\,dxdy$。\\
-转换为极坐标：$x^2+y^2 = r^2, \, dxdy = r\,dr\,d\theta$，积分范围 $\theta \in [0, 2\pi], \, r \in [0, +\infty)$：
-\[
-  I^2 = \int_0^{2\pi}d\theta \int_0^{+\infty} e^{-ar^2} r\,dr = 2\pi \cdot \left[-\frac{1}{2a}e^{-ar^2}\right]_0^{+\infty} = 2\pi \cdot \left(0 - \left(-\frac{1}{2a}\right)\right) = \frac{\pi}{a}
-\]
-因被积函数 $e^{-ax^2} > 0$，故积分值必为正数，开方得最终解：$I = \sqrt{\frac{\pi}{a}}$。
+构造极坐标二重积分：$I^2 = \iint_{\mathbb{R}^2} e^{-a(x^2+y^2)}dxdy = \int_0^{2\pi}d\theta \int_0^{+\infty} e^{-ar^2}rdr = 2\pi \left[-\frac{1}{2a}e^{-ar^2}\right]_0^\infty = \frac{\pi}{a}$。\\
+因被积函数恒正，$I > 0$，故开方得解：$I = \sqrt{\frac{\pi}{a}}$。
 \end{solution}
 
 % ==============================================================================
@@ -466,12 +430,12 @@ $\sin x = x - \frac{x^3}{6} + o(x^3)$，$\cos x = 1 - \frac{x^2}{2} + o(x^2)$。
 
 {\Large\sffamily\bfseries\color{navy} \S 5\quad Daily Debrief \& Reflection (XP Checkout)}
 
-\vspace{6pt}
+\vspace{5pt}
 
 \begin{debrief}{Post-Match Review (fill in before sleep, 5\,min)}
-\renewcommand{\arraystretch}{1.25}
+\renewcommand{\arraystretch}{1.22}
 \sffamily\small
-\begin{tabularx}{\linewidth}{@{}p{3.0cm}X@{}}
+\begin{tabularx}{\linewidth}{@{}p{2.8cm}X@{}}
   \textbf{Section A (肌肉记忆)} & Time: \underline{\hspace{1.2cm}} min \quad\textbar\quad A.1 \checkbox\ \textbar\ A.2 \checkbox\ \textbar\ A.3 \checkbox\ \textbar\ 全对 (+30 XP) \checkbox\\
   & 错因剖析: \checkbox\ 泰勒漏阶 \checkbox\ 特征多项式计算失误 \checkbox\ 积分因子公式遗忘\\
   \midrule
@@ -489,22 +453,22 @@ $\sin x = x - \frac{x^3}{6} + o(x^3)$，$\cos x = 1 - \frac{x^2}{2} + o(x^2)$。
 \end{tabularx}
 \end{debrief}
 
-\vspace{8pt}
+\vspace{6pt}
 
 \begin{tcolorbox}[
   enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
-  left=4mm, right=4mm, top=3.5mm, bottom=4mm,
+  left=4mm, right=4mm, top=3.2mm, bottom=3.5mm,
   fonttitle=\sffamily\bfseries\color{slate},
   title={\raisebox{0pt}{\color{forest}\rule{3pt}{10pt}}\hspace{4pt}Key Derivation Insights \& Traps \textbar\ 突破口与避坑沉淀},
   colbacktitle=paper, coltitle=slate,
-  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+  titlerule=0pt, toptitle=1.8mm, bottomtitle=1.8mm
 ]
 \sffamily\small
-\textbf{Core Breakthrough (今日核心突破口与关键一步)}:\\[30pt]
-\rule{\linewidth}{0.3pt}\\[12pt]
-\textbf{Fatal Trap \& Common Error (致命陷阱与避坑警示)}:\\[30pt]
-\rule{\linewidth}{0.3pt}\\[12pt]
-\textbf{Day +3 Action Item (3 天后间隔重做提取的具体题号与断点)}:\\[25pt]
+\textbf{Core Breakthrough (今日核心突破口与关键一步)}:\\[26pt]
+\rule{\linewidth}{0.3pt}\\[10pt]
+\textbf{Fatal Trap \& Common Error (致命陷阱与避坑警示)}:\\[26pt]
+\rule{\linewidth}{0.3pt}\\[10pt]
+\textbf{Day +3 Action Item (3 天后间隔重做提取的具体题号与断点)}:\\[22pt]
 \rule{\linewidth}{0.3pt}
 \end{tcolorbox}
 
