@@ -14,6 +14,7 @@
 \usepackage{enumitem}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
+\usepackage{tabularx}
 \usepackage{xeCJK}
 \setCJKmainfont{SimSun} % Or whatever standard font
 
@@ -56,6 +57,15 @@
   attach boxed title to top left={yshift=-2mm, xshift=5mm},
   boxed title style={boxrule=0pt, arc=2mm},
   top=4mm
+}
+
+\newtcolorbox{debrief}[1]{
+  enhanced, breakable,
+  colback=white, colframe=slate, boxrule=1pt, arc=3mm,
+  fonttitle=\sffamily\bfseries\large, title={#1},
+  colbacktitle=slate, coltitle=white,
+  attach boxed title to top left={yshift=-2mm, xshift=5mm},
+  boxed title style={boxrule=0pt, arc=2mm}
 }
 
 \pagestyle{fancy}
