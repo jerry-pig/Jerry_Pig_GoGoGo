@@ -11,14 +11,12 @@
             "id": "a975919d7895025e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "00_Dashboard_作战指挥中心/01_16周宏观总览与考纲映射_Milestones.md",
-                "mode": "source",
-                "source": false
+                "file": "05_每日大赛_Daily/2026-09-12/每日大赛.pdf"
               },
-              "icon": "lucide-file",
-              "title": "01_16周宏观总览与考纲映射_Milestones"
+              "icon": "lucide-file-text",
+              "title": "每日大赛"
             }
           }
         ]
