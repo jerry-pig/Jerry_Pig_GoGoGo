@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
+                "file": "00_Dashboard_作战指挥中心/16周宏观作战蓝图/Phase_01_探索与激活_Week1-2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00_Mission_Control_主控台"
+              "title": "Phase_01_探索与激活_Week1-2"
             }
           }
         ]
@@ -202,6 +202,8 @@
   },
   "active": "a975919d7895025e",
   "lastOpenFiles": [
+    "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
+    "00_Dashboard_作战指挥中心/01_16周宏观总览与考纲映射_Milestones.md",
     "05_每日大赛_Daily/template/每日大赛生成规范与AI指引.md",
     "05_每日大赛_Daily/template/每日大赛_模板.pdf",
     "05_每日大赛_Daily/template/每日大赛_模板.aux",
@@ -210,8 +212,6 @@
     "05_每日大赛_Daily/2026-09-12/每日大赛.aux",
     "05_每日大赛_Daily/2026-09-12/每日大赛.log",
     "00_Dashboard_作战指挥中心/04_历史战报与成长里程碑_Archive.md",
-    "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
-    "00_Dashboard_作战指挥中心/01_16周宏观总览与考纲映射_Milestones.md",
     "05_每日大赛_Daily/2026-09-12/每日大赛.tex",
     "05_每日大赛_Daily/2026-09-12",
     "01_16周推进总览_Milestones.md",
