@@ -11,14 +11,12 @@
             "id": "a975919d7895025e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
-                "mode": "source",
-                "source": false
+                "file": "05_每日大赛_Daily/2026-09-13/每日大赛.pdf"
               },
-              "icon": "lucide-file",
-              "title": "00_Mission_Control_主控台"
+              "icon": "lucide-file-text",
+              "title": "每日大赛"
             }
           }
         ]
@@ -83,7 +81,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "fdfaabcdb7417039",
@@ -202,13 +201,13 @@
   },
   "active": "a975919d7895025e",
   "lastOpenFiles": [
+    "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
     "05_每日大赛_Daily/2026-09-13/每日大赛.pdf",
     "05_每日大赛_Daily/2026-09-13/每日大赛.aux",
     "05_每日大赛_Daily/2026-09-13/每日大赛.log",
     "05_每日大赛_Daily/2026-09-13/每日大赛.tex",
     "05_每日大赛_Daily/2026-09-13",
     "00_Dashboard_作战指挥中心/01_16周宏观总览与考纲映射_Milestones.md",
-    "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
     "00_Dashboard_作战指挥中心/16周宏观作战蓝图/Phase_05_体系融合与高危超纲_Week9-10.md",
     "00_Dashboard_作战指挥中心/16周宏观作战蓝图/Phase_06_真题分块特训_Week11-12.md",
     "00_Dashboard_作战指挥中心/16周宏观作战蓝图/Phase_08_肌肉记忆回归_Week15-16.md",
@@ -223,7 +222,6 @@
     "05_每日大赛_Daily/2026-09-12/每日大赛.aux",
     "05_每日大赛_Daily/2026-09-12/每日大赛.log",
     "05_每日大赛_Daily/template/每日大赛生成规范与AI指引.md",
-    "05_每日大赛_Daily/template/每日大赛_模板.pdf",
     "00_Dashboard_作战指挥中心/04_历史战报与成长里程碑_Archive.md",
     "01_16周推进总览_Milestones.md",
     "00_Dashboard_作战指挥中心/03_考纲核查报告与超纲增补.md",
