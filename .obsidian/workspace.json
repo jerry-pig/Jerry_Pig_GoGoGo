@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_Dashboard_作战指挥中心/04_历史战报与成长里程碑_Archive.md",
+                "file": "00_Dashboard_作战指挥中心/02_多巴胺成长系统_SkillTree.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "04_历史战报与成长里程碑_Archive"
+              "title": "02_多巴胺成长系统_SkillTree"
             }
           }
         ]
@@ -202,15 +202,16 @@
   },
   "active": "a975919d7895025e",
   "lastOpenFiles": [
+    "00_Dashboard_作战指挥中心/03_考纲核查报告与超纲增补.md",
     "00_Dashboard_作战指挥中心/02_多巴胺成长系统_SkillTree.md",
-    "05_每日大赛_Daily/2026-09-13/每日大赛.pdf",
+    "00_Dashboard_作战指挥中心/01_16周宏观总览与考纲映射_Milestones.md",
+    "00_Dashboard_作战指挥中心/16周宏观作战蓝图/Phase_01_探索与激活_Week1-2.md",
     "00_Dashboard_作战指挥中心/04_历史战报与成长里程碑_Archive.md",
+    "05_每日大赛_Daily/2026-09-13/每日大赛.pdf",
     "05_每日大赛_Daily/2026-09-13/每日大赛.aux",
     "05_每日大赛_Daily/2026-09-13/每日大赛.log",
     "05_每日大赛_Daily/2026-09-13/每日大赛_2026-09-13_复盘笔记.md",
-    "00_Dashboard_作战指挥中心/03_考纲核查报告与超纲增补.md",
     "05_每日大赛_Daily/2026-09-11/每日大赛_2026-09-11_复盘笔记.md",
-    "00_Dashboard_作战指挥中心/01_16周宏观总览与考纲映射_Milestones.md",
     "01_16周推进总览_Milestones.md",
     "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
     "05_每日大赛_Daily/2026-09-13/page_2.png",
@@ -226,7 +227,6 @@
     "00_Dashboard_作战指挥中心/16周宏观作战蓝图/Phase_04_核心骨架与微扰论复仇_Week7-8.md",
     "00_Dashboard_作战指挥中心/16周宏观作战蓝图/Phase_03_多元进阶与自旋矩阵_Week5-6.md",
     "00_Dashboard_作战指挥中心/16周宏观作战蓝图/Phase_02_地毯式基础回填_Week3-4.md",
-    "00_Dashboard_作战指挥中心/16周宏观作战蓝图/Phase_01_探索与激活_Week1-2.md",
     "05_每日大赛_Daily/2026-09-12/每日大赛.pdf",
     "05_每日大赛_Daily/template/每日大赛_模板.aux",
     "05_每日大赛_Daily/template/每日大赛_模板.log",
