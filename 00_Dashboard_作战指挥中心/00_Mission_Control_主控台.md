@@ -27,7 +27,8 @@
 >    - 算符厄米性判定（分部积分边界条件消失）与本征态正交归一性的严格证明。
 > 4. **艾宾浩斯滚动提取 (Day +1)**：
 >    - 盲写一阶线性微分方程初值变上限积分标准记号 $y(x) = e^{-\int p} \int_{x_0}^x \dots$；
->    - 盲写连续性方程 $rac{\partial ho}{\partial t} + 
+>    - 盲写连续性方程 $rac{\partial 
+ho}{\partial t} + 
 abla \cdot ec{j} = 0$。
 
 ### 📊 学习模式选择 (双轨动量防御)
@@ -42,7 +43,9 @@ abla \cdot ec{j} = 0$。
   - **核心攻坚任务**：
     1. **算符厄米性 (Hermiticity) 的物理与数学本质**：
        - 为什么可观测量算符必须是厄米的？（本征值为实数，本征函数正交归一，保证测量概率诠释成立）；
-       - 严谨证明动量算符 $\hat{p} = -i\hbar rac{\partial}{\partial x}$ 的厄米性：通过分部积分 $\int_{-\infty}^{+\infty} f^* (-i\hbar rac{\partial g}{\partial x}) dx$ 利用物理波函数在无穷远处衰减为 0 边界条件，推导出 $\langle f|\hat{p}gangle = \langle \hat{p}f|gangle$；
+       - 严谨证明动量算符 $\hat{p} = -i\hbar rac{\partial}{\partial x}$ 的厄米性：通过分部积分 $\int_{-\infty}^{+\infty} f^* (-i\hbar rac{\partial g}{\partial x}) dx$ 利用物理波函数在无穷远处衰减为 0 边界条件，推导出 $\langle f|\hat{p}g
+angle = \langle \hat{p}f|g
+angle$；
        - 辨析动能算符 $\hat{T} = -rac{\hbar^2}{2m}rac{d^2}{dx^2}$ 与角动量算符的厄米性。
     2. **对易算符共同本征基与守恒量判定**：
        - 若 $[\hat{A}, \hat{H}] = 0$，则 $\hat{A}$ 是守恒量，且存在二者的共同本征态系。
