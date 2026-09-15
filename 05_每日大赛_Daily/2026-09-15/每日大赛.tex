@@ -1,0 +1,359 @@
+% ==============================================================================
+% The Grand Daily Tournament — 2026-09-15 Match (Week 3 Day 2)
+% Locked template: EB Garamond + Garamond-Math + STKaiti (v7.0 Deluxe - Unlimited Expansion Edition)
+% Feature: Removed 6-page limit, expanded problem sets, heavy artillery practice
+% ==============================================================================
+\documentclass[a4paper,11pt]{article}
+
+% ——— Engine & Font Setup ———
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{unicode-math}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{EBGaramond}[
+  Path           = {c:/texlive/2024/texmf-dist/fonts/opentype/public/ebgaramond/},
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-SemiBold,
+  BoldItalicFont = *-SemiBoldItalic,
+  Ligatures      = TeX,
+  Numbers        = OldStyle
+]
+\setsansfont{LibertinusSans}[
+  Path        = {c:/texlive/2024/texmf-dist/fonts/opentype/public/libertinus-fonts/},
+  Extension   = .otf,
+  UprightFont = *-Regular,
+  ItalicFont  = *-Italic,
+  BoldFont    = *-Bold,
+  Scale       = MatchLowercase
+]
+\setmathfont{Garamond-Math.otf}[
+  Path  = {c:/texlive/2024/texmf-dist/fonts/opentype/public/garamond-math/},
+  Scale = MatchLowercase
+]
+
+\usepackage{xeCJK}
+\xeCJKsetup{
+  CJKmath      = false,
+  PunctStyle   = kaiming,
+  CheckSingle  = true,
+  AutoFakeBold = true,
+  AutoFakeSlant= false
+}
+\setCJKmainfont{STKaiti}[
+  Path        = {C:/Windows/Fonts/},
+  UprightFont = STKAITI.TTF,
+  BoldFont    = STKAITI.TTF,
+  ItalicFont  = STKAITI.TTF,
+  Script      = Default
+]
+\setCJKsansfont{Microsoft YaHei}
+\setCJKmonofont{FangSong}
+
+\usepackage[margin=1.4cm,headheight=14pt,headsep=10pt,footskip=18pt]{geometry}
+\usepackage{booktabs,enumitem,xcolor,graphicx,tabularx}
+
+\usepackage[breakable,skins,hooks]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows.meta}
+\usepackage{fancyhdr,lastpage}
+\usepackage{microtype}
+
+% ——— TeXtured Colour Palette ———
+\definecolor{navy}{HTML}{0F172A}
+\definecolor{slate}{HTML}{1E293B}
+\definecolor{royal}{HTML}{1E40AF}
+\definecolor{mist}{HTML}{64748B}
+\definecolor{border}{HTML}{E2E8F0}
+\definecolor{paper}{HTML}{F8FAFC}
+\definecolor{forest}{HTML}{065F46}
+\definecolor{amber}{HTML}{D97706}
+\definecolor{wine}{HTML}{991B1B}
+\definecolor{ice}{HTML}{EFF6FF}
+\definecolor{purple}{HTML}{6B21A8}
+\definecolor{teal}{HTML}{0F766E}
+
+% ——— Typography Tuning ———
+\linespread{1.08}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt plus 1pt minus 1pt}
+\setlength{\abovedisplayskip}{4pt plus 1pt minus 1pt}
+\setlength{\belowdisplayskip}{4pt plus 1pt minus 1pt}
+
+% ——— Header / Footer ———
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\textcolor{mist}{\footnotesize\sffamily 2027 Theoretical Physics \textperiodcentered\ 604 Calculus \& 811 Quantum Mechanics}}
+\fancyhead[R]{\textcolor{slate}{\footnotesize\sffamily\bfseries Daily Tournament \textperiodcentered\ 2026-09-15}}
+\fancyfoot[L]{\textcolor{mist}{\footnotesize\itshape ``Heavy Artillery Expansion \textperiodcentered\ More problems, deeper understanding.''}}
+\fancyfoot[R]{\textcolor{mist}{\footnotesize\sffamily Page \thepage\ of \pageref{LastPage}}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\color{border}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}
+
+% ——— tcolorbox Environments ———
+\newtcolorbox{briefing}[1]{%
+  enhanced, blanker, breakable,
+  left=4mm, right=3mm, top=3mm, bottom=3mm,
+  borderline west={2.5pt}{0pt}{royal},
+  colback=paper,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={#1},
+  attach title to upper={\par\vspace{2mm}}
+}
+
+\newtcolorbox{problembox}[3]{%
+  enhanced, breakable,
+  colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=2.5mm, bottom=2.5mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{#3}\rule{3.5pt}{10pt}}\hspace{4.5pt}#1\hfill{\normalfont\footnotesize\color{mist}\itshape #2}},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0pt, toptitle=1.8mm, bottomtitle=1.8mm
+}
+
+\newtcolorbox{solution}[1]{%
+  enhanced, breakable,
+  colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=2.2mm, bottom=2.2mm,
+  fonttitle=\sffamily\bfseries\color{forest},
+  title={\raisebox{0pt}{\color{forest}\rule{3pt}{10pt}}\hspace{4pt}#1},
+  colbacktitle=paper, coltitle=forest,
+  titlerule=0pt, toptitle=1.8mm, bottomtitle=1.8mm
+}
+
+\newtcolorbox{debrief}[1]{%
+  enhanced, breakable,
+  colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=3.5mm, right=3.5mm, top=2.5mm, bottom=2.5mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{amber}\rule{3pt}{10pt}}\hspace{4pt}#1},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+}
+
+\newcommand{\checkbox}{\ensuremath{\mdlgwhtsquare}}
+\newcommand{\alerttag}[1]{\textcolor{wine}{\sffamily\bfseries [#1]}}
+
+\begin{document}
+
+% ==============================================================================
+% PAGE 1: COVER
+% ==============================================================================
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[paper] (current page.south west) rectangle (current page.north east);
+  \fill[navy] (current page.north west) rectangle ($(current page.north east)+(0,-3.4cm)$);
+  \fill[royal] ($(current page.north west)+(0,-3.4cm)$) rectangle ($(current page.north east)+(0,-3.55cm)$);
+  \fill[amber] ($(current page.north west)+(0,-3.55cm)$) rectangle ($(current page.north east)+(0,-3.62cm)$);
+
+  \node[anchor=west, text=white] at ($(current page.north west)+(2.2cm,-1.5cm)$) {
+    {\fontsize{12}{14}\selectfont\sffamily\bfseries THE GRAND DAILY TOURNAMENT \textperiodcentered\ 2027}
+  };
+  \node[anchor=west, text=white!50] at ($(current page.north west)+(2.2cm,-2.3cm)$) {
+    {\fontsize{8.5}{11}\selectfont\sffamily UCAS \textperiodcentered\ HIAIS \textperiodcentered\ THEORETICAL PHYSICS ADVANCED TRAINING DOSSIER}
+  };
+
+  \begin{scope}[shift={($(current page.center)+(0,1.2cm)$)}]
+    \draw[line width=0.5pt, border!80, dashed] (0,0) circle (3.3cm);
+    \draw[line width=0.7pt, border] (0,0) circle (2.5cm);
+    \draw[line width=0.4pt, royal!30] (0,0) circle (1.6cm);
+    \draw[line width=1.2pt, slate!60] (-3.8,-2.2) -- (3.8,2.2);
+    \draw[line width=1.2pt, slate!60] (-3.8,2.2) -- (3.8,-2.2);
+    \fill[navy] (0,0) circle (3.5pt);
+    \fill[amber] (0,0) circle (2pt);
+  \end{scope}
+
+  \node[anchor=center] at ($(current page.center)+(0,-3.4cm)$) {
+    \begin{minipage}{0.82\textwidth}
+      \centering
+      {\fontsize{32}{38}\selectfont\bfseries\color{navy} Daily Tournament}\\[5pt]
+      {\fontsize{12}{15}\selectfont\sffamily\bfseries\color{royal}%
+        GRAND ARENA OF THEORETICAL PHYSICS \textperiodcentered\ v7.0 (Unlimited Edition)}\\[12pt]
+      {\color{navy}\rule{0.5\textwidth}{1.2pt}}\\[10pt]
+      {\fontsize{10.5}{14}\selectfont\color{slate}\itshape
+        ``Today's contestants: Uniform Continuity, Differential Operators, Hermitian Proofs \& Past Exams''\\[3pt]
+        {\small\color{mist}\upshape Closed-book \textperiodcentered\ Heavy Artillery Volume \textperiodcentered\ True Exam Simulation}}
+    \end{minipage}
+  };
+
+  \node[anchor=south] at ($(current page.south)+(0,1.6cm)$) {
+    \begin{minipage}{0.84\textwidth}
+      \begin{tcolorbox}[
+        enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+        left=4mm, right=4mm, top=3.5mm, bottom=3.5mm
+      ]
+        \renewcommand{\arraystretch}{1.25}
+        \sffamily\small
+        \begin{tabularx}{\linewidth}{@{}p{2.6cm}X@{}}
+          \textbf{Date} & 2026-09-15 \quad\textbar\quad Week 3 (Day 2) \quad\textbar\quad Level 4: Angular Momentum Master\\
+          \textbf{Modules} & \textbf{604}: Uniform Continuity, Improper Integrals, ODE Operators, Linear Algebra \quad\textbar\quad \textbf{811}: Hermitian Operators, Integration by parts, Real Exam \\
+          \textbf{Architecture} & v7.0 Unlimited: Expansion of Volume, Introduction of Real Exam Questions\\
+        \end{tabularx}
+      \end{tcolorbox}
+    \end{minipage}
+  };
+\end{tikzpicture}
+\end{titlepage}
+
+% ==============================================================================
+% PAGE 2: §1 TACTICAL BRIEFING & WARM-UP RETRIEVAL
+% ==============================================================================
+\clearpage
+
+\begin{center}
+  {\LARGE\bfseries\color{navy} Theoretical Physics Training \textperiodcentered\ Daily Tournament}\\[3pt]
+  {\small\sffamily\color{mist} 2026-09-15 \quad\textbar\quad Week 3 (Day 2) \quad\textbar\quad Phase 2: Ground-Level Foundation Reconstruction}\\[-4pt]
+  {\color{navy}\rule{\textwidth}{0.8pt}}\\[-11pt]
+  {\color{border}\rule{\textwidth}{0.3pt}}
+\end{center}
+
+\vspace{-6pt}
+
+\begin{briefing}{\S 1\quad Tactical Briefing \& Warm-Up Retrieval}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt, topsep=1pt]
+  \item \textbf{扩容说明}：从今日起，大赛不再受6页限制，题目容量大幅提升。引入数据变换与举一反三的计算题，以及量子力学真题模拟，要求强化运算肌肉记忆。
+  \item \textbf{604 今日靶向}：一致连续性构造与反例判定；反常积分审敛法的实际应用；可降阶微分方程求解；微分算子法求解二阶常系数线性非齐次微分方程。
+  \item \textbf{811 今日靶向}：厄米算符数学定义、利用无穷远边界条件进行分部积分的严谨推导；动量算符的厄米性证明；【新增】真题级别算符对易子实战演练。
+\end{itemize}
+
+\vspace{1mm}
+\textbf{Warm-Up Retrieval Checklist} (5--8\,min): without notes, write on scratch paper:\\
+\checkbox\ \alerttag{604} 微分算子法公式：$\frac{1}{f(D)} e^{\lambda x} = \frac{1}{f(\lambda)} e^{\lambda x}$ （当 $f(\lambda) \neq 0$）\quad
+\checkbox\ \alerttag{604} p级数反常积分收敛条件：$\int_1^{\infty} \frac{1}{x^p} dx$ 收敛当且仅当 $p > 1$ \quad
+\checkbox\ \alerttag{811} 厄米算符定义：$\int \psi_1^* (\hat{F}\psi_2) d\tau = \int (\hat{F}\psi_1)^* \psi_2 d\tau$ \quad
+\checkbox\ \alerttag{811} 动量算符：$\hat{p} = -i\hbar \nabla$
+\end{briefing}
+
+\vspace{4pt}
+
+\begin{tcolorbox}[
+  enhanced, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=3mm, bottom=3mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{royal}\rule{3pt}{10pt}}\hspace{4pt}Warm-Up Retrieval Workspace \textbar\ 白纸破冰与间隔提取草稿区},
+  colbacktitle=paper, coltitle=slate,
+  titlerule=0pt, toptitle=2mm, bottomtitle=2mm
+]
+\textcolor{mist}{\footnotesize\itshape 5--8 分钟闭卷盲写：默写上述公式，预热大脑。}
+\vspace{8.0cm}
+\end{tcolorbox}
+
+% ==============================================================================
+% PAGE 3: §2 SECTION A & SECTION B (CALCULUS & ODE)
+% ==============================================================================
+\clearpage
+
+{\Large\sffamily\bfseries\color{navy} \S 2\quad Foundation Matrix \& Concept Blitz}
+\hfill{\small\sffamily\color{mist}\itshape Complete independently under timed conditions}
+
+\vspace{6pt}
+
+{\normalsize\sffamily\bfseries\color{royal} \S A\quad 高数基础区 (Calculus Core \textperiodcentered\ 30 min)}
+\vspace{2pt}
+
+\begin{problembox}{Problem A.1 \textbar\ 604 Calculus: 一致连续性判别}{Suggested time: 10\,min}{royal}
+判断函数 $f(x) = x \sin\left(\frac{1}{x}\right)$ 在区间 $(0, 1]$ 上是否一致连续？\\
+判断函数 $g(x) = x^2$ 在区间 $(0, \infty)$ 上是否一致连续？若不是，请构造反例证明。
+\end{problembox}
+\vspace{6.5cm}
+
+\begin{problembox}{Problem A.2 \textbar\ 604 Calculus: 反常积分审敛}{Suggested time: 10\,min}{royal}
+判别反常积分的收敛性：
+\[
+  I_1 = \int_1^{\infty} \frac{\ln x}{1+x^2} dx, \quad I_2 = \int_0^1 \frac{1}{\sqrt{x(1-x)}} dx
+\]
+\end{problembox}
+\vspace{6.5cm}
+
+\clearpage
+
+{\normalsize\sffamily\bfseries\color{amber} \S B\quad 微分方程与线代进阶区 (ODE \& LA Blitz \textperiodcentered\ 30 min)}
+\vspace{2pt}
+
+\begin{problembox}{Problem B.1 \textbar\ 604 ODE: 缺项可降阶方程}{Suggested time: 12\,min}{amber}
+求解以下不显含 $y$ 的可降阶非线性微分方程，并求其满足初值条件 $y(0)=1, y'(0)=1$ 的特解：
+\[
+  y'' + (y')^2 = 1
+\]
+\textit{提示：令 $p = y'$，转化为关于 $p(x)$ 的一阶方程，注意分离变量。}
+\end{problembox}
+\vspace{8.5cm}
+
+\begin{problembox}{Problem B.2 \textbar\ 604 ODE: 微分算子法实战}{Suggested time: 12\,min}{amber}
+利用微分算子法（Differential Operator Method），求二阶常系数线性非齐次微分方程的通解：
+\[
+  y'' - 4y' + 4y = 8e^{2x} + 4x^2
+\]
+\textit{提示：右端为指数项与多项式项的叠加，利用共振公式 $\frac{1}{(D-a)^n} e^{ax} = \frac{x^n}{n!} e^{ax}$ 以及泰勒展开。}
+\end{problembox}
+\vspace{8.5cm}
+
+\clearpage
+\begin{problembox}{Problem B.3 \textbar\ 604 Linear Algebra: 矩阵运算与特征值}{Suggested time: 10\,min}{amber}
+设矩阵 $A$ 满足 $A^2 - 3A + 2E = 0$（其中 $E$ 为单位矩阵），且 $A$ 是 $3 \times 3$ 的实矩阵。
+已知 $A$ 不等于 $E$ 也不等于 $2E$，求 $A$ 可能的特征值，并列举出 $A$ 迹 (Trace) 的所有可能值。
+\end{problembox}
+\vspace{10.0cm}
+
+% ==============================================================================
+% PAGE : §3 SECTION C (QUANTUM MECHANICS)
+% ==============================================================================
+\clearpage
+
+{\Large\sffamily\bfseries\color{navy} \S 3\quad Quantum Mechanics Core \& Real Exams}
+\hfill{\small\sffamily\color{mist}\itshape Heavy Artillery Volume}
+
+\vspace{6pt}
+{\normalsize\sffamily\bfseries\color{forest} \S C\quad 厄米算符与对易子实战 (Hermitian \& Commutator \textperiodcentered\ 30 min)}
+\vspace{2pt}
+
+\begin{problembox}{Problem C.1 \textbar\ 811 QM: 厄米算符的严谨证明}{Suggested time: 15\,min}{forest}
+在一维空间 $(-\infty, +\infty)$ 中，已知动量算符为 $\hat{p} = -i\hbar \frac{d}{dx}$。波函数 $\psi(x)$ 满足无穷远处的自然边界条件（即 $x \to \pm\infty$ 时，$\psi(x) \to 0$）。
+\begin{enumerate}
+    \item 严格利用分部积分法证明 $\hat{p}$ 是厄米算符。
+    \item 证明若 $\hat{A}$ 和 $\hat{B}$ 均为厄米算符，则算符 $\hat{C} = i[\hat{A}, \hat{B}]$ 也是厄米算符。
+\end{enumerate}
+\end{problembox}
+\vspace{10.0cm}
+
+\clearpage
+\begin{problembox}{Problem C.2 \textbar\ 811 QM: 真题模拟训练 (Adapted from UCAS Past Exams)}{Suggested time: 15\,min}{forest}
+（真题风格演练）在量子力学中，算符之间的对易关系对于确定不确定性原理具有核心意义。
+已知坐标算符 $\hat{x}$ 与动量算符 $\hat{p}$ 满足基本对易关系 $[\hat{x}, \hat{p}] = i\hbar$。
+\begin{enumerate}
+    \item 求算符对易子 $[\hat{x}, \hat{p}^2]$ 的表达式。
+    \item 推导 $[\hat{x}^2, \hat{p}^2]$ 的结果，将其表示为 $\hat{x}$ 与 $\hat{p}$ 的函数。
+    \item 结合广义不确定性原理关系式 $\Delta A \Delta B \ge \frac{1}{2}|\langle [\hat{A}, \hat{B}] \rangle|$，简述第一问结果的物理意义。
+\end{enumerate}
+\end{problembox}
+\vspace{12.0cm}
+
+% ==============================================================================
+% PAGE : DEBRIEFING AREA
+% ==============================================================================
+\clearpage
+
+{\Large\sffamily\bfseries\color{navy} \S 4\quad Post-Match Debriefing \& Error Analysis}
+
+\vspace{4pt}
+
+\begin{debrief}{Debriefing Protocol \textbar\ 复盘与反思 (Fill after grading)}
+\textbf{1. 知识盲区与计算失误 (Blind Spots \& Execution Errors):}
+\vspace{3.5cm}
+
+\textbf{2. 概念纠偏 (Conceptual Corrections):}
+\vspace{3.5cm}
+
+\textbf{3. 下一步行动计划 (Next-Step Action Items):}
+\vspace{3.5cm}
+\end{debrief}
+
+\vspace{4pt}
+\begin{center}
+\sffamily\color{mist}\small
+End of Tournament. Stand tall, review rigorously, and prepare for the next battle.\\
+\textit{May the Hamiltonian guide your path.}
+\end{center}
+
+\end{document}
