@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.6.25)  15 SEP 2026 16:14
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.6.25)  15 SEP 2026 16:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1586,7 +1586,9 @@ Package microtype Info: Character `156' is missing
 
 ] [7
 
-]
+] [8
+
+] [9]
 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./每日大赛.aux)
@@ -1596,12 +1598,12 @@ L3 programming layer <2022/08/05>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 28664 strings out of 474773
- 664931 string characters out of 5761289
- 1936842 words of memory out of 5000000
- 50322 multiletter control sequences out of 15000+600000
- 561496 words of font info for 116 fonts, out of 8000000 for 9000
+ 28688 strings out of 474773
+ 666001 string characters out of 5761289
+ 1965842 words of memory out of 5000000
+ 50345 multiletter control sequences out of 15000+600000
+ 561504 words of font info for 117 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  84i,15n,122p,1001b,1313s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 每日大赛.pdf (8 pages).
+Output written on 每日大赛.pdf (10 pages).

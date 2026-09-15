@@ -356,4 +356,99 @@ End of Tournament. Stand tall, review rigorously, and prepare for the next battl
 \textit{May the Hamiltonian guide your path.}
 \end{center}
 
+
+
+% ==============================================================================
+% PAGE : SOLUTIONS
+% ==============================================================================
+\clearpage
+{\Large\sffamily\bfseries\color{navy} \S 5\quad 官方解答与解析 (Official Solutions)}
+\vspace{6pt}
+
+\begin{solution}{A.1 \textbar\ 604 一致连续性判别}
+1. 对于 $f(x) = x \sin(1/x)$ 在 $(0, 1]$ 上：\\
+由于 $\lim_{x \to 0} x \sin(1/x) = 0$ 存在且有限，我们可以补充定义 $f(0)=0$，使其在闭区间 $[0,1]$ 上连续。由 Cantor 定理（闭区间上的连续函数必一致连续）可知，扩展后的函数在 $[0,1]$ 上一致连续。因此它在子区间 $(0,1]$ 上也一致连续。
+
+2. 对于 $g(x) = x^2$ 在 $(0, \infty)$ 上：\\
+不一致连续。构造反例序列：取 $x_n = \sqrt{n+1}$， $y_n = \sqrt{n}$。\\
+当 $n \to \infty$ 时，$|x_n - y_n| = \frac{1}{\sqrt{n+1}+\sqrt{n}} \to 0$。\\
+但对应的函数值之差为 $|g(x_n) - g(y_n)| = |(n+1) - n| = 1$。\\
+自变量距离趋于 0，而函数值距离无法趋于 0（恒为 1），违背了一致连续性的定义 $\forall \epsilon, \exists \delta$，故不一致连续。
+\end{solution}
+
+\begin{solution}{A.2 \textbar\ 604 反常积分审敛}
+1. $I_1 = \int_1^{\infty} \frac{\ln x}{1+x^2} dx$：\\
+被积函数在 $x \to \infty$ 时，渐近行为是 $\sim \frac{\ln x}{x^2}$。\\
+选取比较函数 $g(x) = \frac{1}{x^{3/2}}$，利用极限比较法：
+$\lim_{x \to \infty} \frac{(\ln x)/(1+x^2)}{1/x^{3/2}} = \lim_{x \to \infty} \frac{x^{3/2}\ln x}{x^2} = \lim_{x \to \infty} \frac{\ln x}{x^{1/2}} = 0$。\\
+因为 $p=3/2 > 1$，积分 $\int_1^\infty \frac{1}{x^{3/2}} dx$ 收敛，故原积分收敛。
+
+2. $I_2 = \int_0^1 \frac{1}{\sqrt{x(1-x)}} dx$：\\
+积分在 $x=0$ 和 $x=1$ 处均为瑕点，拆分为 $\int_0^{1/2} + \int_{1/2}^1$。\\
+在 $x \to 0^+$ 时，$\frac{1}{\sqrt{x(1-x)}} \sim \frac{1}{x^{1/2}}$，$p=1/2 < 1$，瑕积分收敛。\\
+在 $x \to 1^-$ 时，令 $t=1-x$，$t \to 0^+$，被积函数 $\sim \frac{1}{t^{1/2}}$，同理 $p=1/2 < 1$ 收敛。\\
+两部分均收敛，故该反常积分收敛。
+\end{solution}
+
+\begin{solution}{B.1 \textbar\ 604 可降阶微分方程}
+令 $p = y'$，原方程化为一阶方程：$p' + p^2 = 1$。\\
+注意初值条件：$y'(0)=1 \implies p(0)=1$。\\
+将 $p(0)=1$ 代入方程 $p' = 1 - p^2$，得到 $p'(0) = 0$。\\
+如果进行变量分离 $\frac{dp}{1-p^2} = dx$，由于 $1-p^2$ 为 0，分母为 0 无法直接积分！这是一个极其容易踩坑的陷阱点。\\
+事实上，显然 $p(x) \equiv 1$ 是该微分方程的常数解（平衡解），且满足初值条件。\\
+因此 $y' = 1 \implies y = x + C$。\\
+代入 $y(0)=1$ 得 $C=1$，故特解为 $y = x + 1$。
+\end{solution}
+
+\begin{solution}{B.2 \textbar\ 604 微分算子法}
+特征方程 $r^2 - 4r + 4 = 0$，二重根 $r=2$，齐次通解 $y_h = (C_1 + C_2 x)e^{2x}$。\\
+特解 $y_{p1} = \frac{1}{(D-2)^2} 8e^{2x}$，由于 $\lambda=2$ 是特征方程的二重根（发生共振），运用位移公式：\\
+$y_{p1} = 8 \frac{x^2}{2!} e^{2x} = 4x^2 e^{2x}$。\\
+特解 $y_{p2} = \frac{1}{D^2 - 4D + 4} 4x^2 = \frac{1}{4(1 - D/2)^2} 4x^2 = (1 - D/2)^{-2} x^2$。\\
+由泰勒展开 $(1-X)^{-2} = 1 + 2X + 3X^2 + O(X^3)$，代入 $X = D/2$：\\
+$y_{p2} = (1 + 2(D/2) + 3(D/2)^2) x^2 = (1 + D + \frac{3}{4}D^2) x^2 = x^2 + 2x + \frac{3}{2}$。\\
+故通解为 $y = (C_1 + C_2 x)e^{2x} + 4x^2 e^{2x} + x^2 + 2x + \frac{3}{2}$。
+\end{solution}
+
+\begin{solution}{B.3 \textbar\ 604 矩阵迹与特征值}
+由 $A^2 - 3A + 2E = 0$ 得 $(A-E)(A-2E)=0$。\\
+矩阵 $A$ 的极小多项式必须整除 $\lambda^2 - 3\lambda + 2 = (\lambda-1)(\lambda-2)$，故特征值只能取 1 或 2。\\
+由于 $A$ 是 $3 \times 3$ 矩阵，共有三个特征值，其可能的组合（考虑重数）有：\\
+\{1,1,1\}, \{1,1,2\}, \{1,2,2\}, \{2,2,2\}。\\
+若特征值为 \{1,1,1\}，因极小多项式无重根，矩阵必可对角化，得 $A = P E P^{-1} = E$，与已知 $A \neq E$ 矛盾。\\
+若特征值为 \{2,2,2\}，同理 $A = 2E$，与已知矛盾。\\
+故特征值的组合只能是 \{1,1,2\} 或 \{1,2,2\}。\\
+矩阵的迹等于特征值之和：\\
+若为 \{1,1,2\}，则 $Tr(A) = 1+1+2 = 4$。\\
+若为 \{1,2,2\}，则 $Tr(A) = 1+2+2 = 5$。\\
+所以 $A$ 的迹的所有可能值为 4 和 5。
+\end{solution}
+
+\begin{solution}{C.1 \textbar\ 811 厄米算符证明}
+1. $\hat{p}$ 的厄米性：\\
+$\int_{-\infty}^{\infty} \psi_1^* (\hat{p} \psi_2) dx = \int_{-\infty}^{\infty} \psi_1^* \left(-i\hbar \frac{d\psi_2}{dx}\right) dx$\\
+利用分部积分：
+$= \left[-i\hbar \psi_1^* \psi_2 \right]_{-\infty}^{\infty} - \int_{-\infty}^{\infty} \left(-i\hbar \frac{d\psi_1^*}{dx}\right) \psi_2 dx$\\
+因为波函数在无穷远处趋于 0，第一项边界项为 0。\\
+剩下的积分为：$\int_{-\infty}^{\infty} \left(i\hbar \frac{d\psi_1}{dx}\right)^* \psi_2 dx = \int_{-\infty}^{\infty} (\hat{p} \psi_1)^* \psi_2 dx$。\\
+满足定义 $\int \psi_1^* (\hat{p} \psi_2) = \int (\hat{p} \psi_1)^* \psi_2$，故 $\hat{p}$ 为厄米算符。
+
+2. $\hat{C} = i[\hat{A}, \hat{B}]$ 的厄米性：\\
+求 $\hat{C}$ 的厄米共轭：
+$\hat{C}^\dagger = \left( i(\hat{A}\hat{B} - \hat{B}\hat{A}) \right)^\dagger = -i (\hat{A}\hat{B} - \hat{B}\hat{A})^\dagger$\\
+利用性质 $(\hat{X}\hat{Y})^\dagger = \hat{Y}^\dagger \hat{X}^\dagger$ 和 $\hat{A}^\dagger = \hat{A}$：\\
+$= -i ( (\hat{A}\hat{B})^\dagger - (\hat{B}\hat{A})^\dagger ) = -i ( \hat{B}^\dagger \hat{A}^\dagger - \hat{A}^\dagger \hat{B}^\dagger ) = -i (\hat{B}\hat{A} - \hat{A}\hat{B})$\\
+$= i(\hat{A}\hat{B} - \hat{B}\hat{A}) = \hat{C}$。\\
+所以 $\hat{C}^\dagger = \hat{C}$，即 $\hat{C}$ 也是厄米算符。
+\end{solution}
+
+\begin{solution}{C.2 \textbar\ 811 算符对易子}
+已知 $[\hat{x}, \hat{p}] = i\hbar$。\\
+1. $[\hat{x}, \hat{p}^2] = \hat{p}[\hat{x}, \hat{p}] + [\hat{x}, \hat{p}]\hat{p} = \hat{p}(i\hbar) + (i\hbar)\hat{p} = 2i\hbar\hat{p}$。\\
+2. $[\hat{x}^2, \hat{p}^2] = \hat{x}[\hat{x}, \hat{p}^2] + [\hat{x}, \hat{p}^2]\hat{x}$\\
+将第一问的结果代入：$= \hat{x}(2i\hbar\hat{p}) + (2i\hbar\hat{p})\hat{x} = 2i\hbar(\hat{x}\hat{p} + \hat{p}\hat{x})$。\\
+3. 物理意义：由广义不确定性关系 $\Delta x \Delta (p^2) \ge \frac{1}{2} | \langle [\hat{x}, \hat{p}^2] \rangle | = \hbar |\langle \hat{p} \rangle|$。\\
+这表明，粒子的动量期望值绝对值越大，其位置和动能（正比于 $p^2$）的联合不确定度下限就越大。换言之，高速运动粒子的位置和动能更难以被同时精确测量。
+\end{solution}
+
 \end{document}
