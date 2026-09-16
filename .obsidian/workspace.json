@@ -11,14 +11,12 @@
             "id": "a975919d7895025e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "06_历年真题_Archive/201_English/2015_Text1_真题精读与长难句精解.md",
-                "mode": "source",
-                "source": false
+                "file": "06_历年真题_Archive/601/2022/2022_高等数学甲.pdf"
               },
-              "icon": "lucide-file",
-              "title": "2015_Text1_真题精读与长难句精解"
+              "icon": "lucide-file-text",
+              "title": "2022_高等数学甲"
             }
           }
         ]
@@ -202,6 +200,7 @@
   },
   "active": "a975919d7895025e",
   "lastOpenFiles": [
+    "06_历年真题_Archive/201_English/2015_Text1_真题精读与长难句精解.md",
     "00_Dashboard_作战指挥中心/16周宏观作战蓝图/Phase_02_地毯式基础回填_Week3-4.md",
     "00_Dashboard_作战指挥中心/01_16周宏观总览与考纲映射_Milestones.md",
     "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
