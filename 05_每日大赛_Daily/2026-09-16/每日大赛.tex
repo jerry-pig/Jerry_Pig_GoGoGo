@@ -1,0 +1,185 @@
+% ==============================================================================
+% The Grand Daily Tournament — 2026-09-16 Match (Week 3 Day 3)
+% Locked template: EB Garamond + Garamond-Math + STKaiti (v7.1 Unlimited Edition)
+% ==============================================================================
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{unicode-math}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{EBGaramond}[
+  Path           = {c:/texlive/2024/texmf-dist/fonts/opentype/public/ebgaramond/},
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-SemiBold,
+  BoldItalicFont = *-SemiBoldItalic
+]
+\setsansfont{LibertinusSans}[
+  Path        = {c:/texlive/2024/texmf-dist/fonts/opentype/public/libertinus-fonts/},
+  Extension   = .otf,
+  UprightFont = *-Regular,
+  ItalicFont  = *-Italic,
+  BoldFont    = *-Bold,
+  Scale       = MatchLowercase
+]
+\setmathfont{Garamond-Math.otf}[
+  Path  = {c:/texlive/2024/texmf-dist/fonts/opentype/public/garamond-math/},
+  Scale = MatchLowercase
+]
+
+\usepackage{xeCJK}
+\xeCJKsetup{CJKmath = false, PunctStyle = kaiming, CheckSingle = true}
+\setCJKmainfont{STKaiti}[Path = {C:/Windows/Fonts/}, UprightFont = STKAITI.TTF, BoldFont = STKAITI.TTF, ItalicFont = STKAITI.TTF]
+
+\usepackage[margin=1.4cm,headheight=14pt,headsep=10pt,footskip=18pt]{geometry}
+\usepackage{booktabs,enumitem,xcolor,graphicx,tabularx}
+\usepackage[breakable,skins,hooks]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows.meta}
+\usepackage{fancyhdr,lastpage}
+
+% Colors
+\definecolor{navy}{HTML}{0F172A}
+\definecolor{slate}{HTML}{1E293B}
+\definecolor{royal}{HTML}{1E40AF}
+\definecolor{mist}{HTML}{64748B}
+\definecolor{border}{HTML}{E2E8F0}
+\definecolor{paper}{HTML}{F8FAFC}
+\definecolor{forest}{HTML}{065F46}
+\definecolor{amber}{HTML}{D97706}
+\definecolor{wine}{HTML}{991B1B}
+
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\textcolor{mist}{\footnotesize\sffamily 2027 Theoretical Physics \textperiodcentered\ 604 Calculus \& 811 Quantum Mechanics}}
+\fancyhead[R]{\textcolor{slate}{\footnotesize\sffamily\bfseries Daily Tournament \textperiodcentered\ 2026-09-16}}
+\fancyfoot[C]{\textcolor{mist}{\footnotesize\sffamily Page \thepage\ of \pageref{LastPage}}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\color{border}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}
+
+\newtcolorbox{problembox}[3]{%
+  enhanced, breakable, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=2.5mm, bottom=2.5mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{#3}\rule{3.5pt}{10pt}}\hspace{4.5pt}#1\hfill{\normalfont\footnotesize\color{mist}\itshape #2}},
+  colbacktitle=paper, coltitle=slate, titlerule=0pt, toptitle=1.8mm, bottomtitle=1.8mm
+}
+\newtcolorbox{solution}[1]{%
+  enhanced, breakable, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=2.2mm, bottom=2.2mm,
+  fonttitle=\sffamily\bfseries\color{forest},
+  title={\raisebox{0pt}{\color{forest}\rule{3pt}{10pt}}\hspace{4pt}#1},
+  colbacktitle=paper, coltitle=forest, titlerule=0pt, toptitle=1.8mm, bottomtitle=1.8mm
+}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries\color{navy} Theoretical Physics Training \textperiodcentered\ Daily Tournament}\\[3pt]
+  {\small\sffamily\color{mist} 2026-09-16 \quad\textbar\quad Week 3 (Day 3) \quad\textbar\quad Phase 2: Tactics \& Operator Evolution}\\[-4pt]
+  {\color{navy}\rule{\textwidth}{0.8pt}}\\[-11pt]
+  {\color{border}\rule{\textwidth}{0.3pt}}
+\end{center}
+
+{\Large\sffamily\bfseries\color{navy} \S 1\quad 604 Calculus Tricks (微积分大招区)}
+\vspace{4pt}
+
+\begin{problembox}{Problem 1.1 \textbar\ 积分技巧：表格法与平移}{Suggested time: 10\,min}{royal}
+计算以下定积分（提示：利用区间平移与华里士点火公式）：
+\[ I_1 = \int_0^\pi \sin^6 x \, dx \]
+计算以下不定积分（提示：使用表格法直接写出结果）：
+\[ I_2 = \int x^3 e^{-2x} \, dx \]
+\end{problembox}
+\vspace{10cm}
+
+\begin{problembox}{Problem 1.2 \textbar\ 积分技巧：区间再现公式 (乾坤大挪移)}{Suggested time: 12\,min}{royal}
+计算考研经典定积分：
+\[ I = \int_0^\pi \frac{x \sin x}{1 + \cos^2 x} \, dx \]
+\textit{提示：使用消 $x$ 公式（即区间再现公式），然后利用凑微分法。}
+\end{problembox}
+\vspace{10cm}
+
+\clearpage
+{\Large\sffamily\bfseries\color{navy} \S 2\quad 811 Quantum Mechanics (共同本征态与埃伦费斯特)}
+\vspace{4pt}
+
+\begin{problembox}{Problem 2.1 \textbar\ 核心推导：对易必有共同本征态}{Suggested time: 10\,min}{amber}
+已知两个厄米算符 $\hat{A}$ 和 $\hat{B}$ 对易，即 $[\hat{A}, \hat{B}] = 0$。\\
+假设 $\psi$ 是 $\hat{A}$ 的本征态，对应的本征值 $a$ 是\textbf{非简并}的。\\
+请用严格的数学推导证明：$\psi$ 必然也是 $\hat{B}$ 的本征态。
+\end{problembox}
+\vspace{11cm}
+
+\begin{problembox}{Problem 2.2 \textbar\ 综合计算：埃伦费斯特定理与谐振子}{Suggested time: 15\,min}{amber}
+一维量子谐振子的哈密顿算符为：
+\[ \hat{H} = \frac{\hat{p}^2}{2m} + \frac{1}{2}m\omega^2 \hat{x}^2 \]
+利用埃伦费斯特定理 $\frac{d}{dt}\langle \hat{Q} \rangle = \frac{i}{\hbar}\langle [\hat{H}, \hat{Q}] \rangle$（假设算符不显含时间）：
+\begin{enumerate}
+    \item 求坐标平均值的时间导数 $\frac{d}{dt}\langle \hat{x} \rangle$。
+    \item 求动量平均值的时间导数 $\frac{d}{dt}\langle \hat{p} \rangle$。
+    \item 综合上述结果，证明坐标平均值满足经典谐振子的运动方程：$\frac{d^2}{dt^2}\langle \hat{x} \rangle + \omega^2 \langle \hat{x} \rangle = 0$。
+\end{enumerate}
+\textit{提示：你需要用到基础对易关系 $[\hat{x}, \hat{p}] = i\hbar$ 以及展开公式 $[A+B, C] = [A,C] + [B,C]$ 和 $[A^2, B] = A[A,B] + [A,B]A$。}
+\end{problembox}
+\vspace{11cm}
+
+\clearpage
+{\Large\sffamily\bfseries\color{navy} \S 3\quad Official Solutions (官方解答)}
+
+\begin{solution}{Problem 1.1 \textbar\ 表格法与华里士}
+1. $I_1 = \int_0^\pi \sin^6 x \, dx$。\\
+因为 $\sin^6 x$ 是偶次幂，在 $[0, \pi]$ 关于 $\pi/2$ 对称，直接翻倍：\\
+$I_1 = 2 \int_0^{\pi/2} \sin^6 x \, dx$。\\
+利用点火公式：$I_1 = 2 \times \left( \frac{5}{6} \times \frac{3}{4} \times \frac{1}{2} \times \frac{\pi}{2} \right) = \frac{5\pi}{16}$。
+
+2. $I_2 = \int x^3 e^{-2x} \, dx$。\\
+使用表格法：\\
+第一列（求导）：$x^3 \to 3x^2 \to 6x \to 6 \to 0$\\
+第二列（积分）：$e^{-2x} \to -\frac{1}{2}e^{-2x} \to \frac{1}{4}e^{-2x} \to -\frac{1}{8}e^{-2x} \to \frac{1}{16}e^{-2x}$\\
+符号交替：$+,-,+,-$\\
+斜线相乘得：\\
+$I_2 = -\frac{1}{2}x^3 e^{-2x} - \frac{3}{4}x^2 e^{-2x} - \frac{3}{4}x e^{-2x} - \frac{3}{8} e^{-2x} + C$
+\end{solution}
+
+\begin{solution}{Problem 1.2 \textbar\ 区间再现公式}
+令 $I = \int_0^\pi \frac{x \sin x}{1 + \cos^2 x} \, dx$。\\
+应用消 $x$ 公式（区间再现公式 $\int_0^\pi x f(\sin x)dx = \frac{\pi}{2} \int_0^\pi f(\sin x)dx$），注意到 $\cos^2 x = 1 - \sin^2 x$ 是关于 $\sin x$ 的偶函数：\\
+$I = \frac{\pi}{2} \int_0^\pi \frac{\sin x}{1 + \cos^2 x} \, dx$。\\
+凑微分，令 $u = \cos x$，则 $du = -\sin x dx$。\\
+当 $x=0$ 时 $u=1$；$x=\pi$ 时 $u=-1$。\\
+$I = \frac{\pi}{2} \int_1^{-1} \frac{-du}{1 + u^2} = \frac{\pi}{2} \int_{-1}^1 \frac{du}{1 + u^2}$。\\
+$I = \frac{\pi}{2} [\arctan u]_{-1}^1 = \frac{\pi}{2} (\frac{\pi}{4} - (-\frac{\pi}{4})) = \frac{\pi^2}{4}$。
+\end{solution}
+
+\begin{solution}{Problem 2.1 \textbar\ 共同本征态证明}
+证明过程：\\
+已知 $\hat{A}\psi = a\psi$。由于 $[\hat{A}, \hat{B}] = 0$，即 $\hat{A}\hat{B} = \hat{B}\hat{A}$。\\
+考察态 $\hat{B}\psi$，将其被 $\hat{A}$ 作用：\\
+$\hat{A}(\hat{B}\psi) = \hat{A}\hat{B}\psi = \hat{B}\hat{A}\psi = \hat{B}(a\psi) = a(\hat{B}\psi)$。\\
+这表明 $\hat{B}\psi$ 也是 $\hat{A}$ 属于本征值 $a$ 的本征态。\\
+因为本征值 $a$ 是非简并的，对应此本征值的态只能是 $\psi$ 的常数倍。\\
+因此必须有：$\hat{B}\psi = b\psi$ （其中 $b$ 为某常数）。\\
+该式即为 $\hat{B}$ 的本征方程。所以 $\psi$ 也是 $\hat{B}$ 的本征态。证明完毕。
+\end{solution}
+
+\begin{solution}{Problem 2.2 \textbar\ 埃伦费斯特定理与谐振子}
+1. 求 $\frac{d}{dt}\langle \hat{x} \rangle$：\\
+$\frac{d}{dt}\langle \hat{x} \rangle = \frac{i}{\hbar} \langle [\hat{H}, \hat{x}] \rangle = \frac{i}{\hbar} \langle [\frac{\hat{p}^2}{2m} + \frac{1}{2}m\omega^2 \hat{x}^2, \hat{x}] \rangle$。\\
+其中 $[\hat{x}^2, \hat{x}] = 0$。\\
+$[\frac{\hat{p}^2}{2m}, \hat{x}] = \frac{1}{2m} (\hat{p}[\hat{p}, \hat{x}] + [\hat{p}, \hat{x}]\hat{p}) = \frac{1}{2m} (\hat{p}(-i\hbar) + (-i\hbar)\hat{p}) = -\frac{i\hbar}{m} \hat{p}$。\\
+代入得：$\frac{d}{dt}\langle \hat{x} \rangle = \frac{i}{\hbar} \langle -\frac{i\hbar}{m} \hat{p} \rangle = \frac{\langle \hat{p} \rangle}{m}$。\\
+
+2. 求 $\frac{d}{dt}\langle \hat{p} \rangle$：\\
+$\frac{d}{dt}\langle \hat{p} \rangle = \frac{i}{\hbar} \langle [\hat{H}, \hat{p}] \rangle = \frac{i}{\hbar} \langle [\frac{\hat{p}^2}{2m} + \frac{1}{2}m\omega^2 \hat{x}^2, \hat{p}] \rangle$。\\
+其中 $[\hat{p}^2, \hat{p}] = 0$。\\
+$[\frac{1}{2}m\omega^2 \hat{x}^2, \hat{p}] = \frac{1}{2}m\omega^2 (\hat{x}[\hat{x}, \hat{p}] + [\hat{x}, \hat{p}]\hat{x}) = \frac{1}{2}m\omega^2 (\hat{x}(i\hbar) + (i\hbar)\hat{x}) = i\hbar m\omega^2 \hat{x}$。\\
+代入得：$\frac{d}{dt}\langle \hat{p} \rangle = \frac{i}{\hbar} \langle i\hbar m\omega^2 \hat{x} \rangle = -m\omega^2 \langle \hat{x} \rangle$。\\
+
+3. 综合证明：\\
+对第一问的结果两边求导：$\frac{d^2}{dt^2}\langle \hat{x} \rangle = \frac{1}{m} \frac{d}{dt}\langle \hat{p} \rangle$。\\
+将第二问代入：$\frac{d^2}{dt^2}\langle \hat{x} \rangle = \frac{1}{m} (-m\omega^2 \langle \hat{x} \rangle) = -\omega^2 \langle \hat{x} \rangle$。\\
+即 $\frac{d^2}{dt^2}\langle \hat{x} \rangle + \omega^2 \langle \hat{x} \rangle = 0$。与经典力学方程完全一致！
+\end{solution}
+
+\end{document}
