@@ -11,12 +11,14 @@
             "id": "a975919d7895025e",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "06_历年真题_Archive/811/2022/2022_量子力学.pdf"
+                "file": "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "2022_量子力学"
+              "icon": "lucide-file",
+              "title": "00_Mission_Control_主控台"
             }
           }
         ]
@@ -200,6 +202,7 @@
   },
   "active": "a975919d7895025e",
   "lastOpenFiles": [
+    "06_历年真题_Archive/811/2022/2022_量子力学.pdf",
     "02_量子力学_811/02_算符代数与表象理论/共同本征态与广义不确定性原理证明.md",
     "06_历年真题_Archive/811/2023/2023_量子力学.pdf",
     "06_历年真题_Archive/811/2025/2025_量子力学_大纲.pdf",
@@ -236,7 +239,6 @@
     "01_16周推进总览_Milestones.md",
     "05_每日大赛_Daily/2026-09-13/page_2.png",
     "05_每日大赛_Daily/2026-09-13/page_1.png",
-    "01_高等数学_604/01_极限连续与微分/泰勒展开定阶与极限相消项.md",
-    "00_Dashboard_作战指挥中心/16周宏观作战蓝图/Phase_05_体系融合与高危超纲_Week9-10.md"
+    "01_高等数学_604/01_极限连续与微分/泰勒展开定阶与极限相消项.md"
   ]
 }
