@@ -11,14 +11,12 @@
             "id": "a975919d7895025e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
-                "mode": "source",
-                "source": false
+                "file": "05_每日大赛_Daily/2026-09-16/每日大赛.pdf"
               },
-              "icon": "lucide-file",
-              "title": "00_Mission_Control_主控台"
+              "icon": "lucide-file-text",
+              "title": "每日大赛"
             }
           }
         ]
@@ -202,6 +200,7 @@
   },
   "active": "a975919d7895025e",
   "lastOpenFiles": [
+    "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
     "05_每日大赛_Daily/2026-09-16/每日大赛.pdf",
     "05_每日大赛_Daily/2026-09-16/每日大赛.aux",
     "05_每日大赛_Daily/2026-09-16/每日大赛.log",
@@ -215,12 +214,10 @@
     "06_历年真题_Archive/811/2025/2025_量子力学_大纲.pdf",
     "06_历年真题_Archive/601/2020/2020_高等数学甲.pdf",
     "06_历年真题_Archive/601/2021/2021_高等数学甲.pdf",
-    "06_历年真题_Archive/601/2022/2022_高等数学甲.pdf",
     "01_高等数学_604/02_一元积分与反常积分/积分技巧大招_表格法与华里士公式.md",
     "06_历年真题_Archive/201_English/2015_Text1_真题精读与长难句精解.md",
     "00_Dashboard_作战指挥中心/16周宏观作战蓝图/Phase_02_地毯式基础回填_Week3-4.md",
     "00_Dashboard_作战指挥中心/01_16周宏观总览与考纲映射_Milestones.md",
-    "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
     "01_高等数学_604/02_一元积分与反常积分/反常积分审敛法与高斯积分.md",
     "01_高等数学_604/05_级数与常微分方程/高阶微分方程降阶法与二阶常系数线性方程.md",
     "00_Dashboard_作战指挥中心/02_多巴胺成长系统_SkillTree.md",
