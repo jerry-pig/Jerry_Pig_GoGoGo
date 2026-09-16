@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
+                "file": "00_Dashboard_作战指挥中心/01_16周宏观总览与考纲映射_Milestones.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00_Mission_Control_主控台"
+              "title": "01_16周宏观总览与考纲映射_Milestones"
             }
           }
         ]
@@ -202,6 +202,7 @@
   },
   "active": "a975919d7895025e",
   "lastOpenFiles": [
+    "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
     "05_每日大赛_Daily/2026-09-15/每日大赛.pdf",
     "05_每日大赛_Daily/2026-09-15/9.15.pdf",
     "01_高等数学_604/02_一元积分与反常积分/反常积分审敛法与高斯积分.md",
@@ -216,7 +217,6 @@
     "01_高等数学_604/05_级数与常微分方程/Bernoulli方程换元法与全微分方程.md",
     "01_高等数学_604/05_级数与常微分方程/微分方程简单应用_增长衰变混合模型.md",
     "01_高等数学_604/01_极限与连续/函数一致连续性判定与反例构造.md",
-    "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
     "00_Dashboard_作战指挥中心/01_16周宏观总览与考纲映射_Milestones.md",
     "00_Dashboard_作战指挥中心/16周宏观作战蓝图/Phase_02_地毯式基础回填_Week3-4.md",
     "02_量子力学_811/02_算符代数与表象理论/厄米算符数学定义与物理测量本质.md",
@@ -236,7 +236,6 @@
     "05_每日大赛_Daily/2026-09-13/page_1.png",
     "05_每日大赛_Daily/2026-09-13/9.13.pdf",
     "01_高等数学_604/01_极限连续与微分/泰勒展开定阶与极限相消项.md",
-    "05_每日大赛_Daily/2026-09-13/每日大赛.tex",
     "00_Dashboard_作战指挥中心/16周宏观作战蓝图/Phase_05_体系融合与高危超纲_Week9-10.md",
     "00_Dashboard_作战指挥中心/16周宏观作战蓝图/Phase_06_真题分块特训_Week11-12.md",
     "00_Dashboard_作战指挥中心/16周宏观作战蓝图/Phase_08_肌肉记忆回归_Week15-16.md"
