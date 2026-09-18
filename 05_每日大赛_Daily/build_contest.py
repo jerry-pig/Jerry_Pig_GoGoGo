@@ -12,6 +12,14 @@ import subprocess
 import shutil
 from datetime import datetime
 
+# Windows 控制台编码保护
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
 VAULT_DAILY_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def compile_daily_contest(date_str=None):

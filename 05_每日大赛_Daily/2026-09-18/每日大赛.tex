@@ -1,0 +1,199 @@
+% ==============================================================================
+% The Grand Daily Tournament — 2026-09-18 Match (Week 3 Day 5 · 联合重炮双日卷)
+% Locked template: EB Garamond + Garamond-Math + STKaiti (v7.1 Unlimited Edition)
+% ==============================================================================
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{fontspec}
+\usepackage{amsmath}
+\usepackage{unicode-math}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{EBGaramond}[
+  Path           = {c:/texlive/2024/texmf-dist/fonts/opentype/public/ebgaramond/},
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-SemiBold,
+  BoldItalicFont = *-SemiBoldItalic
+]
+\setsansfont{LibertinusSans}[
+  Path        = {c:/texlive/2024/texmf-dist/fonts/opentype/public/libertinus-fonts/},
+  Extension   = .otf,
+  UprightFont = *-Regular,
+  ItalicFont  = *-Italic,
+  BoldFont    = *-Bold,
+  Scale       = MatchLowercase
+]
+\setmathfont{Garamond-Math.otf}[
+  Path  = {c:/texlive/2024/texmf-dist/fonts/opentype/public/garamond-math/},
+  Scale = MatchLowercase
+]
+
+\usepackage{xeCJK}
+\xeCJKsetup{CJKmath = false, PunctStyle = kaiming, CheckSingle = true}
+\setCJKmainfont{STKaiti}[Path = {C:/Windows/Fonts/}, UprightFont = STKAITI.TTF, BoldFont = STKAITI.TTF, ItalicFont = STKAITI.TTF]
+
+\usepackage[margin=1.4cm,headheight=14pt,headsep=10pt,footskip=18pt]{geometry}
+\usepackage{booktabs,enumitem,xcolor,graphicx,tabularx}
+\usepackage[breakable,skins,hooks]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows.meta}
+\usepackage{fancyhdr,lastpage}
+
+% Colors
+\definecolor{navy}{HTML}{0F172A}
+\definecolor{slate}{HTML}{1E293B}
+\definecolor{royal}{HTML}{1E40AF}
+\definecolor{mist}{HTML}{64748B}
+\definecolor{border}{HTML}{E2E8F0}
+\definecolor{paper}{HTML}{F8FAFC}
+\definecolor{forest}{HTML}{065F46}
+\definecolor{amber}{HTML}{D97706}
+\definecolor{wine}{HTML}{991B1B}
+
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\textcolor{mist}{\footnotesize\sffamily 2027 Theoretical Physics \textperiodcentered\ 604 Calculus \& 811 Quantum Mechanics}}
+\fancyhead[R]{\textcolor{slate}{\footnotesize\sffamily\bfseries Daily Tournament \textperiodcentered\ 2026-09-18 (Joint Special)}}
+\fancyfoot[C]{\textcolor{mist}{\footnotesize\sffamily Page \thepage\ of \pageref{LastPage}}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\color{border}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}
+
+\newtcolorbox{problembox}[3]{%
+  enhanced, breakable, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=2.5mm, bottom=2.5mm,
+  fonttitle=\sffamily\bfseries\color{slate},
+  title={\raisebox{0pt}{\color{#3}\rule{3.5pt}{10pt}}\hspace{4.5pt}#1\hfill{\normalfont\footnotesize\color{mist}\itshape #2}},
+  colbacktitle=paper, coltitle=slate, titlerule=0pt, toptitle=1.8mm, bottomtitle=1.8mm
+}
+\newtcolorbox{solution}[1]{%
+  enhanced, breakable, colback=white, colframe=border, boxrule=0.6pt, arc=2mm,
+  left=4mm, right=4mm, top=2.2mm, bottom=2.2mm,
+  fonttitle=\sffamily\bfseries\color{forest},
+  title={\raisebox{0pt}{\color{forest}\rule{3pt}{10pt}}\hspace{4pt}#1},
+  colbacktitle=paper, coltitle=forest, titlerule=0pt, toptitle=1.8mm, bottomtitle=1.8mm
+}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries\color{navy} Theoretical Physics Training \textperiodcentered\ 9.17 \& 9.18 Joint Tournament}\\[3pt]
+  {\small\sffamily\color{mist} 2026-09-18 \quad\textbar\quad Week 3 (Day 5) \quad\textbar\quad Target: Level 6 晋阶决胜卷 \quad\textbar\quad 悬赏: +80 XP}\\[-4pt]
+  {\color{navy}\rule{\textwidth}{0.8pt}}\\[-11pt]
+  {\color{border}\rule{\textwidth}{0.3pt}}
+\end{center}
+
+{\Large\sffamily\bfseries\color{navy} \S 1\quad 604 Calculus: Improper Integrals \& Substitutions (反常积分与换元)}
+\vspace{4pt}
+
+\begin{problembox}{Problem 1.1 \textbar\ 反常积分审敛法：参数范围判定}{Suggested time: 12\,min}{royal}
+求下列反常积分的收敛参数范围（国科大 604 高频母题）：
+\begin{enumerate}
+    \item 讨论参数 $a$ 取何值时，瑕积分收敛：
+    \[ I_1 = \int_0^1 \frac{\ln(1 + \sqrt{x})}{x^a} \, dx \]
+    \item 讨论参数 $p$ 取何值时，无穷限反常积分收敛：
+    \[ I_2 = \int_1^{+\infty} \frac{x^2 + \arctan x}{x^p \sqrt{x + 1}} \, dx \]
+\end{enumerate}
+\end{problembox}
+\vspace{9.5cm}
+
+\begin{problembox}{Problem 1.2 \textbar\ 积分计算技巧：无理根式代换}{Suggested time: 10\,min}{royal}
+计算定积分：
+\[ I = \int_1^3 \frac{\sqrt{x - 1}}{x} \, dx \]
+\textit{提示：令 $t = \sqrt{x - 1}$ 消除根号，化为有理函数积分。}
+\end{problembox}
+\vspace{9.5cm}
+
+\clearpage
+{\Large\sffamily\bfseries\color{navy} \S 2\quad 811 Quantum Mechanics: Angular Momentum Algebra (角动量代数与阶梯算符)}
+\vspace{4pt}
+
+\begin{problembox}{Problem 2.1 \textbar\ 核心算符代数：升降算符对易子手撕}{Suggested time: 12\,min}{amber}
+在三维空间中，轨道角动量算符定义为 $\vec{L} = \vec{r} \times \vec{p}$，满足基础对易关系 $[L_i, L_j] = i\hbar \epsilon_{ijk} L_k$。\\
+定义阶梯算符 $L_+ = L_x + iL_y$ 与 $L_- = L_x - iL_y$。
+\begin{enumerate}
+    \item 利用对易子分配律，严格证明：
+    \[ [L_z, L_+] = \hbar L_+, \quad [L_z, L_-] = -\hbar L_- \]
+    \item 证明升降算符之间的对易关系：
+    \[ [L_+, L_-] = 2\hbar L_z \]
+\end{enumerate}
+\end{problembox}
+\vspace{9.5cm}
+
+\begin{problembox}{Problem 2.2 \textbar\ 态的跃迁与测量期望值 (国科大真题同构母题)}{Suggested time: 15\,min}{amber}
+已知角动量本征态记为 $|l, m\rangle$，升降算符作用公式为：
+\[ L_\pm |l, m\rangle = \hbar \sqrt{l(l+1) - m(m \pm 1)} \, |l, m \pm 1\rangle \]
+假设一个处于 $p$ 轨道的粒子状态为 $|\psi\rangle = |1, 0\rangle$（即 $l=1, m=0$）。
+\begin{enumerate}
+    \item 分别求出态 $L_+ |1, 0\rangle$ 和 $L_- |1, 0\rangle$ 的解析表达式。
+    \item 利用 $L_x = \frac{1}{2}(L_+ + L_-)$，求该态下 $L_x$ 的平均值 $\langle L_x \rangle$ 与方差 $\langle L_x^2 \rangle$。
+    \item 验证在此态下是否满足不确定性关系 $\Delta L_x \cdot \Delta L_y \ge \frac{\hbar}{2} |\langle L_z \rangle|$。
+\end{enumerate}
+\end{problembox}
+\vspace{9.5cm}
+
+\clearpage
+{\Large\sffamily\bfseries\color{navy} \S 3\quad Official Solutions \& Critical Traps (标准答案与避坑指南)}
+
+\begin{solution}{Problem 1.1 \textbar\ 反常积分审敛解答与避坑}
+\textbf{解：}
+1. 对于 $I_1 = \int_0^1 \frac{\ln(1+\sqrt{x})}{x^a} dx$：\\
+瑕点在 $x = 0$。当 $x \to 0^+$ 时，由等价无穷小 $\ln(1+u) \sim u$（此处 $u=\sqrt{x}$），得：
+\[ \frac{\ln(1+\sqrt{x})}{x^a} \sim \frac{\sqrt{x}}{x^a} = \frac{x^{1/2}}{x^a} = \frac{1}{x^{a - 1/2}} \]
+根据瑕积分基准量 $\int_0^1 \frac{1}{x^p} dx$ 在 $p < 1$ 时收敛的判定定理，收敛条件为：
+\[ a - \frac{1}{2} < 1 \implies \mathbf{a < \frac{3}{2}} \]
+
+2. 对于 $I_2 = \int_1^{+\infty} \frac{x^2 + \arctan x}{x^p \sqrt{x+1}} dx$：\\
+无穷远反常积分 $x \to +\infty$。抓大头化简被积函数：\\
+分子：$x^2 + \arctan x = x^2 + \mathcal{O}(1) \sim x^2$（因 $\arctan(+\infty) = \pi/2$ 是有限常数）；\\
+分母：$x^p \sqrt{x+1} \sim x^p \cdot x^{1/2} = x^{p + 1/2}$。\\
+故当 $x \to +\infty$ 时，被积函数主部为：
+\[ \frac{x^2}{x^{p + 1/2}} = \frac{1}{x^{p + 1/2 - 2}} = \frac{1}{x^{p - 3/2}} \]
+根据无穷限积分 $\int_1^{+\infty} \frac{1}{x^k} dx$ 在 $k > 1$ 时收敛的判定定理，收敛条件为：
+\[ p - \frac{3}{2} > 1 \implies \mathbf{p > \frac{5}{2}} \]
+\end{solution}
+
+\begin{solution}{Problem 1.2 \textbar\ 无理根式代换解答}
+\textbf{解：}
+令 $t = \sqrt{x - 1}$，则 $x = t^2 + 1$，$dx = 2t dt$。\\
+上下限变换：当 $x = 1$ 时，$t = 0$；当 $x = 3$ 时，$t = \sqrt{2}$。\\
+原积分代换为：
+\[ I = \int_0^{\sqrt{2}} \frac{t}{t^2 + 1} \cdot 2t \, dt = 2 \int_0^{\sqrt{2}} \frac{t^2}{t^2 + 1} \, dt \]
+拆分分子（假分式拆项）：
+\[ I = 2 \int_0^{\sqrt{2}} \frac{(t^2 + 1) - 1}{t^2 + 1} \, dt = 2 \int_0^{\sqrt{2}} \left( 1 - \frac{1}{t^2 + 1} \right) dt \]
+逐项积分：
+\[ I = 2 \Big[ t - \arctan t \Big]_0^{\sqrt{2}} = 2 \left( \sqrt{2} - \arctan\sqrt{2} \right) = \mathbf{2\sqrt{2} - 2\arctan\sqrt{2}} \]
+\end{solution}
+
+\begin{solution}{Problem 2.1 \textbar\ 升降算符对易子推导}
+\textbf{证明：}
+1. $[L_z, L_\pm] = [L_z, L_x \pm i L_y] = [L_z, L_x] \pm i[L_z, L_y]$。\\
+根据基础对易关系 $[L_z, L_x] = i\hbar L_y$，$[L_z, L_y] = -i\hbar L_x$，代入得：
+\[ [L_z, L_\pm] = i\hbar L_y \pm i(-i\hbar L_x) = i\hbar L_y \pm (\hbar L_x) = \pm \hbar (L_x \pm i L_y) = \mathbf{\pm \hbar L_\pm} \]
+2. 展开 $[L_+, L_-]$：
+\[ [L_+, L_-] = [L_x + iL_y, L_x - iL_y] = [L_x, L_x] - i[L_x, L_y] + i[L_y, L_x] + [L_y, L_y] \]
+其中 $[L_x, L_x] = [L_y, L_y] = 0$，且 $[L_y, L_x] = -[L_x, L_y]$：
+\[ [L_+, L_-] = -i[L_x, L_y] - i[L_x, L_y] = -2i [L_x, L_y] \]
+因为 $[L_x, L_y] = i\hbar L_z$，所以：
+\[ [L_+, L_-] = -2i(i\hbar L_z) = -2(i^2)\hbar L_z = \mathbf{2\hbar L_z} \]
+\end{solution}
+
+\begin{solution}{Problem 2.2 \textbar\ 态跃迁与期望值验证}
+\textbf{解：}
+1. 代入阶梯公式：\\
+$L_+ |1, 0\rangle = \hbar \sqrt{1(2) - 0(1)} |1, 1\rangle = \mathbf{\sqrt{2}\hbar |1, 1\rangle}$。\\
+$L_- |1, 0\rangle = \hbar \sqrt{1(2) - 0(-1)} |1, -1\rangle = \mathbf{\sqrt{2}\hbar |1, -1\rangle}$。\\
+2. 求 $\langle L_x \rangle$ 与 $\langle L_x^2 \rangle$：\\
+因为 $L_x = \frac{1}{2}(L_+ + L_-)$，作用在 $|1, 0\rangle$ 上得到正交态 $|1, 1\rangle$ 与 $|1, -1\rangle$ 的线性叠加：
+\[ L_x |1, 0\rangle = \frac{\sqrt{2}\hbar}{2} (|1, 1\rangle + |1, -1\rangle) = \frac{\hbar}{\sqrt{2}} (|1, 1\rangle + |1, -1\rangle) \]
+由于 $\langle 1, 0 | 1, 1 \rangle = \langle 1, 0 | 1, -1 \rangle = 0$（本征态正交性），故：
+\[ \langle L_x \rangle = \langle 1, 0 | L_x | 1, 0 \rangle = \mathbf{0} \]
+求 $\langle L_x^2 \rangle$：
+\[ \langle L_x^2 \rangle = \langle L_x \psi | L_x \psi \rangle = \left( \frac{\hbar}{\sqrt{2}} \right)^2 \big( \langle 1, 1 | 1, 1 \rangle + \langle 1, -1 | 1, -1 \rangle \big) = \frac{\hbar^2}{2}(1 + 1) = \mathbf{\hbar^2} \]
+3. 验证不确定性关系：\\
+同理可算得 $\langle L_y \rangle = 0$，$\langle L_y^2 \rangle = \hbar^2$。故 $\Delta L_x = \sqrt{\langle L_x^2 \rangle - \langle L_x \rangle^2} = \hbar$，同理 $\Delta L_y = \hbar$。\\
+在态 $|1, 0\rangle$ 下，由于 $m=0$，$\langle L_z \rangle = 0$。\\
+左边：$\Delta L_x \cdot \Delta L_y = \hbar \cdot \hbar = \hbar^2$；右边：$\frac{\hbar}{2} |\langle L_z \rangle| = 0$。\\
+明显 $\hbar^2 \ge 0$，严格满足海森堡不确定性关系！
+\end{solution}
+
+\end{document}
