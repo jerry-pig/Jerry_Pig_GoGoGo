@@ -21,7 +21,7 @@
 
 ### 🎮 任务列表与经验值悬赏 (XP Rewards)
 
-- [ ] **【间隔重复区 (Spaced Repetition)】 错题重构 (+30 XP)**
+- [x] **【间隔重复区 (Spaced Repetition)】 错题重构 (+30 XP)** 🏆 *已斩获*
   - **任务**：针对昨天中午踩坑的“数学错觉”，在一张纸上默写出 $\int \sin^2 t \, dt$ 和 $\int \frac{1}{\sqrt{1-t}} \, dt$ 的正确解法。
   - *认知学背书*：Error-driven Learning 理论指出，在犯错后 24 小时内进行针对性提取，神经纠错效率最高。
 
