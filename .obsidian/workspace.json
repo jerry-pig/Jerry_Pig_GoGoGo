@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03_考研英语_201/00_四级压线生70分逆袭战略_词汇与真题实操.md",
+                "file": "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00_四级压线生70分逆袭战略_词汇与真题实操"
+              "title": "00_Mission_Control_主控台"
             }
           }
         ]
@@ -202,9 +202,11 @@
   },
   "active": "a975919d7895025e",
   "lastOpenFiles": [
+    "00_Dashboard_作战指挥中心/01_16周宏观总览与考纲映射_Milestones.md",
+    "00_Dashboard_作战指挥中心/00_AI协作规范与日常工作流.md",
+    "03_考研英语_201/00_四级压线生70分逆袭战略_词汇与真题实操.md",
     "05_每日大赛_Daily/build_contest.py",
     "99_System_认知系统与模板/templates/tpl_每日学习反思与纠偏日志.md",
-    "00_Dashboard_作战指挥中心/00_AI协作规范与日常工作流.md",
     "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
     "99_System_认知系统与模板/cognitive_manual/理论物理考研认知科学与学习机制操作指南.md",
     "02_量子力学_811/00_量子物理模型图谱_MOC.md",
@@ -216,7 +218,6 @@
     "99_System_认知系统与模板/templates/tpl_每日大赛双链复盘卡.md",
     "99_System_认知系统与模板/templates/tpl_每日元认知反思日志.md",
     "01_高等数学_604/02_一元积分与反常积分/反常积分审敛法与高斯积分.md",
-    "00_Dashboard_作战指挥中心/01_16周宏观总览与考纲映射_Milestones.md",
     "00_Dashboard_作战指挥中心/16周宏观作战蓝图/Phase_02_地毯式基础回填_Week3-4.md",
     "00_Dashboard_作战指挥中心/16周宏观作战蓝图/Phase_01_探索与激活_Week1-2.md",
     "99_System_认知系统与模板/document/specs.md",
@@ -239,7 +240,6 @@
     "06_历年真题_Archive/811/2023/2023_量子力学.pdf",
     "06_历年真题_Archive/811/2025/2025_量子力学_大纲.pdf",
     "06_历年真题_Archive/601/2020/2020_高等数学甲.pdf",
-    "06_历年真题_Archive/601/2021/2021_高等数学甲.pdf",
     "05_每日大赛_Daily/2026-09-13/page_2.png",
     "05_每日大赛_Daily/2026-09-13/page_1.png"
   ]
