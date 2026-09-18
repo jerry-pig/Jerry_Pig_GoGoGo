@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
+                "file": "99_System_认知系统与模板/templates/tpl_每日元认知反思日志.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00_Mission_Control_主控台"
+              "title": "tpl_每日元认知反思日志"
             }
           }
         ]
@@ -202,8 +202,9 @@
   },
   "active": "a975919d7895025e",
   "lastOpenFiles": [
-    "00_Dashboard_作战指挥中心/01_16周宏观总览与考纲映射_Milestones.md",
+    "01_高等数学_604/02_一元积分与反常积分/反常积分审敛法与高斯积分.md",
     "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
+    "00_Dashboard_作战指挥中心/01_16周宏观总览与考纲映射_Milestones.md",
     "00_Dashboard_作战指挥中心/16周宏观作战蓝图/Phase_02_地毯式基础回填_Week3-4.md",
     "00_Dashboard_作战指挥中心/16周宏观作战蓝图/Phase_01_探索与激活_Week1-2.md",
     "99_System_认知系统与模板/document/specs.md",
@@ -231,7 +232,6 @@
     "06_历年真题_Archive/601/2020/2020_高等数学甲.pdf",
     "06_历年真题_Archive/601/2021/2021_高等数学甲.pdf",
     "06_历年真题_Archive/201_English/2015_Text1_真题精读与长难句精解.md",
-    "01_高等数学_604/02_一元积分与反常积分/反常积分审敛法与高斯积分.md",
     "01_高等数学_604/05_级数与常微分方程/高阶微分方程降阶法与二阶常系数线性方程.md",
     "00_Dashboard_作战指挥中心/02_多巴胺成长系统_SkillTree.md",
     "01_高等数学_604/02_一元积分与反常积分/定积分物理应用_弧长引力压力功.md",
