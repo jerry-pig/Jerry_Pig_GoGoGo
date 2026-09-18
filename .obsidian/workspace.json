@@ -11,14 +11,12 @@
             "id": "a975919d7895025e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "99_System_认知系统与模板/cognitive_manual/理论物理考研认知科学与学习机制操作指南.md",
-                "mode": "source",
-                "source": false
+                "file": "05_每日大赛_Daily/2026-09-18/每日大赛.pdf"
               },
-              "icon": "lucide-file",
-              "title": "理论物理考研认知科学与学习机制操作指南"
+              "icon": "lucide-file-text",
+              "title": "每日大赛"
             }
           }
         ]
@@ -83,7 +81,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "fdfaabcdb7417039",
@@ -202,6 +201,7 @@
   },
   "active": "a975919d7895025e",
   "lastOpenFiles": [
+    "99_System_认知系统与模板/cognitive_manual/理论物理考研认知科学与学习机制操作指南.md",
     "05_每日大赛_Daily/2026-09-18/每日大赛_2026-09-18_复盘笔记.md",
     "05_每日大赛_Daily/2026-09-18/每日大赛.synctex.gz",
     "05_每日大赛_Daily/2026-09-18/每日大赛.pdf",
@@ -219,7 +219,6 @@
     "03_考研英语_201/00_四级压线生70分逆袭战略_词汇与真题实操.md",
     "05_每日大赛_Daily/build_contest.py",
     "99_System_认知系统与模板/templates/tpl_每日学习反思与纠偏日志.md",
-    "99_System_认知系统与模板/cognitive_manual/理论物理考研认知科学与学习机制操作指南.md",
     "02_量子力学_811/00_量子物理模型图谱_MOC.md",
     "README.md",
     "CONTEXT.md",
