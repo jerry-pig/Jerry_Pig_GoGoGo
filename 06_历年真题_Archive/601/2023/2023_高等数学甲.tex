@@ -1,0 +1,96 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{fontspec}
+\usepackage{amsmath,amssymb}
+\usepackage{unicode-math}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{EBGaramond}[
+  Path           = {c:/texlive/2024/texmf-dist/fonts/opentype/public/ebgaramond/},
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  ItalicFont     = *-Italic,
+  BoldFont       = *-SemiBold,
+  BoldItalicFont = *-SemiBoldItalic
+]
+\setsansfont{LibertinusSans}[
+  Path        = {c:/texlive/2024/texmf-dist/fonts/opentype/public/libertinus-fonts/},
+  Extension   = .otf,
+  UprightFont = *-Regular,
+  ItalicFont  = *-Italic,
+  BoldFont    = *-Bold,
+  Scale       = MatchLowercase
+]
+\setmathfont{Garamond-Math.otf}[
+  Path  = {c:/texlive/2024/texmf-dist/fonts/opentype/public/garamond-math/},
+  Scale = MatchLowercase
+]
+
+\usepackage{xeCJK}
+\xeCJKsetup{CJKmath = false, PunctStyle = kaiming, CheckSingle = true}
+\setCJKmainfont{STKaiti}[Path = {C:/Windows/Fonts/}, UprightFont = STKAITI.TTF, BoldFont = STKAITI.TTF, ItalicFont = STKAITI.TTF]
+
+\usepackage[margin=2cm,headheight=14pt,headsep=12pt,footskip=18pt]{geometry}
+\usepackage{enumitem,xcolor,fancyhdr,lastpage}
+
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\textcolor{gray}{\footnotesize\sffamily 中国科学院大学 \textperiodcentered\ 硕士研究生入学考试}}
+\fancyhead[R]{\textcolor{black}{\footnotesize\sffamily\bfseries 2023 年高等数学（甲）}}
+\fancyfoot[C]{\textcolor{gray}{\footnotesize\sffamily 第 \thepage\ 页 / 共 \pageref{LastPage} 页}}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\newcommand{\xzanswer}[1]{\hfill\textbf{[#1]}}
+\newcommand{\fourchoices}[4]{%
+  \begin{enumerate}[label=\Alph*., itemsep=0pt, topsep=2pt]
+    \item #1 \quad \item #2 \quad \item #3 \quad \item #4
+  \end{enumerate}
+}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries 中国科学院大学}\\[4pt]
+  {\Large\bfseries 2023 年招收攻读硕士学位研究生入学考试试题}\\[4pt]
+  {\large\bfseries 科目名称：高等数学（甲）}\\[8pt]
+  {\footnotesize 考生须知：1. 本试卷满分 150 分，考试时间 180 分钟。2. 所有答案必须写在答题纸上。}\\[-4pt]
+  \rule{\textwidth}{0.8pt}
+\end{center}
+
+\vspace{10pt}
+
+\section*{一、选择题（本题共 5 小题，每小题 6 分，共 30 分）}
+\begin{enumerate}[label=\arabic*., leftmargin=1.5em]
+  \item 已知 $f\left(\ln \left(\sqrt{x^2+1}+x\right)\right)=\sqrt{x^2+1}-x$，则其反函数 $f^{-1}(x)$ 为 \xzanswer{A}
+  \fourchoices{$\ln \frac{1}{x}$}{$\ln \frac{1}{\sqrt{x}}$}{$e^{\frac{1}{x}}$}{$e^{\frac{1}{\sqrt{x}}}$}
+
+  \item 极限 $\lim\limits_{x \to 0}\left(\frac{2^x+3^x}{2}\right)^{2/x}$ 的结果为 \xzanswer{B}
+  \fourchoices{$e$}{$6$}{$\sqrt{6}$}{$\sqrt{e}$}
+
+  \item 已知曲线 $\rho=e^\theta$ 在 $\theta=\frac{\pi}{2}$ 即 $(\rho, \theta)=\left(e^{\pi/2}, \frac{\pi}{2}\right)$ 处的切线直角坐标方程为 \xzanswer{C}
+  \fourchoices{$x-y=0$}{$x-y=1$}{$x+y=e^{\pi/2}$}{$x+y=e^{2\pi}$}
+
+  \item 已知方程 $xe^x=1$ 的实根个数为 \xzanswer{B}
+  \fourchoices{$0$}{$1$}{$2$}{$4$}
+
+  \item 已知 $\mathbf{a}=(0,1,2)$，向量 $\mathbf{b}$ 平行于 $\mathbf{a}$ 且 $\mathbf{a}\cdot\mathbf{b}=2$，则 $\mathbf{b}$ 为 \xzanswer{B}
+  \fourchoices{$\left(0, \frac{1}{3}, \frac{2}{3}\right)$}{$\left(0, \frac{2}{5}, \frac{4}{5}\right)$}{$\left(0, \frac{3}{5}, \frac{6}{5}\right)$}{$\left(0, \frac{4}{5}, \frac{8}{5}\right)$}
+\end{enumerate}
+
+\section*{二、填空题（本题共 5 小题，每小题 6 分，共 30 分）}
+\begin{enumerate}[label=\arabic*., leftmargin=1.5em]
+  \item 极限 $\lim\limits_{x\to 0}\frac{\int_0^x (x-t)\cos(t^2)\,dt}{x^2} = $ \underline{\hspace{2cm}} \xzanswer{$1/2$}
+  \item 曲线 $y=\frac{x}{1+x^2}$ 的拐点坐标为 \underline{\hspace{2cm}} \xzanswer{$(0,0), (\pm\sqrt{3}, \pm\frac{\sqrt{3}}{4})$}
+  \item 设 $z=f(x^2-y^2, xy)$，其中 $f$ 具有二阶连续偏导数，则 $\frac{\partial^2 z}{\partial x\partial y} = $ \underline{\hspace{2cm}}
+  \item 幂级数 $\sum\limits_{n=1}^\infty \frac{(-1)^n}{n 2^n} (x-1)^n$ 的收敛域为 \underline{\hspace{2cm}} \xzanswer{$(-1, 3]$}
+  \item 设三阶方阵 $A$ 的特征值为 $1, 2, 3$，则 $|A^*+2E| = $ \underline{\hspace{2cm}} \xzanswer{$160$}
+\end{enumerate}
+
+\section*{三、解答与计算题（本大题共 6 题，共 90 分）}
+\begin{enumerate}[label=\arabic*., leftmargin=1.5em]
+  \item（15分）计算不定积分 $\int \frac{dx}{x\sqrt{x^2-1}}$。
+  \item（15分）计算定积分 $I = \int_0^\pi \frac{x\sin x}{1+\cos^2 x}\,dx$。
+  \item（15分）求曲面积分 $\iint_S (x\,dy\,dz + y\,dz\,dx + z\,dx\,dy)$，其中 $S$ 为柱面 $x^2+y^2=1$ 及平面 $z=0, z=1$ 所围成立体表面的外侧。
+  \item（15分）求解微分方程初值问题：$y'' - 2y' + y = xe^x$，满足 $y(0)=1, y'(0)=0$。
+  \item（15分）设函数列 $f_n(x) = \frac{nx}{1+n^2 x^2}$，求其极限函数 $f(x)$，并判断是否在 $[0,1]$ 上一致收敛。
+  \item（15分）设二次型 $f(x_1, x_2, x_3) = x_1^2 + x_2^2 + x_3^2 + 2a x_1 x_2 + 2b x_2 x_3$。求当 $a, b$ 满足什么条件时，该二次型正定。
+\end{enumerate}
+
+\end{document}
