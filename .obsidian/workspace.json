@@ -11,12 +11,14 @@
             "id": "a975919d7895025e",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "06_历年真题_Archive/811/2025/2025_量子力学_大纲.pdf"
+                "file": "00_Dashboard_作战指挥中心/03_考纲核查报告与超纲增补.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "2025_量子力学_大纲"
+              "icon": "lucide-file",
+              "title": "03_考纲核查报告与超纲增补"
             }
           }
         ]
@@ -200,6 +202,11 @@
   },
   "active": "a975919d7895025e",
   "lastOpenFiles": [
+    "00_Dashboard_作战指挥中心/02_多巴胺成长系统_SkillTree.md",
+    "00_Dashboard_作战指挥中心/01_16周宏观总览与考纲映射_Milestones.md",
+    "06_历年真题_Archive/README.md",
+    "06_历年真题_Archive/601/601.pdf",
+    "06_历年真题_Archive/811/2025/2025_量子力学_大纲.pdf",
     "06_历年真题_Archive/811/811.pdf",
     "99_System_认知系统与模板/cognitive_manual/理论物理考研认知科学与学习机制操作指南.md",
     "05_每日大赛_Daily/2026-09-18/每日大赛.pdf",
@@ -214,15 +221,12 @@
     "05_每日大赛_Daily/2026-09-18/每日大赛.synctex(busy)",
     "05_每日大赛_Daily/2026-09-18/每日大赛.log",
     "05_每日大赛_Daily/2026-09-18/每日大赛.tex",
-    "05_每日大赛_Daily/2026-09-18",
-    "00_Dashboard_作战指挥中心/01_16周宏观总览与考纲映射_Milestones.md",
     "02_量子力学_811/04_自旋与角动量耦合/角动量代数与空间量子化_升降算符Lpm.md",
     "00_Dashboard_作战指挥中心/00_Mission_Control_主控台.md",
     "00_Dashboard_作战指挥中心/16周宏观作战蓝图/Phase_04_核心骨架与微扰论复仇_Week7-8.md",
     "00_Dashboard_作战指挥中心/16周宏观作战蓝图/Phase_02_地毯式基础回填_Week3-4.md",
     "00_Dashboard_作战指挥中心/00_AI协作规范与日常工作流.md",
     "03_考研英语_201/00_四级压线生70分逆袭战略_词汇与真题实操.md",
-    "05_每日大赛_Daily/build_contest.py",
     "99_System_认知系统与模板/templates/tpl_每日学习反思与纠偏日志.md",
     "02_量子力学_811/00_量子物理模型图谱_MOC.md",
     "README.md",
@@ -234,8 +238,6 @@
     "99_System_认知系统与模板/templates/tpl_每日元认知反思日志.md",
     "00_Dashboard_作战指挥中心/16周宏观作战蓝图/Phase_01_探索与激活_Week1-2.md",
     "99_System_认知系统与模板/document/specs.md",
-    "99_System_认知系统与模板/00_AI协作规范与智能导师工作流.md",
-    "05_每日大赛_Daily/2026-09-16/每日大赛.pdf",
     "05_每日大赛_Daily/2026-09-16/20260916.jpg",
     "05_每日大赛_Daily/2026-09-16/IMG_20260916_230853.jpg",
     "05_每日大赛_Daily/2026-09-13/page_2.png",
