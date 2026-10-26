@@ -18,8 +18,21 @@
               "icon": "lucide-file-text",
               "title": "601"
             }
+          },
+          {
+            "id": "cb12cc4fd205d816",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.14.5"
+              },
+              "icon": "lucide-book-up",
+              "title": "版本说明 1.14.5"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -198,7 +211,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a975919d7895025e",
+  "active": "cb12cc4fd205d816",
   "lastOpenFiles": [
     "06_历年真题_Archive/601/2021/2021_高等数学甲.pdf",
     "06_历年真题_Archive/601/2022/2022_高等数学甲.pdf",
