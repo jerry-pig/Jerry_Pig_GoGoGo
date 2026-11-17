@@ -23,12 +23,14 @@
             "id": "cb12cc4fd205d816",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.14.5"
+                "file": "01_高等数学_604/01_极限连续与微分/微分中值定理构造辅助函数法.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "版本说明 1.14.5"
+              "icon": "lucide-file",
+              "title": "微分中值定理构造辅助函数法"
             }
           }
         ],
